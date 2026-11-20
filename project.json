@@ -111,6 +111,7 @@
   "hosting": {
     "repository": "https://github.com/ANRGUSC/markov-block-hierarchy-proof-atlas",
     "visibility": "public",
-    "site": "https://anrgusc.github.io/markov-block-hierarchy-proof-atlas/"
+    "site": "https://anrgusc.github.io/markov-block-hierarchy-proof-atlas/",
+    "activity_url": "https://raw.githubusercontent.com/ANRGUSC/markov-block-hierarchy-proof-atlas/proof-atlas-activity/activity.json"
   }
 }

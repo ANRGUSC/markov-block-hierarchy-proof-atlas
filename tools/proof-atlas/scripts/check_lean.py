@@ -1,6 +1,8 @@
 """Provision the project's Lean toolchain and run its Lake build. Python 3.9+."""
 import argparse
+from contextlib import nullcontext
 from datetime import datetime, timezone
+import json
 import os
 from pathlib import Path
 import re
@@ -10,6 +12,7 @@ import sys
 import tempfile
 import urllib.request
 import zipfile
+from activity import Activity
 
 
 def run(args, package, env, log, *, required=True):
@@ -128,6 +131,11 @@ def main():
                         help="Fetch precompiled dependencies for this Mathlib import; repeat per module")
     parser.add_argument("--offline", action="store_true",
                         help="Reuse the installed toolchain and local dependencies; disable remote Git and cache downloads")
+    parser.add_argument("--project", type=Path, help="Atlas project containing the claim inventory")
+    parser.add_argument("--claim", help="Inventory label being checked (defaults to the project focus)")
+    parser.add_argument("--task", default="Check the selected Lean declarations")
+    parser.add_argument("--activity-id", help="Continue an existing proof-writing activity")
+    parser.add_argument("--publish-activity", action="store_true", help="Also report activity to the configured GitHub repository")
     args = parser.parse_args()
     package = args.package.resolve(strict=True)
     logs = args.logs or package / ".proof-atlas-tools" / "logs"
@@ -137,7 +145,13 @@ def main():
                                      prefix=f"lean-{stamp}-", suffix=".log") as log:
         print(f"Lean run log: {log.name}", flush=True)
         try:
-            check(package, log, args.mathlib_module, args.offline)
+            root = args.project or package.parent
+            activity = nullcontext()
+            bound = (root / "dist/inventory.json").is_file() and (root / "project.json").is_file()
+            if args.claim or args.project or args.publish_activity or (bound and json.loads((root / "project.json").read_bytes()).get("focus")):
+                activity = Activity(root, args.claim, args.task, args.activity_id, args.publish_activity)
+            with activity:
+                check(package, log, args.mathlib_module, args.offline)
         except (OSError, ValueError, RuntimeError, KeyError, zipfile.BadZipFile) as exc:
             print(f"Build incomplete: {exc}", file=log)
             print(f"Build incomplete: {exc}", file=sys.stderr)

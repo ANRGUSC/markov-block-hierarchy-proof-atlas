@@ -154,7 +154,8 @@ def build(root):
             log_links[cid] = f'<p><a href="logs/{name}">Read the recorded Lean run</a></p>'
         entries.append(entry)
         url = "proofs/index.html#/claim/" + quote(cid, safe="")
-        rows.append(f'<li><a href="{url}">{esc(entry["reference"])} · {esc(c["title"])}</a> · {esc(status)}</li>')
+        target = ' <strong class="proof-target">Current proof target</strong>' if cid == p.get("focus") else ''
+        rows.append(f'<li data-claim="{esc(cid)}"><a href="{url}">{esc(entry["reference"])} · {esc(c["title"])}</a> · {esc(status)}{target}<span class="claim-activity"></span></li>')
     sources = edition_links(p)
     heading = f'<p>Proof Atlas · Maintainer dashboard</p><h1>{esc(p["title"])}</h1><p>{sources}</p>'
     focus = p.get("focus")
@@ -164,12 +165,13 @@ def build(root):
         active = (f'<section><small>Latest saved proof checkpoint</small><h2><a href="proofs/index.html#/claim/{quote(focus, safe="")}">{esc(by_id[focus]["title"])}</a></h2>'
                   f'<p>{esc(stale.get(focus, w["step"]))}</p><p><strong>Next step</strong><br>{esc(w["next"])}</p>'
                   f'{subproof_lists.get(focus, "")}<time>Last checkpoint · {esc(w["updated"])}</time>{log_links.get(focus, "")}</section>')
-    dashboard = heading + active + f'<section><h2>Claim inventory</h2><p>{len(claims)} entries in manuscript order</p><ol>' + "".join(rows) + '</ol></section>'
+    feed = p.get("hosting", {}).get("activity_url", "")
+    dashboard = heading + f'<section id="claim-inventory" data-feed="{esc(feed)}"><h2>Claim inventory</h2><p>{len(claims)} entries in manuscript order</p><ol>' + "".join(rows) + '</ol></section>' + active
     payload = dict(title=p["title"], focus=focus, claims=entries, dependencies=edges, macros=materials.get("macros", {}))
     template = (assets / "explorer.html").read_text(encoding="utf-8-sig")
     packed = json.dumps(payload, ensure_ascii=False)
     digest = hashlib.sha256((packed + dashboard + template).encode())
-    for name in ("explorer.js", "explorer.css", "graph.js", "graph.css", "style.css", "live.js"):
+    for name in ("explorer.js", "explorer.css", "graph.js", "graph.css", "style.css", "live.js", "activity.js"):
         digest.update((assets / name).read_bytes())
         atomic(output / name, (assets / name).read_bytes())
     version = digest.hexdigest()
@@ -183,7 +185,9 @@ def build(root):
     shutil.copytree(assets / "katex", output / "katex", dirs_exist_ok=True)
     watch = f'<script src="live.js" data-revision="{version}" defer></script>'
     atomic(output / "preview-status.json", b'{}')
-    atomic(output / "progress.html", page("Proof progress", dashboard, watch))
+    if not (output / "activity.json").exists():
+        atomic(output / "activity.json", b'{"runs":[]}')
+    atomic(output / "progress.html", page("Proof progress", dashboard, watch + '<script src="activity.js" defer></script>'))
     atomic(output / "manuscript.pdf", pdf)
     shutil.copyfile(Path(__file__).resolve().parents[1] / "assets/style.css", output / "style.css")
     atomic(output / "inventory.json", json.dumps(claims, ensure_ascii=False, indent=2).encode())

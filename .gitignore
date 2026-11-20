@@ -1,4 +1,5 @@
 /dist/
+/.proof-atlas-activity/
 __pycache__/
 /evidence/*.log
 /lean/.lake/
