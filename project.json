@@ -23,7 +23,7 @@
     "corollary",
     "conjecture"
   ],
-  "focus": "thm:four",
+  "focus": "prop:rec",
   "work": {
     "prop:phase": {
       "status": "closed",
@@ -508,37 +508,41 @@
       }
     },
     "thm:four": {
-      "status": "attempted",
-      "updated": "2026-11-20T08:58:36+00:00",
+      "status": "closed",
+      "updated": "2026-11-20T09:23:42+00:00",
       "summary": "At length four, six complementary-word classes determine a parity allocation and the optimal rate and variance.",
-      "step": "Verified the endpoint-or-root parity rule and that a chosen allocation maximizes the full objective.",
-      "next": "Check continuity of the explicit parity slope and join the optimizer to the rate and variance formulas.",
-      "scope": "Checked components of Theorem 4. The complete four-symbol result remains open.",
-      "lean": "lean/BlockHierarchy/Four/Preliminaries.lean",
-      "run_log": "evidence/four-incremental.txt",
+      "step": "Lean verified the four-symbol theorem against the independently authored paper statement. The release audit checked all transitive local source dependencies and the axiom report.",
+      "next": "Proceed to the finite-block full-support thresholds in Proposition 5.",
+      "scope": "For every stationary symmetric binary source with flip probability between zero and one half, the contract proves the ordered classes, exact prefix maxima, clipped weights and support including empty groups, global and slice optimality, the parity derivative and endpoint/root rules. For every interior distortion it constructs a multiplier and a full sixteen-word channel attaining the budget, proves the stated rate in bits and tilted variance, and establishes the column equality at support transitions.",
+      "lean": "lean/BlockHierarchy/Four/PaperStatement.lean",
+      "run_log": "evidence/four-symbol-complete.txt",
       "checked_inputs": {
         "lean/BlockHierarchy/FiniteRD.lean": "3505cb88bf62172df5ec7477ef03b7d1a009d006776619a1e568473785b39cc3",
         "lean/BlockHierarchy/Four/AllocationIdentities.lean": "762606623c0a6de007759fb5a6c4c8aaf6d23441a9e034e01366b1ce3f46ebf2",
+        "lean/BlockHierarchy/Four/Assembly.lean": "bfd90c243f92566a65250c15a8feb70cbdf37958ed73575c6c20b689648258ac",
         "lean/BlockHierarchy/Four/Channel.lean": "4d89273477827b55ff69dc453e367a0a2146d2d38629c78dfe7cb14eea45391b",
         "lean/BlockHierarchy/Four/Classes.lean": "51726db749fe14afd8bd13b6b6e4eb3c6755452db33cdb25918662c0a0991faa",
-        "lean/BlockHierarchy/Four/Consequences.lean": "a2c5903ac98077eadcd2d22ea190a0be9cc75e6ba0d0494a4933802f7c5bb3f9",
         "lean/BlockHierarchy/Four/Derivatives.lean": "b9cbf08a8ab6ea625b104337b53a07ac7d91ff8c25ffa9810017b643eeda13c6",
         "lean/BlockHierarchy/Four/Distortion.lean": "2ba7bd83937a8f4295919ca8aec1c0c53f4790e9894355ebab54fd6e0bd61a51",
         "lean/BlockHierarchy/Four/Envelope.lean": "df6cf7c7be87f20640abffae744c4702e4d6f4ade0740c118e01aeae80eee3fe",
         "lean/BlockHierarchy/Four/FourWord.lean": "8e5f0df7e2bae35dbc30667382d64f7a0070d1f8889dea588d56a0ea7643a08a",
+        "lean/BlockHierarchy/Four/GroupCertificate.lean": "35cb112c318cc42e143c2b8723a1c20c37d4f96c6859440eeee25895547ba856",
         "lean/BlockHierarchy/Four/Maximizer.lean": "6ea6b77f87d6e0b24fc1d7bbed2e86900b536b26ec44248fbce0668e851566d0",
-        "lean/BlockHierarchy/Four/Optimality.lean": "1f3b7f578c4363d5b3f45413a8e111e253a960b3ad57fdf6bfee4d2cf7c46761",
         "lean/BlockHierarchy/Four/OuterBounds.lean": "425ac84c88ff088c6cca52618e866be834de189bb5a60e9501028ddd317f044a",
         "lean/BlockHierarchy/Four/OuterConnected.lean": "890a70744145dc6392a092763a8d30f8cedb4e3b7dfcd15fe279f8f44c084abf",
         "lean/BlockHierarchy/Four/OuterGeometry.lean": "3fb41e5ca2f5ad6d67a8a2f54061b97283cb579e593a1aaa736b4f123d9b605f",
         "lean/BlockHierarchy/Four/OuterMultiplier.lean": "9343e2d086ffbb4ae3fc53758ea70aeb3882f068962e4924754a2816936122b5",
+        "lean/BlockHierarchy/Four/PaperStatement.lean": "2bc9aec9a270a472fb9c4a0d762e84324849ee8e7cc4acf4a4afecdfd5380330",
         "lean/BlockHierarchy/Four/ParityChoice.lean": "e6bb61332f83b32a784cab186d6061a92476ca4d1cce2588af9d5b6682225cd8",
         "lean/BlockHierarchy/Four/ParityOptimality.lean": "975da85a7a52419de9a9f474cd915760f24586786e69791ba39bf6e6761a1174",
         "lean/BlockHierarchy/Four/Preliminaries.lean": "2e39bde96498407f7c3881ee83dc26cbcaf445a9fda2783469bdf4043b95ba79",
+        "lean/BlockHierarchy/Four/Release.lean": "836944a2d2d35afc91ecd4748fe233a970d91fcc877d58c38341d61da813a40b",
         "lean/BlockHierarchy/Four/SupportBoundary.lean": "e06c832fc77cf0192a0b02d5d5b795701cf23ff651f76f41f03f060190623870",
         "lean/BlockHierarchy/Four/SupportingParity.lean": "106adedd94f70823ae77325ebe9ff70aba3064137e5da5291c840718cf629dfb",
+        "lean/BlockHierarchy/Four/Theorem.lean": "907278dc5cd42a61911478a65e2746a4c7bf0908c5dbff165c7aac7ea677fae2",
         "lean/BlockHierarchy/Four/UniqueMaximizer.lean": "b59417d70b15e3a69dcd8502c030287d1293b87a8a30d694a32e618a9ea6e0e4",
         "lean/BlockHierarchy/Four/WaterClasses.lean": "4f1cf8cd247a52fec4094fbcb53de1e39b3ec96faacd53bb9ddf47ab4a738150",
+        "lean/BlockHierarchy/Four/WaterContinuity.lean": "8e03a4ffda29069deec5dfed88fff3cd2e149629ff7d148c6254a133ede89bf0",
         "lean/BlockHierarchy/Four/WaterEndpoint.lean": "572002ad9435ef11ac7c7589f7e4b9ec5a41d05db56d6736fed5c74b478298b4",
         "lean/BlockHierarchy/Four/WaterFilling.lean": "49ac7c176da79080aec9c02c70493946e9b767e5c67aecae66a076453d24570e",
         "lean/BlockHierarchy/Four/WaterSolution.lean": "38cafd15653f5731727159a53bcbf783aa77957196b81315e8273fe68062e2af",
@@ -582,7 +586,8 @@
         },
         {
           "title": "Assemble the optimal channel, rate and tilted variance for the entire four-symbol theorem",
-          "status": "open"
+          "status": "checked",
+          "declaration": "BlockHierarchy.Four.four_symbol_rate_variance"
         },
         {
           "title": "Recover the Markov probability of each of the 16 words from its class",
@@ -768,9 +773,31 @@
           "title": "The parity choice and marginal conditions imply global optimality",
           "declaration": "BlockHierarchy.Four.chosen_maximizes",
           "status": "checked"
+        },
+        {
+          "title": "Exact prefix support cardinality and the endpoint law against the independent contract",
+          "declaration": "BlockHierarchy.Four.paper_group_of_max",
+          "status": "checked"
+        },
+        {
+          "title": "Continuity of the class levels, weights and parity slope",
+          "declaration": "BlockHierarchy.Four.WaterContinuity.continuous_allocation",
+          "status": "checked"
+        },
+        {
+          "title": "The optimized value has the claimed derivative and parity maximum",
+          "declaration": "BlockHierarchy.Four.water_parity",
+          "status": "checked"
+        },
+        {
+          "title": "Every interior distortion achieves the formula on the full word channel",
+          "declaration": "BlockHierarchy.Four.water_paper_point",
+          "status": "checked"
         }
       ],
       "lean_sources": [
+        "lean/BlockHierarchy/Four/PaperStatement.lean",
+        "lean/BlockHierarchy/Four/Theorem.lean",
         "lean/BlockHierarchy/Four/AllocationIdentities.lean",
         "lean/BlockHierarchy/Four/Classes.lean",
         "lean/BlockHierarchy/Four/Channel.lean",
@@ -793,27 +820,58 @@
         "lean/BlockHierarchy/Four/WaterClasses.lean",
         "lean/BlockHierarchy/Four/UniqueMaximizer.lean",
         "lean/BlockHierarchy/Four/SupportBoundary.lean",
-        "lean/BlockHierarchy/Four/ParityChoice.lean"
-      ]
+        "lean/BlockHierarchy/Four/ParityChoice.lean",
+        "lean/BlockHierarchy/Four/GroupCertificate.lean",
+        "lean/BlockHierarchy/Four/WaterContinuity.lean",
+        "lean/BlockHierarchy/Four/Assembly.lean",
+        "lean/BlockHierarchy/Four/Release.lean"
+      ],
+      "closure": {
+        "package": "lean",
+        "audit": "evidence/four-symbol-audit.json",
+        "expected": "BlockHierarchy.Four.FourSymbolStatement",
+        "declaration": "BlockHierarchy.Four.four_symbol_rate_variance",
+        "correspondence": "For every stationary symmetric binary source with flip probability between zero and one half, the contract proves the ordered classes, exact prefix maxima, clipped weights and support including empty groups, global and slice optimality, the parity derivative and endpoint/root rules. For every interior distortion it constructs a multiplier and a full sixteen-word channel attaining the budget, proves the stated rate in bits and tilted variance, and establishes the column equality at support transitions."
+      }
     },
     "prop:rec": {
       "status": "attempted",
       "scope": "Checked scalar components of Proposition 5.",
-      "updated": "2026-11-20T08:43:59+00:00",
+      "updated": "2026-11-20T09:24:37+00:00",
       "summary": "The signed-prefix recurrence tests full support at finite block length.",
-      "step": "Lean checked monotonicity, the fixed-point equation and the two expressions for the limiting critical distortion.",
-      "next": "Prove that opposite spin maximizes the next absolute moment and connect the recurrence to finite-length feasibility.",
+      "step": "Verified the finite-prefix feasibility criterion and the endpoint-limit theorem for nested closed distortion intervals.",
+      "next": "Specialize the interval argument to the actual backward-channel law and audit the full Proposition 5 contract.",
       "lean": "lean/BlockHierarchy/Recurrence.lean",
       "lean_sources": [
-        "lean/BlockHierarchy/Recurrence.lean"
+        "lean/BlockHierarchy/Recurrence.lean",
+        "lean/BlockHierarchy/RecurrenceCrossing.lean",
+        "lean/BlockHierarchy/RecurrenceExtrema.lean",
+        "lean/BlockHierarchy/RecurrenceLimit.lean",
+        "lean/BlockHierarchy/RecurrenceClosed.lean",
+        "lean/BlockHierarchy/RecurrenceStatement.lean",
+        "lean/BlockHierarchy/RecurrenceOrder.lean",
+        "lean/BlockHierarchy/RecurrencePrefix.lean",
+        "lean/BlockHierarchy/RecurrenceInverse.lean",
+        "lean/BlockHierarchy/RecurrenceCriterion.lean",
+        "lean/BlockHierarchy/RecurrenceThresholds.lean"
       ],
       "run_log": "evidence/recurrence-incremental.txt",
       "checked_inputs": {
         "lean/BlockHierarchy/Recurrence.lean": "c2c0cf675e72fbecde65f963f32c803df906dfd9d1c6682c852826488610e276",
-        "lean/BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48",
+        "lean/BlockHierarchy/RecurrenceClosed.lean": "52856af390d75bd89fd1952652e3bec195984e9526e34e2cf9ac958b36600329",
+        "lean/BlockHierarchy/RecurrenceCriterion.lean": "baca479bad45fa89bf8630c2e0a690f1ae1273884fa2dd69d78e995022b5d05a",
+        "lean/BlockHierarchy/RecurrenceCrossing.lean": "1f126dbc797469e5b9d503be96bcb6fe6fb24c96c760cf998f6cbaff1f9aafb0",
+        "lean/BlockHierarchy/RecurrenceExtrema.lean": "462d38154d418a7018ff0bb2be1c9bfdc729e72b3da757905fc4cbe190a18e6a",
+        "lean/BlockHierarchy/RecurrenceInverse.lean": "f59d22de48360601d5d0a2d2d6ab264ab872104d2e1c86f7f337d01670df256d",
+        "lean/BlockHierarchy/RecurrenceLimit.lean": "f4a8c99fbace668562f7e659654a82ea8d5dfb55ff3fee16ce07b27e8deaec85",
+        "lean/BlockHierarchy/RecurrenceOrder.lean": "5bbb00a76ed8645a1d72fa4893de847eea5521713ffdcb383c96a45f8d7ba60e",
+        "lean/BlockHierarchy/RecurrencePrefix.lean": "8e0b1d1ded20718ab4285134808b8865723e78fafe3c1160c3c3925ea57b1b95",
+        "lean/BlockHierarchy/RecurrenceStatement.lean": "ccc321194537e289ada901b195179f71e9ceacff0079a4e87d72efd1fd426b53",
+        "lean/BlockHierarchy/RecurrenceThresholds.lean": "03701137e9f26bf1ed7e884c7e26300f58cb7738e04e07d5e6a51db1ab658d79",
         "lean/BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
-        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
-        "lean/BlockHierarchy/Three/Distortion.lean": "13c6bcfc7ebbe4e8c24f4021a8d70620fa453dc8c4374a3b3a879ed787325e87"
+        "lean/BlockHierarchy/Three/Distortion.lean": "13c6bcfc7ebbe4e8c24f4021a8d70620fa453dc8c4374a3b3a879ed787325e87",
+        "lean/BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48",
+        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4"
       },
       "subproofs": [
         {
@@ -829,6 +887,81 @@
         {
           "title": "Equality of the two critical-distortion expressions",
           "declaration": "BlockHierarchy.Recurrence.critical_distortion_identity",
+          "status": "checked"
+        },
+        {
+          "title": "Positive uniform increment below the discriminant threshold",
+          "declaration": "BlockHierarchy.Recurrence.uniform_increment",
+          "status": "checked"
+        },
+        {
+          "title": "A negative discriminant forces finite threshold crossing",
+          "declaration": "BlockHierarchy.Recurrence.finite_crossing",
+          "status": "checked"
+        },
+        {
+          "title": "Opposite spin attains the largest absolute child prediction",
+          "declaration": "BlockHierarchy.Recurrence.signed_child_max",
+          "status": "checked"
+        },
+        {
+          "title": "The extremum is attained on the next finite prefix layer",
+          "declaration": "BlockHierarchy.Recurrence.next_layer_peak",
+          "status": "checked"
+        },
+        {
+          "title": "Strict increase to the smaller fixed point including equality at the threshold",
+          "declaration": "BlockHierarchy.Recurrence.orbit_feasible_limit",
+          "status": "checked"
+        },
+        {
+          "title": "Exact infinite-orbit threshold criterion",
+          "declaration": "BlockHierarchy.Recurrence.orbit_below_iff",
+          "status": "checked"
+        },
+        {
+          "title": "Finite inverse-word mass varies continuously with distortion",
+          "declaration": "BlockHierarchy.Recurrence.continuous_inverse_mass",
+          "status": "checked"
+        },
+        {
+          "title": "Finite-word feasibility is relatively closed",
+          "declaration": "BlockHierarchy.Recurrence.finite_feasibility_closed",
+          "status": "checked"
+        },
+        {
+          "title": "Finite feasibility is monotone in the noise parameter",
+          "declaration": "BlockHierarchy.Recurrence.feasible_increases_with_z",
+          "status": "checked"
+        },
+        {
+          "title": "Updates under the original Markov path law",
+          "declaration": "BlockHierarchy.Recurrence.children",
+          "status": "checked"
+        },
+        {
+          "title": "A zero child produces a negative grandchild",
+          "declaration": "BlockHierarchy.Recurrence.zero_child",
+          "status": "checked"
+        },
+        {
+          "title": "Both child extensions are nonnegative exactly at the predicted cutoff",
+          "declaration": "BlockHierarchy.Recurrence.extension_tests",
+          "status": "checked"
+        },
+        {
+          "title": "The actual backward Bernoulli channel is feasible exactly when the inverse masses are nonnegative",
+          "declaration": "BlockHierarchy.Recurrence.backward_iff_inverse",
+          "status": "checked"
+        },
+        {
+          "title": "Attained prefix maxima and strict-before-final full feasibility criterion",
+          "declaration": "BlockHierarchy.Recurrence.prefix_criterion",
+          "status": "checked"
+        },
+        {
+          "title": "Nested closed distortion intervals converge to the critical endpoint",
+          "declaration": "BlockHierarchy.Recurrence.threshold_intervals",
           "status": "checked"
         }
       ]
