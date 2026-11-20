@@ -23,7 +23,7 @@
     "corollary",
     "conjecture"
   ],
-  "focus": "prop:rec",
+  "focus": "thm:varentropy",
   "work": {
     "prop:phase": {
       "status": "closed",
@@ -835,27 +835,29 @@
       }
     },
     "prop:rec": {
-      "status": "attempted",
-      "scope": "Checked scalar components of Proposition 5.",
-      "updated": "2026-11-20T09:24:37+00:00",
+      "status": "closed",
+      "scope": "For each stationary symmetric chain with flip probability between zero and one half, the contract uses signed inverse-channel expectations over actual binary words. It proves the attained prefix maximum, its recurrence, and equivalence of nonnegative inverse masses to the existence of a normalized backward Bernoulli reproduction law. The intermediate prefix tests are strict and the last may attain equality. A common decreasing sequence of finite-block thresholds converges to the stated critical distortion, including equality of its two radical expressions.",
+      "updated": "2026-11-20T09:31:04+00:00",
       "summary": "The signed-prefix recurrence tests full support at finite block length.",
-      "step": "Verified the finite-prefix feasibility criterion and the endpoint-limit theorem for nested closed distortion intervals.",
-      "next": "Specialize the interval argument to the actual backward-channel law and audit the full Proposition 5 contract.",
-      "lean": "lean/BlockHierarchy/Recurrence.lean",
+      "step": "The independent audit verified the full finite-block feasibility test and the convergence of its thresholds.",
+      "next": "Proceed to the finite-block varentropy theorem for general stationary binary sources.",
+      "lean": "lean/BlockHierarchy/RecurrenceStatement.lean",
       "lean_sources": [
+        "lean/BlockHierarchy/RecurrenceStatement.lean",
+        "lean/BlockHierarchy/RecurrencePaper.lean",
+        "lean/BlockHierarchy/RecurrenceRelease.lean",
         "lean/BlockHierarchy/Recurrence.lean",
         "lean/BlockHierarchy/RecurrenceCrossing.lean",
         "lean/BlockHierarchy/RecurrenceExtrema.lean",
         "lean/BlockHierarchy/RecurrenceLimit.lean",
         "lean/BlockHierarchy/RecurrenceClosed.lean",
-        "lean/BlockHierarchy/RecurrenceStatement.lean",
         "lean/BlockHierarchy/RecurrenceOrder.lean",
         "lean/BlockHierarchy/RecurrencePrefix.lean",
         "lean/BlockHierarchy/RecurrenceInverse.lean",
         "lean/BlockHierarchy/RecurrenceCriterion.lean",
         "lean/BlockHierarchy/RecurrenceThresholds.lean"
       ],
-      "run_log": "evidence/recurrence-incremental.txt",
+      "run_log": "evidence/recurrence-complete.txt",
       "checked_inputs": {
         "lean/BlockHierarchy/Recurrence.lean": "c2c0cf675e72fbecde65f963f32c803df906dfd9d1c6682c852826488610e276",
         "lean/BlockHierarchy/RecurrenceClosed.lean": "52856af390d75bd89fd1952652e3bec195984e9526e34e2cf9ac958b36600329",
@@ -865,13 +867,18 @@
         "lean/BlockHierarchy/RecurrenceInverse.lean": "f59d22de48360601d5d0a2d2d6ab264ab872104d2e1c86f7f337d01670df256d",
         "lean/BlockHierarchy/RecurrenceLimit.lean": "f4a8c99fbace668562f7e659654a82ea8d5dfb55ff3fee16ce07b27e8deaec85",
         "lean/BlockHierarchy/RecurrenceOrder.lean": "5bbb00a76ed8645a1d72fa4893de847eea5521713ffdcb383c96a45f8d7ba60e",
+        "lean/BlockHierarchy/RecurrencePaper.lean": "80a4e2c33c5790e8ee7eee2610a6e774d8ccacada1fc10b54f674acb35e8537f",
         "lean/BlockHierarchy/RecurrencePrefix.lean": "8e0b1d1ded20718ab4285134808b8865723e78fafe3c1160c3c3925ea57b1b95",
+        "lean/BlockHierarchy/RecurrenceRelease.lean": "0f5686053af6b1b1fd4886746d11f21fe5138a6b468efebd03bb51b909f9a9f8",
         "lean/BlockHierarchy/RecurrenceStatement.lean": "ccc321194537e289ada901b195179f71e9ceacff0079a4e87d72efd1fd426b53",
         "lean/BlockHierarchy/RecurrenceThresholds.lean": "03701137e9f26bf1ed7e884c7e26300f58cb7738e04e07d5e6a51db1ab658d79",
         "lean/BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
         "lean/BlockHierarchy/Three/Distortion.lean": "13c6bcfc7ebbe4e8c24f4021a8d70620fa453dc8c4374a3b3a879ed787325e87",
         "lean/BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48",
-        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4"
+        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
       },
       "subproofs": [
         {
@@ -963,8 +970,86 @@
           "title": "Nested closed distortion intervals converge to the critical endpoint",
           "declaration": "BlockHierarchy.Recurrence.threshold_intervals",
           "status": "checked"
+        },
+        {
+          "title": "The complete full-support threshold proposition",
+          "declaration": "BlockHierarchy.Recurrence.finite_block_recurrence",
+          "status": "checked"
         }
-      ]
+      ],
+      "closure": {
+        "package": "lean",
+        "audit": "evidence/recurrence-audit.json",
+        "expected": "BlockHierarchy.Recurrence.RecurrenceStatement",
+        "declaration": "BlockHierarchy.Recurrence.finite_block_recurrence",
+        "correspondence": "For each stationary symmetric chain with flip probability between zero and one half, the contract uses signed inverse-channel expectations over actual binary words. It proves the attained prefix maximum, its recurrence, and equivalence of nonnegative inverse masses to the existence of a normalized backward Bernoulli reproduction law. The intermediate prefix tests are strict and the last may attain equality. A common decreasing sequence of finite-block thresholds converges to the stated critical distortion, including equality of its two radical expressions."
+      }
+    },
+    "thm:varentropy": {
+      "status": "attempted",
+      "updated": "2026-11-20T09:32:59+00:00",
+      "summary": "The finite-block varentropy is determined by the variance and lagged covariances of the initial-state and transition information.",
+      "scope": "Finite-block varentropy for a positive stationary binary Markov chain.",
+      "step": "Checked both the tilted-score identity and the finite geometric-sum limit with its exact remainder.",
+      "next": "Finish the actual edge-lag specialization and the finite covariance sum before checking the whole theorem.",
+      "lean": "lean/BlockHierarchy/Varentropy/Statement.lean",
+      "lean_sources": [
+        "lean/BlockHierarchy/Varentropy/Statement.lean",
+        "lean/BlockHierarchy/Varentropy/Covariance.lean",
+        "lean/BlockHierarchy/Varentropy/Score.lean",
+        "lean/BlockHierarchy/Varentropy/Limit.lean"
+      ],
+      "run_log": "evidence/varentropy-incremental.txt",
+      "subproofs": [
+        {
+          "title": "Transition powers on centered functions decay as the persistence eigenvalue",
+          "declaration": "BlockHierarchy.Varentropy.iterate_formula",
+          "status": "checked"
+        },
+        {
+          "title": "Conditional expectation of a distant edge under the full stationary path law",
+          "declaration": "BlockHierarchy.Varentropy.last_edge_conditional",
+          "status": "checked"
+        },
+        {
+          "title": "Self-information equals the initial information plus all transition information",
+          "declaration": "BlockHierarchy.Varentropy.score_eq",
+          "status": "checked"
+        },
+        {
+          "title": "Backward-channel tilted variance equals Markov path varentropy",
+          "declaration": "BlockHierarchy.Varentropy.backward_variance",
+          "status": "checked"
+        },
+        {
+          "title": "Exact geometric remainder at every finite block length",
+          "declaration": "BlockHierarchy.Varentropy.finite_expansion",
+          "status": "checked"
+        },
+        {
+          "title": "Normalized formula converges for arbitrary stationary bias",
+          "declaration": "BlockHierarchy.Varentropy.finite_limit",
+          "status": "checked"
+        },
+        {
+          "title": "Exponential bound on the finite-size remainder",
+          "declaration": "BlockHierarchy.Varentropy.finite_remainder",
+          "status": "checked"
+        }
+      ],
+      "checked_inputs": {
+        "lean/BlockHierarchy/Varentropy/Covariance.lean": "9d63ee314b2117f136db879c5d7c60c430a93a690bd525dc231d25ad542a5b36",
+        "lean/BlockHierarchy/Varentropy/Limit.lean": "6196d5a418834d3e352a7e5cc64cf7d8d5c831cdf1f09dd795c07952fd10099c",
+        "lean/BlockHierarchy/Varentropy/Score.lean": "a3f0c65ec152d9493a389b71f52e2545b44789d03a5816d0c6068db03ea63753",
+        "lean/BlockHierarchy/Varentropy/Statement.lean": "fe310a6d067652205da78f4f22f498949b63932f5d35a7f70cf4a7b93407d404",
+        "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
+        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+        "lean/FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
+        "lean/PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
+        "lean/PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
+        "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
+        "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48"
+      }
     }
   },
   "reader": "reader.json",

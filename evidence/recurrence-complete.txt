@@ -1,0 +1,87 @@
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.RecurrenceRelease
+⚠ [1948/1962] Replayed BlockHierarchy.Three.Thresholds
+warning: BlockHierarchy/Three/Thresholds.lean:30:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:37:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:45:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1950/1962] Replayed BlockHierarchy.Recurrence
+warning: BlockHierarchy/Recurrence.lean:31:26: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Recurrence.lean:27:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Recurrence.lean:31:26: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [1951/1962] Replayed BlockHierarchy.RecurrenceExtrema
+warning: BlockHierarchy/RecurrenceExtrema.lean:21:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/RecurrenceExtrema.lean:25:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: BlockHierarchy/RecurrenceExtrema.lean:87:0: 'BlockHierarchy.Recurrence.signed_child_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/RecurrenceExtrema.lean:88:0: 'BlockHierarchy.Recurrence.next_layer_peak' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1953/1962] Replayed BlockHierarchy.RecurrencePrefix
+warning: BlockHierarchy/RecurrencePrefix.lean:124:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/RecurrencePrefix.lean:124:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/RecurrencePrefix.lean:171:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/RecurrencePrefix.lean:171:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+info: BlockHierarchy/RecurrencePrefix.lean:185:0: 'BlockHierarchy.Recurrence.children' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/RecurrencePrefix.lean:186:0: 'BlockHierarchy.Recurrence.zero_child' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/RecurrencePrefix.lean:187:0: 'BlockHierarchy.Recurrence.extension_tests' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1954/1962] Replayed BlockHierarchy.RecurrenceCriterion
+info: BlockHierarchy/RecurrenceCriterion.lean:137:0: 'BlockHierarchy.Recurrence.prefix_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1955/1962] Replayed BlockHierarchy.RecurrenceInverse
+warning: BlockHierarchy/RecurrenceInverse.lean:37:30: This simp argument is unused:
+  Fintype.sum_bool
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [wordSum, ih, zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: BlockHierarchy/RecurrenceInverse.lean:125:75: This simp argument is unused:
+  Fintype.sum_bool
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [a, b, backWeight, invWeight, spin]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: BlockHierarchy/RecurrenceInverse.lean:155:71: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/RecurrenceInverse.lean:155:71: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+info: BlockHierarchy/RecurrenceInverse.lean:168:0: 'BlockHierarchy.Recurrence.backward_iff_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1958/1962] Replayed BlockHierarchy.RecurrenceClosed
+warning: BlockHierarchy/RecurrenceClosed.lean:44:13: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
+ℹ [1959/1962] Replayed BlockHierarchy.RecurrenceLimit
+info: BlockHierarchy/RecurrenceLimit.lean:82:0: 'BlockHierarchy.Recurrence.orbit_feasible_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/RecurrenceLimit.lean:83:0: 'BlockHierarchy.Recurrence.orbit_below_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1961/1962] Replayed BlockHierarchy.RecurrencePaper
+info: BlockHierarchy/RecurrencePaper.lean:93:0: 'BlockHierarchy.Recurrence.finite_block_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [1962/1962] Built BlockHierarchy.RecurrenceRelease (36s)
+Build completed successfully (1962 jobs).
+Lake build completed.
+
+Independent contract check
+BlockHierarchy.Recurrence.RecurrenceStatement
+'BlockHierarchy.Recurrence.finite_block_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
