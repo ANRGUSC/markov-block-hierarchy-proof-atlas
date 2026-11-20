@@ -1750,7 +1750,8 @@
     "repository": "https://github.com/ANRGUSC/markov-block-hierarchy-proof-atlas",
     "visibility": "public",
     "site": "https://anrgusc.github.io/markov-block-hierarchy-proof-atlas/",
-    "activity_url": "https://api.github.com/repos/ANRGUSC/markov-block-hierarchy-proof-atlas/contents/activity.json?ref=proof-atlas-activity"
+    "activity_url": "https://api.github.com/repos/ANRGUSC/markov-block-hierarchy-proof-atlas/contents/activity.json?ref=proof-atlas-activity",
+    "lean_ci": "enabled"
   },
   "proof_work": {
     "mode": "paper"
