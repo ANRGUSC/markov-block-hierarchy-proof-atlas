@@ -307,11 +307,11 @@
     },
     "thm:three": {
       "status": "attempted",
-      "updated": "2026-11-20T07:33:49+00:00",
+      "updated": "2026-11-20T07:35:53+00:00",
       "page": 11,
       "summary": "Take a symmetric chain with $0<p<1/2$. The three branches, thresholds $D_{\\rm FS}(3),D_2$, normalizers, two variances and scalar equations are those of the linked theorem. The nonzero-rate range ends at $D<1/2$.",
-      "step": "Lean checked the eight-word source reduction, the three class normalizers, strict increase of both distortion equations and their cubic forms. Lean also established the strict ordering and algebraic identities of the two thresholds.",
-      "next": "Connect the endpoint distortions to those thresholds, certify the channels on each support, and evaluate the rate and variance.",
+      "step": "Lean verified both shared endpoint identities and existence and uniqueness of the parameter solving each distortion equation, including the transition to the two-word support.",
+      "next": "Certify the optimizing channels and their support on each branch, then evaluate the rate and variance.",
       "scope": "Theorem 3 remains open. The listed component proofs are kernel-checked.",
       "subproofs": [
         {
@@ -328,8 +328,9 @@
           "status": "open"
         },
         {
-          "title": "Show the branch endpoints bracket every prescribed distortion and prove existence and uniqueness of its slope parameter",
-          "status": "open"
+          "title": "Show the endpoint distortions agree and every interior six-word distortion has exactly one parameter",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.middle_inverse"
         },
         {
           "title": "Compute the three Markov class probabilities",
@@ -360,13 +361,19 @@
           "title": "Prove the two radical threshold identities and strict ordering of the slope parameters",
           "status": "checked",
           "declaration": "BlockHierarchy.Three.thresholds"
+        },
+        {
+          "title": "Prove existence and uniqueness of the slope parameter on the two-word branch",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.constant_inverse"
         }
       ],
       "lean": "lean/BlockHierarchy/Three/Distortion.lean",
       "lean_sources": [
         "lean/BlockHierarchy/Three/Classes.lean",
         "lean/FiniteChannel.lean",
-        "lean/BlockHierarchy/Three/Thresholds.lean"
+        "lean/BlockHierarchy/Three/Thresholds.lean",
+        "lean/BlockHierarchy/Three/Inverse.lean"
       ],
       "run_log": "evidence/three-classes-distortion.txt",
       "checked_inputs": {
@@ -376,7 +383,8 @@
         "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
         "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
         "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
-        "lean/BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48"
+        "lean/BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48",
+        "lean/BlockHierarchy/Three/Inverse.lean": "acf4753527decb5bf6da204a3fa0ff37c81f269d6064452eb28b37cc633a9b13"
       }
     }
   },
