@@ -1,0 +1,19 @@
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Converse.Tilt
+ℹ [2162/2164] Replayed BlockHierarchy.Cut.Optimality
+info: BlockHierarchy/Cut/Optimality.lean:125:0: 'BlockHierarchy.Cut.optimal_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Optimality.lean:126:0: 'BlockHierarchy.Cut.optimal_score_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [2163/2164] Built BlockHierarchy.Converse.Finite (49s)
+ℹ [2164/2164] Built BlockHierarchy.Converse.Tilt (31s)
+info: BlockHierarchy/Converse/Tilt.lean:27:8: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: BlockHierarchy/Converse/Tilt.lean:39:0: 'BlockHierarchy.Converse.optimal_code_converse' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2164 jobs).
+Lake build completed.

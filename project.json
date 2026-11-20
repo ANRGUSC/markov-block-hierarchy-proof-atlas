@@ -1217,11 +1217,147 @@
     },
     "thm:common": {
       "status": "attempted",
-      "updated": "2026-11-20T09:58:06+00:00",
+      "updated": "2026-11-20T10:14:12+00:00",
       "summary": "At a common multiplier, normalized standard deviations have a continuous limit and an explicit finite-block error. At a differentiability point of the rate curve, finite-block variances converge to its positive squared value in bits.",
       "scope": "All lengths for a stationary symmetric source, all nonnegative multipliers and interior differentiability points.",
-      "step": "Deriving the standard-deviation inequality from Lemma 7, comparing dyadic lengths, and proving existence and continuity for the finite optimization.",
-      "next": "Identify the common limit at every length, then establish positivity and the convergence of optimizing slopes.",
+      "step": "The finite Markov score and its normalized standard deviation are continuous even when the optimal reproduction support changes. The independently typed contract includes both common- and fixed-distortion limits.",
+      "next": "Complete the continuous limit, the strict positivity bound and the limit at fixed distortion.",
+      "subproofs": [
+        {
+          "title": "Bound a standard-deviation change by the root mean-square discrepancy",
+          "declaration": "BlockHierarchy.VarianceLimit.sd_diff",
+          "status": "checked"
+        },
+        {
+          "title": "Compare the accumulated error of equal-length pieces",
+          "declaration": "BlockHierarchy.VarianceLimit.equal_pieces",
+          "status": "checked"
+        },
+        {
+          "title": "Sum the errors along successive block doublings",
+          "declaration": "BlockHierarchy.VarianceLimit.dyadic_limit",
+          "status": "checked"
+        },
+        {
+          "title": "Identify one limit for all lengths with the exact finite error",
+          "declaration": "BlockHierarchy.VarianceLimit.common_limit",
+          "status": "checked"
+        },
+        {
+          "title": "Every nonempty finite reproduction alphabet admits an optimizing prior",
+          "declaration": "BlockHierarchy.Cut.exists_optimal",
+          "status": "checked"
+        },
+        {
+          "title": "A canonical prior is optimal for the actual stationary word law",
+          "declaration": "BlockHierarchy.VarianceLimit.canonical_optimal",
+          "status": "checked"
+        },
+        {
+          "title": "Adjacent Markov blocks obey the one-cut standard-deviation inequality",
+          "declaration": "BlockHierarchy.VarianceLimit.block_cut",
+          "status": "checked"
+        },
+        {
+          "title": "Optimal finite-block scores are continuous in the multiplier",
+          "declaration": "BlockHierarchy.Cut.continuous_optimal_score",
+          "status": "checked"
+        },
+        {
+          "title": "Finite-block normalized standard deviations are continuous",
+          "declaration": "BlockHierarchy.Cut.continuous_optimal_sd",
+          "status": "checked"
+        }
+      ],
+      "lean": "lean/BlockHierarchy/VarianceLimit/Statement.lean",
+      "lean_sources": [
+        "lean/BlockHierarchy/VarianceLimit/Statement.lean",
+        "lean/BlockHierarchy/VarianceLimit/Dyadic.lean",
+        "lean/BlockHierarchy/VarianceLimit/Norm.lean",
+        "lean/BlockHierarchy/Cut/Existence.lean",
+        "lean/BlockHierarchy/VarianceLimit/Cut.lean",
+        "lean/BlockHierarchy/Cut/Continuity.lean"
+      ],
+      "run_log": "evidence/variance-limit-incremental.txt",
+      "checked_inputs": {
+        "lean/BlockHierarchy/Cut/ColumnAverage.lean": "9b19a0fa9e6157054fadfbfd2b1e484008cceccd739b9b41fcc6e24980d2dcf8",
+        "lean/BlockHierarchy/Cut/Compare.lean": "ced870464913ae653881088c11b31c45003c99967f3f27021c13a835c6b01ab4",
+        "lean/BlockHierarchy/Cut/Continuity.lean": "b7b64383067218b207b096e58624fd37d7d8fa4736ec9baaea358c59bc753e5b",
+        "lean/BlockHierarchy/Cut/Existence.lean": "e1f398a54de2838ea8ae3452a0910cc4cd77c7287414e334f010778881151513",
+        "lean/BlockHierarchy/Cut/Flips.lean": "9e00e61744d691e13581969b0c0f42c35371d9e2ac649d603b6a39c9ccb020a7",
+        "lean/BlockHierarchy/Cut/Optimality.lean": "28a067e9b350052c2b9d9105424b0391e1f0e4090c69489fc66dd24791cbbf05",
+        "lean/BlockHierarchy/Cut/Paper.lean": "cc445c16e6aa3725d24719b612f8a1b8e234d28febc3e7c007b263539d40410c",
+        "lean/BlockHierarchy/Cut/Product.lean": "87d959a7f4edb6ecc7a49adb671bc714bbd30139f9d907c917de9bc2fbc32467",
+        "lean/BlockHierarchy/Cut/ScoreBound.lean": "42025de340149ed1ce411445d696f3a21387fc7af2847c703a4d8e59b2bb4794",
+        "lean/BlockHierarchy/Cut/Statement.lean": "3a105a49f55ca94972d5b50ca5b11d289ee4e4ac2afc9799f7b640aa7b04a239",
+        "lean/BlockHierarchy/Varentropy/Covariance.lean": "9d63ee314b2117f136db879c5d7c60c430a93a690bd525dc231d25ad542a5b36",
+        "lean/BlockHierarchy/Varentropy/Score.lean": "a3f0c65ec152d9493a389b71f52e2545b44789d03a5816d0c6068db03ea63753",
+        "lean/BlockHierarchy/Varentropy/Statement.lean": "fe310a6d067652205da78f4f22f498949b63932f5d35a7f70cf4a7b93407d404",
+        "lean/BlockHierarchy/VarianceLimit/Cut.lean": "41c7b2c8f75224de1884cc36ecc02ebd6b4aba2f85d9cf275bb4d6ba4301d621",
+        "lean/BlockHierarchy/VarianceLimit/Dyadic.lean": "1d6563620266ec0acd2f44b44413c63ee7f45c096daf94797e387d2533e14582",
+        "lean/BlockHierarchy/VarianceLimit/Norm.lean": "bcb128e7d674b18301fc1684be8726453075521f27fc0b87dfd0fcd13d17377e",
+        "lean/BlockHierarchy/VarianceLimit/Statement.lean": "6648783e43c067e773ea8bb169d437fbe9e7b9fb9157e6c0e75f70229d9b5a43",
+        "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
+        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+        "lean/FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
+        "lean/PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
+        "lean/PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
+        "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
+        "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48"
+      }
+    },
+    "prop:converse": {
+      "status": "attempted",
+      "summary": "For a low-distortion single Markov path, the second-order normalized operational rate is bounded below by the Gaussian upper quantile times the square root of the varentropy rate.",
+      "scope": "A stationary symmetric chain, 0 < D ? the critical distortion, and error probability strictly between zero and one.",
+      "step": "Lean verified the finite-code converse for every encoder and decoder, using the actual tilted score of an optimizing reproduction prior.",
+      "next": "Identify the centered Markov score with a binomial count and apply the Gaussian tail limit to the operational rate.",
+      "updated": "2026-11-20T10:12:09+00:00",
+      "subproofs": [
+        {
+          "title": "The finite-code converse holds for every encoder and decoder",
+          "declaration": "BlockHierarchy.Converse.finite_code_converse",
+          "status": "checked"
+        },
+        {
+          "title": "Optimal column inequalities bound every distortion ball",
+          "declaration": "BlockHierarchy.Converse.ball_column",
+          "status": "checked"
+        },
+        {
+          "title": "The distortion-tilted Markov score gives the operational tail bound",
+          "declaration": "BlockHierarchy.Converse.optimal_code_converse",
+          "status": "checked"
+        }
+      ],
+      "lean": "lean/BlockHierarchy/Converse/Finite.lean",
+      "lean_sources": [
+        "lean/BlockHierarchy/Converse/Finite.lean",
+        "lean/BlockHierarchy/Converse/Tilt.lean"
+      ],
+      "run_log": "evidence/converse-incremental.txt",
+      "checked_inputs": {
+        "lean/BlockHierarchy/Converse/Finite.lean": "3a6b63938e4eff1b1fe66e810e1585576b6a0805b94c68c77ae0f3de1a72c310",
+        "lean/BlockHierarchy/Converse/Tilt.lean": "f06af5701a1f3131afaf71e10e1fba5ae5f7428284842f88b301a137ad305584",
+        "lean/BlockHierarchy/Cut/Optimality.lean": "28a067e9b350052c2b9d9105424b0391e1f0e4090c69489fc66dd24791cbbf05",
+        "lean/BlockHierarchy/Cut/Statement.lean": "3a105a49f55ca94972d5b50ca5b11d289ee4e4ac2afc9799f7b640aa7b04a239",
+        "lean/BlockHierarchy/Varentropy/Statement.lean": "fe310a6d067652205da78f4f22f498949b63932f5d35a7f70cf4a7b93407d404",
+        "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
+        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+        "lean/FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
+        "lean/PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
+        "lean/PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
+        "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
+        "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48"
+      }
+    },
+    "cor:positive": {
+      "status": "attempted",
+      "summary": "The limiting normalized standard deviation has an explicit positive lower bound in terms of the flip probability and multiplier.",
+      "scope": "Positive common multiplier for the stationary symmetric chain.",
+      "step": "Comparing the sum of gains over pairs of block lengths with the covariance upper bound over cuts.",
+      "next": "Prove both finite gain inequalities for the actual optimal reproduction channel.",
+      "updated": "2026-11-20T10:11:47+00:00",
       "subproofs": []
     }
   },

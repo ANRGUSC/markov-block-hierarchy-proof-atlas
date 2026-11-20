@@ -1,0 +1,73 @@
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.VarianceLimit.Norm BlockHierarchy.VarianceLimit.Dyadic BlockHierarchy.Cut.Existence
+ℹ [1970/2039] Replayed BlockHierarchy.VarianceLimit.Dyadic
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:163:0: 'BlockHierarchy.VarianceLimit.equal_pieces' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:164:0: 'BlockHierarchy.VarianceLimit.dyadic_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:165:0: 'BlockHierarchy.VarianceLimit.common_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2163/2165] Replayed BlockHierarchy.Cut.Optimality
+info: BlockHierarchy/Cut/Optimality.lean:125:0: 'BlockHierarchy.Cut.optimal_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Optimality.lean:126:0: 'BlockHierarchy.Cut.optimal_score_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2164/2165] Replayed BlockHierarchy.Cut.Existence
+info: BlockHierarchy/Cut/Existence.lean:32:0: 'BlockHierarchy.Cut.exists_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2165/2165] Built BlockHierarchy.VarianceLimit.Norm (44s)
+info: BlockHierarchy/VarianceLimit/Norm.lean:86:0: 'BlockHierarchy.VarianceLimit.sd_diff' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2165 jobs).
+Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.VarianceLimit.Cut
+⚠ [1997/2070] Replayed BlockHierarchy.Cut.ColumnAverage
+warning: BlockHierarchy/Cut/ColumnAverage.lean:24:5: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [2089/2174] Replayed BlockHierarchy.Varentropy.Covariance
+info: BlockHierarchy/Varentropy/Covariance.lean:88:0: 'BlockHierarchy.Varentropy.iterate_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Covariance.lean:89:0: 'BlockHierarchy.Varentropy.last_edge_conditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2091/2174] Replayed BlockHierarchy.VarianceLimit.Norm
+info: BlockHierarchy/VarianceLimit/Norm.lean:86:0: 'BlockHierarchy.VarianceLimit.sd_diff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2092/2174] Replayed BlockHierarchy.VarianceLimit.Dyadic
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:163:0: 'BlockHierarchy.VarianceLimit.equal_pieces' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:164:0: 'BlockHierarchy.VarianceLimit.dyadic_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:165:0: 'BlockHierarchy.VarianceLimit.common_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2167/2174] Replayed BlockHierarchy.Cut.Optimality
+info: BlockHierarchy/Cut/Optimality.lean:125:0: 'BlockHierarchy.Cut.optimal_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Optimality.lean:126:0: 'BlockHierarchy.Cut.optimal_score_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2168/2174] Replayed BlockHierarchy.Cut.Flips
+info: BlockHierarchy/Cut/Flips.lean:186:0: 'BlockHierarchy.Cut.optimal_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:187:0: 'BlockHierarchy.Cut.concat_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:188:0: 'BlockHierarchy.Cut.concat_distance' depends on axioms: [propext, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:189:0: 'BlockHierarchy.Cut.independent_of_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:190:0: 'BlockHierarchy.Cut.adjacent_le_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2169/2174] Replayed BlockHierarchy.Cut.Product
+info: BlockHierarchy/Cut/Product.lean:59:0: 'BlockHierarchy.Cut.trial_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2172/2174] Replayed BlockHierarchy.Cut.Existence
+info: BlockHierarchy/Cut/Existence.lean:32:0: 'BlockHierarchy.Cut.exists_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2173/2174] Replayed BlockHierarchy.Cut.Paper
+info: BlockHierarchy/Cut/Paper.lean:29:0: 'BlockHierarchy.Cut.one_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2174/2174] Built BlockHierarchy.VarianceLimit.Cut (72s)
+info: BlockHierarchy/VarianceLimit/Cut.lean:125:0: 'BlockHierarchy.VarianceLimit.block_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2174 jobs).
+Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.VarianceLimit.Statement BlockHierarchy.Cut.Continuity
+ℹ [2162/2165] Replayed BlockHierarchy.Cut.Optimality
+info: BlockHierarchy/Cut/Optimality.lean:125:0: 'BlockHierarchy.Cut.optimal_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Optimality.lean:126:0: 'BlockHierarchy.Cut.optimal_score_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2163/2165] Replayed BlockHierarchy.Cut.Existence
+info: BlockHierarchy/Cut/Existence.lean:32:0: 'BlockHierarchy.Cut.exists_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2164/2165] Replayed BlockHierarchy.Cut.Continuity
+info: BlockHierarchy/Cut/Continuity.lean:83:0: 'BlockHierarchy.Cut.continuous_optimal_sd' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [2165/2165] Built BlockHierarchy.VarianceLimit.Statement (51s)
+Build completed successfully (2165 jobs).
+Lake build completed.
