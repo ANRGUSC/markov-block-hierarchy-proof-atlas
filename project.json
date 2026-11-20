@@ -1755,5 +1755,10 @@
   },
   "proof_work": {
     "mode": "paper"
-  }
+  },
+  "authors": [
+    "Bhaskar Krishnamachari"
+  ],
+  "citation_details": "[cs.IT], 19 November 2026",
+  "paper_overview": "The paper asks how much extra rate is needed to compress a finite sequence from a binary Markov source. It studies progressively longer blocks and proves a lower bound at low distortion. Whether the limiting block variance gives the operational dispersion of the Markov source remains a conjecture."
 }
