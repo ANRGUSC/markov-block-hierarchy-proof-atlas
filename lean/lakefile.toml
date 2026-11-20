@@ -28,4 +28,16 @@ name = "NegativeSupport"
 name = "NegativeDistortion"
 
 [[lean_lib]]
+name = "FiniteChannel"
+
+[[lean_lib]]
+name = "ChannelOptimizer"
+
+[[lean_lib]]
+name = "PairChannel"
+
+[[lean_lib]]
+name = "Lossless"
+
+[[lean_lib]]
 name = "Audit"

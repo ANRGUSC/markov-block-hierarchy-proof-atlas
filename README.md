@@ -10,7 +10,7 @@ The inventory contains ten numbered results and one conjecture. The graph displa
 
 ## Lean coverage
 
-For Proposition 1, Lean checks the positive-persistence threshold for the four explicit inverse-prior masses on the admissible distortion interval. For zero persistence, Lean checks that the four masses form a product distribution and stay strictly positive below the smaller stationary probability. For negative persistence, Lean derives the discriminant sign from stationary flow and combines the numerator lemmas when A <= B. Lean also covers the exchanged ordering and the exact threshold in distortion. The connection to channel optimality remains open. The independent contract and axiom queries are in [lean/Audit.lean](lean/Audit.lean). [Recorded Lean run](evidence/negative-distortion.txt)
+For Proposition 1, Lean checks the positive-persistence threshold for the four explicit inverse-prior masses on the admissible distortion interval. For zero persistence, Lean checks that the four masses form a product distribution and stay strictly positive below the smaller stationary probability. For negative persistence, Lean derives the discriminant sign from stationary flow and combines the numerator lemmas when A <= B. Lean also covers the exchanged ordering and the exact threshold in distortion. Lean checks that a feasible inverse prior attains the minimum mutual information at the prescribed distortion, including a separate lossless endpoint proof. The paper-level assembly and uniqueness remain open. The independent contract and axiom queries are in [lean/Audit.lean](lean/Audit.lean). [Recorded Lean run](evidence/pair-channel-optimality.txt)
 
 ## Build or preview
 
