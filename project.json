@@ -509,10 +509,10 @@
     },
     "thm:four": {
       "status": "attempted",
-      "updated": "2026-11-20T08:44:30+00:00",
+      "updated": "2026-11-20T08:48:16+00:00",
       "summary": "At length four, six complementary-word classes determine a parity allocation and the optimal rate and variance.",
-      "step": "Checked the positive-mass allocation and zero-mass endpoint at fixed parity mass.",
-      "next": "Identify the resulting allocation with the six-class maximizer and establish the optimized parity derivative.",
+      "step": "Checked the paper's parity slope as a supporting line, including changes of active class.",
+      "next": "Combine the explicit optimal allocation and continuity of its slope with the verified multiplier existence result.",
       "scope": "Checked components of Theorem 4. The complete four-symbol result remains open.",
       "lean": "lean/BlockHierarchy/Four/Preliminaries.lean",
       "run_log": "evidence/four-incremental.txt",
@@ -528,8 +528,13 @@
         "lean/BlockHierarchy/Four/FourWord.lean": "8e5f0df7e2bae35dbc30667382d64f7a0070d1f8889dea588d56a0ea7643a08a",
         "lean/BlockHierarchy/Four/Maximizer.lean": "6ea6b77f87d6e0b24fc1d7bbed2e86900b536b26ec44248fbce0668e851566d0",
         "lean/BlockHierarchy/Four/Optimality.lean": "1f3b7f578c4363d5b3f45413a8e111e253a960b3ad57fdf6bfee4d2cf7c46761",
+        "lean/BlockHierarchy/Four/OuterBounds.lean": "425ac84c88ff088c6cca52618e866be834de189bb5a60e9501028ddd317f044a",
+        "lean/BlockHierarchy/Four/OuterConnected.lean": "890a70744145dc6392a092763a8d30f8cedb4e3b7dfcd15fe279f8f44c084abf",
+        "lean/BlockHierarchy/Four/OuterGeometry.lean": "3fb41e5ca2f5ad6d67a8a2f54061b97283cb579e593a1aaa736b4f123d9b605f",
+        "lean/BlockHierarchy/Four/OuterMultiplier.lean": "9343e2d086ffbb4ae3fc53758ea70aeb3882f068962e4924754a2816936122b5",
         "lean/BlockHierarchy/Four/ParityOptimality.lean": "975da85a7a52419de9a9f474cd915760f24586786e69791ba39bf6e6761a1174",
         "lean/BlockHierarchy/Four/Preliminaries.lean": "2e39bde96498407f7c3881ee83dc26cbcaf445a9fda2783469bdf4043b95ba79",
+        "lean/BlockHierarchy/Four/SupportingParity.lean": "106adedd94f70823ae77325ebe9ff70aba3064137e5da5291c840718cf629dfb",
         "lean/BlockHierarchy/Four/WaterEndpoint.lean": "572002ad9435ef11ac7c7589f7e4b9ec5a41d05db56d6736fed5c74b478298b4",
         "lean/BlockHierarchy/Four/WaterFilling.lean": "49ac7c176da79080aec9c02c70493946e9b767e5c67aecae66a076453d24570e",
         "lean/BlockHierarchy/Four/WaterSolution.lean": "38cafd15653f5731727159a53bcbf783aa77957196b81315e8273fe68062e2af",
@@ -679,6 +684,46 @@
           "title": "Zero-mass endpoint has zero class weights and first-prefix multiplier",
           "declaration": "BlockHierarchy.Four.WaterFilling.empty_group",
           "status": "checked"
+        },
+        {
+          "title": "Exact cost on a connected set of maximizing laws",
+          "declaration": "BlockHierarchy.Four.exists_optimal_cost_between",
+          "status": "checked"
+        },
+        {
+          "title": "Connected set of six-class optimizers at fixed multiplier",
+          "declaration": "BlockHierarchy.Four.outer_optimal_fibre",
+          "status": "checked"
+        },
+        {
+          "title": "Small-multiplier distortion bound for every optimizer",
+          "declaration": "BlockHierarchy.Four.outer_small_multiplier",
+          "status": "checked"
+        },
+        {
+          "title": "Cost at unit multiplier equals two",
+          "declaration": "BlockHierarchy.Four.outer_cost_one",
+          "status": "checked"
+        },
+        {
+          "title": "Globally maximizing class law attains every interior distortion",
+          "declaration": "BlockHierarchy.Four.exists_optimal_multiplier",
+          "status": "checked"
+        },
+        {
+          "title": "The class kernel is symmetric in the weighted sum",
+          "declaration": "BlockHierarchy.Four.weighted_Z_swap",
+          "status": "checked"
+        },
+        {
+          "title": "Global logarithmic tangent bound for a competing prior",
+          "declaration": "BlockHierarchy.Four.objective_tangent",
+          "status": "checked"
+        },
+        {
+          "title": "The paper's parity slope supports the full objective at every water-filled prior",
+          "declaration": "BlockHierarchy.Four.parity_support",
+          "status": "checked"
         }
       ],
       "lean_sources": [
@@ -695,7 +740,12 @@
         "lean/BlockHierarchy/Four/FourWord.lean",
         "lean/BlockHierarchy/Four/WaterFilling.lean",
         "lean/BlockHierarchy/Four/WaterSolution.lean",
-        "lean/BlockHierarchy/Four/WaterEndpoint.lean"
+        "lean/BlockHierarchy/Four/WaterEndpoint.lean",
+        "lean/BlockHierarchy/Four/OuterConnected.lean",
+        "lean/BlockHierarchy/Four/OuterGeometry.lean",
+        "lean/BlockHierarchy/Four/OuterBounds.lean",
+        "lean/BlockHierarchy/Four/OuterMultiplier.lean",
+        "lean/BlockHierarchy/Four/SupportingParity.lean"
       ]
     },
     "prop:rec": {
