@@ -509,10 +509,10 @@
     },
     "thm:four": {
       "status": "attempted",
-      "updated": "2026-11-20T08:33:32+00:00",
+      "updated": "2026-11-20T08:38:35+00:00",
       "summary": "At length four, six complementary-word classes determine a parity allocation and the optimal rate and variance.",
-      "step": "Lean checked the exact distortion derivative, global optimality from the parity conditions, and the source entropy and varentropy. Each parity slice has a maximizing law.",
-      "next": "Derive the sorted water-filling solution, prove that its supporting slope is the derivative of the optimized value, and establish attainment for every prescribed interior distortion.",
+      "step": "Lean checked the water-filling inclusion tests, the inverse mass condition and optimality of the four-class allocation against every feasible competing allocation.",
+      "next": "Assemble the two parity groups including zero mass, verify the optimized parity derivative, and connect the resulting channels to all interior distortions.",
       "scope": "Checked components of Theorem 4. The complete four-symbol result remains open.",
       "lean": "lean/BlockHierarchy/Four/Preliminaries.lean",
       "run_log": "evidence/four-incremental.txt",
@@ -530,6 +530,7 @@
         "lean/BlockHierarchy/Four/Optimality.lean": "1f3b7f578c4363d5b3f45413a8e111e253a960b3ad57fdf6bfee4d2cf7c46761",
         "lean/BlockHierarchy/Four/ParityOptimality.lean": "975da85a7a52419de9a9f474cd915760f24586786e69791ba39bf6e6761a1174",
         "lean/BlockHierarchy/Four/Preliminaries.lean": "2e39bde96498407f7c3881ee83dc26cbcaf445a9fda2783469bdf4043b95ba79",
+        "lean/BlockHierarchy/Four/WaterFilling.lean": "49ac7c176da79080aec9c02c70493946e9b767e5c67aecae66a076453d24570e",
         "lean/BlockHierarchy/LosslessRD.lean": "2d64c8c442ed3ae7d787a5f20f45a0a23a6b2908736f43b04f65f19577917fbc",
         "lean/BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
         "lean/BlockHierarchy/Three/ConstantColumns.lean": "0bcb32d1adee31594138cc4cf9b205d322c78f66a62726c2fdede4293a4f08b5",
@@ -636,6 +637,21 @@
           "title": "Compute four-symbol source varentropy",
           "declaration": "BlockHierarchy.Four.source_varentropy",
           "status": "checked"
+        },
+        {
+          "title": "Determine the inclusion and exclusion tests from a maximizing sorted prefix",
+          "declaration": "BlockHierarchy.Four.WaterFilling.maximal_prefix_bounds",
+          "status": "checked"
+        },
+        {
+          "title": "Recover the maximal prefix ratio from clipped mass conservation",
+          "declaration": "BlockHierarchy.Four.WaterFilling.clipped_mass_determines_prefix",
+          "status": "checked"
+        },
+        {
+          "title": "Prove the even group's four-class allocation beats every competing feasible group allocation",
+          "declaration": "BlockHierarchy.Four.WaterFilling.four_class_allocation",
+          "status": "checked"
         }
       ],
       "lean_sources": [
@@ -649,7 +665,8 @@
         "lean/BlockHierarchy/Four/Consequences.lean",
         "lean/BlockHierarchy/Four/Distortion.lean",
         "lean/BlockHierarchy/Four/Envelope.lean",
-        "lean/BlockHierarchy/Four/FourWord.lean"
+        "lean/BlockHierarchy/Four/FourWord.lean",
+        "lean/BlockHierarchy/Four/WaterFilling.lean"
       ]
     }
   },

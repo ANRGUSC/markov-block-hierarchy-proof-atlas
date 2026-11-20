@@ -119,3 +119,23 @@ warning: BlockHierarchy/Four/Distortion.lean:36:11: Used `tac1 <;> tac2` where `
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
 Build completed successfully (2184 jobs).
 Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Four.WaterFilling
+⚠ [1947/1947] Built BlockHierarchy.Four.WaterFilling (27s)
+warning: BlockHierarchy/Four/WaterFilling.lean:41:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: BlockHierarchy/Four/WaterFilling.lean:42:40: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully (1947 jobs).
+Lake build completed.
