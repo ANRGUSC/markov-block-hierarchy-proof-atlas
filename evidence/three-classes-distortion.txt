@@ -50,3 +50,42 @@ warning: BlockHierarchy/Three/Inverse.lean:36:4: Used `tac1 <;> tac2` where `(ta
 Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
 Build completed successfully (1950 jobs).
 Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Three.ConstantBranch
+⚠ [1955/1960] Replayed BlockHierarchy.Three.Thresholds
+warning: BlockHierarchy/Three/Thresholds.lean:30:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:37:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:45:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1956/1960] Replayed BlockHierarchy.Three.ConstantColumns
+warning: BlockHierarchy/Three/ConstantColumns.lean:39:71: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/ConstantColumns.lean:39:71: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Three/ConstantColumns.lean:71:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1958/1960] Replayed BlockHierarchy.Three.Inverse
+warning: BlockHierarchy/Three/Inverse.lean:27:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Inverse.lean:33:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Inverse.lean:36:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [1959/1960] Built BlockHierarchy.Three.OperatingPoint (20s)
+✔ [1960/1960] Built BlockHierarchy.Three.ConstantBranch (19s)
+Build completed successfully (1960 jobs).
+Lake build completed.

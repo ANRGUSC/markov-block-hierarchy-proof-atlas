@@ -307,11 +307,11 @@
     },
     "thm:three": {
       "status": "attempted",
-      "updated": "2026-11-20T07:35:53+00:00",
+      "updated": "2026-11-20T07:42:30+00:00",
       "page": 11,
       "summary": "Take a symmetric chain with $0<p<1/2$. The three branches, thresholds $D_{\\rm FS}(3),D_2$, normalizers, two variances and scalar equations are those of the linked theorem. The nonzero-rate range ends at $D<1/2$.",
-      "step": "Lean verified both shared endpoint identities and existence and uniqueness of the parameter solving each distortion equation, including the transition to the two-word support.",
-      "next": "Certify the optimizing channels and their support on each branch, then evaluate the rate and variance.",
+      "step": "Lean has checked the entire two-word branch, including optimality against every feasible joint law, information in bits, and the two-class tilted variance.",
+      "next": "Prove the corresponding six-word and full-support branches and assemble the audited Theorem 3 statement.",
       "scope": "Theorem 3 remains open. The listed component proofs are kernel-checked.",
       "subproofs": [
         {
@@ -366,6 +366,26 @@
           "title": "Prove existence and uniqueness of the slope parameter on the two-word branch",
           "status": "checked",
           "declaration": "BlockHierarchy.Three.constant_inverse"
+        },
+        {
+          "title": "Prove the inactive-column bounds and equality for active constant words",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.constant_columns"
+        },
+        {
+          "title": "Certify the global minimum and information in bits over finite alphabets",
+          "status": "checked",
+          "declaration": "BlockHierarchy.FiniteRD.certificate"
+        },
+        {
+          "title": "Evaluate the two-word channel cost at every allowed parameter",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.constant_cost"
+        },
+        {
+          "title": "Prove optimality, exact rate, and tilted variance for the complete two-word branch",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.constant_branch"
         }
       ],
       "lean": "lean/BlockHierarchy/Three/Distortion.lean",
@@ -373,7 +393,13 @@
         "lean/BlockHierarchy/Three/Classes.lean",
         "lean/FiniteChannel.lean",
         "lean/BlockHierarchy/Three/Thresholds.lean",
-        "lean/BlockHierarchy/Three/Inverse.lean"
+        "lean/BlockHierarchy/Three/Inverse.lean",
+        "lean/BlockHierarchy/FiniteRD.lean",
+        "lean/BlockHierarchy/Three/ConstantBranch.lean",
+        "lean/BlockHierarchy/Three/OperatingPoint.lean",
+        "lean/BlockHierarchy/Three/ConstantColumns.lean",
+        "lean/Variational.lean",
+        "lean/ReducedPair/Moments.lean"
       ],
       "run_log": "evidence/three-classes-distortion.txt",
       "checked_inputs": {
@@ -384,7 +410,13 @@
         "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
         "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
         "lean/BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48",
-        "lean/BlockHierarchy/Three/Inverse.lean": "acf4753527decb5bf6da204a3fa0ff37c81f269d6064452eb28b37cc633a9b13"
+        "lean/BlockHierarchy/Three/Inverse.lean": "acf4753527decb5bf6da204a3fa0ff37c81f269d6064452eb28b37cc633a9b13",
+        "lean/BlockHierarchy/FiniteRD.lean": "3505cb88bf62172df5ec7477ef03b7d1a009d006776619a1e568473785b39cc3",
+        "lean/BlockHierarchy/Three/ConstantBranch.lean": "da332960ecefccfd93b24cfca697188a6bcb32469a9f0445620e69d9e63b6524",
+        "lean/BlockHierarchy/Three/OperatingPoint.lean": "c63208236151041bba6016b56b37d3c7615d986620e131597063e692a4638fc7",
+        "lean/BlockHierarchy/Three/ConstantColumns.lean": "0bcb32d1adee31594138cc4cf9b205d322c78f66a62726c2fdede4293a4f08b5",
+        "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
+        "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48"
       }
     }
   },
