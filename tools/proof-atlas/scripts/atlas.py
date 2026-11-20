@@ -107,6 +107,7 @@ def build(root):
     assets = Path(__file__).resolve().parents[1] / "assets"
     rows, entries, log_links = [], [], {}
     stale = {}
+    subproof_lists = {}
     for c in claims:
         cid = c["id"]
         w = work.get(cid, {})
@@ -123,6 +124,21 @@ def build(root):
             entry["summary"] = m.get("summary", "The paper claim is awaiting a fresh Lean check.")
             status = "awaiting recheck"
         entry.setdefault("reference", c["kind"].title())
+        subproofs = []
+        for part in w.get("subproofs", []):
+            state = part["status"]
+            if state not in {"open", "attempted", "checked"}:
+                raise ValueError(f"{cid}: unsupported subproof status {state}")
+            if state == "checked":
+                if not (part.get("declaration") and w.get("run_log") and w.get("checked_inputs")):
+                    raise ValueError(f"{cid}: checked subproof requires a declaration and recorded build inputs and log")
+                if changed:
+                    state = "awaiting recheck"
+            subproofs.append(dict(part, status=state))
+        entry["subproofs"] = subproofs
+        if subproofs:
+            items = "".join(f'<li>{esc(part["title"])} · {esc(part["status"])}</li>' for part in subproofs)
+            subproof_lists[cid] = f"<h3>Subproofs</h3><ol>{items}</ol>"
         entry["sources"] = [
             {"path": filename, "text": local(root, filename).read_text(encoding="utf-8-sig")}
             for filename in dict.fromkeys(([w["lean"]] if w.get("lean") else []) + w.get("lean_sources", []))
@@ -147,7 +163,7 @@ def build(root):
         w = work[focus]
         active = (f'<section><small>Latest saved proof checkpoint</small><h2><a href="proofs/index.html#/claim/{quote(focus, safe="")}">{esc(by_id[focus]["title"])}</a></h2>'
                   f'<p>{esc(stale.get(focus, w["step"]))}</p><p><strong>Next step</strong><br>{esc(w["next"])}</p>'
-                  f'<time>Last checkpoint · {esc(w["updated"])}</time>{log_links.get(focus, "")}</section>')
+                  f'{subproof_lists.get(focus, "")}<time>Last checkpoint · {esc(w["updated"])}</time>{log_links.get(focus, "")}</section>')
     dashboard = heading + active + f'<section><h2>Claim inventory</h2><p>{len(claims)} entries in manuscript order</p><ol>' + "".join(rows) + '</ol></section>'
     payload = dict(title=p["title"], focus=focus, claims=entries, dependencies=edges, macros=materials.get("macros", {}))
     template = (assets / "explorer.html").read_text(encoding="utf-8-sig")

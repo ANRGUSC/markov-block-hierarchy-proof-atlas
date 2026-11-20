@@ -22,4 +22,7 @@ name = "PositiveThreshold"
 name = "IndependentSupport"
 
 [[lean_lib]]
+name = "NegativeSupport"
+
+[[lean_lib]]
 name = "Audit"
