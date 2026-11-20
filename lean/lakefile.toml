@@ -19,4 +19,7 @@ name = "PairPrior"
 name = "PositiveThreshold"
 
 [[lean_lib]]
+name = "IndependentSupport"
+
+[[lean_lib]]
 name = "Audit"

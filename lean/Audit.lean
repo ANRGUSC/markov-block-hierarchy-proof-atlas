@@ -1,6 +1,7 @@
 import Contracts
 import FirstSupport
 import PositiveThreshold
+import IndependentSupport
 
 example : BlockHierarchy.TransitionZeroContract := BlockHierarchy.transition_zero
 example : BlockHierarchy.PersistentConstantsContract := by
@@ -10,3 +11,5 @@ example : BlockHierarchy.PersistentConstantsContract := by
 #print axioms BlockHierarchy.persistent_constants
 example : BlockHierarchy.PositiveThresholdContract := BlockHierarchy.positive_first_change
 #print axioms BlockHierarchy.positive_first_change
+example : BlockHierarchy.IndependentSupportContract := BlockHierarchy.independent_full_support
+#print axioms BlockHierarchy.independent_full_support

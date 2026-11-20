@@ -135,7 +135,7 @@ def build(root):
             (output / "logs").mkdir(exist_ok=True)
             atomic(output / "logs" / name, log)
             entry["log"] = "logs/" + name
-            log_links[cid] = f'<p><a href="logs/{name}">Lean run log</a></p>'
+            log_links[cid] = f'<p><a href="logs/{name}">Read the recorded Lean run</a></p>'
         entries.append(entry)
         url = "proofs/index.html#/claim/" + quote(cid, safe="")
         rows.append(f'<li><a href="{url}">{esc(entry["reference"])} · {esc(c["title"])}</a> · {esc(status)}</li>')
@@ -145,7 +145,7 @@ def build(root):
     active = ""
     if focus and focus in work:
         w = work[focus]
-        active = (f'<section><small>Current target</small><h2><a href="proofs/index.html#/claim/{quote(focus, safe="")}">{esc(by_id[focus]["title"])}</a></h2>'
+        active = (f'<section><small>Latest saved proof checkpoint</small><h2><a href="proofs/index.html#/claim/{quote(focus, safe="")}">{esc(by_id[focus]["title"])}</a></h2>'
                   f'<p>{esc(stale.get(focus, w["step"]))}</p><p><strong>Next step</strong><br>{esc(w["next"])}</p>'
                   f'<time>Last checkpoint · {esc(w["updated"])}</time>{log_links.get(focus, "")}</section>')
     dashboard = heading + active + f'<section><h2>Claim inventory</h2><p>{len(claims)} entries in manuscript order</p><ol>' + "".join(rows) + '</ol></section>'

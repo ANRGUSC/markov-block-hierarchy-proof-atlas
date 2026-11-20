@@ -24,4 +24,18 @@ def PositiveThresholdContract : Prop :=
       0 < constantMass A B C D ∧ 0 < constantMass B A C D ∧
       (0 < transitionMass A B C D ↔ D < r) ∧ (transitionMass A B C D = 0 ↔ D = r)
 
+/-- At zero persistence the two-bit inverse prior is a product with both bit
+probabilities positive throughout the paper's strict full-support interval. -/
+def IndependentSupportContract : Prop :=
+  ∀ p q D : ℝ, 0 < p → 0 < q → p + q = 1 → 0 ≤ D → D < min p q →
+    let C := p*q
+    let A := p-C
+    let B := q-C
+    let s := (p-D)/(1-2*D)
+    let t := (q-D)/(1-2*D)
+    s + t = 1 ∧ 0 < s ∧ 0 < t ∧
+      constantMass A B C D = s^2 ∧ transitionMass A B C D = s*t ∧
+      constantMass B A C D = t^2 ∧
+      0 < constantMass A B C D ∧ 0 < transitionMass A B C D ∧ 0 < constantMass B A C D
+
 end BlockHierarchy
