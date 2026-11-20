@@ -10,9 +10,11 @@ The inventory contains ten numbered results and one conjecture. The graph displa
 
 ## Lean coverage
 
-Proposition 1 is closed for all three persistence cases, including the equal-bias tie and the lossless endpoint. Lean proves that the displayed marginal uniquely minimizes mutual information under the paper's distortion budget. [Independent contract](lean/FirstChangeStatement.lean) ? [Assembled theorem](lean/FirstChange.lean) ? [Declaration and axiom audit](evidence/first-change-audit.json).
+Proposition 1 is closed for all three persistence cases, including the equal-bias tie and the lossless endpoint. Lean proves that the displayed marginal uniquely minimizes mutual information under the paper's distortion budget. [Independent contract](lean/FirstChangeStatement.lean) ? [Assembled theorem](lean/FirstChange.lean) ? [Declaration and axiom audit](evidence/first-change-audit-v2.json).
 
-The current target is Theorem 2. Lean checks the reduced channel's normalizers, its column values and a general finite-channel optimality bound. [Recorded Lean build](evidence/first-change-and-column-test.txt)
+Theorem 2 is closed for the persistent two-symbol source. The proof covers all three rate and variance branches and the biased zero-rate endpoint. [Independent contract](lean/ReducedPair/PaperStatement.lean) ? [Assembled theorem](lean/ReducedPair/Paper.lean) ? [Declaration and axiom audit](evidence/persistent-pair-audit.json).
+
+The current target is Theorem 3 for the symmetric three-symbol source.
 
 ## Build or preview
 

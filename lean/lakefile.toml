@@ -1,6 +1,9 @@
 name = "MarkovBlockPilot"
 defaultTargets = ["Audit"]
 
+[[lean_lib]]
+name = "BlockHierarchy"
+
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4.git"

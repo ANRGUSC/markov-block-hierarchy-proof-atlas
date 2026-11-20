@@ -1,0 +1,38 @@
+Lean build transcript. The local package path is abbreviated as <LEAN_PACKAGE>.
+Original transcript SHA-256: 12265310798e1929e26af7caf93336168fd2bfbaf4ccb4792d4cd5ef5772b572
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ <LEAN_PACKAGE>\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ <LEAN_PACKAGE>\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build ReducedPair.Paper Audit BlockHierarchy
+ℹ [1960/1980] Replayed ReducedPair.Middle
+info: ReducedPair/Middle.lean:61:0: 'BlockHierarchy.ReducedPair.middle_branch' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1971/1980] Replayed ReducedPair.ZeroRate
+info: ReducedPair/ZeroRate.lean:90:0: 'BlockHierarchy.zero_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ReducedPair/ZeroRate.lean:91:0: 'BlockHierarchy.unique_biased_zero_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1976/1980] Replayed ReducedPair.Paper
+info: ReducedPair/Paper.lean:74:0: 'BlockHierarchy.persistent_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1977/1980] Replayed Audit
+info: Audit.lean:18:0: 'BlockHierarchy.transition_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:19:0: 'BlockHierarchy.persistent_constants' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:21:0: 'BlockHierarchy.positive_first_change' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:23:0: 'BlockHierarchy.independent_full_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:24:0: 'BlockHierarchy.NegativeSupport.constant_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:25:0: 'BlockHierarchy.NegativeSupport.constant_tie' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:26:0: 'BlockHierarchy.NegativeSupport.smaller_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:27:0: 'BlockHierarchy.NegativeSupport.positive_before_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:28:0: 'BlockHierarchy.NegativeSupport.transition_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:29:0: 'BlockHierarchy.NegativeSupport.markov_discriminant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:30:0: 'BlockHierarchy.NegativeSupport.root_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:31:0: 'BlockHierarchy.NegativeSupport.ordered_markov_first_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:32:0: 'BlockHierarchy.NegativeSupport.negative_distortion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:33:0: 'BlockHierarchy.Channel.rate_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:34:0: 'BlockHierarchy.Channel.backward_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:35:0: 'BlockHierarchy.PairChannel.optimal_prior' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:36:0: 'BlockHierarchy.PairChannel.lossless_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:38:0: 'BlockHierarchy.first_change' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:39:0: 'BlockHierarchy.ReducedPair.columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:40:0: 'BlockHierarchy.Channel.column_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [1979/1980] Built BlockHierarchy (14s)
+Build completed successfully (1980 jobs).
+Lake build completed.

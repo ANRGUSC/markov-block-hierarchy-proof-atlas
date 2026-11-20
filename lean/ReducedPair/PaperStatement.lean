@@ -25,6 +25,7 @@ def PersistentPairStatement : Prop :=
       RateAt m.source D (S*(binaryEntropyNats (m.B/S)-binaryEntropyNats δ)/Real.log 2) ∧
       GibbsPoint m.source (ReducedPair.prior m.A m.B u) D u (ReducedPair.Z m.A m.B u) ∧
       (∀ w, 0 < ReducedPair.prior m.A m.B u w ↔ w.1=w.2) ∧
+      (∀ t J, MinimizesAt m.source t J D → t=ReducedPair.prior m.A m.B u) ∧
       tiltedVariance m.source D u (ReducedPair.Z m.A m.B u) =
         ReducedPair.classVariance m.A m.B m.C (-logTwo (m.A*(1+u^2)/S)) (-logTwo u)
           (-logTwo (m.B*(1+u^2)/S))) ∧

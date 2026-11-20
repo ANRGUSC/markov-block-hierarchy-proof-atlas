@@ -3,6 +3,7 @@ import ReducedPair.Middle
 import ReducedPair.Full
 import ReducedPair.ZeroRate
 import ReducedPair.LosslessValue
+import ReducedPair.Unique
 
 namespace BlockHierarchy
 open PairChannel
@@ -65,7 +66,9 @@ theorem persistent_pair : PersistentPairStatement := by
     · obtain ⟨rate,var⟩ := full_values positive hhalf feasible
       exact ⟨rate,(full_point positive hhalf feasible).1,var⟩
   · intro D first last
-    exact ReducedPair.middle_branch hA hB hC mass hr half root first (minEq.symm ▸ last)
+    obtain ⟨rate,point,support,var⟩ := ReducedPair.middle_branch hA hB hC mass hr half root first (minEq.symm ▸ last)
+    exact ⟨rate,point,support,fun t J => ReducedPair.middle_unique hA hB hC mass hr half root first
+      (minEq.symm ▸ last) t J,var⟩
   · exact unique_biased_zero_rate m
 
 #print axioms persistent_pair
