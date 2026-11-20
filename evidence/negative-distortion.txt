@@ -1,0 +1,24 @@
+Lean build transcript. The local package path is abbreviated as <LEAN_PACKAGE>.
+Original transcript SHA-256: 6373b67b9fbc0c390e6b240cde2ad56353b133927a65088007611ca72d7a9f2e
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ <LEAN_PACKAGE>\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ <LEAN_PACKAGE>\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build
+✔ [1507/1509] Built NegativeDistortion (13s)
+ℹ [1508/1509] Built Audit (20s)
+info: Audit.lean:12:0: 'BlockHierarchy.transition_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:13:0: 'BlockHierarchy.persistent_constants' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:15:0: 'BlockHierarchy.positive_first_change' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:17:0: 'BlockHierarchy.independent_full_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:18:0: 'BlockHierarchy.NegativeSupport.constant_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:19:0: 'BlockHierarchy.NegativeSupport.constant_tie' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:20:0: 'BlockHierarchy.NegativeSupport.smaller_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:21:0: 'BlockHierarchy.NegativeSupport.positive_before_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:22:0: 'BlockHierarchy.NegativeSupport.transition_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:23:0: 'BlockHierarchy.NegativeSupport.markov_discriminant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:24:0: 'BlockHierarchy.NegativeSupport.root_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:25:0: 'BlockHierarchy.NegativeSupport.ordered_markov_first_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:26:0: 'BlockHierarchy.NegativeSupport.negative_distortion' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1509 jobs).
+Lake build completed.

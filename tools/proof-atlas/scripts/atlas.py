@@ -81,6 +81,26 @@ def page(title, body, watch=""):
             '<a href="proofs/index.html">Proof Atlas explorer</a></nav><main>' + body + '</main>' + watch + '</body></html>').encode()
 
 
+def proof_work_description(project, claims):
+    scope = project.get("proof_work")
+    if scope is None:
+        return "Proof-work authorization has not been recorded."
+    mode = scope["mode"]
+    if mode == "paper":
+        total = sum(claim["kind"] != "conjecture" for claim in claims)
+        text = f"Paper-wide. Continue through all {total} stated results, including their prerequisites. Track conjectures separately."
+    elif mode == "claim":
+        selected = next((c for c in claims if c["id"] == scope.get("claim")), None)
+        if selected is None:
+            raise ValueError("proof_work.claim must identify a manuscript claim")
+        text = f"One claim. Work through {selected['title']} ({selected['id']}) and its prerequisites, then stop for the author."
+    else:
+        raise ValueError("proof_work.mode must be paper or claim")
+    if scope.get("paused"):
+        return "Paused by the author. Saved scope: " + text
+    return text
+
+
 def build(root):
     p = json.loads((root / "project.json").read_text(encoding="utf-8-sig"))
     if p["schema_version"] != 1 or not p["environments"]:
@@ -92,6 +112,11 @@ def build(root):
     work = p.get("work", {})
     if len(by_id) != len(claims):
         raise ValueError("duplicate claim label across manuscript sources")
+    if "claim_order" in p:
+        order = p["claim_order"]
+        if len(order) != len(claims) or set(order) != set(by_id):
+            raise ValueError("claim_order must list every manuscript claim exactly once")
+        claims = [by_id[label] for label in order]
     if work.keys() - by_id.keys() or (p.get("focus") and p["focus"] not in by_id):
         raise ValueError("checkpoint or focus refers to an unknown claim label")
     pdf = read_source(root, p["pdf"])
@@ -166,7 +191,8 @@ def build(root):
                   f'<p>{esc(stale.get(focus, w["step"]))}</p><p><strong>Next step</strong><br>{esc(w["next"])}</p>'
                   f'{subproof_lists.get(focus, "")}<time>Last checkpoint · {esc(w["updated"])}</time>{log_links.get(focus, "")}</section>')
     feed = p.get("hosting", {}).get("activity_url", "")
-    dashboard = heading + f'<section id="claim-inventory" data-feed="{esc(feed)}"><h2>Claim inventory</h2><p>{len(claims)} entries in manuscript order</p><ol>' + "".join(rows) + '</ol></section>' + active
+    scope = proof_work_description(p, claims)
+    dashboard = heading + f'<section id="claim-inventory" data-feed="{esc(feed)}"><h2>Claim inventory</h2><p><strong>Authorized proof work</strong><br>{esc(scope)}</p><p>{len(claims)} entries in manuscript order</p><ol>' + "".join(rows) + '</ol></section>' + active
     payload = dict(title=p["title"], focus=focus, claims=entries, dependencies=edges, macros=materials.get("macros", {}))
     template = (assets / "explorer.html").read_text(encoding="utf-8-sig")
     packed = json.dumps(payload, ensure_ascii=False)
@@ -193,6 +219,10 @@ def build(root):
     atomic(output / "inventory.json", json.dumps(claims, ensure_ascii=False, indent=2).encode())
     atomic(output / "checkpoint.json", json.dumps(dict(revision=version)).encode())
     print(f"{len(claims)} claims | {output / 'progress.html'}")
+    print(f"Authorized proof work: {scope}")
+    hosting = p.get("hosting") or {}
+    if not hosting.get("repository") and hosting.get("decision") != "local":
+        print("Hosting decision pending. Ask where the author wants this paper's explorer and dashboard hosted.")
 
 
 if __name__ == "__main__":

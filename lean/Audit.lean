@@ -3,6 +3,7 @@ import FirstSupport
 import PositiveThreshold
 import IndependentSupport
 import NegativeSupport
+import NegativeDistortion
 
 example : BlockHierarchy.TransitionZeroContract := BlockHierarchy.transition_zero
 example : BlockHierarchy.PersistentConstantsContract := by
@@ -22,3 +23,4 @@ example : BlockHierarchy.IndependentSupportContract := BlockHierarchy.independen
 #print axioms BlockHierarchy.NegativeSupport.markov_discriminant
 #print axioms BlockHierarchy.NegativeSupport.root_bounds
 #print axioms BlockHierarchy.NegativeSupport.ordered_markov_first_zero
+#print axioms BlockHierarchy.NegativeSupport.negative_distortion

@@ -25,4 +25,7 @@ name = "IndependentSupport"
 name = "NegativeSupport"
 
 [[lean_lib]]
+name = "NegativeDistortion"
+
+[[lean_lib]]
 name = "Audit"
