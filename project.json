@@ -169,17 +169,23 @@
     },
     "thm:two": {
       "status": "open",
-      "updated": "2026-11-20T07:06:14+00:00",
+      "updated": "2026-11-20T07:21:12+00:00",
       "page": 9,
       "summary": "Assume $\\rho>0$, arbitrary stationary bias, $S=A+B$. Compute the rate, variance and active constant words in all three distortion regimes, with the zero supporting slope at and above $D_0$. The linked statement specifies every branch.",
-      "step": "Lean checked the two-output normalizers and all four column values, together with a general finite-channel optimality bound for subnormalized backward columns.",
-      "next": "Derive positivity and the column inequalities throughout the second distortion branch, then evaluate the rate and tilted-information variance and handle the endpoints.",
-      "scope": "The column formulas and variational inequality are checked. The three-branch rate and variance formulas remain open.",
-      "lean": "lean/ReducedPair.lean",
+      "step": "Lean checked the middle branch of Theorem 2. The optimizing marginal uses precisely the two constant words. Its joint law incurs exactly the stated distortion, minimizes information among all competitors, and gives the stated entropy difference and three-class tilted variance.",
+      "next": "Assemble the full-support rate and varentropy, lossless convention, zero-rate branch and biased endpoint against the stationary Markov model.",
+      "scope": "The middle-branch theorem covers positive pair masses satisfying normalization and the persistent threshold identity, from the threshold up to the zero-rate distortion. The whole theorem is still open.",
+      "lean": "lean/ReducedPair/Middle.lean",
       "lean_sources": [
-        "lean/Variational.lean"
+        "lean/ReducedPair.lean",
+        "lean/Variational.lean",
+        "lean/ReducedPair/Branch.lean",
+        "lean/ReducedPair/Moments.lean",
+        "lean/ReducedPair/RateStatement.lean",
+        "lean/ReducedPair/GibbsValue.lean",
+        "lean/ReducedPair/Optimal.lean"
       ],
-      "run_log": "evidence/first-change-and-column-test.txt",
+      "run_log": "evidence/persistent-middle.txt",
       "checked_inputs": {
         "lean/Audit.lean": "aabfb59a2755ebe572814fee1c52828eb743503918daf599975cd0608a8f67ae",
         "lean/ChannelEquality.lean": "513c020d0b6e870f77c404aa76eea36fd0adf8b7d6e5d0970e9aac4a8bf40727",
@@ -202,7 +208,13 @@
         "lean/PairUniqueness.lean": "529fc9d3e4adf1ac03aa6b119bec785a5e9dddc02105f394f8f74dabf3a0b86c",
         "lean/PositiveThreshold.lean": "fd9237e826ff2aea6062307deca5592e6d00a27d468d4bdb01f2926d41ddba03",
         "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
-        "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43"
+        "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
+        "lean/ReducedPair/Branch.lean": "df863ea1f25b4d5911845d5bea930d80283502bf0106d0fad24851fe052c69e8",
+        "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48",
+        "lean/ReducedPair/RateStatement.lean": "ad1f701fda964425d36e9415dee024e4b83f292c6d271e86b589f2a92adab482",
+        "lean/ReducedPair/GibbsValue.lean": "f4a1bc66fdd1fce664606f60fe6b400ae7c4d19e428c1566d342c700bfe39c7c",
+        "lean/ReducedPair/Optimal.lean": "aa732d3c704feeb422fb93dacdad393b767d96d34d8fb369ee90efc9b6260fe6",
+        "lean/ReducedPair/Middle.lean": "098b05d9d23ab82e562b6f9a1bc2fb92d490628d5ff981a862ea78c766161525"
       },
       "subproofs": [
         {
@@ -216,11 +228,20 @@
           "declaration": "BlockHierarchy.Channel.column_optimal"
         },
         {
-          "title": "Prove feasibility and the column test over the specified distortion interval",
+          "title": "Assemble the optimizing channel, support, rate and variance throughout the middle branch",
+          "status": "checked",
+          "declaration": "BlockHierarchy.ReducedPair.middle_branch"
+        },
+        {
+          "title": "Derive the full-support rate, varentropy and lossless endpoint",
           "status": "open"
         },
         {
-          "title": "Compute rate and tilted-information variance on each branch and check the endpoints",
+          "title": "Certify the zero-rate branch and uniqueness at the biased endpoint",
+          "status": "open"
+        },
+        {
+          "title": "Assemble the three branches for the persistent Markov source",
           "status": "open"
         }
       ]

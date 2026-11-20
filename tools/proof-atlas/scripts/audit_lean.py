@@ -27,7 +27,7 @@ def audit(args):
     contract = (root/args.contract).resolve(strict=True)
     if not contract.is_relative_to(root) or contract.suffix != ".lean":
         raise ValueError("Keep the independent contract in the Lean package")
-    for name in (args.declaration, args.expected):
+    for name in (args.declaration, args.expected, *args.target):
         if not re.fullmatch(r"[A-Za-z_][\w']*(?:\.[A-Za-z_][\w']*)*", name):
             raise ValueError("Expected a fully qualified Lean identifier")
     pin = (root/"lean-toolchain").read_text(encoding="utf-8-sig").strip()
@@ -38,7 +38,7 @@ def audit(args):
         raise ValueError("Run initial package setup and keep the contract with the source files")
     lake = select_lake(root, pin, env, sys.stderr, offline=True)
     # The Lake build runner sends output to an actual file descriptor.
-    run([*lake, "--no-cache", "build"], root, env, sys.stderr)
+    run([*lake, "--no-cache", "build", *args.target], root, env, sys.stderr)
     declaration = args.declaration
     program = (contract.read_text(encoding="utf-8-sig") + "\n" +
                f"example : {args.expected} := {declaration}\n#print axioms {declaration}\n")
@@ -68,6 +68,7 @@ if __name__ == "__main__":
     parser.add_argument("contract", help="File importing the target and defining the expected proposition")
     parser.add_argument("expected", help="Name of the independent proposition")
     parser.add_argument("declaration", help="Name of the proof to check")
+    parser.add_argument("--target", action="append", default=[], help="Build this proof module before checking its independent contract")
     parser.add_argument("--output", type=Path, help="New evidence file to create on success")
     args = parser.parse_args()
     try:

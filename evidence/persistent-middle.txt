@@ -1,0 +1,17 @@
+Lean build transcript. The local package path is abbreviated as <LEAN_PACKAGE>.
+Original transcript SHA-256: 60c327d21004b56075f5fbd71912be4cd06578099f54778875499a96fba0f850
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ <LEAN_PACKAGE>\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ <LEAN_PACKAGE>\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build ReducedPair.Paper ReducedPair.Middle
+ℹ [1964/1973] Replayed ReducedPair.Middle
+info: ReducedPair/Middle.lean:61:0: 'BlockHierarchy.ReducedPair.middle_branch' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1971/1973] Replayed ReducedPair.ZeroRate
+info: ReducedPair/ZeroRate.lean:90:0: 'BlockHierarchy.zero_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ReducedPair/ZeroRate.lean:91:0: 'BlockHierarchy.unique_biased_zero_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [1972/1973] Built ReducedPair.LosslessValue (19s)
+ℹ [1973/1973] Built ReducedPair.Paper (19s)
+info: ReducedPair/Paper.lean:71:0: 'BlockHierarchy.persistent_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1973 jobs).
+Lake build completed.
