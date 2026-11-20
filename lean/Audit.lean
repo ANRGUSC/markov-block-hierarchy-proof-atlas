@@ -7,6 +7,9 @@ import NegativeDistortion
 import FiniteChannel
 import PairChannel
 import Lossless
+import FirstChange
+import ReducedPair
+import Variational
 
 example : BlockHierarchy.TransitionZeroContract := BlockHierarchy.transition_zero
 example : BlockHierarchy.PersistentConstantsContract := by
@@ -31,3 +34,7 @@ example : BlockHierarchy.IndependentSupportContract := BlockHierarchy.independen
 #print axioms BlockHierarchy.Channel.backward_optimal
 #print axioms BlockHierarchy.PairChannel.optimal_prior
 #print axioms BlockHierarchy.PairChannel.lossless_optimal
+example : BlockHierarchy.FirstChangeStatement := BlockHierarchy.first_change
+#print axioms BlockHierarchy.first_change
+#print axioms BlockHierarchy.ReducedPair.columns
+#print axioms BlockHierarchy.Channel.column_optimal

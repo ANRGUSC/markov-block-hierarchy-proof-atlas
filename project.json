@@ -23,48 +23,59 @@
     "corollary",
     "conjecture"
   ],
-  "focus": "prop:phase",
+  "focus": "thm:two",
   "work": {
     "prop:phase": {
-      "status": "open",
-      "updated": "2026-11-20T06:54:35+00:00",
+      "status": "closed",
+      "updated": "2026-11-20T07:06:14+00:00",
       "page": 8,
-      "summary": "Proposition 1 asks which reproduction words first lose mass as distortion rises. Lean checks the simultaneous loss of 01 and 10 at the positive-persistence threshold and full support for independent symbols below the smaller stationary probability.",
+      "summary": "Proposition 1 identifies the first change in the support of the unique optimal reproduction law. Positive persistence loses both transition words together. Negative persistence loses the rarer constant, or both constants at equal bias. At zero persistence all four words remain active below the zero-rate distortion.",
       "sketch": "The two transition words have the same candidate mass. Substitute u = D/(1−D) in their common numerator and use the fact that the four input probabilities sum to one. Multiplication by the positive factor (1−D)² gives C−D(1−D), so both numerators vanish when D(1−D) = C. For the constant word 00, multiplying its numerator by B gives the square (Bu-C)^2 plus AB-C^2. The latter is strictly positive by the pair-mass identity. Exchanging A and B covers 11. The smaller quadratic root lies strictly between zero and one half. Factoring the scaled transition mass shows its sign agrees with the threshold minus the distortion on that interval. At zero persistence set C = pq, A = p - C and B = q - C. The four inverse-prior masses simplify to the products of the one-symbol factors (p-D)/(1-2D) and (q-D)/(1-2D). Both factors are positive below min(p,q) and sum to one.",
-      "step": "Lean proved that the nonnegative inverse-prior formula defines an optimal reproduction law. Its explicitly constructed joint has the prescribed input marginal, incurs exactly 2D distortion per pair and minimizes mutual information against every admissible competing joint. The lossless endpoint was checked separately.",
-      "next": "Finish the paper-level assembly for the three persistence cases and the uniqueness argument for the optimizing law.",
-      "run_log": "evidence/pair-channel-optimality.txt",
-      "scope": "The mass signs and an attaining optimal channel are checked. The whole proposition remains open pending assembly and uniqueness.",
+      "step": "Proposition 1 is closed. Lean checked the complete stationary Markov statement, all four support probabilities, uniqueness of the minimizing marginal and every endpoint claimed in the proposition.",
+      "next": "Paper-wide work continues with Theorem 2, the rate and variance for a persistent two-symbol source.",
+      "run_log": "evidence/first-change-and-column-test.txt",
+      "scope": "For every stationary two-state source with positive transition probabilities, the contract compares mutual information against every competing joint law with the same input and distortion budget. It proves existence and uniqueness of the optimal reproduction marginal and gives its exact support before and at each first threshold, including the unbiased tie, zero persistence and lossless distortion. Mutual information is in nats, which preserves the minimizer under conversion to bits.",
       "structured": "Source: local manuscript, Proposition 1, equation labeled eq:pairprior and the following sentence. The numbered steps below expand its algebra; they are a pilot supplement.\n⟨1⟩1. Set u = D/(1−D) and let T = C(1+u²)−(A+B)u.\n⟨1⟩2. Multiply T by (1−D)².\n  ⟨2⟩1. Use A+B = 1−2C from pair-mass normalization.\n  ⟨2⟩2. Expand and collect terms to obtain C−D(1−D).\n⟨1⟩3. Since D < 1/2, the factor in step 2 is nonzero. Thus T = 0 exactly when D(1−D) = C.\n⟨1⟩4. For 00, B times its numerator is (Bu-C)^2 + AB-C^2. The pair-mass identity gives AB-C^2 > 0 under positive persistence. Since B > 0, the numerator is positive. Exchange A and B to obtain the same conclusion for 11.\n⟨1⟩5. The smaller root r lies in (0, 1/2) and r(1-r)=C. The sign of the transition mass equals the sign of (r-D)(1-r-D). For D<1/2 the second factor is strictly positive, so the smaller root is the first zero.\n⟨1⟩6. For the independent case use the two factors from the sketch. Substitute C = pq into each candidate mass, use p+q = 1 and clear denominators. The two factors are positive because D < min(p,q) implies p-D, q-D and 1-2D are positive.\nNegative persistence: the discriminant follows from stationary flow. Independently, the quadratic root and the constant-word comparison give the candidate zero and tie. The root bounds supply the slope hypothesis needed for positivity of both the rarer constant and the transition words. The ordered Markov lemma combines these facts. Exchanging the labels and passing from u to D remain.",
-      "lean": "lean/FirstSupport.lean",
+      "lean": "lean/FirstChangeStatement.lean",
       "lean_sources": [
+        "lean/FirstChange.lean",
         "lean/PairPrior.lean",
+        "lean/FirstSupport.lean",
         "lean/PositiveThreshold.lean",
         "lean/IndependentSupport.lean",
         "lean/NegativeSupport.lean",
         "lean/NegativeDistortion.lean",
         "lean/FiniteChannel.lean",
         "lean/ChannelOptimizer.lean",
+        "lean/ChannelEquality.lean",
         "lean/PairChannel.lean",
         "lean/Lossless.lean",
-        "lean/Audit.lean"
+        "lean/PairUniqueness.lean",
+        "lean/FirstChangeAudit.lean"
       ],
       "checked_inputs": {
-        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
-        "lean/lakefile.toml": "60a3661d6106c6b0d3347b93f26ebdef082835b80302779eae94f74ede02d764",
-        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
-        "lean/Audit.lean": "4df214a744ed1688440f506e7b5dc03da6446a863fc3223927e912918cf1075f",
-        "lean/Contracts.lean": "5e139a2080d4e5afd68df6ee7102748e95ffba4337a447073f1ea15d2f9960a1",
-        "lean/FirstSupport.lean": "611a62c98b4d8a9260d27a9d222e81e4a1d477d434929b133517c18eedbb3ebf",
-        "lean/PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
-        "lean/PositiveThreshold.lean": "fd9237e826ff2aea6062307deca5592e6d00a27d468d4bdb01f2926d41ddba03",
-        "lean/IndependentSupport.lean": "2d4fb4d0ccadce0d1a691e5006a42e24f27862ad7b2c2fe443b240bc58080958",
-        "lean/NegativeSupport.lean": "6c4929b19cb95cd1a45ec644f224f6c9a33dd987bfd1e1c5647ef6766ea931ac",
-        "lean/NegativeDistortion.lean": "ab0fde8ce87e5b21d305e3e36cceb68d9b34d055ac45935fa218567a128011c9",
-        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+        "lean/Audit.lean": "aabfb59a2755ebe572814fee1c52828eb743503918daf599975cd0608a8f67ae",
+        "lean/ChannelEquality.lean": "513c020d0b6e870f77c404aa76eea36fd0adf8b7d6e5d0970e9aac4a8bf40727",
         "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
+        "lean/Contracts.lean": "5e139a2080d4e5afd68df6ee7102748e95ffba4337a447073f1ea15d2f9960a1",
+        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+        "lean/FirstChange.lean": "b5bbc23cc6866b81061f685df513a31116455cdb8d216eaa786c34d5ab966715",
+        "lean/FirstChangeAudit.lean": "a07ab06561efe9f8aeee6f6fdad4e7f568b52aab705d6f40bec3f61fa9013f36",
+        "lean/FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
+        "lean/FirstSupport.lean": "611a62c98b4d8a9260d27a9d222e81e4a1d477d434929b133517c18eedbb3ebf",
+        "lean/IndependentSupport.lean": "2d4fb4d0ccadce0d1a691e5006a42e24f27862ad7b2c2fe443b240bc58080958",
+        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+        "lean/lakefile.toml": "44da941a7ef8e051e5ff46ecd1ff007cea43cb98e1eba50204da862446bc3987",
+        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lean/Lossless.lean": "9fe4a0c1e45717fef7a08f5d4160af6b3a258fd136169650569a6b083086dd0d",
+        "lean/NegativeDistortion.lean": "ab0fde8ce87e5b21d305e3e36cceb68d9b34d055ac45935fa218567a128011c9",
+        "lean/NegativeSupport.lean": "6c4929b19cb95cd1a45ec644f224f6c9a33dd987bfd1e1c5647ef6766ea931ac",
         "lean/PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
-        "lean/Lossless.lean": "789dd20abf1ea78aa90dc11033aad7134e779f16e41e0d99d66df7ee0f6a7f30"
+        "lean/PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
+        "lean/PairUniqueness.lean": "529fc9d3e4adf1ac03aa6b119bec785a5e9dddc02105f394f8f74dabf3a0b86c",
+        "lean/PositiveThreshold.lean": "fd9237e826ff2aea6062307deca5592e6d00a27d468d4bdb01f2926d41ddba03",
+        "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
+        "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43"
       },
       "subproofs": [
         {
@@ -143,7 +154,73 @@
           "declaration": "BlockHierarchy.PairChannel.lossless_optimal"
         },
         {
-          "title": "Assemble all persistence branches against the stationary Markov statement and establish uniqueness of the optimal reproduction law",
+          "title": "Assemble the three branches and prove the optimal marginal is unique",
+          "status": "checked",
+          "declaration": "BlockHierarchy.first_change"
+        }
+      ],
+      "closure": {
+        "package": "lean",
+        "audit": "evidence/first-change-audit.json",
+        "expected": "BlockHierarchy.FirstChangeStatement",
+        "declaration": "BlockHierarchy.first_change",
+        "correspondence": "For every stationary two-state source with positive transition probabilities, the contract compares mutual information against every competing joint law with the same input and distortion budget. It proves existence and uniqueness of the optimal reproduction marginal and gives its exact support before and at each first threshold, including the unbiased tie, zero persistence and lossless distortion. Mutual information is in nats, which preserves the minimizer under conversion to bits."
+      }
+    },
+    "thm:two": {
+      "status": "open",
+      "updated": "2026-11-20T07:06:14+00:00",
+      "page": 9,
+      "summary": "Assume $\\rho>0$, arbitrary stationary bias, $S=A+B$. Compute the rate, variance and active constant words in all three distortion regimes, with the zero supporting slope at and above $D_0$. The linked statement specifies every branch.",
+      "step": "Lean checked the two-output normalizers and all four column values, together with a general finite-channel optimality bound for subnormalized backward columns.",
+      "next": "Derive positivity and the column inequalities throughout the second distortion branch, then evaluate the rate and tilted-information variance and handle the endpoints.",
+      "scope": "The column formulas and variational inequality are checked. The three-branch rate and variance formulas remain open.",
+      "lean": "lean/ReducedPair.lean",
+      "lean_sources": [
+        "lean/Variational.lean"
+      ],
+      "run_log": "evidence/first-change-and-column-test.txt",
+      "checked_inputs": {
+        "lean/Audit.lean": "aabfb59a2755ebe572814fee1c52828eb743503918daf599975cd0608a8f67ae",
+        "lean/ChannelEquality.lean": "513c020d0b6e870f77c404aa76eea36fd0adf8b7d6e5d0970e9aac4a8bf40727",
+        "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
+        "lean/Contracts.lean": "5e139a2080d4e5afd68df6ee7102748e95ffba4337a447073f1ea15d2f9960a1",
+        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+        "lean/FirstChange.lean": "b5bbc23cc6866b81061f685df513a31116455cdb8d216eaa786c34d5ab966715",
+        "lean/FirstChangeAudit.lean": "a07ab06561efe9f8aeee6f6fdad4e7f568b52aab705d6f40bec3f61fa9013f36",
+        "lean/FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
+        "lean/FirstSupport.lean": "611a62c98b4d8a9260d27a9d222e81e4a1d477d434929b133517c18eedbb3ebf",
+        "lean/IndependentSupport.lean": "2d4fb4d0ccadce0d1a691e5006a42e24f27862ad7b2c2fe443b240bc58080958",
+        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+        "lean/lakefile.toml": "44da941a7ef8e051e5ff46ecd1ff007cea43cb98e1eba50204da862446bc3987",
+        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lean/Lossless.lean": "9fe4a0c1e45717fef7a08f5d4160af6b3a258fd136169650569a6b083086dd0d",
+        "lean/NegativeDistortion.lean": "ab0fde8ce87e5b21d305e3e36cceb68d9b34d055ac45935fa218567a128011c9",
+        "lean/NegativeSupport.lean": "6c4929b19cb95cd1a45ec644f224f6c9a33dd987bfd1e1c5647ef6766ea931ac",
+        "lean/PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
+        "lean/PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
+        "lean/PairUniqueness.lean": "529fc9d3e4adf1ac03aa6b119bec785a5e9dddc02105f394f8f74dabf3a0b86c",
+        "lean/PositiveThreshold.lean": "fd9237e826ff2aea6062307deca5592e6d00a27d468d4bdb01f2926d41ddba03",
+        "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
+        "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43"
+      },
+      "subproofs": [
+        {
+          "title": "Compute the constant and transition column values",
+          "status": "checked",
+          "declaration": "BlockHierarchy.ReducedPair.columns"
+        },
+        {
+          "title": "Show the finite column test certifies optimality",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Channel.column_optimal"
+        },
+        {
+          "title": "Prove feasibility and the column test over the specified distortion interval",
+          "status": "open"
+        },
+        {
+          "title": "Compute rate and tilted-information variance on each branch and check the endpoints",
           "status": "open"
         }
       ]

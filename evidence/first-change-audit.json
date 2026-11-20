@@ -1,0 +1,36 @@
+{
+  "declaration": "BlockHierarchy.first_change",
+  "contract": "FirstChangeAudit.lean",
+  "expected": "BlockHierarchy.FirstChangeStatement",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "checked_inputs": {
+    "Audit.lean": "aabfb59a2755ebe572814fee1c52828eb743503918daf599975cd0608a8f67ae",
+    "ChannelEquality.lean": "513c020d0b6e870f77c404aa76eea36fd0adf8b7d6e5d0970e9aac4a8bf40727",
+    "ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
+    "Contracts.lean": "5e139a2080d4e5afd68df6ee7102748e95ffba4337a447073f1ea15d2f9960a1",
+    "FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+    "FirstChange.lean": "b5bbc23cc6866b81061f685df513a31116455cdb8d216eaa786c34d5ab966715",
+    "FirstChangeAudit.lean": "a07ab06561efe9f8aeee6f6fdad4e7f568b52aab705d6f40bec3f61fa9013f36",
+    "FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
+    "FirstSupport.lean": "611a62c98b4d8a9260d27a9d222e81e4a1d477d434929b133517c18eedbb3ebf",
+    "IndependentSupport.lean": "2d4fb4d0ccadce0d1a691e5006a42e24f27862ad7b2c2fe443b240bc58080958",
+    "lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+    "lakefile.toml": "44da941a7ef8e051e5ff46ecd1ff007cea43cb98e1eba50204da862446bc3987",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "Lossless.lean": "9fe4a0c1e45717fef7a08f5d4160af6b3a258fd136169650569a6b083086dd0d",
+    "NegativeDistortion.lean": "ab0fde8ce87e5b21d305e3e36cceb68d9b34d055ac45935fa218567a128011c9",
+    "NegativeSupport.lean": "6c4929b19cb95cd1a45ec644f224f6c9a33dd987bfd1e1c5647ef6766ea931ac",
+    "PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
+    "PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
+    "PairUniqueness.lean": "529fc9d3e4adf1ac03aa6b119bec785a5e9dddc02105f394f8f74dabf3a0b86c",
+    "PositiveThreshold.lean": "fd9237e826ff2aea6062307deca5592e6d00a27d468d4bdb01f2926d41ddba03",
+    "ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
+    "Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43"
+  },
+  "lean_output": "'BlockHierarchy.first_change' depends on axioms: [propext, Classical.choice, Quot.sound]"
+}

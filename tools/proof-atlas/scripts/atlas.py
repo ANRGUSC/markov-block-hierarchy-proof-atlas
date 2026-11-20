@@ -138,9 +138,26 @@ def build(root):
         w = work.get(cid, {})
         m = notes.get(cid, {})
         status = w.get("status", "open")
-        if status not in {"open", "drafted", "blocked", "attempted"}:
+        if status not in {"open", "drafted", "blocked", "attempted", "closed"}:
             raise ValueError(f"{cid}: unsupported checkpoint status {status}")
         entry = {**c, **m, **w}
+        if status == "closed":
+            closure = w["closure"]
+            receipt = local(root, closure["audit"]).read_bytes()
+            audit = json.loads(receipt)
+            package = local(root, closure["package"])
+            relative = package.relative_to(root)
+            inputs = {(relative / name).as_posix(): digest for name, digest in audit["checked_inputs"].items()}
+            if (not inputs or inputs != w.get("checked_inputs") or not w.get("run_log") or
+                not w.get("scope") or not closure.get("correspondence") or
+                audit["expected"] != closure["expected"] or audit["declaration"] != closure["declaration"] or
+                set(audit["axioms"]) - {"propext", "Classical.choice", "Quot.sound"} or
+                any(part["status"] != "checked" for part in w.get("subproofs", []))):
+                raise ValueError(f"{cid}: closure requires matching audit evidence, correspondence and resolved obligations")
+            (output / "logs").mkdir(exist_ok=True)
+            name = hashlib.sha256(receipt).hexdigest() + ".json"
+            atomic(output / "logs" / name, receipt)
+            entry["audit_log"] = "logs/" + name
         changed = [path for path, digest in w.get("checked_inputs", {}).items()
                    if not local(root, path).is_file() or hashlib.sha256(local(root, path).read_bytes()).hexdigest() != digest]
         if changed:
@@ -148,6 +165,7 @@ def build(root):
             entry["scope"] = stale[cid] + ". The linked log is historical."
             entry["summary"] = m.get("summary", "The paper claim is awaiting a fresh Lean check.")
             status = "awaiting recheck"
+        entry["status"] = status
         entry.setdefault("reference", c["kind"].title())
         subproofs = []
         for part in w.get("subproofs", []):

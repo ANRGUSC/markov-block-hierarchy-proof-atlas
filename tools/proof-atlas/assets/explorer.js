@@ -87,6 +87,7 @@ function proofView(c,view) {
     }
     for(const source of c.sources){pane.append(el("h3",source.path),el("pre",source.text));}
     if(c.log) pane.append(link("Inspect Lean run log",c.log));
+    if(c.audit_log) pane.append(link("Inspect the declaration and axiom audit",c.audit_log));
   }
 }
 function render(){

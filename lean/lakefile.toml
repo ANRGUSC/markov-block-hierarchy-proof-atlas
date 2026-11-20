@@ -40,4 +40,22 @@ name = "PairChannel"
 name = "Lossless"
 
 [[lean_lib]]
+name = "FirstChangeStatement"
+
+[[lean_lib]]
+name = "ChannelEquality"
+
+[[lean_lib]]
+name = "PairUniqueness"
+
+[[lean_lib]]
+name = "ReducedPair"
+
+[[lean_lib]]
+name = "Variational"
+
+[[lean_lib]]
+name = "FirstChange"
+
+[[lean_lib]]
 name = "Audit"
