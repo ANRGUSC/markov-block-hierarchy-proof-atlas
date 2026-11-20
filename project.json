@@ -509,10 +509,10 @@
     },
     "thm:four": {
       "status": "attempted",
-      "updated": "2026-11-20T08:38:35+00:00",
+      "updated": "2026-11-20T08:44:30+00:00",
       "summary": "At length four, six complementary-word classes determine a parity allocation and the optimal rate and variance.",
-      "step": "Lean checked the water-filling inclusion tests, the inverse mass condition and optimality of the four-class allocation against every feasible competing allocation.",
-      "next": "Assemble the two parity groups including zero mass, verify the optimized parity derivative, and connect the resulting channels to all interior distortions.",
+      "step": "Checked the positive-mass allocation and zero-mass endpoint at fixed parity mass.",
+      "next": "Identify the resulting allocation with the six-class maximizer and establish the optimized parity derivative.",
       "scope": "Checked components of Theorem 4. The complete four-symbol result remains open.",
       "lean": "lean/BlockHierarchy/Four/Preliminaries.lean",
       "run_log": "evidence/four-incremental.txt",
@@ -530,7 +530,9 @@
         "lean/BlockHierarchy/Four/Optimality.lean": "1f3b7f578c4363d5b3f45413a8e111e253a960b3ad57fdf6bfee4d2cf7c46761",
         "lean/BlockHierarchy/Four/ParityOptimality.lean": "975da85a7a52419de9a9f474cd915760f24586786e69791ba39bf6e6761a1174",
         "lean/BlockHierarchy/Four/Preliminaries.lean": "2e39bde96498407f7c3881ee83dc26cbcaf445a9fda2783469bdf4043b95ba79",
+        "lean/BlockHierarchy/Four/WaterEndpoint.lean": "572002ad9435ef11ac7c7589f7e4b9ec5a41d05db56d6736fed5c74b478298b4",
         "lean/BlockHierarchy/Four/WaterFilling.lean": "49ac7c176da79080aec9c02c70493946e9b767e5c67aecae66a076453d24570e",
+        "lean/BlockHierarchy/Four/WaterSolution.lean": "38cafd15653f5731727159a53bcbf783aa77957196b81315e8273fe68062e2af",
         "lean/BlockHierarchy/LosslessRD.lean": "2d64c8c442ed3ae7d787a5f20f45a0a23a6b2908736f43b04f65f19577917fbc",
         "lean/BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
         "lean/BlockHierarchy/Three/ConstantColumns.lean": "0bcb32d1adee31594138cc4cf9b205d322c78f66a62726c2fdede4293a4f08b5",
@@ -652,6 +654,31 @@
           "title": "Prove the even group's four-class allocation beats every competing feasible group allocation",
           "declaration": "BlockHierarchy.Four.WaterFilling.four_class_allocation",
           "status": "checked"
+        },
+        {
+          "title": "Existence of a maximizing prefix",
+          "declaration": "BlockHierarchy.Four.WaterFilling.prefix_maximum",
+          "status": "checked"
+        },
+        {
+          "title": "Positivity of the prefix ratio",
+          "declaration": "BlockHierarchy.Four.WaterFilling.positive_ratio",
+          "status": "checked"
+        },
+        {
+          "title": "Marginal gain on active and inactive classes",
+          "declaration": "BlockHierarchy.Four.WaterFilling.clipped_gain",
+          "status": "checked"
+        },
+        {
+          "title": "Allocated class weights sum to the prescribed positive mass",
+          "declaration": "BlockHierarchy.Four.WaterFilling.clipped_total",
+          "status": "checked"
+        },
+        {
+          "title": "Zero-mass endpoint has zero class weights and first-prefix multiplier",
+          "declaration": "BlockHierarchy.Four.WaterFilling.empty_group",
+          "status": "checked"
         }
       ],
       "lean_sources": [
@@ -666,7 +693,46 @@
         "lean/BlockHierarchy/Four/Distortion.lean",
         "lean/BlockHierarchy/Four/Envelope.lean",
         "lean/BlockHierarchy/Four/FourWord.lean",
-        "lean/BlockHierarchy/Four/WaterFilling.lean"
+        "lean/BlockHierarchy/Four/WaterFilling.lean",
+        "lean/BlockHierarchy/Four/WaterSolution.lean",
+        "lean/BlockHierarchy/Four/WaterEndpoint.lean"
+      ]
+    },
+    "prop:rec": {
+      "status": "attempted",
+      "scope": "Checked scalar components of Proposition 5.",
+      "updated": "2026-11-20T08:43:59+00:00",
+      "summary": "The signed-prefix recurrence tests full support at finite block length.",
+      "step": "Lean checked monotonicity, the fixed-point equation and the two expressions for the limiting critical distortion.",
+      "next": "Prove that opposite spin maximizes the next absolute moment and connect the recurrence to finite-length feasibility.",
+      "lean": "lean/BlockHierarchy/Recurrence.lean",
+      "lean_sources": [
+        "lean/BlockHierarchy/Recurrence.lean"
+      ],
+      "run_log": "evidence/recurrence-incremental.txt",
+      "checked_inputs": {
+        "lean/BlockHierarchy/Recurrence.lean": "c2c0cf675e72fbecde65f963f32c803df906dfd9d1c6682c852826488610e276",
+        "lean/BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48",
+        "lean/BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
+        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+        "lean/BlockHierarchy/Three/Distortion.lean": "13c6bcfc7ebbe4e8c24f4021a8d70620fa453dc8c4374a3b3a879ed787325e87"
+      },
+      "subproofs": [
+        {
+          "title": "Strict increase of the signed-prefix update",
+          "declaration": "BlockHierarchy.Recurrence.recurrence_strict",
+          "status": "checked"
+        },
+        {
+          "title": "The quadratic fixed-point equation",
+          "declaration": "BlockHierarchy.Recurrence.fixed_point_equation",
+          "status": "checked"
+        },
+        {
+          "title": "Equality of the two critical-distortion expressions",
+          "declaration": "BlockHierarchy.Recurrence.critical_distortion_identity",
+          "status": "checked"
+        }
       ]
     }
   },

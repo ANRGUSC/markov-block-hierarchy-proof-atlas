@@ -139,3 +139,51 @@ Hint: The binding can be removed (if unused) or named `_` (if used implicitly). 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
 Build completed successfully (1947 jobs).
 Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Four.WaterSolution
+⚠ [1947/1948] Replayed BlockHierarchy.Four.WaterFilling
+warning: BlockHierarchy/Four/WaterFilling.lean:41:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: BlockHierarchy/Four/WaterFilling.lean:42:40: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [1948/1948] Built BlockHierarchy.Four.WaterSolution (29s)
+Build completed successfully (1948 jobs).
+Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Four.WaterEndpoint
+⚠ [1947/1949] Replayed BlockHierarchy.Four.WaterFilling
+warning: BlockHierarchy/Four/WaterFilling.lean:41:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: BlockHierarchy/Four/WaterFilling.lean:42:40: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [1949/1949] Built BlockHierarchy.Four.WaterEndpoint (17s)
+warning: BlockHierarchy/Four/WaterEndpoint.lean:7:5: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully (1949 jobs).
+Lake build completed.
