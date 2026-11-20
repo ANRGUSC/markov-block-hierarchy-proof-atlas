@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "claims": {
+    "prop:phase": {
+      "reference": "Proposition 1",
+      "page": 8,
+      "summary": "For a stationary binary chain with positive transition probabilities, determine the first zero of the two-symbol inverse prior. Retain the separate positive-, negative- and zero-persistence cases and the equal-bias tie in the statement.",
+      "lamport": "companion/prop-phase.md",
+      "origin": "From the paper's structured-proof companion (WWresearch Lamport Proof v0.2.0). The companion maps its steps to audited manuscript revision 2ec774c; the Paper view opens the pilot's v4 PDF.",
+      "source_url": "https://github.com/ANRGUSC/markov-block-hierarchy/blob/a4c98199e48a2eaedaa64c91f1c712023206b0fc/proofs/01-first-support-change.md"
+    },
+    "thm:two": {
+      "reference": "Theorem 2",
+      "page": 9,
+      "summary": "Assume $\\rho>0$, arbitrary stationary bias, $S=A+B$. Compute the rate, variance and active constant words in all three distortion regimes, with the zero supporting slope at and above $D_0$. The linked statement specifies every branch.",
+      "lamport": "companion/thm-two.md",
+      "origin": "From the paper's structured-proof companion (WWresearch Lamport Proof v0.2.0). The companion maps its steps to audited manuscript revision 2ec774c; the Paper view opens the pilot's v4 PDF.",
+      "source_url": "https://github.com/ANRGUSC/markov-block-hierarchy/blob/a4c98199e48a2eaedaa64c91f1c712023206b0fc/proofs/02-persistent-pair.md",
+      "sketch": "Split the distortion range at the first loss of support. On the two-word branch, the remaining distortion is allocated between the two constant inputs; the resulting normalizers give the rate and variance."
+    },
+    "thm:three": {
+      "reference": "Theorem 3",
+      "page": 11,
+      "summary": "Take a symmetric chain with $0<p<1/2$. The three branches, thresholds $D_{\\rm FS}(3),D_2$, normalizers, two variances and scalar equations are those of the linked theorem. The nonzero-rate range ends at $D<1/2$.",
+      "lamport": "companion/thm-three.md",
+      "origin": "From the paper's structured-proof companion (WWresearch Lamport Proof v0.2.0). The companion maps its steps to audited manuscript revision 2ec774c; the Paper view opens the pilot's v4 PDF.",
+      "source_url": "https://github.com/ANRGUSC/markov-block-hierarchy/blob/a4c98199e48a2eaedaa64c91f1c712023206b0fc/proofs/03-three-symbols.md",
+      "sketch": "Group the eight input words by symmetry, solve for the active reproduction weights on each branch, and check the column inequalities before evaluating the moments."
+    },
+    "thm:four": {
+      "reference": "Theorem 4",
+      "page": 12,
+      "summary": "For a symmetric persistent chain and $0<D<1/2$, determine the optimum over all four-bit outputs, the rate and the variance from the two scalar searches. Class order, exact endpoint rules and equations for $G$ and distortion are in the linked statement.",
+      "lamport": "companion/thm-four.md",
+      "origin": "From the paper's structured-proof companion (WWresearch Lamport Proof v0.2.0). The companion maps its steps to audited manuscript revision 2ec774c; the Paper view opens the pilot's v4 PDF.",
+      "source_url": "https://github.com/ANRGUSC/markov-block-hierarchy/blob/a4c98199e48a2eaedaa64c91f1c712023206b0fc/proofs/04-four-symbols.md",
+      "sketch": "Reduce the sixteen words to symmetry classes. At each support change, determine the optimizing probabilities and verify the inequalities for the unused words."
+    },
+    "prop:rec": {
+      "reference": "Proposition 5",
+      "page": 15,
+      "summary": "Fix $0<p,D<1/2$ and $K\\ge1$. Determine feasibility of the inverse crossover law, including zeros at the final step, and the decreasing limit of the finite-block thresholds.",
+      "lamport": "companion/prop-rec.md",
+      "origin": "From the paper's structured-proof companion (WWresearch Lamport Proof v0.2.0). The companion maps its steps to audited manuscript revision 2ec774c; the Paper view opens the pilot's v4 PDF.",
+      "source_url": "https://github.com/ANRGUSC/markov-block-hierarchy/blob/a4c98199e48a2eaedaa64c91f1c712023206b0fc/proofs/05-prefix-recursion.md",
+      "sketch": "Track the largest signed mean over positive-mass prefixes. The alternating prefix reaches the worst case; the fixed points of its scalar recursion determine the limiting threshold."
+    },
+    "thm:varentropy": {
+      "reference": "Theorem 6",
+      "page": 16,
+      "summary": "Take any positive stationary two-state chain. At each length choose a distortion on the branch where the entropy equality and its stated score apply. The target is the exact variance, its per-symbol limit and the first correction for $0<|\\rho|<1$.",
+      "lamport": "companion/thm-varentropy.md",
+      "origin": "From the paper's structured-proof companion (WWresearch Lamport Proof v0.2.0). The companion maps its steps to audited manuscript revision 2ec774c; the Paper view opens the pilot's v4 PDF.",
+      "source_url": "https://github.com/ANRGUSC/markov-block-hierarchy/blob/a4c98199e48a2eaedaa64c91f1c712023206b0fc/proofs/06-varentropy.md",
+      "sketch": "Write block self-information as an initial score plus transition scores. The covariances form two geometric sequences, whose sums give the finite-length variance and its limit."
+    },
+    "lem:cut": {
+      "reference": "Lemma 7",
+      "page": 19,
+      "summary": "For a symmetric stationary chain with $0<p<1/2$, adjacent lengths $i,j\\ge1$ and a common $\\tau\\ge0$, prove independence of the two short scores under the true joint law and an uncentered squared-error bound $\\rho$ for their sum versus the joint score.",
+      "lamport": "companion/lem-cut.md",
+      "origin": "From the paper's structured-proof companion (WWresearch Lamport Proof v0.2.0). The companion maps its steps to audited manuscript revision 2ec774c; the Paper view opens the pilot's v4 PDF.",
+      "source_url": "https://github.com/ANRGUSC/markov-block-hierarchy/blob/a4c98199e48a2eaedaa64c91f1c712023206b0fc/proofs/07-one-cut.md",
+      "sketch": "Complement symmetry makes each shorter score depend on disjoint independent flips. The column conditions bound the squared error introduced by cutting the path."
+    },
+    "thm:common": {
+      "reference": "Theorem 8",
+      "page": 19,
+      "summary": "For $0<p<1/2$ prove uniform convergence of $\\omega_k(\\tau)$ to a continuous limit with error $(1+\\sqrt2)\\sqrt{\\rho/k}$ for $\\tau\\ge0$, zero at the origin and positive elsewhere. At differentiable $0<D<1/2$ prove the positive fixed-distortion limit in bits squared per symbol.",
+      "lamport": "companion/thm-common.md",
+      "origin": "From the paper's structured-proof companion (WWresearch Lamport Proof v0.2.0). The companion maps its steps to audited manuscript revision 2ec774c; the Paper view opens the pilot's v4 PDF.",
+      "source_url": "https://github.com/ANRGUSC/markov-block-hierarchy/blob/a4c98199e48a2eaedaa64c91f1c712023206b0fc/proofs/08-variance-limit.md",
+      "sketch": "Apply the one-cut bound along dyadic lengths to obtain a common-slope limit. Control the optimizing slopes at fixed distortion and use the positivity estimate to obtain a positive variance limit."
+    },
+    "cor:positive": {
+      "reference": "Corollary 9",
+      "page": 19,
+      "summary": "For the same persistent symmetric source and every $\\tau>0$ prove $\\omega_\\infty(\\tau)\\ge \\rho\\sqrt{p(1-p)}\\,L(\\tau)^4/2$, with $L(\\tau)=2\\ln\\cosh(\\tau/2)/\\tau$.",
+      "lamport": "companion/cor-positive.md",
+      "origin": "From the paper's structured-proof companion (WWresearch Lamport Proof v0.2.0). The companion maps its steps to audited manuscript revision 2ec774c; the Paper view opens the pilot's v4 PDF.",
+      "source_url": "https://github.com/ANRGUSC/markov-block-hierarchy/blob/a4c98199e48a2eaedaa64c91f1c712023206b0fc/proofs/09-quantitative-positivity.md",
+      "sketch": "Bound the gain from joining blocks at positive slope, then translate this estimate to a positive lower bound on the limiting standard deviation."
+    },
+    "prop:converse": {
+      "reference": "Proposition 10",
+      "page": 20,
+      "summary": "For $0<p<1/2$, $0<D\\le D_c$ and fixed $0<\\epsilon<1$, show $\\liminf_n\\sqrt n(R^*(n,D,\\epsilon)-R(D))\\ge\\sqrt{\\nu(p)}Q^{-1}(\\epsilon)$ under the uninterrupted stationary source law.",
+      "lamport": "companion/prop-converse.md",
+      "origin": "From the paper's structured-proof companion (WWresearch Lamport Proof v0.2.0). The companion maps its steps to audited manuscript revision 2ec774c; the Paper view opens the pilot's v4 PDF.",
+      "source_url": "https://github.com/ANRGUSC/markov-block-hierarchy/blob/a4c98199e48a2eaedaa64c91f1c712023206b0fc/proofs/10-coding-converse.md",
+      "sketch": "Use the low-distortion full-support branch and the path's binomial flip count. A normal approximation to the path score and the coding converse give the second-order lower bound."
+    },
+    "conj:hier": {
+      "reference": "Conjecture 1",
+      "page": 18,
+      "summary": "The paper asks whether the limiting block variance gives the second-order coding rate for one uninterrupted Markov path. Matching achievability remains open."
+    }
+  },
+  "dependencies": [
+    {
+      "claim": "thm:two",
+      "prerequisite": "prop:phase",
+      "reason": "The persistent two-symbol formula changes branch at the first support threshold."
+    },
+    {
+      "claim": "thm:common",
+      "prerequisite": "lem:cut",
+      "reason": "Theorem 8, common-slope proof, uses the one-cut estimate."
+    },
+    {
+      "claim": "thm:common",
+      "prerequisite": "cor:positive",
+      "reason": "Theorem 8, fixed-distortion conclusion, uses the positivity bound. The companion distinguishes this step from the common-slope limit."
+    },
+    {
+      "claim": "prop:converse",
+      "prerequisite": "prop:rec",
+      "reason": "The low-distortion converse uses the full-support interval established by Proposition 5."
+    }
+  ],
+  "macros": {
+    "\\Vhier": "V_{\\mathrm{hier}}",
+    "\\E": "\\mathbb E",
+    "\\Prb": "\\mathbb P",
+    "\\Var": "\\operatorname{Var}",
+    "\\Cov": "\\operatorname{Cov}",
+    "\\sd": "\\operatorname{sd}",
+    "\\ind": "\\mathbf 1",
+    "\\jj": "\\jmath",
+    "\\pos": "\\left[#1\\right]_{+}",
+    "\\Vfun": "\\mathcal V",
+    "\\hx": "h_2"
+  }
+}

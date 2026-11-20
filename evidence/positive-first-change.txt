@@ -1,0 +1,14 @@
+Lean build transcript. The local package path is abbreviated as <LEAN_PACKAGE>.
+Original transcript SHA-256: 703511854e491032cbb48441cb00e8ff08b0ed3f8464d5261dfed1bb34b31139
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ <LEAN_PACKAGE>\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ <LEAN_PACKAGE>\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build
+✔ [1504/1506] Built PositiveThreshold (18s)
+ℹ [1505/1506] Built Audit (16s)
+info: Audit.lean:9:0: 'BlockHierarchy.transition_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:10:0: 'BlockHierarchy.persistent_constants' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:12:0: 'BlockHierarchy.positive_first_change' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1506 jobs).
+Lake build completed.

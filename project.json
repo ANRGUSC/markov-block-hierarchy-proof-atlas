@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "skill_version": "0.4.0",
+  "title": "A Block Hierarchy for Rate-Distortion and Dispersion of Binary Markov Sources",
+  "edition": "arXiv:2603.07435v4 · local manuscript and PDF",
+  "publication": "https://arxiv.org/abs/2603.07435v4",
+  "repository": "https://github.com/ANRGUSC/markov-block-hierarchy",
+  "revision": "a4c98199e48a2eaedaa64c91f1c712023206b0fc",
+  "tex": [
+    {
+      "path": "paper/Block_Hierarchy_General_K.tex",
+      "sha256": "517270e191e2baff2d7d5484a9d3053b9b5c3e2eb3f2e2991d85a498a564250d"
+    }
+  ],
+  "pdf": {
+    "path": "paper/manuscript.pdf",
+    "sha256": "a1ca94d8627d0c490307437fd896084d65dec4c1c5a0c5d73392c22b90c6c4fc"
+  },
+  "environments": [
+    "theorem",
+    "proposition",
+    "lemma",
+    "corollary",
+    "conjecture"
+  ],
+  "focus": "prop:phase",
+  "work": {
+    "prop:phase": {
+      "status": "open",
+      "updated": "2026-11-20T05:45:02+00:00",
+      "page": 8,
+      "summary": "Proposition 1 identifies which pair of symbols first loses reproduction mass as distortion rises. For positive persistence the two transition words, 01 and 10, disappear together. Lean checks the stated threshold for the paper's explicit inverse-prior formulas.",
+      "sketch": "The two transition words have the same candidate mass. Substitute u = D/(1−D) in their common numerator and use the fact that the four input probabilities sum to one. Multiplication by the positive factor (1−D)² gives C−D(1−D), so both numerators vanish when D(1−D) = C. For the constant word 00, multiplying its numerator by B gives the square (Bu-C)^2 plus AB-C^2. The latter is strictly positive by the pair-mass identity. Exchanging A and B covers 11. The smaller quadratic root lies strictly between zero and one half. Factoring the scaled transition mass shows its sign agrees with the threshold minus the distortion on that interval.",
+      "step": "Lean checked the positive-persistence threshold formula for the four explicit inverse-prior masses. Both constant masses stay positive. The two transition masses are positive below the stated threshold and vanish exactly at it. Proposition 1 remains open in its other cases. The threshold lies strictly between zero and one half.",
+      "next": "Formalize the negative-persistence case, including the equal-bias tie, and then the independent-source case.",
+      "run_log": "evidence/positive-first-change.txt",
+      "scope": "The audited positive branch assumes positive stationary masses summing to one and persistence strictly between zero and one. Starting from the paper's pair-mass formulas, Lean derives the determinant identity and proves the exact signs and first zero on 0 <= D < 1/2. The channel-inversion and optimality correspondence are still manuscript inputs. The negative and zero persistence cases remain open. The audited contract also places the threshold strictly between zero and one half.",
+      "structured": "Source: local manuscript, Proposition 1, equation labeled eq:pairprior and the following sentence. The numbered steps below expand its algebra; they are a pilot supplement.\n⟨1⟩1. Set u = D/(1−D) and let T = C(1+u²)−(A+B)u.\n⟨1⟩2. Multiply T by (1−D)².\n  ⟨2⟩1. Use A+B = 1−2C from pair-mass normalization.\n  ⟨2⟩2. Expand and collect terms to obtain C−D(1−D).\n⟨1⟩3. Since D < 1/2, the factor in step 2 is nonzero. Thus T = 0 exactly when D(1−D) = C.\n⟨1⟩4. For 00, B times its numerator is (Bu-C)^2 + AB-C^2. The pair-mass identity gives AB-C^2 > 0 under positive persistence. Since B > 0, the numerator is positive. Exchange A and B to obtain the same conclusion for 11.\n⟨1⟩5. The smaller root r lies in (0, 1/2) and r(1-r)=C. The sign of the transition mass equals the sign of (r-D)(1-r-D). For D<1/2 the second factor is strictly positive, so the smaller root is the first zero.",
+      "lean": "lean/FirstSupport.lean",
+      "lean_sources": [
+        "lean/PairPrior.lean",
+        "lean/PositiveThreshold.lean",
+        "lean/Audit.lean"
+      ],
+      "checked_inputs": {
+        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lean/lakefile.toml": "b4b77b038f21829e816038cabe87bef907e89731a4f5352742f036c80342aec3",
+        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+        "lean/Audit.lean": "d3294ba19dcb624e93fb338867bcea8e1773aab82016ffcad6e6f931287a745c",
+        "lean/Contracts.lean": "5e139a2080d4e5afd68df6ee7102748e95ffba4337a447073f1ea15d2f9960a1",
+        "lean/FirstSupport.lean": "611a62c98b4d8a9260d27a9d222e81e4a1d477d434929b133517c18eedbb3ebf",
+        "lean/PairPrior.lean": "3f52f3916729009dcff52ff8c8d3ac562f686947e8a329a6092630b7817ec65d",
+        "lean/PositiveThreshold.lean": "fd9237e826ff2aea6062307deca5592e6d00a27d468d4bdb01f2926d41ddba03"
+      }
+    }
+  },
+  "reader": "reader.json",
+  "hosting": {
+    "repository": "https://github.com/ANRGUSC/markov-block-hierarchy-proof-atlas",
+    "visibility": "public",
+    "site": "https://anrgusc.github.io/markov-block-hierarchy-proof-atlas/"
+  }
+}

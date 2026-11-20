@@ -1,0 +1,9 @@
+# The project records the digest of the original submission bytes.
+paper/*.tex -text
+paper/*.pdf binary
+# Preserve the exact bytes covered by the Lean audit.
+lean/*.lean -text
+lean/lakefile.toml -text
+lean/lake-manifest.json -text
+lean/lean-toolchain -text
+evidence/*.txt -text
