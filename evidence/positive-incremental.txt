@@ -1,0 +1,59 @@
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.VarianceLimit.GainLimit BlockHierarchy.VarianceLimit.Gibbs
+ℹ [1873/1898] Replayed BlockHierarchy.VarianceLimit.Dyadic
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:163:0: 'BlockHierarchy.VarianceLimit.equal_pieces' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:164:0: 'BlockHierarchy.VarianceLimit.dyadic_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:165:0: 'BlockHierarchy.VarianceLimit.common_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1876/1899] Replayed BlockHierarchy.VarianceLimit.GainLimit
+info: BlockHierarchy/VarianceLimit/GainLimit.lean:164:0: 'BlockHierarchy.VarianceLimit.square_gain_le_diagonals' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/GainLimit.lean:165:0: 'BlockHierarchy.VarianceLimit.gain_positivity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2166/2167] Replayed BlockHierarchy.Cut.Optimality
+info: BlockHierarchy/Cut/Optimality.lean:125:0: 'BlockHierarchy.Cut.optimal_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Optimality.lean:126:0: 'BlockHierarchy.Cut.optimal_score_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2167/2167] Replayed BlockHierarchy.VarianceLimit.Gibbs
+info: BlockHierarchy/VarianceLimit/Gibbs.lean:104:0: 'BlockHierarchy.VarianceLimit.gibbs_marginal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Gibbs.lean:105:0: 'BlockHierarchy.VarianceLimit.gibbs_attains' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Gibbs.lean:106:0: 'BlockHierarchy.VarianceLimit.gibbs_variational' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2167 jobs).
+Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Converse.Statement BlockHierarchy.VarianceLimit.PositiveStatement
+⚠ [2024/2081] Replayed BlockHierarchy.Three.Thresholds
+warning: BlockHierarchy/Three/Thresholds.lean:30:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:37:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:45:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2037/2093] Replayed BlockHierarchy.Recurrence
+warning: BlockHierarchy/Recurrence.lean:31:26: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Recurrence.lean:27:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Recurrence.lean:31:26: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2038/2093] Replayed BlockHierarchy.RecurrenceExtrema
+warning: BlockHierarchy/RecurrenceExtrema.lean:21:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/RecurrenceExtrema.lean:25:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: BlockHierarchy/RecurrenceExtrema.lean:87:0: 'BlockHierarchy.Recurrence.signed_child_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/RecurrenceExtrema.lean:88:0: 'BlockHierarchy.Recurrence.next_layer_peak' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3120/3121] Built BlockHierarchy.VarianceLimit.PositiveStatement (103s)
+✔ [3121/3121] Built BlockHierarchy.Converse.Statement (121s)
+Build completed successfully (3121 jobs).
+Lake build completed.

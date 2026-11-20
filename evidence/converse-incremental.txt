@@ -17,3 +17,80 @@ info: BlockHierarchy/Converse/Tilt.lean:27:8: Try this:
 info: BlockHierarchy/Converse/Tilt.lean:39:0: 'BlockHierarchy.Converse.optimal_code_converse' depends on axioms: [propext, Classical.choice, Quot.sound]
 Build completed successfully (2164 jobs).
 Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Converse.Paths
+ℹ [2112/2166] Replayed BlockHierarchy.Varentropy.Covariance
+info: BlockHierarchy/Varentropy/Covariance.lean:88:0: 'BlockHierarchy.Varentropy.iterate_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Covariance.lean:89:0: 'BlockHierarchy.Varentropy.last_edge_conditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2164/2166] Replayed BlockHierarchy.Cut.Optimality
+info: BlockHierarchy/Cut/Optimality.lean:125:0: 'BlockHierarchy.Cut.optimal_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Optimality.lean:126:0: 'BlockHierarchy.Cut.optimal_score_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2165/2166] Replayed BlockHierarchy.Cut.Flips
+info: BlockHierarchy/Cut/Flips.lean:186:0: 'BlockHierarchy.Cut.optimal_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:187:0: 'BlockHierarchy.Cut.concat_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:188:0: 'BlockHierarchy.Cut.concat_distance' depends on axioms: [propext, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:189:0: 'BlockHierarchy.Cut.independent_of_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:190:0: 'BlockHierarchy.Cut.adjacent_le_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2166/2166] Built BlockHierarchy.Converse.Paths (48s)
+warning: BlockHierarchy/Converse/Paths.lean:74:19: This simp argument is unused:
+  Nat.cast_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [iidFlips, flipCount, Bool.false_eq_true, ite_false, ite_true, Nat.cast_add, Nat.cast_zero,
+    Nat.cast_succ, Real.log_mul hn.ne' (iid_pos hp h1 n w).ne', Real.log_mul hp.ne' (iid_pos hp h1 n w).ne',
+    Real.log_div hn.ne' hp.ne']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: BlockHierarchy/Converse/Paths.lean:85:0: 'BlockHierarchy.Converse.path_information' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2166 jobs).
+Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Converse.Quantile
+ℹ [1956/1956] Built BlockHierarchy.Converse.Quantile (54s)
+info: BlockHierarchy/Converse/Quantile.lean:28:0: 'BlockHierarchy.Converse.quantile_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1956 jobs).
+Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Converse.Statement BlockHierarchy.VarianceLimit.PositiveStatement
+⚠ [2024/2081] Replayed BlockHierarchy.Three.Thresholds
+warning: BlockHierarchy/Three/Thresholds.lean:30:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:37:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:45:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2037/2093] Replayed BlockHierarchy.Recurrence
+warning: BlockHierarchy/Recurrence.lean:31:26: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Recurrence.lean:27:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Recurrence.lean:31:26: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2038/2093] Replayed BlockHierarchy.RecurrenceExtrema
+warning: BlockHierarchy/RecurrenceExtrema.lean:21:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/RecurrenceExtrema.lean:25:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: BlockHierarchy/RecurrenceExtrema.lean:87:0: 'BlockHierarchy.Recurrence.signed_child_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/RecurrenceExtrema.lean:88:0: 'BlockHierarchy.Recurrence.next_layer_peak' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3120/3121] Built BlockHierarchy.VarianceLimit.PositiveStatement (103s)
+✔ [3121/3121] Built BlockHierarchy.Converse.Statement (121s)
+Build completed successfully (3121 jobs).
+Lake build completed.
