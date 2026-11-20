@@ -23,7 +23,7 @@
     "corollary",
     "conjecture"
   ],
-  "focus": "prop:converse",
+  "focus": null,
   "work": {
     "prop:phase": {
       "status": "closed",
@@ -307,12 +307,12 @@
     },
     "thm:three": {
       "status": "closed",
-      "updated": "2026-11-20T08:10:49+00:00",
+      "updated": "2026-11-20T11:12:54+00:00",
       "page": 11,
       "summary": "Take a symmetric chain with $0<p<1/2$. The three branches, thresholds $D_{\\rm FS}(3),D_2$, normalizers, two variances and scalar equations are those of the linked theorem. The nonzero-rate range ends at $D<1/2$.",
-      "step": "The independent Lean audit closed Theorem 3, including the distortion endpoints, all three support sizes, the optimizing marginal and both moments on every interval.",
+      "step": "Audited the full numbered theorem together with the displayed pairwise variance formula.",
       "next": "Proceed with Theorem 4 and its six four-symbol classes.",
-      "scope": "For every symmetric chain with 0 < p < 1/2 the contract proves both ordered thresholds, the 8/6/2 supports including both transitions and zero distortion, uniqueness among all minimizing reproduction marginals, both parameter roots with their cubic forms and strict increase, and the stated rate and tilted variance in bits. The Gibbs channel in every branch attains the budget and is compared with every feasible joint law.",
+      "scope": "For every symmetric chain with 0 < p < 1/2 the contract proves both ordered thresholds, the 8/6/2 supports including both transitions and zero distortion, uniqueness among all minimizing reproduction marginals, both parameter roots with their cubic forms and strict increase, and the stated rate and tilted variance in bits. The Gibbs channel in every branch attains the budget and is compared with every feasible joint law. The actual tilted word variance equals the displayed weighted sum of squared base-two log ratios over unordered pairs of source classes.",
       "subproofs": [
         {
           "title": "Derive the complement-pair normalizers from Hamming distance and the Markov probabilities",
@@ -413,10 +413,16 @@
           "title": "Check the complete three-symbol paper statement and unique optimizing marginals",
           "status": "checked",
           "declaration": "BlockHierarchy.Three.three_symbol"
+        },
+        {
+          "title": "The word variance equals the manuscript sum over unordered class pairs",
+          "status": "checked",
+          "declaration": "BlockHierarchy.PairVariance.three_display"
         }
       ],
-      "lean": "lean/BlockHierarchy/Three/PaperStatement.lean",
+      "lean": "lean/BlockHierarchy/PairVariance/ThreeStatement.lean",
       "lean_sources": [
+        "lean/BlockHierarchy/PairVariance/ThreeStatement.lean",
         "lean/BlockHierarchy/Three/Paper.lean",
         "lean/BlockHierarchy/Three/FullPoint.lean",
         "lean/BlockHierarchy/Three/FullBranch.lean",
@@ -435,36 +441,26 @@
         "lean/ReducedPair/Moments.lean",
         "lean/BlockHierarchy/Three/MiddleWeights.lean",
         "lean/BlockHierarchy/Three/MiddleColumns.lean",
-        "lean/BlockHierarchy/Three/MiddleBranch.lean"
+        "lean/BlockHierarchy/Three/MiddleBranch.lean",
+        "lean/BlockHierarchy/PairVariance/Statement.lean",
+        "lean/BlockHierarchy/PairVariance/Generic.lean",
+        "lean/BlockHierarchy/PairVariance/Paper.lean",
+        "lean/BlockHierarchy/PairVariance/ThreeRelease.lean"
       ],
-      "run_log": "evidence/three-symbol-complete.txt",
+      "run_log": "evidence/three-symbol-full-complete.txt",
       "checked_inputs": {
-        "lean/Audit.lean": "aabfb59a2755ebe572814fee1c52828eb743503918daf599975cd0608a8f67ae",
-        "lean/BlockHierarchy.lean": "fa91adff2940afbbaea2efd02ebc8dee96926c66c23969412bb0f2e0ecbbe72f",
-        "lean/ChannelEquality.lean": "513c020d0b6e870f77c404aa76eea36fd0adf8b7d6e5d0970e9aac4a8bf40727",
-        "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
-        "lean/Contracts.lean": "5e139a2080d4e5afd68df6ee7102748e95ffba4337a447073f1ea15d2f9960a1",
-        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
-        "lean/FirstChange.lean": "b5bbc23cc6866b81061f685df513a31116455cdb8d216eaa786c34d5ab966715",
-        "lean/FirstChangeAudit.lean": "a07ab06561efe9f8aeee6f6fdad4e7f568b52aab705d6f40bec3f61fa9013f36",
-        "lean/FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
-        "lean/FirstSupport.lean": "611a62c98b4d8a9260d27a9d222e81e4a1d477d434929b133517c18eedbb3ebf",
-        "lean/IndependentSupport.lean": "2d4fb4d0ccadce0d1a691e5006a42e24f27862ad7b2c2fe443b240bc58080958",
-        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
-        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
-        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
-        "lean/Lossless.lean": "9fe4a0c1e45717fef7a08f5d4160af6b3a258fd136169650569a6b083086dd0d",
-        "lean/NegativeDistortion.lean": "ab0fde8ce87e5b21d305e3e36cceb68d9b34d055ac45935fa218567a128011c9",
-        "lean/NegativeSupport.lean": "6c4929b19cb95cd1a45ec644f224f6c9a33dd987bfd1e1c5647ef6766ea931ac",
-        "lean/PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
-        "lean/PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
-        "lean/PairUniqueness.lean": "529fc9d3e4adf1ac03aa6b119bec785a5e9dddc02105f394f8f74dabf3a0b86c",
-        "lean/PositiveThreshold.lean": "fd9237e826ff2aea6062307deca5592e6d00a27d468d4bdb01f2926d41ddba03",
-        "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
-        "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
         "lean/BlockHierarchy/FiniteRD.lean": "3505cb88bf62172df5ec7477ef03b7d1a009d006776619a1e568473785b39cc3",
-        "lean/BlockHierarchy/LosslessRD.lean": "2d64c8c442ed3ae7d787a5f20f45a0a23a6b2908736f43b04f65f19577917fbc",
+        "lean/BlockHierarchy/Four/AllocationIdentities.lean": "762606623c0a6de007759fb5a6c4c8aaf6d23441a9e034e01366b1ce3f46ebf2",
+        "lean/BlockHierarchy/Four/Channel.lean": "4d89273477827b55ff69dc453e367a0a2146d2d38629c78dfe7cb14eea45391b",
+        "lean/BlockHierarchy/Four/Classes.lean": "51726db749fe14afd8bd13b6b6e4eb3c6755452db33cdb25918662c0a0991faa",
+        "lean/BlockHierarchy/Four/Maximizer.lean": "6ea6b77f87d6e0b24fc1d7bbed2e86900b536b26ec44248fbce0668e851566d0",
         "lean/BlockHierarchy/Four/Preliminaries.lean": "2e39bde96498407f7c3881ee83dc26cbcaf445a9fda2783469bdf4043b95ba79",
+        "lean/BlockHierarchy/LosslessRD.lean": "2d64c8c442ed3ae7d787a5f20f45a0a23a6b2908736f43b04f65f19577917fbc",
+        "lean/BlockHierarchy/PairVariance/Generic.lean": "5dfd4f9cb7944f2a816d19e6fce9b9d340ec7c00572675a6051af57336b9d796",
+        "lean/BlockHierarchy/PairVariance/Paper.lean": "fdc8d7d2fd17a8f6db485743571c869ec07cbaab4a267a5649fcf74fd9f43c33",
+        "lean/BlockHierarchy/PairVariance/Statement.lean": "e32937db6ce5d14ecea296ffa40cf4f4d63584806c4784027b734bede3c7e831",
+        "lean/BlockHierarchy/PairVariance/ThreeRelease.lean": "907576c3942dc775e7dd80a7fbd6f187e573f9f6d9f340a306498582192d3923",
+        "lean/BlockHierarchy/PairVariance/ThreeStatement.lean": "6ae99d148e2997c2e8364eb908d869a0380784b2e4381f5bda8d19227f7242d5",
         "lean/BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
         "lean/BlockHierarchy/Three/ConstantBranch.lean": "da332960ecefccfd93b24cfca697188a6bcb32469a9f0445620e69d9e63b6524",
         "lean/BlockHierarchy/Three/ConstantColumns.lean": "0bcb32d1adee31594138cc4cf9b205d322c78f66a62726c2fdede4293a4f08b5",
@@ -480,42 +476,38 @@
         "lean/BlockHierarchy/Three/OperatingPoint.lean": "c63208236151041bba6016b56b37d3c7615d986620e131597063e692a4638fc7",
         "lean/BlockHierarchy/Three/Paper.lean": "f1963b9469834e62b26304c651a3c9c4997fd5e4c4d001dd2f2317dfbe4119c1",
         "lean/BlockHierarchy/Three/PaperStatement.lean": "f21ba599ad384129d2be80229ef4f08e98bb3613e6310674e2eab4ff7421834d",
-        "lean/BlockHierarchy/Three/Release.lean": "e327425e782a6bd54092f1f73e8a544a06a36bbafb2d4e48976c88ad95fadbdf",
         "lean/BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48",
         "lean/BlockHierarchy/Three/Unique.lean": "9419ea90608b78ad75184d1a8799476987ef32e777109b3c8b7d6e4938907380",
-        "lean/ReducedPair/Branch.lean": "df863ea1f25b4d5911845d5bea930d80283502bf0106d0fad24851fe052c69e8",
+        "lean/ChannelEquality.lean": "513c020d0b6e870f77c404aa76eea36fd0adf8b7d6e5d0970e9aac4a8bf40727",
+        "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
+        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+        "lean/PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
+        "lean/PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
+        "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
         "lean/ReducedPair/ColumnEquality.lean": "8d2e91573bfeaac0a3027320248cbfb93f0c3a7a70520403fcaa83096347051b",
-        "lean/ReducedPair/Full.lean": "1ccf99fbe62737a460bd692eb26772b7371e60e5d7c3b1965f634f985b0c745d",
-        "lean/ReducedPair/GibbsValue.lean": "f4a1bc66fdd1fce664606f60fe6b400ae7c4d19e428c1566d342c700bfe39c7c",
-        "lean/ReducedPair/LosslessValue.lean": "80b41dd175d3dea27fa4b04e03643d57e0a1f8dd48ad54224d6ca06d64ac9741",
-        "lean/ReducedPair/Middle.lean": "098b05d9d23ab82e562b6f9a1bc2fb92d490628d5ff981a862ea78c766161525",
         "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48",
-        "lean/ReducedPair/Optimal.lean": "aa732d3c704feeb422fb93dacdad393b767d96d34d8fb369ee90efc9b6260fe6",
-        "lean/ReducedPair/Paper.lean": "388b35d603dc582053d3c6d0b897082de3ec8f994297163ed9e3111c1c893b42",
-        "lean/ReducedPair/PaperStatement.lean": "a7d11ea722e46bbfc5c55343500173ce14ddfcf744e3b314edb86d2f5bd5b080",
-        "lean/ReducedPair/RateStatement.lean": "ad1f701fda964425d36e9415dee024e4b83f292c6d271e86b589f2a92adab482",
-        "lean/ReducedPair/Release.lean": "3f917e2650e42af4cf9b8157739eee31358432ce2362d90864bba3a889ce8d1d",
-        "lean/ReducedPair/Unique.lean": "3f3c5f0e9c091e33ab47d53460fa934a275d5fad5abab45358e3f85114e7088e",
-        "lean/ReducedPair/ZeroInformation.lean": "4ff8871687577984e99a4e96fcf531cb470bb791bae4bcfabf3c2c5b1fd7f2f8",
-        "lean/ReducedPair/ZeroRate.lean": "9a760d3e4576cc87d985ffc62f6fda11abd94af0ac901975921187fcdf630999"
+        "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
+        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
       },
       "closure": {
         "package": "lean",
-        "audit": "evidence/three-symbol-audit.json",
-        "expected": "BlockHierarchy.Three.ThreeSymbolStatement",
-        "declaration": "BlockHierarchy.Three.three_symbol",
-        "correspondence": "For every symmetric chain with 0 < p < 1/2 the contract proves both ordered thresholds, the 8/6/2 supports including both transitions and zero distortion, uniqueness among all minimizing reproduction marginals, both parameter roots with their cubic forms and strict increase, and the stated rate and tilted variance in bits. The Gibbs channel in every branch attains the budget and is compared with every feasible joint law."
+        "audit": "evidence/three-symbol-full-audit.json",
+        "expected": "BlockHierarchy.PairVariance.ThreeFullStatement",
+        "declaration": "BlockHierarchy.PairVariance.three_full",
+        "correspondence": "For every symmetric chain with 0 < p < 1/2 the contract proves both ordered thresholds, the 8/6/2 supports including both transitions and zero distortion, uniqueness among all minimizing reproduction marginals, both parameter roots with their cubic forms and strict increase, and the stated rate and tilted variance in bits. The Gibbs channel in every branch attains the budget and is compared with every feasible joint law. The actual tilted word variance equals the displayed weighted sum of squared base-two log ratios over unordered pairs of source classes."
       }
     },
     "thm:four": {
       "status": "closed",
-      "updated": "2026-11-20T09:23:42+00:00",
+      "updated": "2026-11-20T11:12:54+00:00",
       "summary": "At length four, six complementary-word classes determine a parity allocation and the optimal rate and variance.",
-      "step": "Lean verified the four-symbol theorem against the independently authored paper statement. The release audit checked all transitive local source dependencies and the axiom report.",
+      "step": "Audited the full numbered theorem together with the displayed pairwise variance formula.",
       "next": "Proceed to the finite-block full-support thresholds in Proposition 5.",
-      "scope": "For every stationary symmetric binary source with flip probability between zero and one half, the contract proves the ordered classes, exact prefix maxima, clipped weights and support including empty groups, global and slice optimality, the parity derivative and endpoint/root rules. For every interior distortion it constructs a multiplier and a full sixteen-word channel attaining the budget, proves the stated rate in bits and tilted variance, and establishes the column equality at support transitions.",
-      "lean": "lean/BlockHierarchy/Four/PaperStatement.lean",
-      "run_log": "evidence/four-symbol-complete.txt",
+      "scope": "For every stationary symmetric binary source with flip probability between zero and one half, the contract proves the ordered classes, exact prefix maxima, clipped weights and support including empty groups, global and slice optimality, the parity derivative and endpoint/root rules. For every interior distortion it constructs a multiplier and a full sixteen-word channel attaining the budget, proves the stated rate in bits and tilted variance, and establishes the column equality at support transitions. The actual tilted word variance equals the displayed weighted sum of squared base-two log ratios over unordered pairs of source classes.",
+      "lean": "lean/BlockHierarchy/PairVariance/FourStatement.lean",
+      "run_log": "evidence/four-symbol-full-complete.txt",
       "checked_inputs": {
         "lean/BlockHierarchy/FiniteRD.lean": "3505cb88bf62172df5ec7477ef03b7d1a009d006776619a1e568473785b39cc3",
         "lean/BlockHierarchy/Four/AllocationIdentities.lean": "762606623c0a6de007759fb5a6c4c8aaf6d23441a9e034e01366b1ce3f46ebf2",
@@ -536,7 +528,6 @@
         "lean/BlockHierarchy/Four/ParityChoice.lean": "e6bb61332f83b32a784cab186d6061a92476ca4d1cce2588af9d5b6682225cd8",
         "lean/BlockHierarchy/Four/ParityOptimality.lean": "975da85a7a52419de9a9f474cd915760f24586786e69791ba39bf6e6761a1174",
         "lean/BlockHierarchy/Four/Preliminaries.lean": "2e39bde96498407f7c3881ee83dc26cbcaf445a9fda2783469bdf4043b95ba79",
-        "lean/BlockHierarchy/Four/Release.lean": "836944a2d2d35afc91ecd4748fe233a970d91fcc877d58c38341d61da813a40b",
         "lean/BlockHierarchy/Four/SupportBoundary.lean": "e06c832fc77cf0192a0b02d5d5b795701cf23ff651f76f41f03f060190623870",
         "lean/BlockHierarchy/Four/SupportingParity.lean": "106adedd94f70823ae77325ebe9ff70aba3064137e5da5291c840718cf629dfb",
         "lean/BlockHierarchy/Four/Theorem.lean": "907278dc5cd42a61911478a65e2746a4c7bf0908c5dbff165c7aac7ea677fae2",
@@ -547,6 +538,11 @@
         "lean/BlockHierarchy/Four/WaterFilling.lean": "49ac7c176da79080aec9c02c70493946e9b767e5c67aecae66a076453d24570e",
         "lean/BlockHierarchy/Four/WaterSolution.lean": "38cafd15653f5731727159a53bcbf783aa77957196b81315e8273fe68062e2af",
         "lean/BlockHierarchy/LosslessRD.lean": "2d64c8c442ed3ae7d787a5f20f45a0a23a6b2908736f43b04f65f19577917fbc",
+        "lean/BlockHierarchy/PairVariance/FourRelease.lean": "3296d1a2ff285a9b71d16e05b57244141d0e27cdc9f743219e7b807f12e40d19",
+        "lean/BlockHierarchy/PairVariance/FourStatement.lean": "43e5c77215a49a80d5d7ecff80246c362339e5d03b2d1535bac57d89cbe607e2",
+        "lean/BlockHierarchy/PairVariance/Generic.lean": "5dfd4f9cb7944f2a816d19e6fce9b9d340ec7c00572675a6051af57336b9d796",
+        "lean/BlockHierarchy/PairVariance/Paper.lean": "fdc8d7d2fd17a8f6db485743571c869ec07cbaab4a267a5649fcf74fd9f43c33",
+        "lean/BlockHierarchy/PairVariance/Statement.lean": "e32937db6ce5d14ecea296ffa40cf4f4d63584806c4784027b734bede3c7e831",
         "lean/BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
         "lean/BlockHierarchy/Three/ConstantColumns.lean": "0bcb32d1adee31594138cc4cf9b205d322c78f66a62726c2fdede4293a4f08b5",
         "lean/BlockHierarchy/Three/Entropy.lean": "8cbe8844e7709c4125f153dfb8a1efe100efe801448915a2735eb4a6bd42c6fa",
@@ -793,9 +789,15 @@
           "title": "Every interior distortion achieves the formula on the full word channel",
           "declaration": "BlockHierarchy.Four.water_paper_point",
           "status": "checked"
+        },
+        {
+          "title": "The word variance equals the manuscript sum over unordered class pairs",
+          "status": "checked",
+          "declaration": "BlockHierarchy.PairVariance.four_display"
         }
       ],
       "lean_sources": [
+        "lean/BlockHierarchy/PairVariance/FourStatement.lean",
         "lean/BlockHierarchy/Four/PaperStatement.lean",
         "lean/BlockHierarchy/Four/Theorem.lean",
         "lean/BlockHierarchy/Four/AllocationIdentities.lean",
@@ -824,14 +826,18 @@
         "lean/BlockHierarchy/Four/GroupCertificate.lean",
         "lean/BlockHierarchy/Four/WaterContinuity.lean",
         "lean/BlockHierarchy/Four/Assembly.lean",
-        "lean/BlockHierarchy/Four/Release.lean"
+        "lean/BlockHierarchy/Four/Release.lean",
+        "lean/BlockHierarchy/PairVariance/Statement.lean",
+        "lean/BlockHierarchy/PairVariance/Generic.lean",
+        "lean/BlockHierarchy/PairVariance/Paper.lean",
+        "lean/BlockHierarchy/PairVariance/FourRelease.lean"
       ],
       "closure": {
         "package": "lean",
-        "audit": "evidence/four-symbol-audit.json",
-        "expected": "BlockHierarchy.Four.FourSymbolStatement",
-        "declaration": "BlockHierarchy.Four.four_symbol_rate_variance",
-        "correspondence": "For every stationary symmetric binary source with flip probability between zero and one half, the contract proves the ordered classes, exact prefix maxima, clipped weights and support including empty groups, global and slice optimality, the parity derivative and endpoint/root rules. For every interior distortion it constructs a multiplier and a full sixteen-word channel attaining the budget, proves the stated rate in bits and tilted variance, and establishes the column equality at support transitions."
+        "audit": "evidence/four-symbol-full-audit.json",
+        "expected": "BlockHierarchy.PairVariance.FourFullStatement",
+        "declaration": "BlockHierarchy.PairVariance.four_full",
+        "correspondence": "For every stationary symmetric binary source with flip probability between zero and one half, the contract proves the ordered classes, exact prefix maxima, clipped weights and support including empty groups, global and slice optimality, the parity derivative and endpoint/root rules. For every interior distortion it constructs a multiplier and a full sixteen-word channel attaining the budget, proves the stated rate in bits and tilted variance, and establishes the column equality at support transitions. The actual tilted word variance equals the displayed weighted sum of squared base-two log ratios over unordered pairs of source classes."
       }
     },
     "prop:rec": {
@@ -1105,7 +1111,7 @@
       "status": "closed",
       "updated": "2026-11-20T10:07:37+00:00",
       "summary": "Compare scores on two consecutive stationary symmetric Markov blocks with the optimizing score on their union.",
-      "scope": "For every stationary symmetric binary chain with flip probability between zero and one half, every nonnegative common multiplier, every pair of nonempty adjacent blocks, and any globally minimizing reproduction priors, the two optimized scores are independent under the true adjacent Markov law. Their sum differs from the optimized score of the joined word by at most 1?2p in mean square. Concatenation preserves both path probability and Hamming distortion.",
+      "scope": "For every stationary symmetric binary chain with flip probability between zero and one half, every nonnegative common multiplier, every pair of nonempty adjacent blocks, and any globally minimizing reproduction priors, the two optimized scores are independent under the true adjacent Markov law. Their sum differs from the optimized score of the joined word by at most 1−2p in mean square. Concatenation preserves both path probability and Hamming distortion.",
       "step": "Lean checked both conclusions of the one-cut lemma, including its actual adjacent-path law and all optimizing priors.",
       "next": "Complete.",
       "lean": "lean/BlockHierarchy/Cut/Statement.lean",
@@ -1212,14 +1218,14 @@
         "audit": "evidence/cut-audit.json",
         "expected": "BlockHierarchy.Cut.OneCutStatement",
         "declaration": "BlockHierarchy.Cut.one_cut",
-        "correspondence": "For every stationary symmetric binary chain with flip probability between zero and one half, every nonnegative common multiplier, every pair of nonempty adjacent blocks, and any globally minimizing reproduction priors, the two optimized scores are independent under the true adjacent Markov law. Their sum differs from the optimized score of the joined word by at most 1?2p in mean square. Concatenation preserves both path probability and Hamming distortion."
+        "correspondence": "For every stationary symmetric binary chain with flip probability between zero and one half, every nonnegative common multiplier, every pair of nonempty adjacent blocks, and any globally minimizing reproduction priors, the two optimized scores are independent under the true adjacent Markov law. Their sum differs from the optimized score of the joined word by at most 1−2p in mean square. Concatenation preserves both path probability and Hamming distortion."
       }
     },
     "thm:common": {
       "status": "closed",
       "updated": "2026-11-20T11:01:14+00:00",
       "summary": "At a common multiplier, normalized standard deviations have a continuous limit and an explicit finite-block error. At a differentiability point of the rate curve, finite-block variances converge to its positive squared value in bits.",
-      "scope": "For each stationary symmetric binary Markov source with 0<p<1/2 the checked theorem supplies a continuous common-multiplier limit on the nonnegative real line, its zero value at zero, strict positivity elsewhere and the exact (1+?2)?((1?2p)/k) enclosure for every positive block length and every optimizing reproduction prior. For interior distortion the constrained operational rates converge. At every differentiability point the normalized block variances converge to the positive squared limiting value in bits for every sequence of maximizing slopes and optimizing priors; those maximizing slopes exist.",
+      "scope": "For each stationary symmetric binary Markov source with 0<p<1/2 the checked theorem supplies a continuous common-multiplier limit on the nonnegative real line, its zero value at zero, strict positivity elsewhere and the exact (1+√2)√((1−2p)/k) enclosure for every positive block length and every optimizing reproduction prior. For interior distortion the constrained finite-block rate-distortion functions converge. At every differentiability point the normalized block variances converge to the positive squared limiting value in bits for every sequence of maximizing slopes and optimizing priors; those maximizing slopes exist.",
       "step": "The independent audit verified both the common-multiplier and fixed-distortion limits, including all positivity, existence and rate conditions.",
       "next": "Complete.",
       "subproofs": [
@@ -1417,16 +1423,16 @@
         "audit": "evidence/variance-limit-audit.json",
         "expected": "BlockHierarchy.VarianceLimit.VarianceLimitStatement",
         "declaration": "BlockHierarchy.VarianceLimit.variance_limit",
-        "correspondence": "For each stationary symmetric binary Markov source with 0<p<1/2 the checked theorem supplies a continuous common-multiplier limit on the nonnegative real line, its zero value at zero, strict positivity elsewhere and the exact (1+?2)?((1?2p)/k) enclosure for every positive block length and every optimizing reproduction prior. For interior distortion the constrained operational rates converge. At every differentiability point the normalized block variances converge to the positive squared limiting value in bits for every sequence of maximizing slopes and optimizing priors; those maximizing slopes exist."
+        "correspondence": "For each stationary symmetric binary Markov source with 0<p<1/2 the checked theorem supplies a continuous common-multiplier limit on the nonnegative real line, its zero value at zero, strict positivity elsewhere and the exact (1+√2)√((1−2p)/k) enclosure for every positive block length and every optimizing reproduction prior. For interior distortion the constrained finite-block rate-distortion functions converge. At every differentiability point the normalized block variances converge to the positive squared limiting value in bits for every sequence of maximizing slopes and optimizing priors; those maximizing slopes exist."
       }
     },
     "prop:converse": {
-      "status": "attempted",
+      "status": "closed",
       "summary": "For a low-distortion single Markov path, the second-order normalized operational rate is bounded below by the Gaussian upper quantile times the square root of the varentropy rate.",
-      "scope": "A stationary symmetric chain, 0 < D ? the critical distortion, and error probability strictly between zero and one.",
-      "step": "Lean checked the finite-code inequality, the exact affine formula for information along the Markov path, and the deduction of a code-size lower limit from convergent tails.",
-      "next": "Specialize the Gaussian limit to the paper's Bernoulli flip count and relate its centering to the operational rate.",
-      "updated": "2026-11-20T10:23:32+00:00",
+      "scope": "For every symmetric binary Markov source with 0 < p < 1/2, every positive distortion through Gray's critical distortion (inclusive), and every error probability strictly between zero and one, the minimum fixed-length code rate on one uninterrupted path has the paper's second-order lower bound. The constrained rate is in bits per symbol. The Gaussian upper quantile is defined from the standard normal measure, and the dispersion is p(1-p) times the squared base-two log odds. The eventual lower bounds include negative quantiles and are equivalent to the stated extended-real lower limit.",
+      "step": "The checked theorem combines the operational finite-code bound, independent-flip Gaussian tails, the low-distortion constrained rate and the asymptotic normalization.",
+      "next": "Complete.",
+      "updated": "2026-11-20T11:13:16+00:00",
       "subproofs": [
         {
           "title": "The finite-code converse holds for every encoder and decoder",
@@ -1457,6 +1463,56 @@
           "title": "A strict limiting tail bound implies the operational lower limit for code sizes",
           "declaration": "BlockHierarchy.Converse.quantile_lower",
           "status": "checked"
+        },
+        {
+          "title": "Central limit theorem for independent Bernoulli flips",
+          "declaration": "BlockHierarchy.Converse.flips_clt",
+          "status": "checked"
+        },
+        {
+          "title": "The probability of every finite cylinder is the product flip law",
+          "declaration": "BlockHierarchy.Converse.cylinder_probability",
+          "status": "checked"
+        },
+        {
+          "title": "Normalized finite flip tails converge to the Gaussian tail",
+          "declaration": "BlockHierarchy.Converse.normalized_flip_tails",
+          "status": "checked"
+        },
+        {
+          "title": "Every feasible code obeys the shifted information bound",
+          "declaration": "BlockHierarchy.Converse.shifted_code_converse",
+          "status": "checked"
+        },
+        {
+          "title": "Path information splits into the mean and normalized flip fluctuation",
+          "declaration": "BlockHierarchy.Converse.centered_score",
+          "status": "checked"
+        },
+        {
+          "title": "The finite code bound applies to normalized flip tails",
+          "declaration": "BlockHierarchy.Converse.code_tail_bound",
+          "status": "checked"
+        },
+        {
+          "title": "A backward prior exists through the critical distortion",
+          "declaration": "BlockHierarchy.Converse.exists_backward",
+          "status": "checked"
+        },
+        {
+          "title": "The finite-block rate equals the backward entropy formula",
+          "declaration": "BlockHierarchy.Converse.rate_backward",
+          "status": "checked"
+        },
+        {
+          "title": "The limiting constrained rate equals the low-distortion entropy formula",
+          "declaration": "BlockHierarchy.Converse.rateBits_low",
+          "status": "checked"
+        },
+        {
+          "title": "The minimum operational rate satisfies the dispersion converse",
+          "declaration": "BlockHierarchy.Converse.low_distortion_converse",
+          "status": "checked"
         }
       ],
       "lean": "lean/BlockHierarchy/Converse/Statement.lean",
@@ -1465,20 +1521,78 @@
         "lean/BlockHierarchy/Converse/Finite.lean",
         "lean/BlockHierarchy/Converse/Tilt.lean",
         "lean/BlockHierarchy/Converse/Paths.lean",
-        "lean/BlockHierarchy/Converse/Quantile.lean"
+        "lean/BlockHierarchy/Converse/Quantile.lean",
+        "lean/BlockHierarchy/Converse/Normalized.lean",
+        "lean/BlockHierarchy/Converse/Gaussian.lean",
+        "lean/BlockHierarchy/Converse/Cylinders.lean",
+        "lean/BlockHierarchy/Converse/Tails.lean",
+        "lean/BlockHierarchy/Converse/Ball.lean",
+        "lean/BlockHierarchy/Converse/Bernoulli.lean",
+        "lean/BlockHierarchy/Converse/BSCFacts.lean",
+        "lean/BlockHierarchy/Converse/Backward.lean",
+        "lean/BlockHierarchy/Converse/BackwardRate.lean",
+        "lean/BlockHierarchy/Converse/BlockRate.lean",
+        "lean/BlockHierarchy/Converse/MarkovEntropy.lean",
+        "lean/BlockHierarchy/Converse/Rate.lean",
+        "lean/BlockHierarchy/Converse/Center.lean",
+        "lean/BlockHierarchy/Converse/Paper.lean",
+        "lean/BlockHierarchy/Converse/Release.lean"
       ],
-      "run_log": "evidence/converse-incremental.txt",
+      "run_log": "evidence/converse-complete.txt",
       "checked_inputs": {
+        "lean/BlockHierarchy/Converse/BSCFacts.lean": "004612810dedd3b25d07cc8cc3d28912d8e79ab8b0c5f23d9ea6d3a99991600c",
+        "lean/BlockHierarchy/Converse/Backward.lean": "f513f03c800c79d51ee73892c95292fa05a210272d8ec16f536a83c725b04db9",
+        "lean/BlockHierarchy/Converse/BackwardRate.lean": "f39f86aed5310eb7d5abad262c7cedc5ab0d9bd0b0e58cd52c8989acf3fcd0f8",
+        "lean/BlockHierarchy/Converse/Ball.lean": "29657162b0cc230ec9796cb76797db4eceae8751ec70066de5cbb1c91081d3db",
+        "lean/BlockHierarchy/Converse/Bernoulli.lean": "ec15d93a31241888ab47daabd39ea110e6ce7fc1d758ebbf3c7b5120d9f9937b",
+        "lean/BlockHierarchy/Converse/BlockRate.lean": "df48a625d95e724aa109e6503fc7ae3d3aa10760d576f15862e28c67afc39d1d",
+        "lean/BlockHierarchy/Converse/Center.lean": "f88d22644c8324e1a30137bdcad31bf528b9c6d8fb3daf08786939aabc0f5e14",
+        "lean/BlockHierarchy/Converse/Cylinders.lean": "feb75f8437d47b6bba62622983c39ea8365e9724978838b7e2939540faf19c6b",
         "lean/BlockHierarchy/Converse/Finite.lean": "3a6b63938e4eff1b1fe66e810e1585576b6a0805b94c68c77ae0f3de1a72c310",
+        "lean/BlockHierarchy/Converse/Gaussian.lean": "2ef94e6de450d60ada066c69b90f5d2e1adb5bf87ce4a040e3e938e58567614f",
+        "lean/BlockHierarchy/Converse/MarkovEntropy.lean": "c9667ffe268723f41dd56584c6d97b2e45031896b0f18f0869114d026723c49d",
+        "lean/BlockHierarchy/Converse/Normalized.lean": "7e937df6f8d43234fa2d21a7094d6246b1c21fe269206b0cbb45efe181343045",
+        "lean/BlockHierarchy/Converse/Paper.lean": "f7ee32ef0e14a137561e7d6c54ac90c3edb5b2a2cb3b64e55b99ce3dd8123ba8",
         "lean/BlockHierarchy/Converse/Paths.lean": "705b5cf55c200c4c62877633ffa5096840e007915ec6a51da986d9eb1ced4726",
         "lean/BlockHierarchy/Converse/Quantile.lean": "85cd217e97429c5c46c43f58136e02f4755e720bb507fd01cae4f6faecbc9236",
-        "lean/BlockHierarchy/Converse/Tilt.lean": "f06af5701a1f3131afaf71e10e1fba5ae5f7428284842f88b301a137ad305584",
+        "lean/BlockHierarchy/Converse/Rate.lean": "9e0f2de8912b5074043e88dfa93e548af266678e15fdf1cf05be7bcf24dfdde4",
+        "lean/BlockHierarchy/Converse/Release.lean": "14697dd75399d99279a0d8bbb6fb0673ef883c02bdf53b7cc0b89cc07249a0fa",
+        "lean/BlockHierarchy/Converse/Statement.lean": "fc080a8fbe7b4d5cd55607d5467ca2361223ff9f545fa82d6a61f4ed45e0e27e",
+        "lean/BlockHierarchy/Converse/Tails.lean": "d0654913a8a80b9d2773c4da123ce0cb6202f55876d7f578d8f9a022dae3de41",
+        "lean/BlockHierarchy/Cut/ColumnAverage.lean": "9b19a0fa9e6157054fadfbfd2b1e484008cceccd739b9b41fcc6e24980d2dcf8",
+        "lean/BlockHierarchy/Cut/Compare.lean": "ced870464913ae653881088c11b31c45003c99967f3f27021c13a835c6b01ab4",
+        "lean/BlockHierarchy/Cut/Existence.lean": "e1f398a54de2838ea8ae3452a0910cc4cd77c7287414e334f010778881151513",
         "lean/BlockHierarchy/Cut/Flips.lean": "9e00e61744d691e13581969b0c0f42c35371d9e2ac649d603b6a39c9ccb020a7",
         "lean/BlockHierarchy/Cut/Optimality.lean": "28a067e9b350052c2b9d9105424b0391e1f0e4090c69489fc66dd24791cbbf05",
+        "lean/BlockHierarchy/Cut/Paper.lean": "cc445c16e6aa3725d24719b612f8a1b8e234d28febc3e7c007b263539d40410c",
+        "lean/BlockHierarchy/Cut/Product.lean": "87d959a7f4edb6ecc7a49adb671bc714bbd30139f9d907c917de9bc2fbc32467",
+        "lean/BlockHierarchy/Cut/ScoreBound.lean": "42025de340149ed1ce411445d696f3a21387fc7af2847c703a4d8e59b2bb4794",
         "lean/BlockHierarchy/Cut/Statement.lean": "3a105a49f55ca94972d5b50ca5b11d289ee4e4ac2afc9799f7b640aa7b04a239",
+        "lean/BlockHierarchy/Recurrence.lean": "c2c0cf675e72fbecde65f963f32c803df906dfd9d1c6682c852826488610e276",
+        "lean/BlockHierarchy/RecurrenceClosed.lean": "52856af390d75bd89fd1952652e3bec195984e9526e34e2cf9ac958b36600329",
+        "lean/BlockHierarchy/RecurrenceCriterion.lean": "baca479bad45fa89bf8630c2e0a690f1ae1273884fa2dd69d78e995022b5d05a",
+        "lean/BlockHierarchy/RecurrenceCrossing.lean": "1f126dbc797469e5b9d503be96bcb6fe6fb24c96c760cf998f6cbaff1f9aafb0",
+        "lean/BlockHierarchy/RecurrenceExtrema.lean": "462d38154d418a7018ff0bb2be1c9bfdc729e72b3da757905fc4cbe190a18e6a",
+        "lean/BlockHierarchy/RecurrenceInverse.lean": "f59d22de48360601d5d0a2d2d6ab264ab872104d2e1c86f7f337d01670df256d",
+        "lean/BlockHierarchy/RecurrenceLimit.lean": "f4a8c99fbace668562f7e659654a82ea8d5dfb55ff3fee16ce07b27e8deaec85",
+        "lean/BlockHierarchy/RecurrenceOrder.lean": "5bbb00a76ed8645a1d72fa4893de847eea5521713ffdcb383c96a45f8d7ba60e",
+        "lean/BlockHierarchy/RecurrencePaper.lean": "80a4e2c33c5790e8ee7eee2610a6e774d8ccacada1fc10b54f674acb35e8537f",
+        "lean/BlockHierarchy/RecurrencePrefix.lean": "8e0b1d1ded20718ab4285134808b8865723e78fafe3c1160c3c3925ea57b1b95",
+        "lean/BlockHierarchy/RecurrenceStatement.lean": "ccc321194537e289ada901b195179f71e9ceacff0079a4e87d72efd1fd426b53",
+        "lean/BlockHierarchy/RecurrenceThresholds.lean": "03701137e9f26bf1ed7e884c7e26300f58cb7738e04e07d5e6a51db1ab658d79",
+        "lean/BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
+        "lean/BlockHierarchy/Three/Distortion.lean": "13c6bcfc7ebbe4e8c24f4021a8d70620fa453dc8c4374a3b3a879ed787325e87",
+        "lean/BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48",
         "lean/BlockHierarchy/Varentropy/Covariance.lean": "9d63ee314b2117f136db879c5d7c60c430a93a690bd525dc231d25ad542a5b36",
         "lean/BlockHierarchy/Varentropy/Score.lean": "a3f0c65ec152d9493a389b71f52e2545b44789d03a5816d0c6068db03ea63753",
         "lean/BlockHierarchy/Varentropy/Statement.lean": "fe310a6d067652205da78f4f22f498949b63932f5d35a7f70cf4a7b93407d404",
+        "lean/BlockHierarchy/VarianceLimit/Cut.lean": "63cac1d6c017292348fac2c78c44910caae81767dbd91bded7f71f1fbfc2eb05",
+        "lean/BlockHierarchy/VarianceLimit/Dyadic.lean": "1d6563620266ec0acd2f44b44413c63ee7f45c096daf94797e387d2533e14582",
+        "lean/BlockHierarchy/VarianceLimit/Norm.lean": "bcb128e7d674b18301fc1684be8726453075521f27fc0b87dfd0fcd13d17377e",
+        "lean/BlockHierarchy/VarianceLimit/PositiveStatement.lean": "985c24dc858d3d13b804f0bcedaa0af8fd3d9ac87023c110c25561fe7f44dbe0",
+        "lean/BlockHierarchy/VarianceLimit/Redundancy.lean": "28367d74e1b0b0b080de2141b4c93716f3bd46c78211b6799bd00204a6c0e53c",
+        "lean/BlockHierarchy/VarianceLimit/Statement.lean": "6648783e43c067e773ea8bb169d437fbe9e7b9fb9157e6c0e75f70229d9b5a43",
+        "lean/BlockHierarchy/VarianceLimit/Uniform.lean": "3c6ba9b51ce73be43f76752f1c81809893601ef003fdf000e9f9071b1ab16e3c",
         "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
         "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
         "lean/FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
@@ -1486,20 +1600,22 @@
         "lean/PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
         "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
         "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48",
-        "lean/BlockHierarchy/Converse/Statement.lean": "fc080a8fbe7b4d5cd55607d5467ca2361223ff9f545fa82d6a61f4ed45e0e27e",
-        "lean/BlockHierarchy/VarianceLimit/Statement.lean": "6648783e43c067e773ea8bb169d437fbe9e7b9fb9157e6c0e75f70229d9b5a43",
-        "lean/BlockHierarchy/RecurrenceStatement.lean": "ccc321194537e289ada901b195179f71e9ceacff0079a4e87d72efd1fd426b53",
-        "lean/BlockHierarchy/RecurrenceExtrema.lean": "462d38154d418a7018ff0bb2be1c9bfdc729e72b3da757905fc4cbe190a18e6a",
-        "lean/BlockHierarchy/Recurrence.lean": "c2c0cf675e72fbecde65f963f32c803df906dfd9d1c6682c852826488610e276",
-        "lean/BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48",
-        "lean/BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
-        "lean/BlockHierarchy/Three/Distortion.lean": "13c6bcfc7ebbe4e8c24f4021a8d70620fa453dc8c4374a3b3a879ed787325e87"
+        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+      },
+      "closure": {
+        "package": "lean",
+        "audit": "evidence/converse-audit.json",
+        "expected": "BlockHierarchy.Converse.LowDistortionConverseStatement",
+        "declaration": "BlockHierarchy.Converse.low_distortion_converse",
+        "correspondence": "For every symmetric binary Markov source with 0 < p < 1/2, every positive distortion through Gray's critical distortion (inclusive), and every error probability strictly between zero and one, the minimum fixed-length code rate on one uninterrupted path has the paper's second-order lower bound. The constrained rate is in bits per symbol. The Gaussian upper quantile is defined from the standard normal measure, and the dispersion is p(1-p) times the squared base-two log odds. The eventual lower bounds include negative quantiles and are equivalent to the stated extended-real lower limit."
       }
     },
     "cor:positive": {
       "status": "closed",
       "summary": "The limiting normalized standard deviation has an explicit positive lower bound in terms of the flip probability and multiplier.",
-      "scope": "For every stationary symmetric binary source with flip probability between zero and one half, and every strictly positive multiplier, the normalized standard deviation for any sequence of actual optimizing priors converges to a positive limit. The checked bound has exactly the manuscript's coefficient (1?2p)?(p(1?p))/2 and fourth power of 2 log(cosh(?/2))/?. The proof supplies the finite gain inequalities, the endpoint deletion estimate and the limiting aggregation.",
+      "scope": "For every stationary symmetric binary source with flip probability between zero and one half, and every strictly positive multiplier, the normalized standard deviation for any sequence of actual optimizing priors converges to a positive limit. The checked bound has exactly the manuscript's coefficient (1−2p)√(p(1−p))/2 and fourth power of 2 log(cosh(τ/2))/τ. The proof supplies the finite gain inequalities, the endpoint deletion estimate and the limiting aggregation.",
       "step": "The independent audit checked the exact positive lower bound on the physical limiting standard deviation for all optimizing priors.",
       "next": "Complete.",
       "updated": "2026-11-20T10:51:57+00:00",
@@ -1625,7 +1741,7 @@
         "audit": "evidence/positive-audit.json",
         "expected": "BlockHierarchy.VarianceLimit.QuantitativePositivityStatement",
         "declaration": "BlockHierarchy.VarianceLimit.quantitative_positivity",
-        "correspondence": "For every stationary symmetric binary source with flip probability between zero and one half, and every strictly positive multiplier, the normalized standard deviation for any sequence of actual optimizing priors converges to a positive limit. The checked bound has exactly the manuscript's coefficient (1?2p)?(p(1?p))/2 and fourth power of 2 log(cosh(?/2))/?. The proof supplies the finite gain inequalities, the endpoint deletion estimate and the limiting aggregation."
+        "correspondence": "For every stationary symmetric binary source with flip probability between zero and one half, and every strictly positive multiplier, the normalized standard deviation for any sequence of actual optimizing priors converges to a positive limit. The checked bound has exactly the manuscript's coefficient (1−2p)√(p(1−p))/2 and fourth power of 2 log(cosh(τ/2))/τ. The proof supplies the finite gain inequalities, the endpoint deletion estimate and the limiting aggregation."
       }
     }
   },

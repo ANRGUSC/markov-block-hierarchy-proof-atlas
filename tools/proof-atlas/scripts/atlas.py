@@ -81,14 +81,17 @@ def page(title, body, watch=""):
             '<a href="proofs/index.html">Proof Atlas explorer</a></nav><main>' + body + '</main>' + watch + '</body></html>').encode()
 
 
-def proof_work_description(project, claims):
+def proof_work_description(project, claims, *, closed_results=None):
     scope = project.get("proof_work")
     if scope is None:
         return "Proof-work authorization has not been recorded."
     mode = scope["mode"]
     if mode == "paper":
         total = sum(claim["kind"] != "conjecture" for claim in claims)
-        text = f"Paper-wide. Continue through all {total} stated results, including their prerequisites. Track conjectures separately."
+        if total and closed_results == total:
+            text = "Paper-wide proof work complete. All stated results are closed."
+        else:
+            text = f"Paper-wide. Continue through all {total} stated results, including their prerequisites. Track conjectures separately."
     elif mode == "claim":
         selected = next((c for c in claims if c["id"] == scope.get("claim")), None)
         if selected is None:
@@ -133,6 +136,7 @@ def build(root):
     rows, entries, log_links = [], [], {}
     stale = {}
     subproof_lists = {}
+    closed_results = 0
     for c in claims:
         cid = c["id"]
         w = work.get(cid, {})
@@ -166,6 +170,8 @@ def build(root):
             entry["summary"] = m.get("summary", "The paper claim is awaiting a fresh Lean check.")
             status = "awaiting recheck"
         entry["status"] = status
+        if c["kind"] != "conjecture" and status == "closed":
+            closed_results += 1
         entry.setdefault("reference", c["kind"].title())
         subproofs = []
         for part in w.get("subproofs", []):
@@ -209,8 +215,9 @@ def build(root):
                   f'<p>{esc(stale.get(focus, w["step"]))}</p><p><strong>Next step</strong><br>{esc(w["next"])}</p>'
                   f'{subproof_lists.get(focus, "")}<time>Last checkpoint · {esc(w["updated"])}</time>{log_links.get(focus, "")}</section>')
     feed = p.get("hosting", {}).get("activity_url", "")
-    scope = proof_work_description(p, claims)
-    dashboard = heading + f'<section id="claim-inventory" data-feed="{esc(feed)}"><h2>Claim inventory</h2><p><strong>Authorized proof work</strong><br>{esc(scope)}</p><p>{len(claims)} entries in manuscript order</p><ol>' + "".join(rows) + '</ol></section>' + active
+    total_results = sum(c["kind"] != "conjecture" for c in claims)
+    scope = proof_work_description(p, claims, closed_results=closed_results)
+    dashboard = heading + f'<section id="claim-inventory" data-feed="{esc(feed)}"><h2>Claim inventory</h2><p><strong>Authorized proof work</strong><br>{esc(scope)}</p><p>{closed_results} of {total_results} stated results closed</p><ol>' + "".join(rows) + '</ol></section>' + active
     payload = dict(title=p["title"], focus=focus, claims=entries, dependencies=edges, macros=materials.get("macros", {}))
     template = (assets / "explorer.html").read_text(encoding="utf-8-sig")
     packed = json.dumps(payload, ensure_ascii=False)

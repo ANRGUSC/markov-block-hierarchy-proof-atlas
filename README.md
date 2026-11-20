@@ -10,13 +10,20 @@ The inventory contains ten numbered results and one conjecture. The graph displa
 
 ## Lean coverage
 
-Proposition 1 is closed for all three persistence cases, including the equal-bias tie and the lossless endpoint. Lean proves that the displayed marginal uniquely minimizes mutual information under the paper's distortion budget. [Independent contract](lean/FirstChangeStatement.lean) ? [Assembled theorem](lean/FirstChange.lean) ? [Declaration and axiom audit](evidence/first-change-audit-v2.json).
+Lean checks all ten numbered results against their paper statements. The conjecture remains open. The [combined release transcript](evidence/paper-release.txt) records the same ten declarations checked together. Each receipt records the declaration, its expected type, the pinned toolchain, the input hashes and the transitive axioms.
 
-Theorem 2 is closed for the persistent two-symbol source. The proof covers all three rate and variance branches and the biased zero-rate endpoint. [Independent contract](lean/ReducedPair/PaperStatement.lean) ? [Assembled theorem](lean/ReducedPair/Paper.lean) ? [Declaration and axiom audit](evidence/persistent-pair-audit.json).
-
-Theorem 3 is closed for all three support regimes of the symmetric three-symbol source. The independent audit covers the lossless endpoint, both transitions, uniqueness of the optimizing reproduction law, and the rate and tilted variance throughout the stated range. [Independent contract](lean/BlockHierarchy/Three/PaperStatement.lean) ? [Declaration and axiom audit](evidence/three-symbol-audit.json).
-
-The current target is Theorem 4 for the symmetric four-symbol source.
+| Numbered result | Formal statement | Verification |
+|---|---|---|
+| Proposition 1 | [Lean statement](lean/FirstChangeStatement.lean) | [Audit receipt](evidence/first-change-audit-v2.json) |
+| Theorem 2 | [Lean statement](lean/ReducedPair/PaperStatement.lean) | [Audit receipt](evidence/persistent-pair-audit.json) |
+| Theorem 3 | [Lean statement](lean/BlockHierarchy/PairVariance/ThreeStatement.lean) | [Audit receipt](evidence/three-symbol-full-audit.json) |
+| Theorem 4 | [Lean statement](lean/BlockHierarchy/PairVariance/FourStatement.lean) | [Audit receipt](evidence/four-symbol-full-audit.json) |
+| Proposition 5 | [Lean statement](lean/BlockHierarchy/RecurrenceStatement.lean) | [Audit receipt](evidence/recurrence-audit.json) |
+| Theorem 6 | [Lean statement](lean/BlockHierarchy/Varentropy/Statement.lean) | [Audit receipt](evidence/varentropy-audit.json) |
+| Lemma 7 | [Lean statement](lean/BlockHierarchy/Cut/Statement.lean) | [Audit receipt](evidence/cut-audit.json) |
+| Theorem 8 | [Lean statement](lean/BlockHierarchy/VarianceLimit/Statement.lean) | [Audit receipt](evidence/variance-limit-audit.json) |
+| Corollary 9 | [Lean statement](lean/BlockHierarchy/VarianceLimit/PositiveStatement.lean) | [Audit receipt](evidence/positive-audit.json) |
+| Proposition 10 | [Lean statement](lean/BlockHierarchy/Converse/Statement.lean) | [Audit receipt](evidence/converse-audit.json) |
 
 ## Build or preview
 
@@ -28,6 +35,6 @@ python tools/proof-atlas/scripts/preview.py . --open
 
 The preview opens the explorer and the dashboard and updates them as records change. For a static build, run `python tools/proof-atlas/scripts/atlas.py build .`. The Pages workflow runs this build on pushes to main and deploys the resulting `dist/` directory.
 
-To rerun the Lean checks, use `python tools/proof-atlas/scripts/check_lean.py lean --logs evidence`. The helper locates or provisions the pinned toolchain. Once its dependencies are available locally, use `--offline`. The website build reuses the selected recorded evidence. New mathematical results require a new Lean check.
+To recheck all ten numbered results in one build, run `python tools/proof-atlas/scripts/check_lean.py lean --logs evidence --target BlockHierarchy.PaperRelease`. The helper locates or provisions the pinned toolchain. Once its dependencies are available locally, use `--offline`. The website build reuses the selected recorded evidence. New mathematical results require a new Lean check.
 
 The paper-specific records are in `project.json`, `reader.json`, `companion/`, and `lean/`. A portable renderer snapshot is included in `tools/proof-atlas/`; bundled third-party notices accompany its assets.

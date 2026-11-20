@@ -1,0 +1,457 @@
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.PaperRelease
+⚠ [1963/2044] Replayed BlockHierarchy.Three.Thresholds
+warning: BlockHierarchy/Three/Thresholds.lean:30:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:37:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:45:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1964/2044] Replayed BlockHierarchy.Three.ConstantColumns
+warning: BlockHierarchy/Three/ConstantColumns.lean:39:71: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/ConstantColumns.lean:39:71: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Three/ConstantColumns.lean:71:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1966/2044] Replayed BlockHierarchy.Three.Inverse
+warning: BlockHierarchy/Three/Inverse.lean:27:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Inverse.lean:33:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Inverse.lean:36:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1969/2044] Replayed BlockHierarchy.Four.Preliminaries
+warning: BlockHierarchy/Four/Preliminaries.lean:116:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1971/2044] Replayed BlockHierarchy.Four.AllocationIdentities
+warning: BlockHierarchy/Four/AllocationIdentities.lean:41:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1993/2050] Replayed BlockHierarchy.Three.Entropy
+warning: BlockHierarchy/Three/Entropy.lean:27:25: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/Entropy.lean:27:25: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [1994/2050] Replayed BlockHierarchy.Three.FullWeights
+warning: BlockHierarchy/Three/FullWeights.lean:45:36: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/FullWeights.lean:45:36: Unused tactic linter: `positivity` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2000/2050] Replayed BlockHierarchy.Three.MiddleBranch
+warning: BlockHierarchy/Three/MiddleBranch.lean:31:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:36:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:60:72: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:64:66: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:60:72: Unused tactic linter: `positivity` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:64:66: Unused tactic linter: `positivity` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2021/2050] Replayed BlockHierarchy.Four.WaterFilling
+warning: BlockHierarchy/Four/WaterFilling.lean:41:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: BlockHierarchy/Four/WaterFilling.lean:42:40: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [2024/2078] Replayed ReducedPair.Middle
+info: ReducedPair/Middle.lean:61:0: 'BlockHierarchy.ReducedPair.middle_branch' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2026/2078] Replayed ReducedPair.ZeroRate
+info: ReducedPair/ZeroRate.lean:90:0: 'BlockHierarchy.zero_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ReducedPair/ZeroRate.lean:91:0: 'BlockHierarchy.unique_biased_zero_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2029/2078] Replayed ReducedPair.Paper
+info: ReducedPair/Paper.lean:74:0: 'BlockHierarchy.persistent_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2030/2078] Replayed BlockHierarchy.Three.Paper
+info: BlockHierarchy/Three/Paper.lean:84:0: 'BlockHierarchy.Three.three_symbol' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2041/2078] Replayed BlockHierarchy.Four.WaterEndpoint
+warning: BlockHierarchy/Four/WaterEndpoint.lean:7:5: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [2042/2078] Replayed BlockHierarchy.Four.WaterClasses
+warning: BlockHierarchy/Four/WaterClasses.lean:65:79: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: BlockHierarchy/Four/WaterClasses.lean:123:0: 'BlockHierarchy.Four.WaterClasses.allocation' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2043/2078] Replayed BlockHierarchy.Four.WaterContinuity
+warning: BlockHierarchy/Four/WaterContinuity.lean:41:58: This simp argument is unused:
+  le_max_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [evenCost]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: BlockHierarchy/Four/WaterContinuity.lean:50:49: This simp argument is unused:
+  le_max_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [oddCost]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: BlockHierarchy/Four/WaterContinuity.lean:121:0: 'BlockHierarchy.Four.WaterContinuity.continuous_allocation' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2057/2114] Replayed BlockHierarchy.PairVariance.Paper
+info: BlockHierarchy/PairVariance/Paper.lean:34:0: 'BlockHierarchy.PairVariance.shifted_log_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/PairVariance/Paper.lean:35:0: 'BlockHierarchy.PairVariance.three_four_pair_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2163/2249] Replayed BlockHierarchy.Four.SupportingParity
+warning: BlockHierarchy/Four/SupportingParity.lean:11:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Four/SupportingParity.lean:26:65: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Four/SupportingParity.lean:26:65: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Four/SupportingParity.lean:58:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2164/2249] Replayed BlockHierarchy.Four.FourWord
+warning: BlockHierarchy/Four/FourWord.lean:25:39: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Three.step]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [2170/2249] Replayed BlockHierarchy.Four.SupportBoundary
+warning: BlockHierarchy/Four/SupportBoundary.lean:26:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [2171/2249] Replayed BlockHierarchy.Recurrence
+warning: BlockHierarchy/Recurrence.lean:31:26: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Recurrence.lean:27:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Recurrence.lean:31:26: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2191/2267] Replayed BlockHierarchy.RecurrenceExtrema
+warning: BlockHierarchy/RecurrenceExtrema.lean:21:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/RecurrenceExtrema.lean:25:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: BlockHierarchy/RecurrenceExtrema.lean:87:0: 'BlockHierarchy.Recurrence.signed_child_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/RecurrenceExtrema.lean:88:0: 'BlockHierarchy.Recurrence.next_layer_peak' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2193/2267] Replayed BlockHierarchy.RecurrencePrefix
+warning: BlockHierarchy/RecurrencePrefix.lean:124:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/RecurrencePrefix.lean:124:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/RecurrencePrefix.lean:171:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/RecurrencePrefix.lean:171:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+info: BlockHierarchy/RecurrencePrefix.lean:185:0: 'BlockHierarchy.Recurrence.children' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/RecurrencePrefix.lean:186:0: 'BlockHierarchy.Recurrence.zero_child' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/RecurrencePrefix.lean:187:0: 'BlockHierarchy.Recurrence.extension_tests' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2194/2267] Replayed BlockHierarchy.RecurrenceCriterion
+info: BlockHierarchy/RecurrenceCriterion.lean:137:0: 'BlockHierarchy.Recurrence.prefix_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2195/2267] Replayed BlockHierarchy.RecurrenceInverse
+warning: BlockHierarchy/RecurrenceInverse.lean:37:30: This simp argument is unused:
+  Fintype.sum_bool
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [wordSum, ih, zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: BlockHierarchy/RecurrenceInverse.lean:125:75: This simp argument is unused:
+  Fintype.sum_bool
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [a, b, backWeight, invWeight, spin]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: BlockHierarchy/RecurrenceInverse.lean:155:71: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/RecurrenceInverse.lean:155:71: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+info: BlockHierarchy/RecurrenceInverse.lean:168:0: 'BlockHierarchy.Recurrence.backward_iff_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2198/2267] Replayed BlockHierarchy.RecurrenceClosed
+warning: BlockHierarchy/RecurrenceClosed.lean:44:13: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
+ℹ [2199/2267] Replayed BlockHierarchy.RecurrenceLimit
+info: BlockHierarchy/RecurrenceLimit.lean:82:0: 'BlockHierarchy.Recurrence.orbit_feasible_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/RecurrenceLimit.lean:83:0: 'BlockHierarchy.Recurrence.orbit_below_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2201/2267] Replayed BlockHierarchy.RecurrencePaper
+info: BlockHierarchy/RecurrencePaper.lean:93:0: 'BlockHierarchy.Recurrence.finite_block_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2203/2267] Replayed BlockHierarchy.Varentropy.Covariance
+info: BlockHierarchy/Varentropy/Covariance.lean:88:0: 'BlockHierarchy.Varentropy.iterate_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Covariance.lean:89:0: 'BlockHierarchy.Varentropy.last_edge_conditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2205/2267] Replayed BlockHierarchy.Varentropy.Limit
+warning: BlockHierarchy/Varentropy/Limit.lean:85:26: This simp argument is unused:
+  abs_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_div, abs_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: BlockHierarchy/Varentropy/Limit.lean:85:35: This simp argument is unused:
+  abs_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_mul, abs_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: BlockHierarchy/Varentropy/Limit.lean:85:44: This simp argument is unused:
+  abs_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_mul, abs_div]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: BlockHierarchy/Varentropy/Limit.lean:87:0: 'BlockHierarchy.Varentropy.finite_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Limit.lean:88:0: 'BlockHierarchy.Varentropy.finite_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Limit.lean:89:0: 'BlockHierarchy.Varentropy.finite_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2206/2267] Replayed BlockHierarchy.Cut.ColumnAverage
+warning: BlockHierarchy/Cut/ColumnAverage.lean:24:5: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [2224/2296] Replayed BlockHierarchy.Varentropy.Lag
+info: BlockHierarchy/Varentropy/Lag.lean:120:0: 'BlockHierarchy.Varentropy.prefix_edge_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Lag.lean:121:0: 'BlockHierarchy.Varentropy.initial_lag' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Lag.lean:122:0: 'BlockHierarchy.Varentropy.edge_lag' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2225/2296] Replayed BlockHierarchy.Varentropy.Marginal
+info: BlockHierarchy/Varentropy/Marginal.lean:72:0: 'BlockHierarchy.Varentropy.right_cov' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Marginal.lean:73:0: 'BlockHierarchy.Varentropy.left_cov' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2226/2296] Replayed BlockHierarchy.Varentropy.Finite
+info: BlockHierarchy/Varentropy/Finite.lean:144:0: 'BlockHierarchy.Varentropy.finite_from_score' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2227/2296] Replayed BlockHierarchy.Varentropy.Paper
+info: BlockHierarchy/Varentropy/Paper.lean:19:0: 'BlockHierarchy.Varentropy.finite_block_varentropy' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2230/2296] Replayed BlockHierarchy.VarianceLimit.Norm
+info: BlockHierarchy/VarianceLimit/Norm.lean:86:0: 'BlockHierarchy.VarianceLimit.sd_diff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2231/2296] Replayed BlockHierarchy.VarianceLimit.Dyadic
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:163:0: 'BlockHierarchy.VarianceLimit.equal_pieces' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:164:0: 'BlockHierarchy.VarianceLimit.dyadic_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:165:0: 'BlockHierarchy.VarianceLimit.common_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2232/2296] Replayed BlockHierarchy.VarianceLimit.GainLimit
+info: BlockHierarchy/VarianceLimit/GainLimit.lean:164:0: 'BlockHierarchy.VarianceLimit.square_gain_le_diagonals' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/GainLimit.lean:165:0: 'BlockHierarchy.VarianceLimit.gain_positivity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2259/2312] Replayed BlockHierarchy.VarianceLimit.ChannelConvex
+info: BlockHierarchy/VarianceLimit/ChannelConvex.lean:99:0: 'BlockHierarchy.VarianceLimit.information_mix' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2289/2365] Replayed BlockHierarchy.Four.Derivatives
+warning: BlockHierarchy/Four/Derivatives.lean:37:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Four/Derivatives.lean:37:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2290/2365] Replayed BlockHierarchy.Four.Distortion
+warning: BlockHierarchy/Four/Distortion.lean:27:15: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Four/Distortion.lean:27:15: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Four/Distortion.lean:36:11: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [2293/2365] Replayed BlockHierarchy.Four.GroupCertificate
+info: BlockHierarchy/Four/GroupCertificate.lean:42:0: 'BlockHierarchy.Four.paper_group_of_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2295/2365] Replayed BlockHierarchy.Cut.Optimality
+info: BlockHierarchy/Cut/Optimality.lean:125:0: 'BlockHierarchy.Cut.optimal_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Optimality.lean:126:0: 'BlockHierarchy.Cut.optimal_score_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2296/2365] Replayed BlockHierarchy.Cut.Flips
+info: BlockHierarchy/Cut/Flips.lean:186:0: 'BlockHierarchy.Cut.optimal_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:187:0: 'BlockHierarchy.Cut.concat_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:188:0: 'BlockHierarchy.Cut.concat_distance' depends on axioms: [propext, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:189:0: 'BlockHierarchy.Cut.independent_of_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:190:0: 'BlockHierarchy.Cut.adjacent_le_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2297/2365] Replayed BlockHierarchy.Cut.Product
+info: BlockHierarchy/Cut/Product.lean:59:0: 'BlockHierarchy.Cut.trial_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2298/2365] Replayed BlockHierarchy.Cut.Paper
+info: BlockHierarchy/Cut/Paper.lean:29:0: 'BlockHierarchy.Cut.one_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2299/2365] Replayed BlockHierarchy.VarianceLimit.Gibbs
+info: BlockHierarchy/VarianceLimit/Gibbs.lean:104:0: 'BlockHierarchy.VarianceLimit.gibbs_marginal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Gibbs.lean:105:0: 'BlockHierarchy.VarianceLimit.gibbs_attains' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Gibbs.lean:106:0: 'BlockHierarchy.VarianceLimit.gibbs_variational' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2300/2365] Replayed BlockHierarchy.Cut.Existence
+info: BlockHierarchy/Cut/Existence.lean:32:0: 'BlockHierarchy.Cut.exists_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2301/2365] Replayed BlockHierarchy.VarianceLimit.Cut
+info: BlockHierarchy/VarianceLimit/Cut.lean:125:0: 'BlockHierarchy.VarianceLimit.block_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2303/2365] Replayed BlockHierarchy.Converse.Paths
+warning: BlockHierarchy/Converse/Paths.lean:74:19: This simp argument is unused:
+  Nat.cast_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [iidFlips, flipCount, Bool.false_eq_true, ite_false, ite_true, Nat.cast_add, Nat.cast_zero,
+    Nat.cast_succ, Real.log_mul hn.ne' (iid_pos hp h1 n w).ne', Real.log_mul hp.ne' (iid_pos hp h1 n w).ne',
+    Real.log_div hn.ne' hp.ne']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: BlockHierarchy/Converse/Paths.lean:85:0: 'BlockHierarchy.Converse.path_information' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2304/2365] Replayed BlockHierarchy.Cut.Continuity
+info: BlockHierarchy/Cut/Continuity.lean:83:0: 'BlockHierarchy.Cut.continuous_optimal_sd' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2325/2379] Replayed BlockHierarchy.Four.Theorem
+info: BlockHierarchy/Four/Theorem.lean:38:0: 'BlockHierarchy.Four.four_symbol_rate_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2328/2379] Replayed BlockHierarchy.VarianceLimit.GainLower
+info: BlockHierarchy/VarianceLimit/GainLower.lean:183:0: 'BlockHierarchy.VarianceLimit.spin_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/GainLower.lean:184:0: 'BlockHierarchy.VarianceLimit.gain_lower_adjacent' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2329/2379] Replayed BlockHierarchy.VarianceLimit.Redundancy
+info: BlockHierarchy/VarianceLimit/Redundancy.lean:169:0: 'BlockHierarchy.VarianceLimit.cost_redundancy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Redundancy.lean:171:0: 'BlockHierarchy.VarianceLimit.totalCost_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2330/2379] Replayed BlockHierarchy.VarianceLimit.EndpointDeletion
+warning: BlockHierarchy/VarianceLimit/EndpointDeletion.lean:27:55: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: BlockHierarchy/VarianceLimit/EndpointDeletion.lean:105:0: 'BlockHierarchy.VarianceLimit.endpoint_increment' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2331/2379] Replayed BlockHierarchy.VarianceLimit.EndpointSymmetry
+info: BlockHierarchy/VarianceLimit/EndpointSymmetry.lean:118:0: 'BlockHierarchy.VarianceLimit.symmetric_choice' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/EndpointSymmetry.lean:119:0: 'BlockHierarchy.VarianceLimit.symmetric_endpoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2332/2379] Replayed BlockHierarchy.VarianceLimit.GainUpper
+info: BlockHierarchy/VarianceLimit/GainUpper.lean:128:0: 'BlockHierarchy.VarianceLimit.single_cut_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+warning: BlockHierarchy/VarianceLimit/GainUpper.lean:149:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: BlockHierarchy/VarianceLimit/GainUpper.lean:206:0: 'BlockHierarchy.VarianceLimit.path_count_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/GainUpper.lean:264:0: 'BlockHierarchy.VarianceLimit.gain_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2333/2379] Replayed BlockHierarchy.VarianceLimit.Uniform
+info: BlockHierarchy/VarianceLimit/Uniform.lean:89:0: 'BlockHierarchy.VarianceLimit.mean_endpoint_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2334/2379] Replayed BlockHierarchy.VarianceLimit.Common
+info: BlockHierarchy/VarianceLimit/Common.lean:71:0: 'BlockHierarchy.VarianceLimit.commonOmega_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Common.lean:72:0: 'BlockHierarchy.VarianceLimit.commonOmega_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Common.lean:73:0: 'BlockHierarchy.VarianceLimit.omegaAt_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2335/2379] Replayed BlockHierarchy.VarianceLimit.FiniteDual
+info: BlockHierarchy/VarianceLimit/FiniteDual.lean:129:0: 'BlockHierarchy.VarianceLimit.finite_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2336/2379] Replayed BlockHierarchy.VarianceLimit.RatePositive
+info: BlockHierarchy/VarianceLimit/RatePositive.lean:101:0: 'BlockHierarchy.VarianceLimit.word_laplace_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/RatePositive.lean:225:0: 'BlockHierarchy.VarianceLimit.exists_positive_objective' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2353/2421] Replayed BlockHierarchy.VarianceLimit.EndpointProfile
+info: BlockHierarchy/VarianceLimit/EndpointProfile.lean:37:0: 'BlockHierarchy.VarianceLimit.exists_endpoint_profile' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2354/2421] Replayed BlockHierarchy.VarianceLimit.Positive
+info: BlockHierarchy/VarianceLimit/Positive.lean:68:0: 'BlockHierarchy.VarianceLimit.quantitative_positivity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2355/2421] Replayed BlockHierarchy.VarianceLimit.FixedSlope
+info: BlockHierarchy/VarianceLimit/FixedSlope.lean:108:0: 'BlockHierarchy.VarianceLimit.moving_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/FixedSlope.lean:109:0: 'BlockHierarchy.VarianceLimit.rate_convergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/FixedSlope.lean:110:0: 'BlockHierarchy.VarianceLimit.maximizingSlope_convergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2356/2421] Replayed BlockHierarchy.VarianceLimit.SlopePositive
+info: BlockHierarchy/VarianceLimit/SlopePositive.lean:32:0: 'BlockHierarchy.VarianceLimit.positive_slope_of_commonCost' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2357/2421] Replayed BlockHierarchy.VarianceLimit.Paper
+info: BlockHierarchy/VarianceLimit/Paper.lean:26:0: 'BlockHierarchy.VarianceLimit.variance_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3221/3265] Replayed BlockHierarchy.Converse.Ball
+info: BlockHierarchy/Converse/Ball.lean:67:0: 'BlockHierarchy.Converse.shifted_code_converse' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3342/3391] Replayed BlockHierarchy.Converse.Quantile
+info: BlockHierarchy/Converse/Quantile.lean:28:0: 'BlockHierarchy.Converse.quantile_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3344/3391] Replayed BlockHierarchy.Converse.BackwardRate
+info: BlockHierarchy/Converse/BackwardRate.lean:69:0: 'BlockHierarchy.Converse.backward_rate_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3363/3391] Replayed BlockHierarchy.Converse.BSCFacts
+warning: BlockHierarchy/Converse/BSCFacts.lean:24:27: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Converse/BSCFacts.lean:24:27: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [3364/3391] Replayed BlockHierarchy.Converse.MarkovEntropy
+warning: BlockHierarchy/Converse/MarkovEntropy.lean:11:84: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Converse/MarkovEntropy.lean:13:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Converse/MarkovEntropy.lean:11:84: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ℹ [3365/3391] Replayed BlockHierarchy.Converse.BlockRate
+info: BlockHierarchy/Converse/BlockRate.lean:44:0: 'BlockHierarchy.Converse.rate_backward' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3366/3391] Replayed BlockHierarchy.Converse.Backward
+warning: BlockHierarchy/Converse/Backward.lean:48:55: This simp argument is unused:
+  Fintype.sum_bool
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Recurrence.expectFrom, Three.step, tail, wordList, show Fintype.card (Bits 0) = 1 from rfl]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: BlockHierarchy/Converse/Backward.lean:107:0: 'BlockHierarchy.Converse.exists_backward' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3367/3391] Replayed BlockHierarchy.Converse.Rate
+warning: BlockHierarchy/Converse/Rate.lean:20:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: BlockHierarchy/Converse/Rate.lean:29:0: 'BlockHierarchy.Converse.rateBits_low' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3371/3391] Replayed BlockHierarchy.Converse.Center
+warning: BlockHierarchy/Converse/Center.lean:30:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: BlockHierarchy/Converse/Center.lean:80:0: 'BlockHierarchy.Converse.code_tail_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3385/3391] Replayed BlockHierarchy.Converse.Gaussian
+warning: BlockHierarchy/Converse/Gaussian.lean:61:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: BlockHierarchy/Converse/Gaussian.lean:66:0: 'BlockHierarchy.Converse.flips_clt' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3386/3391] Replayed BlockHierarchy.Converse.Cylinders
+warning: BlockHierarchy/Converse/Cylinders.lean:21:37: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: BlockHierarchy/Converse/Cylinders.lean:68:0: 'BlockHierarchy.Converse.cylinder_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3387/3391] Replayed BlockHierarchy.Converse.Tails
+info: BlockHierarchy/Converse/Tails.lean:87:0: 'BlockHierarchy.Converse.normalized_flip_tails' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3388/3391] Replayed BlockHierarchy.Converse.Paper
+info: BlockHierarchy/Converse/Paper.lean:130:0: 'BlockHierarchy.Converse.low_distortion_converse' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3390/3391] Built ReducedPair.Release (20s)
+ℹ [3391/3391] Built BlockHierarchy.PaperRelease (21s)
+info: BlockHierarchy/PaperRelease.lean:15:0: 'BlockHierarchy.first_change' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/PaperRelease.lean:18:0: 'BlockHierarchy.persistent_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/PaperRelease.lean:21:0: 'BlockHierarchy.PairVariance.three_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/PaperRelease.lean:24:0: 'BlockHierarchy.PairVariance.four_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/PaperRelease.lean:27:0: 'BlockHierarchy.Recurrence.finite_block_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/PaperRelease.lean:30:0: 'BlockHierarchy.Varentropy.finite_block_varentropy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/PaperRelease.lean:33:0: 'BlockHierarchy.Cut.one_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/PaperRelease.lean:36:0: 'BlockHierarchy.VarianceLimit.variance_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/PaperRelease.lean:39:0: 'BlockHierarchy.VarianceLimit.quantitative_positivity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/PaperRelease.lean:42:0: 'BlockHierarchy.Converse.low_distortion_converse' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3391 jobs).
+Lake build completed.

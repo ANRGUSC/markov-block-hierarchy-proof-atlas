@@ -1,0 +1,178 @@
+⚠ [1980/2050] Replayed BlockHierarchy.Three.Thresholds
+warning: BlockHierarchy/Three/Thresholds.lean:30:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:37:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:45:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1981/2050] Replayed BlockHierarchy.Three.ConstantColumns
+warning: BlockHierarchy/Three/ConstantColumns.lean:39:71: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/ConstantColumns.lean:39:71: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Three/ConstantColumns.lean:71:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1984/2050] Replayed BlockHierarchy.Four.Preliminaries
+warning: BlockHierarchy/Four/Preliminaries.lean:116:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1986/2050] Replayed BlockHierarchy.Four.AllocationIdentities
+warning: BlockHierarchy/Four/AllocationIdentities.lean:41:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1995/2050] Replayed BlockHierarchy.Four.WaterFilling
+warning: BlockHierarchy/Four/WaterFilling.lean:41:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: BlockHierarchy/Four/WaterFilling.lean:42:40: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [2003/2056] Replayed BlockHierarchy.Three.Inverse
+warning: BlockHierarchy/Three/Inverse.lean:27:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Inverse.lean:33:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Inverse.lean:36:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2012/2056] Replayed BlockHierarchy.Four.WaterEndpoint
+warning: BlockHierarchy/Four/WaterEndpoint.lean:7:5: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [2023/2081] Replayed BlockHierarchy.Three.Entropy
+warning: BlockHierarchy/Three/Entropy.lean:27:25: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/Entropy.lean:27:25: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2024/2081] Replayed BlockHierarchy.Three.FullWeights
+warning: BlockHierarchy/Three/FullWeights.lean:45:36: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/FullWeights.lean:45:36: Unused tactic linter: `positivity` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2026/2081] Replayed BlockHierarchy.Three.MiddleBranch
+warning: BlockHierarchy/Three/MiddleBranch.lean:31:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:36:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:60:72: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:64:66: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:60:72: Unused tactic linter: `positivity` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:64:66: Unused tactic linter: `positivity` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2031/2081] Replayed BlockHierarchy.Four.WaterClasses
+warning: BlockHierarchy/Four/WaterClasses.lean:65:79: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: BlockHierarchy/Four/WaterClasses.lean:123:0: 'BlockHierarchy.Four.WaterClasses.allocation' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2053/2115] Replayed BlockHierarchy.Four.WaterContinuity
+warning: BlockHierarchy/Four/WaterContinuity.lean:41:58: This simp argument is unused:
+  le_max_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [evenCost]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: BlockHierarchy/Four/WaterContinuity.lean:50:49: This simp argument is unused:
+  le_max_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [oddCost]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: BlockHierarchy/Four/WaterContinuity.lean:121:0: 'BlockHierarchy.Four.WaterContinuity.continuous_allocation' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2070/2152] Replayed BlockHierarchy.Three.Paper
+info: BlockHierarchy/Three/Paper.lean:84:0: 'BlockHierarchy.Three.three_symbol' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2156/2214] Replayed BlockHierarchy.Four.SupportingParity
+warning: BlockHierarchy/Four/SupportingParity.lean:11:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Four/SupportingParity.lean:26:65: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Four/SupportingParity.lean:26:65: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Four/SupportingParity.lean:58:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2157/2214] Replayed BlockHierarchy.Four.FourWord
+warning: BlockHierarchy/Four/FourWord.lean:25:39: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Three.step]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [2162/2214] Replayed BlockHierarchy.Four.SupportBoundary
+warning: BlockHierarchy/Four/SupportBoundary.lean:26:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [2202/2214] Replayed BlockHierarchy.Four.Derivatives
+warning: BlockHierarchy/Four/Derivatives.lean:37:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Four/Derivatives.lean:37:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2203/2214] Replayed BlockHierarchy.Four.Distortion
+warning: BlockHierarchy/Four/Distortion.lean:27:15: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Four/Distortion.lean:27:15: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Four/Distortion.lean:36:11: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [2206/2214] Replayed BlockHierarchy.Four.GroupCertificate
+info: BlockHierarchy/Four/GroupCertificate.lean:42:0: 'BlockHierarchy.Four.paper_group_of_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2207/2214] Replayed BlockHierarchy.Four.Theorem
+info: BlockHierarchy/Four/Theorem.lean:38:0: 'BlockHierarchy.Four.four_symbol_rate_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [2208/2214] Built BlockHierarchy.PairVariance.Statement (19s)
+✔ [2209/2214] Built BlockHierarchy.PairVariance.ThreeStatement (28s)
+✔ [2210/2214] Built BlockHierarchy.PairVariance.Generic (30s)
+✔ [2211/2214] Built BlockHierarchy.PairVariance.FourStatement (30s)
+ℹ [2212/2214] Built BlockHierarchy.PairVariance.Paper (15s)
+info: BlockHierarchy/PairVariance/Paper.lean:34:0: 'BlockHierarchy.PairVariance.shifted_log_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/PairVariance/Paper.lean:35:0: 'BlockHierarchy.PairVariance.three_four_pair_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [2213/2214] Built BlockHierarchy.PairVariance.ThreeRelease (24s)
+✔ [2214/2214] Built BlockHierarchy.PairVariance.FourRelease (25s)
+Build completed successfully (2214 jobs).
+
+'BlockHierarchy.PairVariance.three_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+Independent statement: BlockHierarchy.PairVariance.ThreeFullStatement
