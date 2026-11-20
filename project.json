@@ -1,7 +1,18 @@
 {
   "schema_version": 1,
-  "skill_version": "0.4.0",
+  "skill_version": "0.7.0",
   "title": "A Block Hierarchy for Rate-Distortion and Dispersion of Binary Markov Sources",
+  "folio": {
+    "short_title": "The block hierarchy",
+    "featured_claim": "thm:common",
+    "blurb": "Theorem 8 follows the variance across longer and longer blocks. A bound for joining two blocks controls the limit, and a positivity estimate shows that it stays above zero at the stated distortions.",
+    "figure": {
+      "path": "paper/folio-varentropy.webp",
+      "alt": "Two plots showing finite-block varentropy and the convergence of its correction as block length increases.",
+      "caption": "Fig. 8 · Finite-block varentropy",
+      "page": 17
+    }
+  },
   "edition": "arXiv:2603.07435v4 · local manuscript and PDF",
   "publication": "https://arxiv.org/abs/2603.07435v4",
   "repository": "https://github.com/ANRGUSC/markov-block-hierarchy",
