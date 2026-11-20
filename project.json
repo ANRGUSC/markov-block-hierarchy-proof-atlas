@@ -509,18 +509,34 @@
     },
     "thm:four": {
       "status": "attempted",
-      "updated": "2026-11-20T08:06:43+00:00",
+      "updated": "2026-11-20T08:30:44+00:00",
       "summary": "At length four, six complementary-word classes determine a parity allocation and the optimal rate and variance.",
-      "step": "Lean checked the six class probability ordering, the complementary Hamming coefficients and conditional costs, and the two-class allocation formula.",
-      "next": "Prove the full allocation within each parity group, the optimal parity mass, and the rate and tilted variance across all interior distortions.",
+      "step": "Lean checked the six-word-class reduction, the feasible channel's rate and tilted variance under the dual column conditions, the parity endpoint rules, and existence of optimizing class weights on each fixed parity slice.",
+      "next": "Identify the optimizing weights by their sorted prefix formula, certify the derivative of the optimized parity objective, and show every prescribed interior distortion is attained.",
       "scope": "Checked components of Theorem 4. The complete four-symbol result remains open.",
       "lean": "lean/BlockHierarchy/Four/Preliminaries.lean",
-      "run_log": "evidence/four-preliminaries.txt",
+      "run_log": "evidence/four-incremental.txt",
       "checked_inputs": {
+        "lean/BlockHierarchy/FiniteRD.lean": "3505cb88bf62172df5ec7477ef03b7d1a009d006776619a1e568473785b39cc3",
+        "lean/BlockHierarchy/Four/AllocationIdentities.lean": "762606623c0a6de007759fb5a6c4c8aaf6d23441a9e034e01366b1ce3f46ebf2",
+        "lean/BlockHierarchy/Four/Channel.lean": "4d89273477827b55ff69dc453e367a0a2146d2d38629c78dfe7cb14eea45391b",
+        "lean/BlockHierarchy/Four/Classes.lean": "51726db749fe14afd8bd13b6b6e4eb3c6755452db33cdb25918662c0a0991faa",
+        "lean/BlockHierarchy/Four/Consequences.lean": "a2c5903ac98077eadcd2d22ea190a0be9cc75e6ba0d0494a4933802f7c5bb3f9",
+        "lean/BlockHierarchy/Four/Derivatives.lean": "b9cbf08a8ab6ea625b104337b53a07ac7d91ff8c25ffa9810017b643eeda13c6",
+        "lean/BlockHierarchy/Four/Maximizer.lean": "6ea6b77f87d6e0b24fc1d7bbed2e86900b536b26ec44248fbce0668e851566d0",
+        "lean/BlockHierarchy/Four/Optimality.lean": "1f3b7f578c4363d5b3f45413a8e111e253a960b3ad57fdf6bfee4d2cf7c46761",
+        "lean/BlockHierarchy/Four/ParityOptimality.lean": "975da85a7a52419de9a9f474cd915760f24586786e69791ba39bf6e6761a1174",
         "lean/BlockHierarchy/Four/Preliminaries.lean": "2e39bde96498407f7c3881ee83dc26cbcaf445a9fda2783469bdf4043b95ba79",
+        "lean/BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
+        "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
         "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
-        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+        "lean/PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
+        "lean/PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
+        "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
+        "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48",
+        "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
         "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
         "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
       },
       "subproofs": [
@@ -542,7 +558,57 @@
         {
           "title": "Assemble the optimal channel, rate and tilted variance for the entire four-symbol theorem",
           "status": "open"
+        },
+        {
+          "title": "Recover the Markov probability of each of the 16 words from its class",
+          "declaration": "BlockHierarchy.Four.source_probability",
+          "status": "checked"
+        },
+        {
+          "title": "Reduce every four-bit Hamming convolution to the six class weights",
+          "declaration": "BlockHierarchy.Four.reduce_kernel",
+          "status": "checked"
+        },
+        {
+          "title": "Express total distortion using the class normalizers",
+          "declaration": "BlockHierarchy.Four.normalized_cost",
+          "status": "checked"
+        },
+        {
+          "title": "Certify the minimizing joint, exact information in bits, and tilted variance from the six dual columns",
+          "declaration": "BlockHierarchy.Four.rate_and_variance",
+          "status": "checked"
+        },
+        {
+          "title": "Prove the water-filling gain and parity endpoint conditions imply all optimality inequalities",
+          "declaration": "BlockHierarchy.Four.parity_columns",
+          "status": "checked"
+        },
+        {
+          "title": "Establish existence of a maximizing law at each positive multiplier and constrained parity mass",
+          "declaration": "BlockHierarchy.Four.exists_optimal_slice",
+          "status": "checked"
+        },
+        {
+          "title": "Differentiate the class objective under fixed class masses",
+          "declaration": "BlockHierarchy.Four.affine_class_derivative",
+          "status": "checked"
+        },
+        {
+          "title": "Derive the two endpoint decisions and the stationary interior case from a supporting slope",
+          "declaration": "BlockHierarchy.Four.parity_endpoint_rule",
+          "status": "checked"
         }
+      ],
+      "lean_sources": [
+        "lean/BlockHierarchy/Four/AllocationIdentities.lean",
+        "lean/BlockHierarchy/Four/Classes.lean",
+        "lean/BlockHierarchy/Four/Channel.lean",
+        "lean/BlockHierarchy/Four/ParityOptimality.lean",
+        "lean/BlockHierarchy/Four/Maximizer.lean",
+        "lean/BlockHierarchy/Four/Optimality.lean",
+        "lean/BlockHierarchy/Four/Derivatives.lean",
+        "lean/BlockHierarchy/Four/Consequences.lean"
       ]
     }
   },

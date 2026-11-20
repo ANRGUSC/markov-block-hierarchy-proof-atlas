@@ -1,0 +1,39 @@
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Four.Preliminaries
+⚠ [1947/1947] Built BlockHierarchy.Four.Preliminaries (49s)
+warning: BlockHierarchy/Four/Preliminaries.lean:116:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Build completed successfully (1947 jobs).
+Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Four.ParityOptimality BlockHierarchy.Four.Maximizer BlockHierarchy.Four.Derivatives BlockHierarchy.Four.Optimality BlockHierarchy.Four.Consequences BlockHierarchy.VarianceEnclosure
+⚠ [1987/2046] Replayed BlockHierarchy.Four.Preliminaries
+warning: BlockHierarchy/Four/Preliminaries.lean:116:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1989/2046] Replayed BlockHierarchy.Four.AllocationIdentities
+warning: BlockHierarchy/Four/AllocationIdentities.lean:41:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2101/2171] Replayed BlockHierarchy.Four.Optimality
+warning: BlockHierarchy/Four/Optimality.lean:16:22: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Four/Optimality.lean:16:22: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2171/2171] Replayed BlockHierarchy.Four.Derivatives
+warning: BlockHierarchy/Four/Derivatives.lean:37:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Four/Derivatives.lean:37:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Build completed successfully (2171 jobs).
+Lake build completed.
