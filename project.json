@@ -306,17 +306,18 @@
       }
     },
     "thm:three": {
-      "status": "open",
-      "updated": "2026-11-20T07:28:43+00:00",
+      "status": "attempted",
+      "updated": "2026-11-20T07:33:49+00:00",
       "page": 11,
       "summary": "Take a symmetric chain with $0<p<1/2$. The three branches, thresholds $D_{\\rm FS}(3),D_2$, normalizers, two variances and scalar equations are those of the linked theorem. The nonzero-rate range ends at $D<1/2$.",
-      "step": "Formalizing the reduction from eight words to the three symmetry classes of the symmetric Markov source.",
-      "next": "Derive the orbit normalizers, identify the eight-, six- and two-word supports, and certify the minimizing channels and moments on each interval.",
-      "scope": "Theorems for two-symbol blocks have been checked. The three-symbol proof has its own support thresholds and distortion equations.",
+      "step": "Lean checked the eight-word source reduction, the three class normalizers, strict increase of both distortion equations and their cubic forms. Lean also established the strict ordering and algebraic identities of the two thresholds.",
+      "next": "Connect the endpoint distortions to those thresholds, certify the channels on each support, and evaluate the rate and variance.",
+      "scope": "Theorem 3 remains open. The listed component proofs are kernel-checked.",
       "subproofs": [
         {
           "title": "Derive the complement-pair normalizers from Hamming distance and the Markov probabilities",
-          "status": "open"
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.class_normalizer"
         },
         {
           "title": "Establish the two thresholds and positivity of each candidate support",
@@ -327,10 +328,56 @@
           "status": "open"
         },
         {
-          "title": "Prove uniqueness and monotonicity of the two distortion equations and their cubic reductions",
+          "title": "Show the branch endpoints bracket every prescribed distortion and prove existence and uniqueness of its slope parameter",
           "status": "open"
+        },
+        {
+          "title": "Compute the three Markov class probabilities",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.class_expectation"
+        },
+        {
+          "title": "Prove strict increase of the six-word distortion equation",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.middleCost_strict"
+        },
+        {
+          "title": "Prove strict increase of the two-word distortion equation",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.constantCost_strict"
+        },
+        {
+          "title": "Reduce the six-word distortion equation to a cubic",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.middle_cubic"
+        },
+        {
+          "title": "Reduce the two-word distortion equation to a cubic",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.constant_cubic"
+        },
+        {
+          "title": "Prove the two radical threshold identities and strict ordering of the slope parameters",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.thresholds"
         }
-      ]
+      ],
+      "lean": "lean/BlockHierarchy/Three/Distortion.lean",
+      "lean_sources": [
+        "lean/BlockHierarchy/Three/Classes.lean",
+        "lean/FiniteChannel.lean",
+        "lean/BlockHierarchy/Three/Thresholds.lean"
+      ],
+      "run_log": "evidence/three-classes-distortion.txt",
+      "checked_inputs": {
+        "lean/BlockHierarchy/Three/Distortion.lean": "13c6bcfc7ebbe4e8c24f4021a8d70620fa453dc8c4374a3b3a879ed787325e87",
+        "lean/BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
+        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lean/BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48"
+      }
     }
   },
   "reader": "reader.json",

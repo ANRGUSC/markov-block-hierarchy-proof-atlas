@@ -1,0 +1,25 @@
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Three.Distortion
+✔ [1947/1948] Built BlockHierarchy.Three.Classes (12s)
+✔ [1948/1948] Built BlockHierarchy.Three.Distortion (21s)
+Build completed successfully (1948 jobs).
+Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Three.Thresholds
+⚠ [1948/1948] Built BlockHierarchy.Three.Thresholds (22s)
+warning: BlockHierarchy/Three/Thresholds.lean:30:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:37:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:45:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Build completed successfully (1948 jobs).
+Lake build completed.
