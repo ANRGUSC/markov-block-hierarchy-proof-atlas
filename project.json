@@ -307,11 +307,11 @@
     },
     "thm:three": {
       "status": "attempted",
-      "updated": "2026-11-20T07:42:30+00:00",
+      "updated": "2026-11-20T07:45:38+00:00",
       "page": 11,
       "summary": "Take a symmetric chain with $0<p<1/2$. The three branches, thresholds $D_{\\rm FS}(3),D_2$, normalizers, two variances and scalar equations are those of the linked theorem. The nonzero-rate range ends at $D<1/2$.",
-      "step": "Lean has checked the entire two-word branch, including optimality against every feasible joint law, information in bits, and the two-class tilted variance.",
-      "next": "Prove the corresponding six-word and full-support branches and assemble the audited Theorem 3 statement.",
+      "step": "Lean has checked both reduced-support branches, including their optimizing channels, support, rate and tilted variance.",
+      "next": "Check the full-support channel, its lossless endpoint and the common boundary, then audit the assembled theorem.",
       "scope": "Theorem 3 remains open. The listed component proofs are kernel-checked.",
       "subproofs": [
         {
@@ -386,6 +386,26 @@
           "title": "Prove optimality, exact rate, and tilted variance for the complete two-word branch",
           "status": "checked",
           "declaration": "BlockHierarchy.Three.constant_branch"
+        },
+        {
+          "title": "Prove positivity of each active six-word weight",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.six_weights"
+        },
+        {
+          "title": "Derive all three middle-branch normalizers",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.six_normalizer"
+        },
+        {
+          "title": "Check the active and inactive dual columns",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.middle_columns"
+        },
+        {
+          "title": "Certify the six-word support, exact distortion, global optimality, rate, and tilted variance",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Three.middle_branch"
         }
       ],
       "lean": "lean/BlockHierarchy/Three/Distortion.lean",
@@ -399,7 +419,10 @@
         "lean/BlockHierarchy/Three/OperatingPoint.lean",
         "lean/BlockHierarchy/Three/ConstantColumns.lean",
         "lean/Variational.lean",
-        "lean/ReducedPair/Moments.lean"
+        "lean/ReducedPair/Moments.lean",
+        "lean/BlockHierarchy/Three/MiddleWeights.lean",
+        "lean/BlockHierarchy/Three/MiddleColumns.lean",
+        "lean/BlockHierarchy/Three/MiddleBranch.lean"
       ],
       "run_log": "evidence/three-classes-distortion.txt",
       "checked_inputs": {
@@ -416,7 +439,10 @@
         "lean/BlockHierarchy/Three/OperatingPoint.lean": "c63208236151041bba6016b56b37d3c7615d986620e131597063e692a4638fc7",
         "lean/BlockHierarchy/Three/ConstantColumns.lean": "0bcb32d1adee31594138cc4cf9b205d322c78f66a62726c2fdede4293a4f08b5",
         "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
-        "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48"
+        "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48",
+        "lean/BlockHierarchy/Three/MiddleWeights.lean": "76ff346e7116afd67e2fba7b1d13b91d012eb5c984e55e9558f4b0c7d11f2e77",
+        "lean/BlockHierarchy/Three/MiddleColumns.lean": "577e13c92f1242115230982dc87736c7eaf671a989eaad6374bb51daf69245c0",
+        "lean/BlockHierarchy/Three/MiddleBranch.lean": "52a307fa16b991625c80c32b6ab5ac226a7c85a47404e7ad0adde6db1ba2f69c"
       }
     }
   },
