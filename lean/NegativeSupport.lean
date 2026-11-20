@@ -44,4 +44,67 @@ theorem transition_positive {A B C u : ℝ} (hC : 0 < C) (hAB : A ≤ B)
   rw [← hf] at hp
   exact pos_of_mul_pos_right hp hC.le
 
+/-- Stationary flow balance and negative persistence give the discriminant sign. -/
+theorem markov_discriminant {p q a b : ℝ} (hp : 0 < p) (hq : 0 < q)
+    (balance : p*a = q*b) (negative : 1 < a+b) :
+    0 < (p*a)^2 - (p*(1-a))*(q*(1-b)) := by
+  have product : (p*a)^2 = (p*a)*(q*b) := by rw [← balance, pow_two]
+  rw [product]
+  nlinarith only [mul_pos (mul_pos hp hq) (sub_pos.mpr negative)]
+
+/-- Label the rarer constant A. The smaller root is interior and gives a
+positive slope factor on the entire interval up to that root. -/
+theorem root_bounds {A B C : ℝ} (hA : 0 < A) (hB : 0 < B) (hC : 0 < C)
+    (order : A ≤ B) (hd : 0 < C^2-A*B) :
+    let r := (C-Real.sqrt (C^2-A*B))/B
+    0 < r ∧ r < 1 ∧ ∀ u ≤ r, 0 < C-B*u := by
+  let s := Real.sqrt (C^2-A*B)
+  have hs : 0 < s := Real.sqrt_pos.mpr hd
+  have hs2 : s^2 = C^2-A*B := Real.sq_sqrt hd.le
+  have hac : A < C := by
+    by_contra! h
+    nlinarith only [mul_le_mul_of_nonneg_right h hC.le,
+      mul_le_mul_of_nonneg_left (h.trans order) hA.le, hd]
+  have sumpos := add_pos hC hs
+  have rationalized : (C-s)/B = A/(C+s) := by
+    apply (div_eq_div_iff hB.ne' sumpos.ne').mpr
+    nlinarith only [hs2]
+  change 0 < (C-s)/B ∧ (C-s)/B < 1 ∧ ∀ u ≤ (C-s)/B, 0 < C-B*u
+  refine ⟨rationalized.symm ▸ div_pos hA sumpos, ?_, ?_⟩
+  · rw [rationalized]
+    apply (div_lt_iff₀ sumpos).mpr
+    linarith
+  · intro u hu
+    have bound := (le_div_iff₀ hB).mp hu
+    linarith [mul_comm u B]
+
+/-- Assemble the numerator signs through the first zero in the ordering A ≤ B. -/
+theorem ordered_markov_first_zero {p q a b : ℝ} (hp : 0 < p) (hq : 0 < q)
+    (ha : 0 < a) (ha1 : a < 1) (hb1 : b < 1) (balance : p*a = q*b)
+    (negative : 1 < a+b) (order : p*(1-a) ≤ q*(1-b)) :
+    let A := p*(1-a)
+    let B := q*(1-b)
+    let C := p*a
+    let r := (C-Real.sqrt (C^2-A*B))/B
+    0 < r ∧ r < 1 ∧ N A B C r = 0 ∧ (N B A C r = 0 ↔ B = A) ∧
+      (∀ u, 0 ≤ u → u < r → 0 < N A B C u ∧ 0 < N B A C u) ∧
+      (∀ u, 0 ≤ u → u ≤ r → 0 < C*(1+u^2)-(A+B)*u) := by
+  dsimp only
+  have hA := mul_pos hp (sub_pos.mpr ha1)
+  have hB := mul_pos hq (sub_pos.mpr hb1)
+  have hC := mul_pos hp ha
+  have hd := markov_discriminant hp hq balance negative
+  obtain ⟨hr, hr1, slope⟩ := root_bounds hA hB hC order hd
+  have hz := smaller_root hB hd
+  refine ⟨hr, hr1, hz, constant_tie hr.le hr1 hz, ?_, ?_⟩
+  · intro u hu hur
+    have hpos := positive_before_root hB hz (slope _ le_rfl) hur
+    have hlt := lt_trans hur hr1
+    have hsq : 0 < 1-u^2 := by
+      nlinarith only [mul_pos (sub_pos.mpr hlt) (show 0 < 1+u by linarith)]
+    have gap := constant_gap (p*(1-a)) (q*(1-b)) (p*a) u
+    exact ⟨hpos, by linarith [mul_nonneg (sub_nonneg.mpr order) hsq.le]⟩
+  · intro u hu hur
+    exact transition_positive hC order hd hu (slope u hur)
+
 end BlockHierarchy.NegativeSupport

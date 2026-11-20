@@ -10,7 +10,7 @@ The inventory contains ten numbered results and one conjecture. The graph displa
 
 ## Lean coverage
 
-For Proposition 1, Lean checks the positive-persistence threshold for the four explicit inverse-prior masses on the admissible distortion interval. For zero persistence, Lean checks that the four masses form a product distribution and stay strictly positive below the smaller stationary probability. For negative persistence, five named algebraic lemmas cover the smaller quadratic root, positivity before it, the ordering of constant words, the tie at a zero and positivity of the transition masses. Deriving their hypotheses from the source model, assembling the first-loss result and establishing channel optimality remain open. The independent contract and axiom queries are in [lean/Audit.lean](lean/Audit.lean). [Recorded Lean run](evidence/negative-support-subproofs.txt)
+For Proposition 1, Lean checks the positive-persistence threshold for the four explicit inverse-prior masses on the admissible distortion interval. For zero persistence, Lean checks that the four masses form a product distribution and stay strictly positive below the smaller stationary probability. For negative persistence, Lean derives the discriminant sign from stationary flow and combines the numerator lemmas when A <= B. Exchanging the labels, converting the result into distortion and connecting the inverse-prior formulas to channel optimality remain open. The independent contract and axiom queries are in [lean/Audit.lean](lean/Audit.lean). [Recorded Lean run](evidence/ordered-markov-first-zero.txt)
 
 ## Build or preview
 

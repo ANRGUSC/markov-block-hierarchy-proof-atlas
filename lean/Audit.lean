@@ -19,3 +19,6 @@ example : BlockHierarchy.IndependentSupportContract := BlockHierarchy.independen
 #print axioms BlockHierarchy.NegativeSupport.smaller_root
 #print axioms BlockHierarchy.NegativeSupport.positive_before_root
 #print axioms BlockHierarchy.NegativeSupport.transition_positive
+#print axioms BlockHierarchy.NegativeSupport.markov_discriminant
+#print axioms BlockHierarchy.NegativeSupport.root_bounds
+#print axioms BlockHierarchy.NegativeSupport.ordered_markov_first_zero
