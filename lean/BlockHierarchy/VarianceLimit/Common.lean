@@ -21,6 +21,10 @@ private theorem limit_spec {p τ : ℝ} (hp : 0<p) (ph : p<1/2) (ht : 0≤τ) :
   have eq : commonOmega p τ=L := t.limUnder_eq
   exact eq.symm ▸ ⟨hL,t,e⟩
 
+theorem blockSD_tendsto_commonOmega {p τ : ℝ} (hp : 0<p) (ph : p<1/2) (ht : 0≤τ) :
+    Tendsto (fun n : ℕ => blockSD p τ n / Real.sqrt n) atTop (𝓝 (commonOmega p τ)) :=
+  (limit_spec hp ph ht).2.1
+
 theorem commonOmega_nonneg {p τ : ℝ} (hp : 0<p) (ph : p<1/2) (ht : 0≤τ) :
     0≤commonOmega p τ := (limit_spec hp ph ht).1
 

@@ -117,3 +117,144 @@ info: BlockHierarchy/VarianceLimit/Common.lean:68:0: 'BlockHierarchy.VarianceLim
 info: BlockHierarchy/VarianceLimit/Common.lean:69:0: 'BlockHierarchy.VarianceLimit.omegaAt_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]
 Build completed successfully (2177 jobs).
 Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.VarianceLimit.Common BlockHierarchy.VarianceLimit.ChannelConvex BlockHierarchy.VarianceLimit.Redundancy BlockHierarchy.VarianceLimit.GainUpper BlockHierarchy.VarianceLimit.Uniform
+⚠ [2006/2061] Replayed BlockHierarchy.Cut.ColumnAverage
+warning: BlockHierarchy/Cut/ColumnAverage.lean:24:5: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [2093/2180] Replayed BlockHierarchy.Varentropy.Covariance
+info: BlockHierarchy/Varentropy/Covariance.lean:88:0: 'BlockHierarchy.Varentropy.iterate_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Covariance.lean:89:0: 'BlockHierarchy.Varentropy.last_edge_conditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2108/2184] Replayed BlockHierarchy.VarianceLimit.Norm
+info: BlockHierarchy/VarianceLimit/Norm.lean:86:0: 'BlockHierarchy.VarianceLimit.sd_diff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2109/2184] Replayed BlockHierarchy.VarianceLimit.Dyadic
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:163:0: 'BlockHierarchy.VarianceLimit.equal_pieces' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:164:0: 'BlockHierarchy.VarianceLimit.dyadic_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:165:0: 'BlockHierarchy.VarianceLimit.common_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2126/2184] Replayed BlockHierarchy.VarianceLimit.ChannelConvex
+info: BlockHierarchy/VarianceLimit/ChannelConvex.lean:99:0: 'BlockHierarchy.VarianceLimit.information_mix' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2171/2184] Replayed BlockHierarchy.Cut.Optimality
+info: BlockHierarchy/Cut/Optimality.lean:125:0: 'BlockHierarchy.Cut.optimal_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Optimality.lean:126:0: 'BlockHierarchy.Cut.optimal_score_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2172/2184] Replayed BlockHierarchy.Cut.Flips
+info: BlockHierarchy/Cut/Flips.lean:186:0: 'BlockHierarchy.Cut.optimal_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:187:0: 'BlockHierarchy.Cut.concat_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:188:0: 'BlockHierarchy.Cut.concat_distance' depends on axioms: [propext, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:189:0: 'BlockHierarchy.Cut.independent_of_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:190:0: 'BlockHierarchy.Cut.adjacent_le_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2173/2184] Replayed BlockHierarchy.Cut.Product
+info: BlockHierarchy/Cut/Product.lean:59:0: 'BlockHierarchy.Cut.trial_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2176/2184] Replayed BlockHierarchy.Cut.Paper
+info: BlockHierarchy/Cut/Paper.lean:29:0: 'BlockHierarchy.Cut.one_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2177/2184] Replayed BlockHierarchy.Cut.Existence
+info: BlockHierarchy/Cut/Existence.lean:32:0: 'BlockHierarchy.Cut.exists_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2178/2184] Replayed BlockHierarchy.VarianceLimit.Cut
+info: BlockHierarchy/VarianceLimit/Cut.lean:125:0: 'BlockHierarchy.VarianceLimit.block_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2179/2184] Replayed BlockHierarchy.Cut.Continuity
+info: BlockHierarchy/Cut/Continuity.lean:83:0: 'BlockHierarchy.Cut.continuous_optimal_sd' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2180/2184] Replayed BlockHierarchy.VarianceLimit.Redundancy
+info: BlockHierarchy/VarianceLimit/Redundancy.lean:169:0: 'BlockHierarchy.VarianceLimit.cost_redundancy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Redundancy.lean:171:0: 'BlockHierarchy.VarianceLimit.totalCost_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2181/2184] Replayed BlockHierarchy.Converse.Paths
+warning: BlockHierarchy/Converse/Paths.lean:74:19: This simp argument is unused:
+  Nat.cast_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [iidFlips, flipCount, Bool.false_eq_true, ite_false, ite_true, Nat.cast_add, Nat.cast_zero,
+    Nat.cast_succ, Real.log_mul hn.ne' (iid_pos hp h1 n w).ne', Real.log_mul hp.ne' (iid_pos hp h1 n w).ne',
+    Real.log_div hn.ne' hp.ne']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: BlockHierarchy/Converse/Paths.lean:85:0: 'BlockHierarchy.Converse.path_information' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2182/2184] Replayed BlockHierarchy.VarianceLimit.GainUpper
+info: BlockHierarchy/VarianceLimit/GainUpper.lean:128:0: 'BlockHierarchy.VarianceLimit.single_cut_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+warning: BlockHierarchy/VarianceLimit/GainUpper.lean:149:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: BlockHierarchy/VarianceLimit/GainUpper.lean:206:0: 'BlockHierarchy.VarianceLimit.path_count_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/GainUpper.lean:264:0: 'BlockHierarchy.VarianceLimit.gain_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2183/2184] Replayed BlockHierarchy.VarianceLimit.Uniform
+info: BlockHierarchy/VarianceLimit/Uniform.lean:89:0: 'BlockHierarchy.VarianceLimit.mean_endpoint_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2184/2184] Replayed BlockHierarchy.VarianceLimit.Common
+info: BlockHierarchy/VarianceLimit/Common.lean:71:0: 'BlockHierarchy.VarianceLimit.commonOmega_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Common.lean:72:0: 'BlockHierarchy.VarianceLimit.commonOmega_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Common.lean:73:0: 'BlockHierarchy.VarianceLimit.omegaAt_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2184 jobs).
+Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.VarianceLimit.SlopePositive
+ℹ [2111/2173] Replayed BlockHierarchy.VarianceLimit.ChannelConvex
+info: BlockHierarchy/VarianceLimit/ChannelConvex.lean:99:0: 'BlockHierarchy.VarianceLimit.information_mix' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2116/2182] Replayed BlockHierarchy.Cut.ColumnAverage
+warning: BlockHierarchy/Cut/ColumnAverage.lean:24:5: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [2117/2182] Replayed BlockHierarchy.Varentropy.Covariance
+info: BlockHierarchy/Varentropy/Covariance.lean:88:0: 'BlockHierarchy.Varentropy.iterate_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Covariance.lean:89:0: 'BlockHierarchy.Varentropy.last_edge_conditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2118/2182] Replayed BlockHierarchy.VarianceLimit.Norm
+info: BlockHierarchy/VarianceLimit/Norm.lean:86:0: 'BlockHierarchy.VarianceLimit.sd_diff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2126/2188] Replayed BlockHierarchy.VarianceLimit.Dyadic
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:163:0: 'BlockHierarchy.VarianceLimit.equal_pieces' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:164:0: 'BlockHierarchy.VarianceLimit.dyadic_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Dyadic.lean:165:0: 'BlockHierarchy.VarianceLimit.common_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2175/2188] Replayed BlockHierarchy.Cut.Optimality
+info: BlockHierarchy/Cut/Optimality.lean:125:0: 'BlockHierarchy.Cut.optimal_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Optimality.lean:126:0: 'BlockHierarchy.Cut.optimal_score_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2176/2188] Replayed BlockHierarchy.Cut.Existence
+info: BlockHierarchy/Cut/Existence.lean:32:0: 'BlockHierarchy.Cut.exists_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2177/2188] Replayed BlockHierarchy.VarianceLimit.Gibbs
+info: BlockHierarchy/VarianceLimit/Gibbs.lean:104:0: 'BlockHierarchy.VarianceLimit.gibbs_marginal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Gibbs.lean:105:0: 'BlockHierarchy.VarianceLimit.gibbs_attains' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Gibbs.lean:106:0: 'BlockHierarchy.VarianceLimit.gibbs_variational' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2178/2188] Replayed BlockHierarchy.Cut.Flips
+info: BlockHierarchy/Cut/Flips.lean:186:0: 'BlockHierarchy.Cut.optimal_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:187:0: 'BlockHierarchy.Cut.concat_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:188:0: 'BlockHierarchy.Cut.concat_distance' depends on axioms: [propext, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:189:0: 'BlockHierarchy.Cut.independent_of_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:190:0: 'BlockHierarchy.Cut.adjacent_le_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2179/2188] Replayed BlockHierarchy.Cut.Product
+info: BlockHierarchy/Cut/Product.lean:59:0: 'BlockHierarchy.Cut.trial_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2180/2188] Replayed BlockHierarchy.Cut.Continuity
+info: BlockHierarchy/Cut/Continuity.lean:83:0: 'BlockHierarchy.Cut.continuous_optimal_sd' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2181/2188] Replayed BlockHierarchy.Cut.Paper
+info: BlockHierarchy/Cut/Paper.lean:29:0: 'BlockHierarchy.Cut.one_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2182/2188] Replayed BlockHierarchy.VarianceLimit.Cut
+info: BlockHierarchy/VarianceLimit/Cut.lean:125:0: 'BlockHierarchy.VarianceLimit.block_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2183/2188] Replayed BlockHierarchy.VarianceLimit.Redundancy
+info: BlockHierarchy/VarianceLimit/Redundancy.lean:169:0: 'BlockHierarchy.VarianceLimit.cost_redundancy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Redundancy.lean:171:0: 'BlockHierarchy.VarianceLimit.totalCost_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2184/2188] Replayed BlockHierarchy.VarianceLimit.Uniform
+info: BlockHierarchy/VarianceLimit/Uniform.lean:89:0: 'BlockHierarchy.VarianceLimit.mean_endpoint_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2185/2188] Replayed BlockHierarchy.VarianceLimit.FiniteDual
+info: BlockHierarchy/VarianceLimit/FiniteDual.lean:129:0: 'BlockHierarchy.VarianceLimit.finite_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2186/2188] Replayed BlockHierarchy.VarianceLimit.Common
+info: BlockHierarchy/VarianceLimit/Common.lean:71:0: 'BlockHierarchy.VarianceLimit.commonOmega_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Common.lean:72:0: 'BlockHierarchy.VarianceLimit.commonOmega_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/Common.lean:73:0: 'BlockHierarchy.VarianceLimit.omegaAt_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2187/2188] Replayed BlockHierarchy.VarianceLimit.FixedSlope
+info: BlockHierarchy/VarianceLimit/FixedSlope.lean:108:0: 'BlockHierarchy.VarianceLimit.moving_variance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/FixedSlope.lean:109:0: 'BlockHierarchy.VarianceLimit.rate_convergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/VarianceLimit/FixedSlope.lean:110:0: 'BlockHierarchy.VarianceLimit.maximizingSlope_convergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2188/2188] Built BlockHierarchy.VarianceLimit.SlopePositive (64s)
+info: BlockHierarchy/VarianceLimit/SlopePositive.lean:32:0: 'BlockHierarchy.VarianceLimit.positive_slope_of_commonCost' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2188 jobs).
+Lake build completed.

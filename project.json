@@ -1217,11 +1217,11 @@
     },
     "thm:common": {
       "status": "attempted",
-      "updated": "2026-11-20T10:18:25+00:00",
+      "updated": "2026-11-20T10:47:02+00:00",
       "summary": "At a common multiplier, normalized standard deviations have a continuous limit and an explicit finite-block error. At a differentiability point of the rate curve, finite-block variances converge to its positive squared value in bits.",
       "scope": "All lengths for a stationary symmetric source, all nonnegative multipliers and interior differentiability points.",
-      "step": "For the actual Markov source, the common-multiplier limit is continuous, equals zero at zero and obeys the paper's explicit error enclosure for every finite optimizing prior.",
-      "next": "Prove strict positivity and convergence of the fixed-distortion operational variance.",
+      "step": "The fixed-distortion rate and variance limits passed on the actual finite-block optimization, including every choice of maximizing slopes. Checking interior positivity for the stationary Markov source.",
+      "next": "Verify the strictly positive objective and close the independently stated common- and fixed-distortion theorem.",
       "subproofs": [
         {
           "title": "Bound a standard-deviation change by the root mean-square discrepancy",
@@ -1282,6 +1282,46 @@
           "title": "Every optimal prior satisfies the paper's explicit finite-length enclosure",
           "declaration": "BlockHierarchy.VarianceLimit.omegaAt_enclosure",
           "status": "checked"
+        },
+        {
+          "title": "All physical block lengths converge to the same limiting standard deviation",
+          "declaration": "BlockHierarchy.VarianceLimit.blockSD_tendsto_commonOmega",
+          "status": "checked"
+        },
+        {
+          "title": "Mutual information is convex under mixtures of test channels, including unused outputs",
+          "declaration": "BlockHierarchy.VarianceLimit.information_mix",
+          "status": "checked"
+        },
+        {
+          "title": "The difference between finite and limiting mean canonical costs is bounded uniformly in the multiplier",
+          "declaration": "BlockHierarchy.VarianceLimit.cost_redundancy",
+          "status": "checked"
+        },
+        {
+          "title": "Finite-block constrained rate equals the dual value and maximizing slopes exist",
+          "declaration": "BlockHierarchy.VarianceLimit.finite_duality",
+          "status": "checked"
+        },
+        {
+          "title": "Finite-block operational rates converge at every positive distortion",
+          "declaration": "BlockHierarchy.VarianceLimit.rate_convergence",
+          "status": "checked"
+        },
+        {
+          "title": "Every sequence of maximizing slopes converges at a differentiability point",
+          "declaration": "BlockHierarchy.VarianceLimit.maximizingSlope_convergence",
+          "status": "checked"
+        },
+        {
+          "title": "The normalized variance converges at the moving finite-block optimum",
+          "declaration": "BlockHierarchy.VarianceLimit.moving_variance",
+          "status": "checked"
+        },
+        {
+          "title": "A positive dual objective forces the limiting slope to be positive",
+          "declaration": "BlockHierarchy.VarianceLimit.positive_slope_of_commonCost",
+          "status": "checked"
         }
       ],
       "lean": "lean/BlockHierarchy/VarianceLimit/Statement.lean",
@@ -1292,7 +1332,13 @@
         "lean/BlockHierarchy/Cut/Existence.lean",
         "lean/BlockHierarchy/VarianceLimit/Cut.lean",
         "lean/BlockHierarchy/Cut/Continuity.lean",
-        "lean/BlockHierarchy/VarianceLimit/Common.lean"
+        "lean/BlockHierarchy/VarianceLimit/Common.lean",
+        "lean/BlockHierarchy/VarianceLimit/ChannelConvex.lean",
+        "lean/BlockHierarchy/VarianceLimit/Redundancy.lean",
+        "lean/BlockHierarchy/VarianceLimit/SupportingSlope.lean",
+        "lean/BlockHierarchy/VarianceLimit/FiniteDual.lean",
+        "lean/BlockHierarchy/VarianceLimit/FixedSlope.lean",
+        "lean/BlockHierarchy/VarianceLimit/SlopePositive.lean"
       ],
       "run_log": "evidence/variance-limit-incremental.txt",
       "checked_inputs": {
@@ -1309,18 +1355,28 @@
         "lean/BlockHierarchy/Varentropy/Covariance.lean": "9d63ee314b2117f136db879c5d7c60c430a93a690bd525dc231d25ad542a5b36",
         "lean/BlockHierarchy/Varentropy/Score.lean": "a3f0c65ec152d9493a389b71f52e2545b44789d03a5816d0c6068db03ea63753",
         "lean/BlockHierarchy/Varentropy/Statement.lean": "fe310a6d067652205da78f4f22f498949b63932f5d35a7f70cf4a7b93407d404",
-        "lean/BlockHierarchy/VarianceLimit/Common.lean": "5d91a67427b76570553a872f49d8f07ebf1bce774a97db93e1498fc2fcd52adf",
+        "lean/BlockHierarchy/VarianceLimit/ChannelConvex.lean": "5b29975c64cf4aac9363c0496cc19ce1c78403aa9bf0f000f7bf0ce9ccfa2b14",
+        "lean/BlockHierarchy/VarianceLimit/Common.lean": "4179319d75e7f49ee6976d533dac7aa65006b90b2a3d6e046ea5200613870f4d",
         "lean/BlockHierarchy/VarianceLimit/Cut.lean": "63cac1d6c017292348fac2c78c44910caae81767dbd91bded7f71f1fbfc2eb05",
         "lean/BlockHierarchy/VarianceLimit/Dyadic.lean": "1d6563620266ec0acd2f44b44413c63ee7f45c096daf94797e387d2533e14582",
+        "lean/BlockHierarchy/VarianceLimit/FiniteDual.lean": "e473a4c5f879ed14ea7d3d53d5c6fd756f56a276e6d609a155e569ab39e585b2",
+        "lean/BlockHierarchy/VarianceLimit/FixedSlope.lean": "35f43d7dc7b595110465ef257e5c2c4a525467e435a3d57fcdd77c1687564cdc",
+        "lean/BlockHierarchy/VarianceLimit/Gibbs.lean": "0de20433d83f008736c7e9102ae8ed75868ae42fd3f6a1a3114c3052a3804080",
         "lean/BlockHierarchy/VarianceLimit/Norm.lean": "bcb128e7d674b18301fc1684be8726453075521f27fc0b87dfd0fcd13d17377e",
+        "lean/BlockHierarchy/VarianceLimit/PositiveStatement.lean": "985c24dc858d3d13b804f0bcedaa0af8fd3d9ac87023c110c25561fe7f44dbe0",
+        "lean/BlockHierarchy/VarianceLimit/Redundancy.lean": "28367d74e1b0b0b080de2141b4c93716f3bd46c78211b6799bd00204a6c0e53c",
+        "lean/BlockHierarchy/VarianceLimit/SlopePositive.lean": "d5727ab243520f3054772eb3cabd8d032fb6849b35ec5296b705f2a5d1d36ba4",
         "lean/BlockHierarchy/VarianceLimit/Statement.lean": "6648783e43c067e773ea8bb169d437fbe9e7b9fb9157e6c0e75f70229d9b5a43",
+        "lean/BlockHierarchy/VarianceLimit/SupportingSlope.lean": "c92a2052e2c59f43825409475a82859620a5675094b1ef324cc799617c7d670b",
+        "lean/BlockHierarchy/VarianceLimit/Uniform.lean": "3c6ba9b51ce73be43f76752f1c81809893601ef003fdf000e9f9071b1ab16e3c",
         "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
         "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
         "lean/FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
         "lean/PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
         "lean/PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
         "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
-        "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48"
+        "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48",
+        "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43"
       }
     },
     "prop:converse": {
@@ -1400,12 +1456,12 @@
       }
     },
     "cor:positive": {
-      "status": "attempted",
+      "status": "closed",
       "summary": "The limiting normalized standard deviation has an explicit positive lower bound in terms of the flip probability and multiplier.",
-      "scope": "Positive common multiplier for the stationary symmetric chain.",
-      "step": "The aggregate lower bound now checks, including its exact coefficient. Lean also verified that the actual Gibbs test channel attains the variational cost.",
-      "next": "Prove the two finite gain estimates and the lower bound on mean endpoint correlation for the Markov source.",
-      "updated": "2026-11-20T10:22:16+00:00",
+      "scope": "For every stationary symmetric binary source with flip probability between zero and one half, and every strictly positive multiplier, the normalized standard deviation for any sequence of actual optimizing priors converges to a positive limit. The checked bound has exactly the manuscript's coefficient (1?2p)?(p(1?p))/2 and fourth power of 2 log(cosh(?/2))/?. The proof supplies the finite gain inequalities, the endpoint deletion estimate and the limiting aggregation.",
+      "step": "The independent audit checked the exact positive lower bound on the physical limiting standard deviation for all optimizing priors.",
+      "next": "Complete.",
+      "updated": "2026-11-20T10:51:57+00:00",
       "subproofs": [
         {
           "title": "Sum the gain estimates across cuts and prove their limiting coefficient",
@@ -1426,23 +1482,91 @@
           "title": "Every trial channel has at least the optimal penalized information cost",
           "declaration": "BlockHierarchy.VarianceLimit.gibbs_variational",
           "status": "checked"
+        },
+        {
+          "title": "Changing a single flip and applying Cauchy?Schwarz bounds the sum of all cut gains",
+          "declaration": "BlockHierarchy.VarianceLimit.gain_upper",
+          "status": "checked"
+        },
+        {
+          "title": "A uniform reproduction prior bounds the total optimal cost",
+          "declaration": "BlockHierarchy.VarianceLimit.totalCost_uniform",
+          "status": "checked"
+        },
+        {
+          "title": "Endpoint deletions telescope into the required average correlation",
+          "declaration": "BlockHierarchy.VarianceLimit.mean_endpoint_lower",
+          "status": "checked"
+        },
+        {
+          "title": "One optimizing endpoint-correlation profile supplies both estimates at every length",
+          "declaration": "BlockHierarchy.VarianceLimit.exists_endpoint_profile",
+          "status": "checked"
+        },
+        {
+          "title": "The common standard deviation satisfies the exact positive lower bound",
+          "declaration": "BlockHierarchy.VarianceLimit.commonOmega_lower",
+          "status": "checked"
+        },
+        {
+          "title": "The limiting standard deviation is strictly positive at every positive multiplier",
+          "declaration": "BlockHierarchy.VarianceLimit.commonOmega_pos",
+          "status": "checked"
+        },
+        {
+          "title": "The complete quantitative positivity statement for every optimizing prior",
+          "declaration": "BlockHierarchy.VarianceLimit.quantitative_positivity",
+          "status": "checked"
         }
       ],
       "lean": "lean/BlockHierarchy/VarianceLimit/PositiveStatement.lean",
       "lean_sources": [
         "lean/BlockHierarchy/VarianceLimit/PositiveStatement.lean",
         "lean/BlockHierarchy/VarianceLimit/GainLimit.lean",
-        "lean/BlockHierarchy/VarianceLimit/Gibbs.lean"
+        "lean/BlockHierarchy/VarianceLimit/Gibbs.lean",
+        "lean/BlockHierarchy/VarianceLimit/GainUpper.lean",
+        "lean/BlockHierarchy/VarianceLimit/Uniform.lean",
+        "lean/BlockHierarchy/VarianceLimit/EndpointProfile.lean",
+        "lean/BlockHierarchy/VarianceLimit/EndpointDeletion.lean",
+        "lean/BlockHierarchy/VarianceLimit/EndpointSymmetry.lean",
+        "lean/BlockHierarchy/VarianceLimit/Positive.lean",
+        "lean/BlockHierarchy/VarianceLimit/PositiveRelease.lean"
       ],
-      "run_log": "evidence/positive-incremental.txt",
+      "run_log": "evidence/positive-complete.txt",
       "checked_inputs": {
+        "lean/BlockHierarchy/Converse/Paths.lean": "705b5cf55c200c4c62877633ffa5096840e007915ec6a51da986d9eb1ced4726",
+        "lean/BlockHierarchy/Cut/ColumnAverage.lean": "9b19a0fa9e6157054fadfbfd2b1e484008cceccd739b9b41fcc6e24980d2dcf8",
+        "lean/BlockHierarchy/Cut/Compare.lean": "ced870464913ae653881088c11b31c45003c99967f3f27021c13a835c6b01ab4",
+        "lean/BlockHierarchy/Cut/Continuity.lean": "b7b64383067218b207b096e58624fd37d7d8fa4736ec9baaea358c59bc753e5b",
+        "lean/BlockHierarchy/Cut/Existence.lean": "e1f398a54de2838ea8ae3452a0910cc4cd77c7287414e334f010778881151513",
+        "lean/BlockHierarchy/Cut/Flips.lean": "9e00e61744d691e13581969b0c0f42c35371d9e2ac649d603b6a39c9ccb020a7",
         "lean/BlockHierarchy/Cut/Optimality.lean": "28a067e9b350052c2b9d9105424b0391e1f0e4090c69489fc66dd24791cbbf05",
+        "lean/BlockHierarchy/Cut/Paper.lean": "cc445c16e6aa3725d24719b612f8a1b8e234d28febc3e7c007b263539d40410c",
+        "lean/BlockHierarchy/Cut/Product.lean": "87d959a7f4edb6ecc7a49adb671bc714bbd30139f9d907c917de9bc2fbc32467",
+        "lean/BlockHierarchy/Cut/ScoreBound.lean": "42025de340149ed1ce411445d696f3a21387fc7af2847c703a4d8e59b2bb4794",
         "lean/BlockHierarchy/Cut/Statement.lean": "3a105a49f55ca94972d5b50ca5b11d289ee4e4ac2afc9799f7b640aa7b04a239",
+        "lean/BlockHierarchy/Varentropy/Covariance.lean": "9d63ee314b2117f136db879c5d7c60c430a93a690bd525dc231d25ad542a5b36",
+        "lean/BlockHierarchy/Varentropy/Marginal.lean": "a22c2d7ad0f4f6f42fe25780caf92ee5a34215e761eb8e37e688a1ba8962abd7",
+        "lean/BlockHierarchy/Varentropy/Score.lean": "a3f0c65ec152d9493a389b71f52e2545b44789d03a5816d0c6068db03ea63753",
         "lean/BlockHierarchy/Varentropy/Statement.lean": "fe310a6d067652205da78f4f22f498949b63932f5d35a7f70cf4a7b93407d404",
+        "lean/BlockHierarchy/VarianceLimit/Common.lean": "4179319d75e7f49ee6976d533dac7aa65006b90b2a3d6e046ea5200613870f4d",
+        "lean/BlockHierarchy/VarianceLimit/Cut.lean": "63cac1d6c017292348fac2c78c44910caae81767dbd91bded7f71f1fbfc2eb05",
         "lean/BlockHierarchy/VarianceLimit/Dyadic.lean": "1d6563620266ec0acd2f44b44413c63ee7f45c096daf94797e387d2533e14582",
+        "lean/BlockHierarchy/VarianceLimit/EndpointDeletion.lean": "1c3060c4bdc55be8e43d15a606ed0baad59a838123d29750c974f1bc9dbdd058",
+        "lean/BlockHierarchy/VarianceLimit/EndpointProfile.lean": "d60b60491286924df1a9e6f7dc9366baa91d0b4614f94f333cb59da6f0e001db",
+        "lean/BlockHierarchy/VarianceLimit/EndpointSymmetry.lean": "f836d6652a965e835f04bc64a8b7c343f444bcf8999493f4fb39185902051200",
         "lean/BlockHierarchy/VarianceLimit/GainLimit.lean": "53f3a47930e8527305be2ec87aeb8f8e969af182bd9ff0469f7769c9f4e8730f",
+        "lean/BlockHierarchy/VarianceLimit/GainLower.lean": "dd3f9da11b3efded78a3f8642eb2ccdd0464e7b24a90103d1b44131892d4e10f",
+        "lean/BlockHierarchy/VarianceLimit/GainUpper.lean": "201453dfbae8f480589556a0a16e482dbc4fc0502c870643f441e5cb4473de84",
         "lean/BlockHierarchy/VarianceLimit/Gibbs.lean": "0de20433d83f008736c7e9102ae8ed75868ae42fd3f6a1a3114c3052a3804080",
+        "lean/BlockHierarchy/VarianceLimit/Norm.lean": "bcb128e7d674b18301fc1684be8726453075521f27fc0b87dfd0fcd13d17377e",
+        "lean/BlockHierarchy/VarianceLimit/Positive.lean": "0426ee0dc727cfb33d5bd86a8c8669c82aebbffc8935585ff1865c317b360309",
+        "lean/BlockHierarchy/VarianceLimit/PositiveRelease.lean": "caefcc2eadddff8c54c1bd019e5320f0966cf47009639ef6b7de94177ed31a8d",
+        "lean/BlockHierarchy/VarianceLimit/PositiveStatement.lean": "985c24dc858d3d13b804f0bcedaa0af8fd3d9ac87023c110c25561fe7f44dbe0",
+        "lean/BlockHierarchy/VarianceLimit/Redundancy.lean": "28367d74e1b0b0b080de2141b4c93716f3bd46c78211b6799bd00204a6c0e53c",
+        "lean/BlockHierarchy/VarianceLimit/Reversal.lean": "852669fca0600e9e9099f32c3a6d5551e57aef1f4c9aa001aab06f3133a7170d",
         "lean/BlockHierarchy/VarianceLimit/Statement.lean": "6648783e43c067e773ea8bb169d437fbe9e7b9fb9157e6c0e75f70229d9b5a43",
+        "lean/BlockHierarchy/VarianceLimit/Uniform.lean": "3c6ba9b51ce73be43f76752f1c81809893601ef003fdf000e9f9071b1ab16e3c",
         "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
         "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
         "lean/FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
@@ -1451,7 +1575,16 @@
         "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
         "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48",
         "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
-        "lean/BlockHierarchy/VarianceLimit/PositiveStatement.lean": "985c24dc858d3d13b804f0bcedaa0af8fd3d9ac87023c110c25561fe7f44dbe0"
+        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+      },
+      "closure": {
+        "package": "lean",
+        "audit": "evidence/positive-audit.json",
+        "expected": "BlockHierarchy.VarianceLimit.QuantitativePositivityStatement",
+        "declaration": "BlockHierarchy.VarianceLimit.quantitative_positivity",
+        "correspondence": "For every stationary symmetric binary source with flip probability between zero and one half, and every strictly positive multiplier, the normalized standard deviation for any sequence of actual optimizing priors converges to a positive limit. The checked bound has exactly the manuscript's coefficient (1?2p)?(p(1?p))/2 and fourth power of 2 log(cosh(?/2))/?. The proof supplies the finite gain inequalities, the endpoint deletion estimate and the limiting aggregation."
       }
     }
   },

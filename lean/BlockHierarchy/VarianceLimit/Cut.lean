@@ -24,7 +24,7 @@ noncomputable def blockSD (p τ : ℝ) : ℕ → ℝ
   | 0 => 0
   | n+1 => Real.sqrt (variance (mass p n) (blockScore p τ n))
 
-private theorem mean_pull {X Y : Type*} [Fintype X] [Fintype Y] (e : X ≃ Y) (P f : Y → ℝ) :
+theorem mean_pull {X Y : Type*} [Fintype X] [Fintype Y] (e : X ≃ Y) (P f : Y → ℝ) :
     mean (fun x => P (e x)) (fun x => f (e x))=mean P f := e.sum_comp (fun y => P y*f y)
 
 private theorem variance_pull {X Y : Type*} [Fintype X] [Fintype Y] (e : X ≃ Y) (P f : Y → ℝ) :
@@ -36,13 +36,13 @@ private theorem variance_pull {X Y : Type*} [Fintype X] [Fintype Y] (e : X ≃ Y
 private theorem prior_pull {X Y : Type*} [Fintype X] [Fintype Y] (e : X ≃ Y) {q : Y → ℝ} (hq : IsPrior q) :
     IsPrior (fun x => q (e x)) := ⟨fun _ => hq.1 _,(e.sum_comp q).trans hq.2⟩
 
-private theorem score_pull {X Y : Type*} [Fintype X] [Fintype Y] (e : X ≃ Y)
+theorem score_pull {X Y : Type*} [Fintype X] [Fintype Y] (e : X ≃ Y)
     (τ : ℝ) (d : Y → Y → ℕ) (q : Y → ℝ) (x : X) :
     score τ (fun a b => d (e a) (e b)) (fun a => q (e a)) x=score τ d q (e x) := by
   unfold score Z
   rw [e.sum_comp (fun y => q y*Real.exp (-τ*(d (e x) y : ℝ)))]
 
-private theorem optimal_pull {X Y : Type*} [Fintype X] [Fintype Y] (e : X ≃ Y)
+theorem optimal_pull {X Y : Type*} [Fintype X] [Fintype Y] (e : X ≃ Y)
     {P q : Y → ℝ} {τ : ℝ} {d : Y → Y → ℕ} (h : Optimal P τ d q) :
     Optimal (fun x => P (e x)) τ (fun a b => d (e a) (e b)) (fun a => q (e a)) := by
   refine ⟨prior_pull e h.1,?_⟩
