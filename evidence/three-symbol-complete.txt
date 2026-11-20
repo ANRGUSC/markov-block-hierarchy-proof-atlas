@@ -1,0 +1,71 @@
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Three.Paper
+⚠ [1954/1973] Replayed BlockHierarchy.Three.Thresholds
+warning: BlockHierarchy/Three/Thresholds.lean:30:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:37:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:45:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1955/1973] Replayed BlockHierarchy.Three.ConstantColumns
+warning: BlockHierarchy/Three/ConstantColumns.lean:39:71: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/ConstantColumns.lean:39:71: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Three/ConstantColumns.lean:71:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1957/1973] Replayed BlockHierarchy.Three.Inverse
+warning: BlockHierarchy/Three/Inverse.lean:27:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Inverse.lean:33:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Inverse.lean:36:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1963/1973] Replayed BlockHierarchy.Three.Entropy
+warning: BlockHierarchy/Three/Entropy.lean:27:25: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/Entropy.lean:27:25: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [1964/1973] Replayed BlockHierarchy.Three.FullWeights
+warning: BlockHierarchy/Three/FullWeights.lean:45:36: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/FullWeights.lean:45:36: Unused tactic linter: `positivity` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [1971/1973] Replayed BlockHierarchy.Three.MiddleBranch
+warning: BlockHierarchy/Three/MiddleBranch.lean:31:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:36:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:60:72: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:64:66: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:60:72: Unused tactic linter: `positivity` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Three/MiddleBranch.lean:64:66: Unused tactic linter: `positivity` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ℹ [1973/1973] Built BlockHierarchy.Three.Paper (31s)
+info: BlockHierarchy/Three/Paper.lean:84:0: 'BlockHierarchy.Three.three_symbol' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1973 jobs).
+Lake build completed.

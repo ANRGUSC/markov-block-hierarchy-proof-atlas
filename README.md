@@ -5,7 +5,6 @@ Explore Bhaskar Krishnamachari's *A Block Hierarchy for Rate-Distortion and Disp
 - [Read the Proof Atlas](https://anrgusc.github.io/markov-block-hierarchy-proof-atlas/proofs/)
 - [Explore the dependency graph for Theorem 8](https://anrgusc.github.io/markov-block-hierarchy-proof-atlas/proofs/#/graph/thm%3Acommon)
 - [View the progress dashboard](https://anrgusc.github.io/markov-block-hierarchy-proof-atlas/progress.html)
-- [Read the proof-writing experiments and timings](experiments/REPORT.md)
 
 The inventory contains ten numbered results and one conjecture. The graph displays the recorded prerequisites. Selecting a claim highlights its upstream and downstream results and opens the explanations for its direct links. The structured proofs come from the paper's proof companion.
 
@@ -15,7 +14,9 @@ Proposition 1 is closed for all three persistence cases, including the equal-bia
 
 Theorem 2 is closed for the persistent two-symbol source. The proof covers all three rate and variance branches and the biased zero-rate endpoint. [Independent contract](lean/ReducedPair/PaperStatement.lean) ? [Assembled theorem](lean/ReducedPair/Paper.lean) ? [Declaration and axiom audit](evidence/persistent-pair-audit.json).
 
-The current target is Theorem 3 for the symmetric three-symbol source.
+Theorem 3 is closed for all three support regimes of the symmetric three-symbol source. The independent audit covers the lossless endpoint, both transitions, uniqueness of the optimizing reproduction law, and the rate and tilted variance throughout the stated range. [Independent contract](lean/BlockHierarchy/Three/PaperStatement.lean) ? [Declaration and axiom audit](evidence/three-symbol-audit.json).
+
+The current target is Theorem 4 for the symmetric four-symbol source.
 
 ## Build or preview
 
