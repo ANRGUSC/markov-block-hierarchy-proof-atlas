@@ -444,6 +444,44 @@
         "lean/BlockHierarchy/Three/MiddleColumns.lean": "577e13c92f1242115230982dc87736c7eaf671a989eaad6374bb51daf69245c0",
         "lean/BlockHierarchy/Three/MiddleBranch.lean": "52a307fa16b991625c80c32b6ab5ac226a7c85a47404e7ad0adde6db1ba2f69c"
       }
+    },
+    "thm:four": {
+      "status": "attempted",
+      "updated": "2026-11-20T08:06:43+00:00",
+      "summary": "At length four, six complementary-word classes determine a parity allocation and the optimal rate and variance.",
+      "step": "Three paired proof-writing experiments produced checked prerequisites for the four-symbol proof. The winners were rechecked together through the paper package.",
+      "next": "Prove the full allocation within each parity group, the optimal parity mass, and the rate and tilted variance across all interior distortions.",
+      "scope": "Checked components of Theorem 4. The complete four-symbol result remains open.",
+      "lean": "lean/BlockHierarchy/Four/Preliminaries.lean",
+      "run_log": "evidence/four-preliminaries.txt",
+      "checked_inputs": {
+        "lean/BlockHierarchy/Four/Preliminaries.lean": "2e39bde96498407f7c3881ee83dc26cbcaf445a9fda2783469bdf4043b95ba79",
+        "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+      },
+      "subproofs": [
+        {
+          "title": "Order the six class probabilities and averaged Hamming coefficients",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Four.Coefficients.class_order_and_kernel_gaps"
+        },
+        {
+          "title": "Compute all normalizers and conditional errors for the constant output pair",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Four.ConstantPair.normalizer_and_cost"
+        },
+        {
+          "title": "Identify the allocations in both regimes of the two-class water-filling problem",
+          "status": "checked",
+          "declaration": "BlockHierarchy.Four.OddAllocation.water_filling"
+        },
+        {
+          "title": "Assemble the optimal channel, rate and tilted variance for the entire four-symbol theorem",
+          "status": "open"
+        }
+      ]
     }
   },
   "reader": "reader.json",
@@ -455,5 +493,12 @@
   },
   "proof_work": {
     "mode": "paper"
+  },
+  "proof_experiments": {
+    "scope": "remaining numbered results",
+    "outcome": "elapsed proof-writing time to a checked complete contract",
+    "protocol": "experiments/PROTOCOL.md",
+    "report": "experiments/REPORT.md",
+    "records": "experiments/trials.json"
   }
 }
