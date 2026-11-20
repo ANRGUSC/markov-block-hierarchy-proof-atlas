@@ -1,0 +1,49 @@
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Varentropy.Release
+ℹ [1954/1961] Replayed BlockHierarchy.Varentropy.Covariance
+info: BlockHierarchy/Varentropy/Covariance.lean:88:0: 'BlockHierarchy.Varentropy.iterate_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Covariance.lean:89:0: 'BlockHierarchy.Varentropy.last_edge_conditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1956/1961] Replayed BlockHierarchy.Varentropy.Lag
+info: BlockHierarchy/Varentropy/Lag.lean:120:0: 'BlockHierarchy.Varentropy.prefix_edge_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Lag.lean:121:0: 'BlockHierarchy.Varentropy.initial_lag' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Lag.lean:122:0: 'BlockHierarchy.Varentropy.edge_lag' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1957/1961] Replayed BlockHierarchy.Varentropy.Marginal
+info: BlockHierarchy/Varentropy/Marginal.lean:72:0: 'BlockHierarchy.Varentropy.right_cov' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Marginal.lean:73:0: 'BlockHierarchy.Varentropy.left_cov' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1958/1961] Replayed BlockHierarchy.Varentropy.Finite
+info: BlockHierarchy/Varentropy/Finite.lean:144:0: 'BlockHierarchy.Varentropy.finite_from_score' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1959/1961] Replayed BlockHierarchy.Varentropy.Limit
+warning: BlockHierarchy/Varentropy/Limit.lean:85:26: This simp argument is unused:
+  abs_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_div, abs_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: BlockHierarchy/Varentropy/Limit.lean:85:35: This simp argument is unused:
+  abs_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_mul, abs_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: BlockHierarchy/Varentropy/Limit.lean:85:44: This simp argument is unused:
+  abs_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_mul, abs_div]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: BlockHierarchy/Varentropy/Limit.lean:87:0: 'BlockHierarchy.Varentropy.finite_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Limit.lean:88:0: 'BlockHierarchy.Varentropy.finite_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Limit.lean:89:0: 'BlockHierarchy.Varentropy.finite_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1960/1961] Replayed BlockHierarchy.Varentropy.Paper
+info: BlockHierarchy/Varentropy/Paper.lean:19:0: 'BlockHierarchy.Varentropy.finite_block_varentropy' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [1961/1961] Built BlockHierarchy.Varentropy.Release (26s)
+Build completed successfully (1961 jobs).
+Lake build completed.
+
+'BlockHierarchy.Varentropy.finite_block_varentropy' depends on axioms: [propext, Classical.choice, Quot.sound]
+Independent statement: BlockHierarchy.Varentropy.FiniteBlockVarentropyStatement
