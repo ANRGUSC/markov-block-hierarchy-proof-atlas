@@ -37,3 +37,85 @@ warning: BlockHierarchy/Four/Derivatives.lean:37:6: Unused tactic linter: `ring`
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
 Build completed successfully (2171 jobs).
 Lake build completed.
+
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Four.Distortion BlockHierarchy.Four.Envelope BlockHierarchy.Four.FourWord BlockHierarchy.Four.Optimality BlockHierarchy.Four.Consequences BlockHierarchy.VarianceEnclosure
+⚠ [1987/2045] Replayed BlockHierarchy.Four.Preliminaries
+warning: BlockHierarchy/Four/Preliminaries.lean:116:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [1989/2045] Replayed BlockHierarchy.Four.AllocationIdentities
+warning: BlockHierarchy/Four/AllocationIdentities.lean:41:29: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2106/2177] Replayed BlockHierarchy.Three.Thresholds
+warning: BlockHierarchy/Three/Thresholds.lean:30:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:37:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: BlockHierarchy/Three/Thresholds.lean:45:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2116/2184] Replayed BlockHierarchy.Three.ConstantColumns
+warning: BlockHierarchy/Three/ConstantColumns.lean:39:71: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/ConstantColumns.lean:39:71: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Three/ConstantColumns.lean:71:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [2118/2184] Replayed BlockHierarchy.Four.Optimality
+warning: BlockHierarchy/Four/Optimality.lean:16:22: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Four/Optimality.lean:16:22: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2133/2184] Replayed BlockHierarchy.Three.Entropy
+warning: BlockHierarchy/Three/Entropy.lean:27:25: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/Entropy.lean:27:25: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2134/2184] Replayed BlockHierarchy.Three.FullWeights
+warning: BlockHierarchy/Three/FullWeights.lean:45:36: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Three/FullWeights.lean:45:36: Unused tactic linter: `positivity` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2181/2184] Replayed BlockHierarchy.Four.Derivatives
+warning: BlockHierarchy/Four/Derivatives.lean:37:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Four/Derivatives.lean:37:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [2182/2184] Built BlockHierarchy.Four.FourWord (52s)
+warning: BlockHierarchy/Four/FourWord.lean:25:39: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Three.step]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [2183/2184] Built BlockHierarchy.Four.Envelope (52s)
+⚠ [2184/2184] Built BlockHierarchy.Four.Distortion (51s)
+warning: BlockHierarchy/Four/Distortion.lean:27:15: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: BlockHierarchy/Four/Distortion.lean:27:15: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: BlockHierarchy/Four/Distortion.lean:36:11: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Build completed successfully (2184 jobs).
+Lake build completed.
