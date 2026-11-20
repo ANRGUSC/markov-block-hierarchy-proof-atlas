@@ -11,3 +11,5 @@
 .graph-link,.muted {font-size:.9rem}.muted {color:#52685d}.atlas iframe {display:block;width:100%;height:min(65vh,48rem);margin:1rem 0;border:1px solid #cbd5cf}
 .relations {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.relations section {margin:.75rem 0;padding:.8rem;border-radius:0;background:#f8faf6}.relations section h3 {margin:0 0 .6rem!important}.node {display:block;font-weight:600}.edge {display:flex;gap:.8rem;align-items:center;padding:.6rem 0;border-bottom:1px solid #e0e8e2}.proof-step {margin-top:1rem;padding:.5rem 0 .2rem 1rem;border-left:2px solid #9bbab0}.proof-step p {margin:.3rem 0}.katex {font-size:1.02em}.katex-display {overflow:auto}.atlas :focus-visible {outline:3px solid #bf7429;outline-offset:2px}
 @media(max-width:760px){.workspace {grid-template-columns:1fr;gap:1rem}.mast {align-items:flex-start;flex-direction:column}.mast nav {gap:.85rem}.workspace aside #claim-list {max-height:10rem;overflow:auto}.relations {grid-template-columns:1fr}.views a{padding:.45rem}.paper h1{font-size:1.65rem}}
+
+.paper a {color:inherit;text-underline-offset:.18em}

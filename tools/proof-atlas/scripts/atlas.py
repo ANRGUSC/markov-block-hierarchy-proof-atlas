@@ -9,11 +9,25 @@ import shutil
 import sys
 import tempfile
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit
 
 
 def esc(value):
     return html.escape(str(value), quote=True)
+
+
+def edition_links(project):
+    # Older projects included the PDF caption in their edition text.
+    edition = project["edition"].removesuffix(" \u00b7 local manuscript and PDF")
+    label = esc(edition)
+    publication = project.get("publication")
+    if publication:
+        url = urlsplit(publication)
+        if url.scheme not in ("http", "https") or not url.hostname:
+            raise ValueError("project.json: publication must be an absolute HTTP(S) URL")
+        label = f'<a href="{esc(publication)}">{label or "Publication"}</a>'
+    pdf = '<a href="manuscript.pdf">Manuscript PDF</a>'
+    return " &middot; ".join(filter(None, (label, pdf)))
 
 
 def atomic(path, data):
@@ -125,7 +139,8 @@ def build(root):
         entries.append(entry)
         url = "proofs/index.html#/claim/" + quote(cid, safe="")
         rows.append(f'<li><a href="{url}">{esc(entry["reference"])} · {esc(c["title"])}</a> · {esc(status)}</li>')
-    heading = f'<p>Proof Atlas · Maintainer dashboard</p><h1>{esc(p["title"])}</h1><p>{esc(p["edition"])}</p>'
+    sources = edition_links(p)
+    heading = f'<p>Proof Atlas · Maintainer dashboard</p><h1>{esc(p["title"])}</h1><p>{sources}</p>'
     focus = p.get("focus")
     active = ""
     if focus and focus in work:
@@ -144,7 +159,7 @@ def build(root):
     version = digest.hexdigest()
     payload["revision"] = version
     packed = json.dumps(payload, ensure_ascii=False).replace("<", r"\u003c")
-    explorer = template.replace("__TITLE__", esc(p["title"])).replace("__EDITION__", esc(p["edition"]))
+    explorer = template.replace("__TITLE__", esc(p["title"])).replace("__EDITION__", sources)
     for directory, base in ((output, "./"), (output / "proofs", "../")):
         directory.mkdir(exist_ok=True)
         atomic(directory / "index.html", explorer.replace("__REVISION__", version).replace("__BASE__", base).replace("__DATA__", packed).encode())
