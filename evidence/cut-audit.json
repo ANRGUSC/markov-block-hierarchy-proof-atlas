@@ -1,0 +1,40 @@
+{
+  "declaration": "BlockHierarchy.Cut.one_cut",
+  "contract": "BlockHierarchy/Cut/Release.lean",
+  "expected": "BlockHierarchy.Cut.OneCutStatement",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "targets": [
+    "BlockHierarchy.Cut.Release"
+  ],
+  "input_scope": "module-closure",
+  "checked_inputs": {
+    "BlockHierarchy/Cut/ColumnAverage.lean": "9b19a0fa9e6157054fadfbfd2b1e484008cceccd739b9b41fcc6e24980d2dcf8",
+    "BlockHierarchy/Cut/Compare.lean": "ced870464913ae653881088c11b31c45003c99967f3f27021c13a835c6b01ab4",
+    "BlockHierarchy/Cut/Flips.lean": "9e00e61744d691e13581969b0c0f42c35371d9e2ac649d603b6a39c9ccb020a7",
+    "BlockHierarchy/Cut/Optimality.lean": "28a067e9b350052c2b9d9105424b0391e1f0e4090c69489fc66dd24791cbbf05",
+    "BlockHierarchy/Cut/Paper.lean": "cc445c16e6aa3725d24719b612f8a1b8e234d28febc3e7c007b263539d40410c",
+    "BlockHierarchy/Cut/Product.lean": "87d959a7f4edb6ecc7a49adb671bc714bbd30139f9d907c917de9bc2fbc32467",
+    "BlockHierarchy/Cut/Release.lean": "659b84f3b1f91d51686e1326f2db782ac2b6e19057b40a85f947c8e9a5a244e0",
+    "BlockHierarchy/Cut/ScoreBound.lean": "42025de340149ed1ce411445d696f3a21387fc7af2847c703a4d8e59b2bb4794",
+    "BlockHierarchy/Cut/Statement.lean": "3a105a49f55ca94972d5b50ca5b11d289ee4e4ac2afc9799f7b640aa7b04a239",
+    "BlockHierarchy/Varentropy/Covariance.lean": "9d63ee314b2117f136db879c5d7c60c430a93a690bd525dc231d25ad542a5b36",
+    "BlockHierarchy/Varentropy/Score.lean": "a3f0c65ec152d9493a389b71f52e2545b44789d03a5816d0c6068db03ea63753",
+    "BlockHierarchy/Varentropy/Statement.lean": "fe310a6d067652205da78f4f22f498949b63932f5d35a7f70cf4a7b93407d404",
+    "ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
+    "FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+    "FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
+    "PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
+    "PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
+    "ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
+    "ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48",
+    "lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+    "lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+  },
+  "lean_output": "'BlockHierarchy.Cut.one_cut' depends on axioms: [propext, Classical.choice, Quot.sound]"
+}

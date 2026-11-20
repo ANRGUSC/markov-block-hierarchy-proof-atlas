@@ -1,0 +1,33 @@
+Lean toolchain: leanprover/lean4:v4.33.1
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --version
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+$ C:\Users\bhask\codex\proof-atlas\pilots\markov-block-hierarchy\lean\.proof-atlas-tools\elan\bin\elan.exe run leanprover/lean4:v4.33.1 lake --no-cache build BlockHierarchy.Cut.Release
+⚠ [1980/2045] Replayed BlockHierarchy.Cut.ColumnAverage
+warning: BlockHierarchy/Cut/ColumnAverage.lean:24:5: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [2106/2171] Replayed BlockHierarchy.Varentropy.Covariance
+info: BlockHierarchy/Varentropy/Covariance.lean:88:0: 'BlockHierarchy.Varentropy.iterate_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Varentropy/Covariance.lean:89:0: 'BlockHierarchy.Varentropy.last_edge_conditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2165/2171] Replayed BlockHierarchy.Cut.Optimality
+info: BlockHierarchy/Cut/Optimality.lean:125:0: 'BlockHierarchy.Cut.optimal_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Optimality.lean:126:0: 'BlockHierarchy.Cut.optimal_score_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2166/2171] Replayed BlockHierarchy.Cut.Flips
+info: BlockHierarchy/Cut/Flips.lean:186:0: 'BlockHierarchy.Cut.optimal_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:187:0: 'BlockHierarchy.Cut.concat_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:188:0: 'BlockHierarchy.Cut.concat_distance' depends on axioms: [propext, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:189:0: 'BlockHierarchy.Cut.independent_of_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BlockHierarchy/Cut/Flips.lean:190:0: 'BlockHierarchy.Cut.adjacent_le_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2169/2171] Built BlockHierarchy.Cut.Product (41s)
+info: BlockHierarchy/Cut/Product.lean:59:0: 'BlockHierarchy.Cut.trial_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2170/2171] Built BlockHierarchy.Cut.Paper (19s)
+info: BlockHierarchy/Cut/Paper.lean:29:0: 'BlockHierarchy.Cut.one_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [2171/2171] Built BlockHierarchy.Cut.Release (29s)
+Build completed successfully (2171 jobs).
+Lake build completed.
+
+'BlockHierarchy.Cut.one_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+Independent statement: BlockHierarchy.Cut.OneCutStatement
