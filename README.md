@@ -8,9 +8,21 @@ Explore Bhaskar Krishnamachari's *A Block Hierarchy for Rate-Distortion and Disp
 
 The inventory contains ten numbered results and one conjecture. The graph displays the recorded prerequisites. Selecting a claim highlights its upstream and downstream results and opens the explanations for its direct links. The structured proofs come from the paper's proof companion.
 
+## Author review
+
+[Open the public review queue](https://anrgusc.github.io/markov-block-hierarchy-proof-atlas/review.html) to compare the v4 manuscript with the mathematical reading of each audited Lean statement. GitHub verification and optional human review have separate badges. The open conjecture has no proof to approve. [How to use this atlas](https://anrgusc.github.io/markov-block-hierarchy-proof-atlas/guide.html).
+
+To submit a decision, tell your coding agent **“Open the local review dashboard for the Markov paper.”** From this repository you can also run:
+
+```sh
+python tools/proof-atlas/scripts/atlas.py review .
+```
+
+Choose **Yes, these match**, **I see a difference**, or **Skip for now**. Decisions are saved to this checkout; publishing the committed review records makes them visible to readers.
+
 ## Lean coverage
 
-Lean checks all ten numbered results against their paper statements. The conjecture remains open. The [combined release transcript](evidence/paper-release.txt) records the same ten declarations checked together. Each receipt records the declaration, its expected type, the pinned toolchain, the input hashes and the transitive axioms.
+Lean checks the formal declarations mapped to the ten numbered results. The review queue tracks their correspondence with the manuscript. The conjecture remains open. The [combined release transcript](evidence/paper-release.txt) records the same ten declarations checked together. Each receipt records the declaration, its expected type, the pinned toolchain, the input hashes and the transitive axioms.
 
 | Numbered result | Formal statement | Verification |
 |---|---|---|
