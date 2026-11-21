@@ -1,0 +1,7 @@
+leanprover/lean4:v4.33.1
+Lake build targets: BlockHierarchy.RecurrenceRelease
+Contract: BlockHierarchy/RecurrenceRelease.lean
+Expected: BlockHierarchy.Recurrence.RecurrenceStatement
+'BlockHierarchy.Recurrence.finite_block_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+Statement SHA-256: 186ecfccb14aaca0b65ca0e056467229d1493c34bcefd287dd0002bafc874de2
+Fingerprinted local constants: 27

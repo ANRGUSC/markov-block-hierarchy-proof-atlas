@@ -1,0 +1,7 @@
+leanprover/lean4:v4.33.1
+Lake build targets: BlockHierarchy.Cut.Release
+Contract: BlockHierarchy/Cut/Release.lean
+Expected: BlockHierarchy.Cut.OneCutStatement
+'BlockHierarchy.Cut.one_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+Statement SHA-256: 1dff2509a8adef15358d05fc79e789b398df9656cd954e9859329f15fd3eefa6
+Fingerprinted local constants: 31

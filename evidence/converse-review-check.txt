@@ -1,0 +1,7 @@
+leanprover/lean4:v4.33.1
+Lake build targets: BlockHierarchy.Converse.Release
+Contract: BlockHierarchy/Converse/Release.lean
+Expected: BlockHierarchy.Converse.LowDistortionConverseStatement
+'BlockHierarchy.Converse.low_distortion_converse' depends on axioms: [propext, Classical.choice, Quot.sound]
+Statement SHA-256: 07800c8a1bdbb09b1702254802871f4b8397f71f0d2415be415b3385ac8318ed
+Fingerprinted local constants: 35

@@ -1,0 +1,7 @@
+leanprover/lean4:v4.33.1
+Lake build targets: BlockHierarchy.Varentropy.Release
+Contract: BlockHierarchy/Varentropy/Release.lean
+Expected: BlockHierarchy.Varentropy.FiniteBlockVarentropyStatement
+'BlockHierarchy.Varentropy.finite_block_varentropy' depends on axioms: [propext, Classical.choice, Quot.sound]
+Statement SHA-256: 035d9a649319580a0604e8e052851eed8df91c47fe24fe8fcaee2b26973e39e0
+Fingerprinted local constants: 47

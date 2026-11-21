@@ -1,0 +1,261 @@
+{
+  "declaration": "BlockHierarchy.Recurrence.finite_block_recurrence",
+  "contract": "BlockHierarchy/RecurrenceRelease.lean",
+  "expected": "BlockHierarchy.Recurrence.RecurrenceStatement",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "targets": [
+    "BlockHierarchy.RecurrenceRelease"
+  ],
+  "input_scope": "module-closure",
+  "checked_inputs": {
+    "BlockHierarchy/Recurrence.lean": "c2c0cf675e72fbecde65f963f32c803df906dfd9d1c6682c852826488610e276",
+    "BlockHierarchy/RecurrenceClosed.lean": "52856af390d75bd89fd1952652e3bec195984e9526e34e2cf9ac958b36600329",
+    "BlockHierarchy/RecurrenceCriterion.lean": "baca479bad45fa89bf8630c2e0a690f1ae1273884fa2dd69d78e995022b5d05a",
+    "BlockHierarchy/RecurrenceCrossing.lean": "1f126dbc797469e5b9d503be96bcb6fe6fb24c96c760cf998f6cbaff1f9aafb0",
+    "BlockHierarchy/RecurrenceExtrema.lean": "462d38154d418a7018ff0bb2be1c9bfdc729e72b3da757905fc4cbe190a18e6a",
+    "BlockHierarchy/RecurrenceInverse.lean": "f59d22de48360601d5d0a2d2d6ab264ab872104d2e1c86f7f337d01670df256d",
+    "BlockHierarchy/RecurrenceLimit.lean": "f4a8c99fbace668562f7e659654a82ea8d5dfb55ff3fee16ce07b27e8deaec85",
+    "BlockHierarchy/RecurrenceOrder.lean": "5bbb00a76ed8645a1d72fa4893de847eea5521713ffdcb383c96a45f8d7ba60e",
+    "BlockHierarchy/RecurrencePaper.lean": "80a4e2c33c5790e8ee7eee2610a6e774d8ccacada1fc10b54f674acb35e8537f",
+    "BlockHierarchy/RecurrencePrefix.lean": "8e0b1d1ded20718ab4285134808b8865723e78fafe3c1160c3c3925ea57b1b95",
+    "BlockHierarchy/RecurrenceRelease.lean": "0f5686053af6b1b1fd4886746d11f21fe5138a6b468efebd03bb51b909f9a9f8",
+    "BlockHierarchy/RecurrenceStatement.lean": "ccc321194537e289ada901b195179f71e9ceacff0079a4e87d72efd1fd426b53",
+    "BlockHierarchy/RecurrenceThresholds.lean": "03701137e9f26bf1ed7e884c7e26300f58cb7738e04e07d5e6a51db1ab658d79",
+    "BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
+    "BlockHierarchy/Three/Distortion.lean": "13c6bcfc7ebbe4e8c24f4021a8d70620fa453dc8c4374a3b3a879ed787325e87",
+    "BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48",
+    "FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+    "lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+    "lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+  },
+  "statements": [],
+  "lean_output": "'BlockHierarchy.Recurrence.finite_block_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "statement": {
+    "expected": "BlockHierarchy.Recurrence.RecurrenceStatement",
+    "sha256": "186ecfccb14aaca0b65ca0e056467229d1493c34bcefd287dd0002bafc874de2",
+    "constants": [
+      {
+        "name": "BlockHierarchy.Recurrence.BackwardFeasible",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          43,
+          47
+        ],
+        "sha256": "64867c81ce10fc5e85cf0772a6a308ec10c3d56f320d9084a517785e57c8fe72"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.InverseNonnegative",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          40,
+          41
+        ],
+        "sha256": "b8358848f6bdcdd8de9992efc1029d15baedbb43b8bf0cd1f67474620e9cc130"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.MaximumAt",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          49,
+          51
+        ],
+        "sha256": "6078b7bd02e07aa09bb7b8cb24920d582a32bc848fdd95fd852db1e088f5e765"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.RecurrenceStatement",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          57,
+          72
+        ],
+        "sha256": "4404e921991a001a4bfcba534b4c055ceb7271b64183f748a531bfe0ba44dd0c"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.backWeight",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          24,
+          24
+        ],
+        "sha256": "aac5ecb96175ee55b27b3d1f533243114aa955139bb49ee8d5c7f8ad81ca4afe"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.expectFrom",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          11,
+          15
+        ],
+        "sha256": "8b3b333244e887e1fc2f1f3d03ad89edf851e9d31f395cb0587f1f452f82b18a"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.expectFrom._f",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": null,
+        "sha256": "d3bb52b0c4a4f1c8a12554e54af6a63140662a499e901a3226c67b22df77ace6"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.expectFrom.match_1",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": null,
+        "sha256": "adfebb85987415bcb14721c58da4b6a0747dcd3ede1e695835cfb7afea08de1d"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.firstMoment",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          35,
+          36
+        ],
+        "sha256": "97baf7bfee05d71bf82ea9f70fde785de9c3a9c9cde3ab3f32979003ae8ba1bd"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.grayD",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          53,
+          55
+        ],
+        "sha256": "d4e529523e8301f5f5020ece2d268e4eac16c950fe4ea83f737e3380a4022239"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.invWeight",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          23,
+          23
+        ],
+        "sha256": "3593d8a45ffba1b40b976e3bc86f5b19b54b85f71939720a1d73cf4130911be8"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.markovExpect",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          17,
+          18
+        ],
+        "sha256": "8eedd53ddd096c575246223f133ca43914c3a127bfb9d54fda034c5a3c72a47f"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.markovExpect._proof_1",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.mass",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          32,
+          33
+        ],
+        "sha256": "0a98aa082acc47ea2463a7b6e14124f7051a69ef23b07a2811c232986f1d14d0"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.moment",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          38,
+          38
+        ],
+        "sha256": "dbd9a2d47fdfdc3582f5074975d54b0f30691c3e27d75ae75400746e322af25c"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.pathLaw",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          20,
+          21
+        ],
+        "sha256": "e3f5ad444d17a323f7cdd12f40c188b92601672380098aaef284a8f456fe4f1e"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.peak",
+        "file": "BlockHierarchy/RecurrenceExtrema.lean",
+        "lines": [
+          7,
+          7
+        ],
+        "sha256": "303d3ead5dc016d4eb6a8da3a98a1064b7927efa48f137541aafd2182f4bfa71"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.spin",
+        "file": "BlockHierarchy/RecurrenceExtrema.lean",
+        "lines": [
+          58,
+          58
+        ],
+        "sha256": "22307178eb6b39df728d2beea4e180770c25ccde3e232ddcf99c249c0a45f7c8"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.wordSum",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          6,
+          9
+        ],
+        "sha256": "5368b712ccc2fdaecc96ff4d0b95bfbc249a772441780e65a963f1c559583b3d"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.wordSum._f",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": null,
+        "sha256": "67afda2965a0e41956cad1f7a12d3ee9d7d61ffc859bba3bc47b680ea593be90"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.wordSum.match_1",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": null,
+        "sha256": "47b6fd2fea6abcdcddf6c7d7293ff93c11ad1640425a317f86a3dd2bb78d0f15"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.wordWeight",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": [
+          26,
+          30
+        ],
+        "sha256": "23ac94e17bedfbcb8e5a0169f720b6d752fc81e4188ce94823b0002743103a7a"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.wordWeight._f",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": null,
+        "sha256": "c94c304231ad5b41f5a9851c9ee59fd985734e21c5ca32da4dc8cb636fa26ce2"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.wordWeight._sparseCasesOn_1",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": null,
+        "sha256": "a03e6d30ae77bc9caf00d9dcd7bac5b062fad1f53c403e7fb4bda3ba84f558e7"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.wordWeight._sparseCasesOn_2",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": null,
+        "sha256": "5ff5f49a61ad4f44231965db2c963e1e3d2a113036d0bb0ad03c89a393d890c5"
+      },
+      {
+        "name": "BlockHierarchy.Recurrence.wordWeight.match_1",
+        "file": "BlockHierarchy/RecurrenceStatement.lean",
+        "lines": null,
+        "sha256": "2e14691a6486f079e3ce8058b2d846a4113d030f987c4592d52fc251bb7d04a1"
+      },
+      {
+        "name": "BlockHierarchy.Three.step",
+        "file": "BlockHierarchy/Three/Classes.lean",
+        "lines": [
+          22,
+          22
+        ],
+        "sha256": "aac5ecb96175ee55b27b3d1f533243114aa955139bb49ee8d5c7f8ad81ca4afe"
+      }
+    ]
+  }
+}

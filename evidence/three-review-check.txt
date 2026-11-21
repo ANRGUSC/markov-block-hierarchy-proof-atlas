@@ -1,0 +1,7 @@
+leanprover/lean4:v4.33.1
+Lake build targets: BlockHierarchy.PairVariance.ThreeRelease
+Contract: BlockHierarchy/PairVariance/ThreeRelease.lean
+Expected: BlockHierarchy.PairVariance.ThreeFullStatement
+'BlockHierarchy.PairVariance.three_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+Statement SHA-256: 8e404ea17f0a9b36eb4a50a825c38ba4fed03ef53c49537138c54667cdf1e272
+Fingerprinted local constants: 57

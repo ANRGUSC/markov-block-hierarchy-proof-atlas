@@ -1,0 +1,294 @@
+{
+  "declaration": "BlockHierarchy.VarianceLimit.quantitative_positivity",
+  "contract": "BlockHierarchy/VarianceLimit/PositiveRelease.lean",
+  "expected": "BlockHierarchy.VarianceLimit.QuantitativePositivityStatement",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "targets": [
+    "BlockHierarchy.VarianceLimit.PositiveRelease"
+  ],
+  "input_scope": "module-closure",
+  "checked_inputs": {
+    "BlockHierarchy/Converse/Paths.lean": "705b5cf55c200c4c62877633ffa5096840e007915ec6a51da986d9eb1ced4726",
+    "BlockHierarchy/Cut/ColumnAverage.lean": "9b19a0fa9e6157054fadfbfd2b1e484008cceccd739b9b41fcc6e24980d2dcf8",
+    "BlockHierarchy/Cut/Compare.lean": "ced870464913ae653881088c11b31c45003c99967f3f27021c13a835c6b01ab4",
+    "BlockHierarchy/Cut/Continuity.lean": "b7b64383067218b207b096e58624fd37d7d8fa4736ec9baaea358c59bc753e5b",
+    "BlockHierarchy/Cut/Existence.lean": "e1f398a54de2838ea8ae3452a0910cc4cd77c7287414e334f010778881151513",
+    "BlockHierarchy/Cut/Flips.lean": "9e00e61744d691e13581969b0c0f42c35371d9e2ac649d603b6a39c9ccb020a7",
+    "BlockHierarchy/Cut/Optimality.lean": "28a067e9b350052c2b9d9105424b0391e1f0e4090c69489fc66dd24791cbbf05",
+    "BlockHierarchy/Cut/Paper.lean": "cc445c16e6aa3725d24719b612f8a1b8e234d28febc3e7c007b263539d40410c",
+    "BlockHierarchy/Cut/Product.lean": "87d959a7f4edb6ecc7a49adb671bc714bbd30139f9d907c917de9bc2fbc32467",
+    "BlockHierarchy/Cut/ScoreBound.lean": "42025de340149ed1ce411445d696f3a21387fc7af2847c703a4d8e59b2bb4794",
+    "BlockHierarchy/Cut/Statement.lean": "3a105a49f55ca94972d5b50ca5b11d289ee4e4ac2afc9799f7b640aa7b04a239",
+    "BlockHierarchy/Varentropy/Covariance.lean": "9d63ee314b2117f136db879c5d7c60c430a93a690bd525dc231d25ad542a5b36",
+    "BlockHierarchy/Varentropy/Marginal.lean": "a22c2d7ad0f4f6f42fe25780caf92ee5a34215e761eb8e37e688a1ba8962abd7",
+    "BlockHierarchy/Varentropy/Score.lean": "a3f0c65ec152d9493a389b71f52e2545b44789d03a5816d0c6068db03ea63753",
+    "BlockHierarchy/Varentropy/Statement.lean": "fe310a6d067652205da78f4f22f498949b63932f5d35a7f70cf4a7b93407d404",
+    "BlockHierarchy/VarianceLimit/Common.lean": "4179319d75e7f49ee6976d533dac7aa65006b90b2a3d6e046ea5200613870f4d",
+    "BlockHierarchy/VarianceLimit/Cut.lean": "63cac1d6c017292348fac2c78c44910caae81767dbd91bded7f71f1fbfc2eb05",
+    "BlockHierarchy/VarianceLimit/Dyadic.lean": "1d6563620266ec0acd2f44b44413c63ee7f45c096daf94797e387d2533e14582",
+    "BlockHierarchy/VarianceLimit/EndpointDeletion.lean": "1c3060c4bdc55be8e43d15a606ed0baad59a838123d29750c974f1bc9dbdd058",
+    "BlockHierarchy/VarianceLimit/EndpointProfile.lean": "d60b60491286924df1a9e6f7dc9366baa91d0b4614f94f333cb59da6f0e001db",
+    "BlockHierarchy/VarianceLimit/EndpointSymmetry.lean": "f836d6652a965e835f04bc64a8b7c343f444bcf8999493f4fb39185902051200",
+    "BlockHierarchy/VarianceLimit/GainLimit.lean": "53f3a47930e8527305be2ec87aeb8f8e969af182bd9ff0469f7769c9f4e8730f",
+    "BlockHierarchy/VarianceLimit/GainLower.lean": "dd3f9da11b3efded78a3f8642eb2ccdd0464e7b24a90103d1b44131892d4e10f",
+    "BlockHierarchy/VarianceLimit/GainUpper.lean": "201453dfbae8f480589556a0a16e482dbc4fc0502c870643f441e5cb4473de84",
+    "BlockHierarchy/VarianceLimit/Gibbs.lean": "0de20433d83f008736c7e9102ae8ed75868ae42fd3f6a1a3114c3052a3804080",
+    "BlockHierarchy/VarianceLimit/Norm.lean": "bcb128e7d674b18301fc1684be8726453075521f27fc0b87dfd0fcd13d17377e",
+    "BlockHierarchy/VarianceLimit/Positive.lean": "0426ee0dc727cfb33d5bd86a8c8669c82aebbffc8935585ff1865c317b360309",
+    "BlockHierarchy/VarianceLimit/PositiveRelease.lean": "caefcc2eadddff8c54c1bd019e5320f0966cf47009639ef6b7de94177ed31a8d",
+    "BlockHierarchy/VarianceLimit/PositiveStatement.lean": "985c24dc858d3d13b804f0bcedaa0af8fd3d9ac87023c110c25561fe7f44dbe0",
+    "BlockHierarchy/VarianceLimit/Redundancy.lean": "28367d74e1b0b0b080de2141b4c93716f3bd46c78211b6799bd00204a6c0e53c",
+    "BlockHierarchy/VarianceLimit/Reversal.lean": "852669fca0600e9e9099f32c3a6d5551e57aef1f4c9aa001aab06f3133a7170d",
+    "BlockHierarchy/VarianceLimit/Statement.lean": "6648783e43c067e773ea8bb169d437fbe9e7b9fb9157e6c0e75f70229d9b5a43",
+    "BlockHierarchy/VarianceLimit/Uniform.lean": "3c6ba9b51ce73be43f76752f1c81809893601ef003fdf000e9f9071b1ab16e3c",
+    "ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
+    "FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+    "FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
+    "PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
+    "PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
+    "ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
+    "ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48",
+    "Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
+    "lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+    "lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+  },
+  "statements": [],
+  "lean_output": "'BlockHierarchy.VarianceLimit.quantitative_positivity' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "statement": {
+    "expected": "BlockHierarchy.VarianceLimit.QuantitativePositivityStatement",
+    "sha256": "8ba7fcbbaf227bb92809352f3210dccfe2a8b1511a5dcd351ddc58274408d874",
+    "constants": [
+      {
+        "name": "BlockHierarchy.Cut.IsPrior",
+        "file": "BlockHierarchy/Cut/Statement.lean",
+        "lines": [
+          41,
+          41
+        ],
+        "sha256": "d93e38ef0038025dfe7344014e991d4a9de081089a2af8298ffda7679aca979e"
+      },
+      {
+        "name": "BlockHierarchy.Cut.Optimal",
+        "file": "BlockHierarchy/Cut/Statement.lean",
+        "lines": [
+          49,
+          51
+        ],
+        "sha256": "1fc9b99a85d3016696118588e78725b8f8583a12c11fa99afd15ce7bc88db609"
+      },
+      {
+        "name": "BlockHierarchy.Cut.Word",
+        "file": "BlockHierarchy/Cut/Statement.lean",
+        "lines": [
+          7,
+          8
+        ],
+        "sha256": "2962bb92e73929d78433087766344d3298cfc695f66334fa6141e5c354ff3c2a"
+      },
+      {
+        "name": "BlockHierarchy.Cut.Z",
+        "file": "BlockHierarchy/Cut/Statement.lean",
+        "lines": [
+          43,
+          44
+        ],
+        "sha256": "51ddffc2fc55f9054622932257a87e9e9405641390e03b412ab2868d315cb6b8"
+      },
+      {
+        "name": "BlockHierarchy.Cut.distance",
+        "file": "BlockHierarchy/Cut/Statement.lean",
+        "lines": [
+          32,
+          32
+        ],
+        "sha256": "d474adf75f809229a9cc65da68cd0c3f1fba9f79153df09807ab9e7378708075"
+      },
+      {
+        "name": "BlockHierarchy.Cut.mass",
+        "file": "BlockHierarchy/Cut/Statement.lean",
+        "lines": [
+          22,
+          23
+        ],
+        "sha256": "674080000c4592cd1fc74116f531c231808b16342f6282ce69a6de7a09d5e978"
+      },
+      {
+        "name": "BlockHierarchy.Cut.mass._proof_1",
+        "file": "BlockHierarchy/Cut/Statement.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.Cut.score",
+        "file": "BlockHierarchy/Cut/Statement.lean",
+        "lines": [
+          46,
+          47
+        ],
+        "sha256": "2f12d84394b30100f463bfab8aac1aab11e3be3917d361bca2aedc04a737b593"
+      },
+      {
+        "name": "BlockHierarchy.Cut.step",
+        "file": "BlockHierarchy/Cut/Statement.lean",
+        "lines": [
+          10,
+          10
+        ],
+        "sha256": "aac5ecb96175ee55b27b3d1f533243114aa955139bb49ee8d5c7f8ad81ca4afe"
+      },
+      {
+        "name": "BlockHierarchy.Cut.tail",
+        "file": "BlockHierarchy/Cut/Statement.lean",
+        "lines": [
+          12,
+          14
+        ],
+        "sha256": "e2504602e399ffb4f42535edfb114df31796bb107138c966dd49b97fd3948586"
+      },
+      {
+        "name": "BlockHierarchy.Cut.tail._f",
+        "file": "BlockHierarchy/Cut/Statement.lean",
+        "lines": null,
+        "sha256": "233b37c2d55b1a1f05237d38ca72abac56da8d3853c3b499d8f8fdb913cf2681"
+      },
+      {
+        "name": "BlockHierarchy.Cut.tail.match_1",
+        "file": "BlockHierarchy/Cut/Statement.lean",
+        "lines": null,
+        "sha256": "75ecc514347ed621652083cf1e63502daee2c171e41798263283987569ebb508"
+      },
+      {
+        "name": "BlockHierarchy.Varentropy.Bits",
+        "file": "BlockHierarchy/Varentropy/Statement.lean",
+        "lines": [
+          9,
+          12
+        ],
+        "sha256": "1f91163424e935560217e1f62f541450f56fd68b2c864248754150c6076498aa"
+      },
+      {
+        "name": "BlockHierarchy.Varentropy.Bits._f",
+        "file": "BlockHierarchy/Varentropy/Statement.lean",
+        "lines": null,
+        "sha256": "8a450a836210e62fae815c2011a659f753ef11dd205345248ec441c9f5e18c3f"
+      },
+      {
+        "name": "BlockHierarchy.Varentropy.Bits.match_1",
+        "file": "BlockHierarchy/Varentropy/Statement.lean",
+        "lines": null,
+        "sha256": "6f5d759bb94354ae9d882c98d85922a0c69bc5343f3646804a8bb2a20a503e9c"
+      },
+      {
+        "name": "BlockHierarchy.Varentropy.hamming",
+        "file": "BlockHierarchy/Varentropy/Statement.lean",
+        "lines": [
+          59,
+          61
+        ],
+        "sha256": "dadaabf403c751900707b301cb98b4800320b2b47c39c36bbaef20582e970726"
+      },
+      {
+        "name": "BlockHierarchy.Varentropy.hamming._f",
+        "file": "BlockHierarchy/Varentropy/Statement.lean",
+        "lines": null,
+        "sha256": "38cace23e98bf04bda2a53cf95c99eccfff4468f98cde950ceb7c0e64d71d764"
+      },
+      {
+        "name": "BlockHierarchy.Varentropy.hamming.match_1",
+        "file": "BlockHierarchy/Varentropy/Statement.lean",
+        "lines": null,
+        "sha256": "a8848ae448c8f6435958572c999a9f0c8929b27cf5429b17cbdffd0f83d9046f"
+      },
+      {
+        "name": "BlockHierarchy.Varentropy.instFintypeBits",
+        "file": "BlockHierarchy/Varentropy/Statement.lean",
+        "lines": [
+          14,
+          18
+        ],
+        "sha256": "07b0da0f91e996ccf86493f60cfcff8a1c4169a47966c9a71c050a39ea8f8afd"
+      },
+      {
+        "name": "BlockHierarchy.Varentropy.instFintypeBits._aux_1",
+        "file": "BlockHierarchy/Varentropy/Statement.lean",
+        "lines": null,
+        "sha256": "a6df67e081d54d0e63646b72d84162045d9e01b1c7933a92f7f16b670c7b301a"
+      },
+      {
+        "name": "BlockHierarchy.Varentropy.instFintypeBits._aux_4",
+        "file": "BlockHierarchy/Varentropy/Statement.lean",
+        "lines": null,
+        "sha256": "b5786a0ef251c88e74a57d642db2120014f4657a37aa4b1f9aade986f4271e46"
+      },
+      {
+        "name": "BlockHierarchy.Varentropy.instFintypeBits._f",
+        "file": "BlockHierarchy/Varentropy/Statement.lean",
+        "lines": null,
+        "sha256": "9ce25ab33af6a1c81b1cf66e8c19a7e15f18451667146be9ec1c2d00f3725bab"
+      },
+      {
+        "name": "BlockHierarchy.Varentropy.instFintypeBits._proof_3",
+        "file": "BlockHierarchy/Varentropy/Statement.lean",
+        "lines": null,
+        "sha256": "985e20f3610c0a34bb0eb9143cb64b6542ffcdf7b087f0b7223e7e982968a035"
+      },
+      {
+        "name": "BlockHierarchy.VarianceLimit.QuantitativePositivityStatement",
+        "file": "BlockHierarchy/VarianceLimit/PositiveStatement.lean",
+        "lines": [
+          9,
+          17
+        ],
+        "sha256": "bb1f093cc2d90fe75d439df000ba617154f555088528e878fbde02163a9ff13d"
+      },
+      {
+        "name": "BlockHierarchy.VarianceLimit.endpointLower",
+        "file": "BlockHierarchy/VarianceLimit/PositiveStatement.lean",
+        "lines": [
+          7,
+          7
+        ],
+        "sha256": "86975e13d17bb795c20d3dc30590626db999b01d3227d715b9068bc53484ccc9"
+      },
+      {
+        "name": "BlockHierarchy.VarianceLimit.endpointLower._proof_1",
+        "file": "BlockHierarchy/VarianceLimit/PositiveStatement.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.VarianceLimit.omegaAt",
+        "file": "BlockHierarchy/VarianceLimit/Statement.lean",
+        "lines": [
+          35,
+          36
+        ],
+        "sha256": "f1a928cab840dd301527ad5ec90e80331058c8fd98ceb11627a3a8ee1dd67aa8"
+      },
+      {
+        "name": "BlockHierarchy.mean",
+        "file": "ReducedPair/Moments.lean",
+        "lines": [
+          10,
+          10
+        ],
+        "sha256": "1bd55dcd6cd9366dc07474426d26467c5f9a33351f72d402b8426339ad27cb65"
+      },
+      {
+        "name": "BlockHierarchy.variance",
+        "file": "ReducedPair/Moments.lean",
+        "lines": [
+          12,
+          13
+        ],
+        "sha256": "e2c4da315996ee47f5108390ec605ee0a0f87474afb78f2cb1c78045cc19066d"
+      }
+    ]
+  }
+}

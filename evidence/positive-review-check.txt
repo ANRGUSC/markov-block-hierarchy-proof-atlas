@@ -1,0 +1,7 @@
+leanprover/lean4:v4.33.1
+Lake build targets: BlockHierarchy.VarianceLimit.PositiveRelease
+Contract: BlockHierarchy/VarianceLimit/PositiveRelease.lean
+Expected: BlockHierarchy.VarianceLimit.QuantitativePositivityStatement
+'BlockHierarchy.VarianceLimit.quantitative_positivity' depends on axioms: [propext, Classical.choice, Quot.sound]
+Statement SHA-256: 8ba7fcbbaf227bb92809352f3210dccfe2a8b1511a5dcd351ddc58274408d874
+Fingerprinted local constants: 29

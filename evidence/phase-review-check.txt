@@ -1,0 +1,7 @@
+leanprover/lean4:v4.33.1
+Lake build targets: FirstChange
+Contract: FirstChangeAudit.lean
+Expected: BlockHierarchy.FirstChangeStatement
+'BlockHierarchy.first_change' depends on axioms: [propext, Classical.choice, Quot.sound]
+Statement SHA-256: 860019b1a448ca09f1c246afc9e761937185c520f4f9a234aa3d58e75327a760
+Fingerprinted local constants: 26

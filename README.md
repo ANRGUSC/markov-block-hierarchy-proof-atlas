@@ -26,16 +26,18 @@ Lean checks the formal declarations mapped to the ten numbered results. The revi
 
 | Numbered result | Formal statement | Verification |
 |---|---|---|
-| Proposition 1 | [Lean statement](lean/FirstChangeStatement.lean) | [Audit receipt](evidence/first-change-audit-v2.json) |
-| Theorem 2 | [Lean statement](lean/ReducedPair/PaperStatement.lean) | [Audit receipt](evidence/persistent-pair-audit.json) |
-| Theorem 3 | [Lean statement](lean/BlockHierarchy/PairVariance/ThreeStatement.lean) | [Audit receipt](evidence/three-symbol-full-audit.json) |
-| Theorem 4 | [Lean statement](lean/BlockHierarchy/PairVariance/FourStatement.lean) | [Audit receipt](evidence/four-symbol-full-audit.json) |
-| Proposition 5 | [Lean statement](lean/BlockHierarchy/RecurrenceStatement.lean) | [Audit receipt](evidence/recurrence-audit.json) |
-| Theorem 6 | [Lean statement](lean/BlockHierarchy/Varentropy/Statement.lean) | [Audit receipt](evidence/varentropy-audit.json) |
-| Lemma 7 | [Lean statement](lean/BlockHierarchy/Cut/Statement.lean) | [Audit receipt](evidence/cut-audit.json) |
-| Theorem 8 | [Lean statement](lean/BlockHierarchy/VarianceLimit/Statement.lean) | [Audit receipt](evidence/variance-limit-audit.json) |
-| Corollary 9 | [Lean statement](lean/BlockHierarchy/VarianceLimit/PositiveStatement.lean) | [Audit receipt](evidence/positive-audit.json) |
-| Proposition 10 | [Lean statement](lean/BlockHierarchy/Converse/Statement.lean) | [Audit receipt](evidence/converse-audit.json) |
+| Proposition 1 | [Lean statement](lean/FirstChangeStatement.lean) | [Audit receipt](evidence/phase-review-audit.json) |
+| Theorem 2 | [Lean statement](lean/ReducedPair/PaperStatement.lean) | [Audit receipt](evidence/two-review-audit.json) |
+| Theorem 3 | [Lean statement](lean/BlockHierarchy/PairVariance/ThreeStatement.lean) | [Audit receipt](evidence/three-review-audit.json) |
+| Theorem 4 | [Lean statement](lean/BlockHierarchy/PairVariance/FourStatement.lean) | [Audit receipt](evidence/four-review-audit.json) |
+| Proposition 5 | [Lean statement](lean/BlockHierarchy/RecurrenceStatement.lean) | [Audit receipt](evidence/rec-review-audit.json) |
+| Theorem 6 | [Lean statement](lean/BlockHierarchy/Varentropy/Statement.lean) | [Audit receipt](evidence/varentropy-review-audit.json) |
+| Lemma 7 | [Lean statement](lean/BlockHierarchy/Cut/Statement.lean) | [Audit receipt](evidence/cut-review-audit.json) |
+| Theorem 8 | [Lean statement](lean/BlockHierarchy/VarianceLimit/Statement.lean) | [Audit receipt](evidence/common-review-audit.json) |
+| Corollary 9 | [Lean statement](lean/BlockHierarchy/VarianceLimit/PositiveStatement.lean) | [Audit receipt](evidence/positive-review-audit.json) |
+| Proposition 10 | [Lean statement](lean/BlockHierarchy/Converse/Statement.lean) | [Audit receipt](evidence/converse-review-audit.json) |
+
+The review receipts fingerprint the theorem statements and their definitions in the original module layout. The separate check that statement modules import only other statement modules was not run for this edition.
 
 ## Build or preview
 

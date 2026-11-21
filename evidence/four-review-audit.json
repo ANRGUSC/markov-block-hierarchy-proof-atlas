@@ -1,0 +1,703 @@
+{
+  "declaration": "BlockHierarchy.PairVariance.four_full",
+  "contract": "BlockHierarchy/PairVariance/FourRelease.lean",
+  "expected": "BlockHierarchy.PairVariance.FourFullStatement",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "targets": [
+    "BlockHierarchy.PairVariance.FourRelease"
+  ],
+  "input_scope": "module-closure",
+  "checked_inputs": {
+    "BlockHierarchy/FiniteRD.lean": "3505cb88bf62172df5ec7477ef03b7d1a009d006776619a1e568473785b39cc3",
+    "BlockHierarchy/Four/AllocationIdentities.lean": "762606623c0a6de007759fb5a6c4c8aaf6d23441a9e034e01366b1ce3f46ebf2",
+    "BlockHierarchy/Four/Assembly.lean": "bfd90c243f92566a65250c15a8feb70cbdf37958ed73575c6c20b689648258ac",
+    "BlockHierarchy/Four/Channel.lean": "4d89273477827b55ff69dc453e367a0a2146d2d38629c78dfe7cb14eea45391b",
+    "BlockHierarchy/Four/Classes.lean": "51726db749fe14afd8bd13b6b6e4eb3c6755452db33cdb25918662c0a0991faa",
+    "BlockHierarchy/Four/Derivatives.lean": "b9cbf08a8ab6ea625b104337b53a07ac7d91ff8c25ffa9810017b643eeda13c6",
+    "BlockHierarchy/Four/Distortion.lean": "2ba7bd83937a8f4295919ca8aec1c0c53f4790e9894355ebab54fd6e0bd61a51",
+    "BlockHierarchy/Four/Envelope.lean": "df6cf7c7be87f20640abffae744c4702e4d6f4ade0740c118e01aeae80eee3fe",
+    "BlockHierarchy/Four/FourWord.lean": "8e5f0df7e2bae35dbc30667382d64f7a0070d1f8889dea588d56a0ea7643a08a",
+    "BlockHierarchy/Four/GroupCertificate.lean": "35cb112c318cc42e143c2b8723a1c20c37d4f96c6859440eeee25895547ba856",
+    "BlockHierarchy/Four/Maximizer.lean": "6ea6b77f87d6e0b24fc1d7bbed2e86900b536b26ec44248fbce0668e851566d0",
+    "BlockHierarchy/Four/OuterBounds.lean": "425ac84c88ff088c6cca52618e866be834de189bb5a60e9501028ddd317f044a",
+    "BlockHierarchy/Four/OuterConnected.lean": "890a70744145dc6392a092763a8d30f8cedb4e3b7dfcd15fe279f8f44c084abf",
+    "BlockHierarchy/Four/OuterGeometry.lean": "3fb41e5ca2f5ad6d67a8a2f54061b97283cb579e593a1aaa736b4f123d9b605f",
+    "BlockHierarchy/Four/OuterMultiplier.lean": "9343e2d086ffbb4ae3fc53758ea70aeb3882f068962e4924754a2816936122b5",
+    "BlockHierarchy/Four/PaperStatement.lean": "2bc9aec9a270a472fb9c4a0d762e84324849ee8e7cc4acf4a4afecdfd5380330",
+    "BlockHierarchy/Four/ParityChoice.lean": "e6bb61332f83b32a784cab186d6061a92476ca4d1cce2588af9d5b6682225cd8",
+    "BlockHierarchy/Four/ParityOptimality.lean": "975da85a7a52419de9a9f474cd915760f24586786e69791ba39bf6e6761a1174",
+    "BlockHierarchy/Four/Preliminaries.lean": "2e39bde96498407f7c3881ee83dc26cbcaf445a9fda2783469bdf4043b95ba79",
+    "BlockHierarchy/Four/SupportBoundary.lean": "e06c832fc77cf0192a0b02d5d5b795701cf23ff651f76f41f03f060190623870",
+    "BlockHierarchy/Four/SupportingParity.lean": "106adedd94f70823ae77325ebe9ff70aba3064137e5da5291c840718cf629dfb",
+    "BlockHierarchy/Four/Theorem.lean": "907278dc5cd42a61911478a65e2746a4c7bf0908c5dbff165c7aac7ea677fae2",
+    "BlockHierarchy/Four/UniqueMaximizer.lean": "b59417d70b15e3a69dcd8502c030287d1293b87a8a30d694a32e618a9ea6e0e4",
+    "BlockHierarchy/Four/WaterClasses.lean": "4f1cf8cd247a52fec4094fbcb53de1e39b3ec96faacd53bb9ddf47ab4a738150",
+    "BlockHierarchy/Four/WaterContinuity.lean": "8e03a4ffda29069deec5dfed88fff3cd2e149629ff7d148c6254a133ede89bf0",
+    "BlockHierarchy/Four/WaterEndpoint.lean": "572002ad9435ef11ac7c7589f7e4b9ec5a41d05db56d6736fed5c74b478298b4",
+    "BlockHierarchy/Four/WaterFilling.lean": "49ac7c176da79080aec9c02c70493946e9b767e5c67aecae66a076453d24570e",
+    "BlockHierarchy/Four/WaterSolution.lean": "38cafd15653f5731727159a53bcbf783aa77957196b81315e8273fe68062e2af",
+    "BlockHierarchy/LosslessRD.lean": "2d64c8c442ed3ae7d787a5f20f45a0a23a6b2908736f43b04f65f19577917fbc",
+    "BlockHierarchy/PairVariance/FourRelease.lean": "3296d1a2ff285a9b71d16e05b57244141d0e27cdc9f743219e7b807f12e40d19",
+    "BlockHierarchy/PairVariance/FourStatement.lean": "43e5c77215a49a80d5d7ecff80246c362339e5d03b2d1535bac57d89cbe607e2",
+    "BlockHierarchy/PairVariance/Generic.lean": "5dfd4f9cb7944f2a816d19e6fce9b9d340ec7c00572675a6051af57336b9d796",
+    "BlockHierarchy/PairVariance/Paper.lean": "fdc8d7d2fd17a8f6db485743571c869ec07cbaab4a267a5649fcf74fd9f43c33",
+    "BlockHierarchy/PairVariance/Statement.lean": "e32937db6ce5d14ecea296ffa40cf4f4d63584806c4784027b734bede3c7e831",
+    "BlockHierarchy/Three/Classes.lean": "5bdae05e74de46d05ab5c95ff63357cbd7d522107192a48298720393be1dcbd5",
+    "BlockHierarchy/Three/ConstantColumns.lean": "0bcb32d1adee31594138cc4cf9b205d322c78f66a62726c2fdede4293a4f08b5",
+    "BlockHierarchy/Three/Entropy.lean": "8cbe8844e7709c4125f153dfb8a1efe100efe801448915a2735eb4a6bd42c6fa",
+    "BlockHierarchy/Three/FullBranch.lean": "814e6067b25db85498e6d4ec5c9f889cfd27d206784847fa9ab29595a47906bd",
+    "BlockHierarchy/Three/FullWeights.lean": "d3666efe053a9a035001a5fda220e58cd9cb8da8214f71177a5ac6e273022fdb",
+    "BlockHierarchy/Three/OperatingPoint.lean": "c63208236151041bba6016b56b37d3c7615d986620e131597063e692a4638fc7",
+    "BlockHierarchy/Three/Thresholds.lean": "0080ae14f419f27b7c657c4632689f12bd46d2c53edb22d3a25758b668ea6d48",
+    "BlockHierarchy/Three/Unique.lean": "9419ea90608b78ad75184d1a8799476987ef32e777109b3c8b7d6e4938907380",
+    "ChannelEquality.lean": "513c020d0b6e870f77c404aa76eea36fd0adf8b7d6e5d0970e9aac4a8bf40727",
+    "ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
+    "FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+    "PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
+    "PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
+    "ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
+    "ReducedPair/ColumnEquality.lean": "8d2e91573bfeaac0a3027320248cbfb93f0c3a7a70520403fcaa83096347051b",
+    "ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48",
+    "Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
+    "lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+    "lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+  },
+  "statements": [],
+  "lean_output": "'BlockHierarchy.PairVariance.four_full' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "statement": {
+    "expected": "BlockHierarchy.PairVariance.FourFullStatement",
+    "sha256": "a0b26b521e31edc6cc908918aa932e7bb03050c77af8731a51f526e7c245a966",
+    "constants": [
+      {
+        "name": "BlockHierarchy.Channel.cost",
+        "file": "FiniteChannel.lean",
+        "lines": [
+          17,
+          17
+        ],
+        "sha256": "3ce75877e00442152b33a5f084f23310a826357259daf7ff6f43c514e3adbeee"
+      },
+      {
+        "name": "BlockHierarchy.Channel.info",
+        "file": "FiniteChannel.lean",
+        "lines": [
+          13,
+          15
+        ],
+        "sha256": "b110c0994d58a0c23dca2a22ac9e499b7971ff180cd972674fa0266601088dcb"
+      },
+      {
+        "name": "BlockHierarchy.FiniteRD.Optimal",
+        "file": "BlockHierarchy/FiniteRD.lean",
+        "lines": [
+          8,
+          12
+        ],
+        "sha256": "6f65834db86383459f84d652164349048337c0fb8d145bbfcd9749afc0ac6490"
+      },
+      {
+        "name": "BlockHierarchy.FiniteRD.joint",
+        "file": "BlockHierarchy/FiniteRD.lean",
+        "lines": [
+          17,
+          18
+        ],
+        "sha256": "c58e6f21161ca5932ad403b4c8ee1e6b29ebd507a4b0866618faebfa210d2738"
+      },
+      {
+        "name": "BlockHierarchy.FiniteRD.kernel",
+        "file": "BlockHierarchy/FiniteRD.lean",
+        "lines": [
+          14,
+          15
+        ],
+        "sha256": "22bb170dcd4ae162ff13290931a55f833e0b3dd4cc60c776762709046fa99f73"
+      },
+      {
+        "name": "BlockHierarchy.Four.Class",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          8,
+          8
+        ],
+        "sha256": "28e87f60bcec43bfc8792487e71d7ce1e4f0cb9ef7730e7bb78d77060f572ce4"
+      },
+      {
+        "name": "BlockHierarchy.Four.FourSymbolStatement",
+        "file": "BlockHierarchy/Four/PaperStatement.lean",
+        "lines": [
+          73,
+          86
+        ],
+        "sha256": "fcf2f24bb765f6db25b71e35c8ee5ae934588b5ed0dff00388eff6b34dbb7ca5"
+      },
+      {
+        "name": "BlockHierarchy.Four.PaperAllocation",
+        "file": "BlockHierarchy/Four/PaperStatement.lean",
+        "lines": [
+          21,
+          31
+        ],
+        "sha256": "82575610578a76836bdd9cbc746de31441b0229df684dc33f1172938a6c88f10"
+      },
+      {
+        "name": "BlockHierarchy.Four.PaperAllocation._proof_1",
+        "file": "BlockHierarchy/Four/PaperStatement.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.Four.PaperGroup",
+        "file": "BlockHierarchy/Four/PaperStatement.lean",
+        "lines": [
+          11,
+          19
+        ],
+        "sha256": "e0a37aed17a5c9246c57e80bc2c6301812c222b7adbf9e51e5b2d14a0fe0d18a"
+      },
+      {
+        "name": "BlockHierarchy.Four.PaperParity",
+        "file": "BlockHierarchy/Four/PaperStatement.lean",
+        "lines": [
+          33,
+          44
+        ],
+        "sha256": "a6ebe2b344ca8edfd6f5d2d9fca58f5d8001f5911770f38d3b6dae64ec06121a"
+      },
+      {
+        "name": "BlockHierarchy.Four.PaperParity._proof_1",
+        "file": "BlockHierarchy/Four/PaperStatement.lean",
+        "lines": null,
+        "sha256": "e763d6307a41140551dab6f9e38ef7b0aa6c0c64fcba5fd85ea35c995a794742"
+      },
+      {
+        "name": "BlockHierarchy.Four.PaperPoint",
+        "file": "BlockHierarchy/Four/PaperStatement.lean",
+        "lines": [
+          46,
+          60
+        ],
+        "sha256": "5e6bc633a1c6a3203573cd1f237f7327911a9898a8324c084044b6d56d4b2a0d"
+      },
+      {
+        "name": "BlockHierarchy.Four.PaperPoint._proof_1",
+        "file": "BlockHierarchy/Four/PaperStatement.lean",
+        "lines": null,
+        "sha256": "ede2361f56bbefb8336307b08f8f3248a1abe104ec0c5be6cd0f52471cf86ab6"
+      },
+      {
+        "name": "BlockHierarchy.Four.PaperThresholds",
+        "file": "BlockHierarchy/Four/PaperStatement.lean",
+        "lines": [
+          62,
+          71
+        ],
+        "sha256": "7ae968a4199871c5316d88395a53dc4382953bd20aed982b8cc1359177e1581b"
+      },
+      {
+        "name": "BlockHierarchy.Four.ParityChoice",
+        "file": "BlockHierarchy/Four/ParityChoice.lean",
+        "lines": [
+          8,
+          9
+        ],
+        "sha256": "8184125841e0132809acdf12fdae74efcee9d79c7b86c2e460fb6482b34b68d7"
+      },
+      {
+        "name": "BlockHierarchy.Four.WaterClasses.PrefixMaximum",
+        "file": "BlockHierarchy/Four/WaterClasses.lean",
+        "lines": [
+          23,
+          25
+        ],
+        "sha256": "b904bedd16157114c145580c32442c4e0d362d743f3cd2f9ec35b8772f81f829"
+      },
+      {
+        "name": "BlockHierarchy.Four.WaterClasses.base",
+        "file": "BlockHierarchy/Four/WaterClasses.lean",
+        "lines": [
+          19,
+          19
+        ],
+        "sha256": "7602093e59d6b8b04082c2a7ef922ee6cdfd099fe1ec2d0a00bfaf203e301f78"
+      },
+      {
+        "name": "BlockHierarchy.Four.WaterClasses.evenS",
+        "file": "BlockHierarchy/Four/WaterClasses.lean",
+        "lines": [
+          8,
+          12
+        ],
+        "sha256": "c7e7c562a0aad89ac41c9ddcf2d32482d2e53d280a4ea6bca5bb117bd9c93ba0"
+      },
+      {
+        "name": "BlockHierarchy.Four.WaterClasses.evenS.match_1",
+        "file": "BlockHierarchy/Four/WaterClasses.lean",
+        "lines": null,
+        "sha256": "b4d1bab80d8220afd9b49ecb87b912b6786d28869487f300b2bdbb1d158926ee"
+      },
+      {
+        "name": "BlockHierarchy.Four.WaterClasses.join",
+        "file": "BlockHierarchy/Four/WaterClasses.lean",
+        "lines": [
+          20,
+          21
+        ],
+        "sha256": "75e7371c62af34cb7d6a4bf06866c6c6af41d8e6d030a8dd532c861a54959c59"
+      },
+      {
+        "name": "BlockHierarchy.Four.WaterClasses.kE",
+        "file": "BlockHierarchy/Four/WaterClasses.lean",
+        "lines": [
+          18,
+          18
+        ],
+        "sha256": "8df888cc0b89ea8d9a7053998e91f4dcdc15ee01447836644ba08b1ec31bd398"
+      },
+      {
+        "name": "BlockHierarchy.Four.WaterClasses.oddS",
+        "file": "BlockHierarchy/Four/WaterClasses.lean",
+        "lines": [
+          14,
+          16
+        ],
+        "sha256": "72fe729f16c62cfb5ec6850f04e866140e9d5b75c6848967aad359456bdff06a"
+      },
+      {
+        "name": "BlockHierarchy.Four.WaterClasses.oddS._proof_1",
+        "file": "BlockHierarchy/Four/WaterClasses.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.Four.WaterClasses.oddS.match_1",
+        "file": "BlockHierarchy/Four/WaterClasses.lean",
+        "lines": null,
+        "sha256": "193ca5ceaf6fdd9182f18896f66657c33d629fdaa9327c7f8d1ea80b30f6e80d"
+      },
+      {
+        "name": "BlockHierarchy.Four.WaterFilling.clipped",
+        "file": "BlockHierarchy/Four/WaterFilling.lean",
+        "lines": [
+          10,
+          10
+        ],
+        "sha256": "bfa0ffd62142aa56fd8cd673bccbaaeb65356dd054fb64b90550da24b3ee6c44"
+      },
+      {
+        "name": "BlockHierarchy.Four.WaterFilling.pref",
+        "file": "BlockHierarchy/Four/WaterFilling.lean",
+        "lines": [
+          8,
+          8
+        ],
+        "sha256": "78ed73b0eea04efcbb72d07f28dd434f1106665c76bc5c60b580cdf73ac8289f"
+      },
+      {
+        "name": "BlockHierarchy.Four.WaterFilling.ratio",
+        "file": "BlockHierarchy/Four/WaterFilling.lean",
+        "lines": [
+          9,
+          9
+        ],
+        "sha256": "53cce8dde38324ce6b658751accf3837728315f11c0646ebd75df652847ad2ff"
+      },
+      {
+        "name": "BlockHierarchy.Four.Word",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          7,
+          7
+        ],
+        "sha256": "2b19dd4ab65313cac9f65141a2c600b389c74f22dfdbc530763ac37786348b29"
+      },
+      {
+        "name": "BlockHierarchy.Four.Z",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          105,
+          105
+        ],
+        "sha256": "c08f4f6ed9ccde5545741b877aba80427078531aabb8d3a319d035cb253acc29"
+      },
+      {
+        "name": "BlockHierarchy.Four.baseline",
+        "file": "BlockHierarchy/Four/ParityOptimality.lean",
+        "lines": [
+          6,
+          7
+        ],
+        "sha256": "e26baebe47fbb172693a2aa08dcfa57eccda75d6a91c57eef78dff7015ed20d2"
+      },
+      {
+        "name": "BlockHierarchy.Four.baseline._proof_1",
+        "file": "BlockHierarchy/Four/ParityOptimality.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.Four.baselineD",
+        "file": "BlockHierarchy/Four/Distortion.lean",
+        "lines": [
+          8,
+          9
+        ],
+        "sha256": "c0a9094036b08364ebb1d73240e6e6a2b03fe2bf7cc62fbd52ea9d1ab2fb909d"
+      },
+      {
+        "name": "BlockHierarchy.Four.baselineD._proof_1",
+        "file": "BlockHierarchy/Four/Distortion.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.Four.baselineD._proof_2",
+        "file": "BlockHierarchy/Four/Distortion.lean",
+        "lines": null,
+        "sha256": "b6e681ba76a28d6c4fb4dfbd8b24466e8fa54cf840292093071a62a9e0ffa1a7"
+      },
+      {
+        "name": "BlockHierarchy.Four.cardinal",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          32,
+          32
+        ],
+        "sha256": "7473afc19614dacf60602900e10b842663e8876b4d11a35d03b8dd7962593422"
+      },
+      {
+        "name": "BlockHierarchy.Four.cardinal._proof_1",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.Four.cardinal._proof_2",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": null,
+        "sha256": "ede2361f56bbefb8336307b08f8f3248a1abe104ec0c5be6cd0f52471cf86ab6"
+      },
+      {
+        "name": "BlockHierarchy.Four.classKernel",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          93,
+          95
+        ],
+        "sha256": "f2e6ce5eca8a5ab68a6bdeec74be8f6e0af096a8a2ac0aad3a0ba25e459c171c"
+      },
+      {
+        "name": "BlockHierarchy.Four.classTiltVariance",
+        "file": "BlockHierarchy/Four/Channel.lean",
+        "lines": [
+          62,
+          63
+        ],
+        "sha256": "7a1853ae8fd0fec3bd2ff346a2ef602223efbbad6ab61f508c7363d23b28bed2"
+      },
+      {
+        "name": "BlockHierarchy.Four.coefficient",
+        "file": "BlockHierarchy/Four/ParityOptimality.lean",
+        "lines": [
+          9,
+          10
+        ],
+        "sha256": "83f881b57e5f9760ba2c3a1c9791d9befb5e9e737f04aafabefa87d66701798a"
+      },
+      {
+        "name": "BlockHierarchy.Four.coefficientD",
+        "file": "BlockHierarchy/Four/Distortion.lean",
+        "lines": [
+          11,
+          11
+        ],
+        "sha256": "f552157ca37513be292d7b57470a61519f8b6c6112cb87c042b0a1bcde6b8813"
+      },
+      {
+        "name": "BlockHierarchy.Four.distance",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          36,
+          36
+        ],
+        "sha256": "be851735742fbac4c5b8325797f16ac1fbd4c432ba65cadb3858f1f8ad13eca7"
+      },
+      {
+        "name": "BlockHierarchy.Four.evenGroup",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          29,
+          29
+        ],
+        "sha256": "b7f2fb20d9f91c632aefec3b5554fa25259ada70fe087759b0e26af5b2f119f8"
+      },
+      {
+        "name": "BlockHierarchy.Four.evenMass",
+        "file": "BlockHierarchy/Four/ParityOptimality.lean",
+        "lines": [
+          16,
+          16
+        ],
+        "sha256": "f3754684fe5e1237f05a2b8e4600deea49948dc58ea38165d013a4d1511e5392"
+      },
+      {
+        "name": "BlockHierarchy.Four.evenMass._proof_1",
+        "file": "BlockHierarchy/Four/ParityOptimality.lean",
+        "lines": null,
+        "sha256": "1c7ada43fb40aab34fb45a386be968a0dbed1fee55324dde22eb7c5bd0ac8afb"
+      },
+      {
+        "name": "BlockHierarchy.Four.groupMass",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          87,
+          88
+        ],
+        "sha256": "38fd2dff92a4b16a0204e8d988158620e7ad63906294a121b0d374c21e1bb142"
+      },
+      {
+        "name": "BlockHierarchy.Four.instDecidableEvenGroup",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          30,
+          30
+        ],
+        "sha256": "14a31b32bed859aa104386b61a9aefa2a7be17057d7271b99d29f139c5397568"
+      },
+      {
+        "name": "BlockHierarchy.Four.instDecidableEvenGroup._aux_1",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": null,
+        "sha256": "e1341b914f868fc0aad596198e6389d30398685cb21ea0f2679500ee7e3a8f6c"
+      },
+      {
+        "name": "BlockHierarchy.Four.objective",
+        "file": "BlockHierarchy/Four/Maximizer.lean",
+        "lines": [
+          12,
+          13
+        ],
+        "sha256": "9d3a7c1fe0bcb7feebb8eadc7664bb8cbf454aa2e9afd9f9b04922a861a72ba6"
+      },
+      {
+        "name": "BlockHierarchy.Four.oddMass",
+        "file": "BlockHierarchy/Four/ParityOptimality.lean",
+        "lines": [
+          17,
+          17
+        ],
+        "sha256": "b0a7f51527991a412b57cd2a74dbfbe7e40f34c667b57544919e062a52c1bed2"
+      },
+      {
+        "name": "BlockHierarchy.Four.orbit",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          10,
+          27
+        ],
+        "sha256": "c95ac6749bbbf8dd3ce6398ab037a01980939b03daea7ce40b1fcf4257a9570f"
+      },
+      {
+        "name": "BlockHierarchy.Four.orbit._proof_1",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": null,
+        "sha256": "1c7ada43fb40aab34fb45a386be968a0dbed1fee55324dde22eb7c5bd0ac8afb"
+      },
+      {
+        "name": "BlockHierarchy.Four.orbit.match_1",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": null,
+        "sha256": "bc9e8613f0b49d54e92fdcf9fa2acda989fae9c1774da723c72419a1ed89b87c"
+      },
+      {
+        "name": "BlockHierarchy.Four.otherMass",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          90,
+          91
+        ],
+        "sha256": "55a87c54e8b44a41c61494eb42b5c43bd6fab542e53ca749464604bcbf1fc879"
+      },
+      {
+        "name": "BlockHierarchy.Four.paritySlice",
+        "file": "BlockHierarchy/Four/Maximizer.lean",
+        "lines": [
+          39,
+          40
+        ],
+        "sha256": "31da1ed7a30f422d0525134247d1da8510f686e825c605ff9681ba2c3837a7f5"
+      },
+      {
+        "name": "BlockHierarchy.Four.paritySlice._proof_1",
+        "file": "BlockHierarchy/Four/Maximizer.lean",
+        "lines": null,
+        "sha256": "1c7ada43fb40aab34fb45a386be968a0dbed1fee55324dde22eb7c5bd0ac8afb"
+      },
+      {
+        "name": "BlockHierarchy.Four.paritySlope",
+        "file": "BlockHierarchy/Four/ParityOptimality.lean",
+        "lines": [
+          58,
+          61
+        ],
+        "sha256": "e815deb6b1eaac62004f980d3321cdc0ee0092b5d25d1f3a439bbb60c7d33831"
+      },
+      {
+        "name": "BlockHierarchy.Four.prior",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          34,
+          34
+        ],
+        "sha256": "9bf30af8397190240d0ecee4ae055092464571cddc841f02da4bf718c48be360"
+      },
+      {
+        "name": "BlockHierarchy.Four.ratio",
+        "file": "BlockHierarchy/Four/Channel.lean",
+        "lines": [
+          24,
+          24
+        ],
+        "sha256": "8844c811fe0b4a5d783d1ae43327c464ecbf900d01998bb04ce706dc56157ff0"
+      },
+      {
+        "name": "BlockHierarchy.Four.source",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          35,
+          35
+        ],
+        "sha256": "d7027a89b04f949ede7f72546909d9318d826d1881a69da8172f6385ed8900d3"
+      },
+      {
+        "name": "BlockHierarchy.Four.sourceClasses",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": [
+          38,
+          45
+        ],
+        "sha256": "6a6b2f74ef1d6cd0b978246b5557b2b95135ec7fe7e691d7ff5543badb51f8e6"
+      },
+      {
+        "name": "BlockHierarchy.Four.sourceClasses.match_1",
+        "file": "BlockHierarchy/Four/Classes.lean",
+        "lines": null,
+        "sha256": "0555e0a6485f904f40dd1fe14da075115b01df5671a84bb737433d973bdfc33d"
+      },
+      {
+        "name": "BlockHierarchy.PairVariance.FourDisplayStatement",
+        "file": "BlockHierarchy/PairVariance/Statement.lean",
+        "lines": [
+          18,
+          21
+        ],
+        "sha256": "db984229923d493668f28d7f86f4bd0c0673981a13ba05b85daaacc71b24f5b8"
+      },
+      {
+        "name": "BlockHierarchy.PairVariance.FourDisplayStatement._proof_1",
+        "file": "BlockHierarchy/PairVariance/Statement.lean",
+        "lines": null,
+        "sha256": "ede2361f56bbefb8336307b08f8f3248a1abe104ec0c5be6cd0f52471cf86ab6"
+      },
+      {
+        "name": "BlockHierarchy.PairVariance.FourFullStatement",
+        "file": "BlockHierarchy/PairVariance/FourStatement.lean",
+        "lines": [
+          6,
+          7
+        ],
+        "sha256": "f976ec3f5b9f8382febc918ed4fc14c5d3cb2eed268188d6ff4384965b8803a9"
+      },
+      {
+        "name": "BlockHierarchy.PairVariance.pairSum",
+        "file": "BlockHierarchy/PairVariance/Statement.lean",
+        "lines": [
+          7,
+          10
+        ],
+        "sha256": "3cee190698c6f6f1b4d4dcbe6db6e0336d2c6ec6d67cec05aab1fe29404ce571"
+      },
+      {
+        "name": "BlockHierarchy.Three.Word",
+        "file": "BlockHierarchy/Three/Classes.lean",
+        "lines": [
+          8,
+          8
+        ],
+        "sha256": "999538fca3567daf793c7595a9ea325b0fd97be89b358afbfe589a737a8dee74"
+      },
+      {
+        "name": "BlockHierarchy.Three.hamming",
+        "file": "BlockHierarchy/Three/Classes.lean",
+        "lines": [
+          13,
+          15
+        ],
+        "sha256": "c4d79986c363ea20cfddd4a43c4c9ece1c494a5e824458729519e57f3ef64b6d"
+      },
+      {
+        "name": "BlockHierarchy.Three.markov",
+        "file": "BlockHierarchy/Three/Classes.lean",
+        "lines": [
+          24,
+          25
+        ],
+        "sha256": "440da46d8f873a9c9d6375eb4c42505c2b6b44f71d0fa36544ad609f33f01cd3"
+      },
+      {
+        "name": "BlockHierarchy.Three.markov._proof_1",
+        "file": "BlockHierarchy/Three/Classes.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.Three.step",
+        "file": "BlockHierarchy/Three/Classes.lean",
+        "lines": [
+          22,
+          22
+        ],
+        "sha256": "aac5ecb96175ee55b27b3d1f533243114aa955139bb49ee8d5c7f8ad81ca4afe"
+      },
+      {
+        "name": "BlockHierarchy.logTwo",
+        "file": "ReducedPair/Moments.lean",
+        "lines": [
+          8,
+          8
+        ],
+        "sha256": "f6bf21bd006158f2df70aefe442397856043c67908e0502c053901b6fa3542f0"
+      },
+      {
+        "name": "BlockHierarchy.logTwo._proof_1",
+        "file": "ReducedPair/Moments.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.mean",
+        "file": "ReducedPair/Moments.lean",
+        "lines": [
+          10,
+          10
+        ],
+        "sha256": "1bd55dcd6cd9366dc07474426d26467c5f9a33351f72d402b8426339ad27cb65"
+      },
+      {
+        "name": "BlockHierarchy.variance",
+        "file": "ReducedPair/Moments.lean",
+        "lines": [
+          12,
+          13
+        ],
+        "sha256": "e2c4da315996ee47f5108390ec605ee0a0f87474afb78f2cb1c78045cc19066d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+leanprover/lean4:v4.33.1
+Lake build targets: BlockHierarchy.VarianceLimit.Release
+Contract: BlockHierarchy/VarianceLimit/Release.lean
+Expected: BlockHierarchy.VarianceLimit.VarianceLimitStatement
+'BlockHierarchy.VarianceLimit.variance_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+Statement SHA-256: a55be991e64d4e4eafd931d68394b276c34f4183568c2a6466496743fa8e5285
+Fingerprinted local constants: 36

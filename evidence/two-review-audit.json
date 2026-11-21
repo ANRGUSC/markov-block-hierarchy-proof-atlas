@@ -1,0 +1,395 @@
+{
+  "declaration": "BlockHierarchy.persistent_pair",
+  "contract": "ReducedPair/Release.lean",
+  "expected": "BlockHierarchy.PersistentPairStatement",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "targets": [
+    "ReducedPair.Paper"
+  ],
+  "input_scope": "module-closure",
+  "checked_inputs": {
+    "ChannelEquality.lean": "513c020d0b6e870f77c404aa76eea36fd0adf8b7d6e5d0970e9aac4a8bf40727",
+    "ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
+    "FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
+    "FirstChange.lean": "b5bbc23cc6866b81061f685df513a31116455cdb8d216eaa786c34d5ab966715",
+    "FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
+    "FirstSupport.lean": "611a62c98b4d8a9260d27a9d222e81e4a1d477d434929b133517c18eedbb3ebf",
+    "IndependentSupport.lean": "2d4fb4d0ccadce0d1a691e5006a42e24f27862ad7b2c2fe443b240bc58080958",
+    "Lossless.lean": "9fe4a0c1e45717fef7a08f5d4160af6b3a258fd136169650569a6b083086dd0d",
+    "NegativeDistortion.lean": "ab0fde8ce87e5b21d305e3e36cceb68d9b34d055ac45935fa218567a128011c9",
+    "NegativeSupport.lean": "6c4929b19cb95cd1a45ec644f224f6c9a33dd987bfd1e1c5647ef6766ea931ac",
+    "PairChannel.lean": "7be56d6b6d1309ded5b0040afdc58ff5351fb8e2058416eb401bd99260fa98a5",
+    "PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
+    "PairUniqueness.lean": "529fc9d3e4adf1ac03aa6b119bec785a5e9dddc02105f394f8f74dabf3a0b86c",
+    "PositiveThreshold.lean": "fd9237e826ff2aea6062307deca5592e6d00a27d468d4bdb01f2926d41ddba03",
+    "ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
+    "ReducedPair/Branch.lean": "df863ea1f25b4d5911845d5bea930d80283502bf0106d0fad24851fe052c69e8",
+    "ReducedPair/ColumnEquality.lean": "8d2e91573bfeaac0a3027320248cbfb93f0c3a7a70520403fcaa83096347051b",
+    "ReducedPair/Full.lean": "1ccf99fbe62737a460bd692eb26772b7371e60e5d7c3b1965f634f985b0c745d",
+    "ReducedPair/GibbsValue.lean": "f4a1bc66fdd1fce664606f60fe6b400ae7c4d19e428c1566d342c700bfe39c7c",
+    "ReducedPair/LosslessValue.lean": "80b41dd175d3dea27fa4b04e03643d57e0a1f8dd48ad54224d6ca06d64ac9741",
+    "ReducedPair/Middle.lean": "098b05d9d23ab82e562b6f9a1bc2fb92d490628d5ff981a862ea78c766161525",
+    "ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48",
+    "ReducedPair/Optimal.lean": "aa732d3c704feeb422fb93dacdad393b767d96d34d8fb369ee90efc9b6260fe6",
+    "ReducedPair/Paper.lean": "388b35d603dc582053d3c6d0b897082de3ec8f994297163ed9e3111c1c893b42",
+    "ReducedPair/PaperStatement.lean": "a7d11ea722e46bbfc5c55343500173ce14ddfcf744e3b314edb86d2f5bd5b080",
+    "ReducedPair/RateStatement.lean": "ad1f701fda964425d36e9415dee024e4b83f292c6d271e86b589f2a92adab482",
+    "ReducedPair/Release.lean": "3f917e2650e42af4cf9b8157739eee31358432ce2362d90864bba3a889ce8d1d",
+    "ReducedPair/Unique.lean": "3f3c5f0e9c091e33ab47d53460fa934a275d5fad5abab45358e3f85114e7088e",
+    "ReducedPair/ZeroInformation.lean": "4ff8871687577984e99a4e96fcf531cb470bb791bae4bcfabf3c2c5b1fd7f2f8",
+    "ReducedPair/ZeroRate.lean": "9a760d3e4576cc87d985ffc62f6fda11abd94af0ac901975921187fcdf630999",
+    "Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
+    "lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+    "lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+  },
+  "statements": [],
+  "lean_output": "'BlockHierarchy.persistent_pair' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "statement": {
+    "expected": "BlockHierarchy.PersistentPairStatement",
+    "sha256": "a8ad24b5eea6022fe9023a478cd0fe4793823737c76784d64015f43b1a9d59e4",
+    "constants": [
+      {
+        "name": "BlockHierarchy.BinaryModel",
+        "file": "FirstChangeStatement.lean",
+        "lines": [
+          6,
+          20
+        ],
+        "sha256": "687db703d8245ef0b98577b38c60fd819dc3e86a1274a8ce9c09cffb4c5d7e42"
+      },
+      {
+        "name": "BlockHierarchy.BinaryModel.A",
+        "file": "FirstChangeStatement.lean",
+        "lines": [
+          24,
+          24
+        ],
+        "sha256": "89fd27208bf3e984a101ffe7fa0d3a15710b05a0f1ba0a54ad98f029a1d15766"
+      },
+      {
+        "name": "BlockHierarchy.BinaryModel.B",
+        "file": "FirstChangeStatement.lean",
+        "lines": [
+          25,
+          25
+        ],
+        "sha256": "fc5971dc0ec30164bbe1c65697fd1d56fd4c4d999db4351c0660e8f9ddf5d8cb"
+      },
+      {
+        "name": "BlockHierarchy.BinaryModel.C",
+        "file": "FirstChangeStatement.lean",
+        "lines": [
+          26,
+          26
+        ],
+        "sha256": "011a56d423c9ed5235b2f96e9f1d6c896a8bbcacfe6619fafbf3a069552ecaa7"
+      },
+      {
+        "name": "BlockHierarchy.BinaryModel.a",
+        "file": "FirstChangeStatement.lean",
+        "lines": [
+          11,
+          11
+        ],
+        "sha256": "466d46e7a309c76ff6032e7fee5e72acf1296b6ef902f91f00a48928a0766fce"
+      },
+      {
+        "name": "BlockHierarchy.BinaryModel.b",
+        "file": "FirstChangeStatement.lean",
+        "lines": [
+          12,
+          12
+        ],
+        "sha256": "79956c4f83899a839abba6ed855a9628358b9f1abb19ebc220f908acacd894c3"
+      },
+      {
+        "name": "BlockHierarchy.BinaryModel.mk",
+        "file": "FirstChangeStatement.lean",
+        "lines": [
+          8,
+          8
+        ],
+        "sha256": "765027fc188c133144da8832fdb8167bf872b128018edbe56c3a76f2e7a65041"
+      },
+      {
+        "name": "BlockHierarchy.BinaryModel.p",
+        "file": "FirstChangeStatement.lean",
+        "lines": [
+          9,
+          9
+        ],
+        "sha256": "b0b306c73aff893bde79bd4dbd558c4278c20ce4509550dee9c8239c20b14a5d"
+      },
+      {
+        "name": "BlockHierarchy.BinaryModel.persistence",
+        "file": "FirstChangeStatement.lean",
+        "lines": [
+          23,
+          23
+        ],
+        "sha256": "b1ff0654762750af7e9ee24e310d893835603e394ef43d71cd406232c4b46ea4"
+      },
+      {
+        "name": "BlockHierarchy.BinaryModel.q",
+        "file": "FirstChangeStatement.lean",
+        "lines": [
+          10,
+          10
+        ],
+        "sha256": "cb11dd2570e4120c1d82af8290f6161a0355d2b3ce61a0eee3206f4208a13a31"
+      },
+      {
+        "name": "BlockHierarchy.BinaryModel.source",
+        "file": "FirstChangeStatement.lean",
+        "lines": [
+          27,
+          27
+        ],
+        "sha256": "8a5a26fcf08c1dd307fb2ed80cf872eeda571f230eab86f107a7934c94d9734d"
+      },
+      {
+        "name": "BlockHierarchy.Channel.cost",
+        "file": "FiniteChannel.lean",
+        "lines": [
+          17,
+          17
+        ],
+        "sha256": "3ce75877e00442152b33a5f084f23310a826357259daf7ff6f43c514e3adbeee"
+      },
+      {
+        "name": "BlockHierarchy.Channel.info",
+        "file": "FiniteChannel.lean",
+        "lines": [
+          13,
+          15
+        ],
+        "sha256": "b110c0994d58a0c23dca2a22ac9e499b7971ff180cd972674fa0266601088dcb"
+      },
+      {
+        "name": "BlockHierarchy.GibbsPoint",
+        "file": "ReducedPair/RateStatement.lean",
+        "lines": [
+          22,
+          26
+        ],
+        "sha256": "5712b71c7baaa36e18a162508289297be7baefc484a85b690c52e4230f450be5"
+      },
+      {
+        "name": "BlockHierarchy.MinimizesAt",
+        "file": "ReducedPair/RateStatement.lean",
+        "lines": [
+          12,
+          17
+        ],
+        "sha256": "897fd64075b79f8cbaa11b6bc44929c934b5927096c074ee133e8ed68503bd01"
+      },
+      {
+        "name": "BlockHierarchy.MinimizesAt._proof_1",
+        "file": "ReducedPair/RateStatement.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.PairChannel.Word",
+        "file": "PairChannel.lean",
+        "lines": [
+          9,
+          9
+        ],
+        "sha256": "9ea41813f3b93bdcd8f800415320af6463c06bf669bc042ef1220e4421978a4f"
+      },
+      {
+        "name": "BlockHierarchy.PairChannel.hamming",
+        "file": "PairChannel.lean",
+        "lines": [
+          16,
+          17
+        ],
+        "sha256": "caa7b4ca27cca7291299857c0b1cfb5f4f13c7575d3589ce5199beb903ed5bd5"
+      },
+      {
+        "name": "BlockHierarchy.PairChannel.jointCost",
+        "file": "PairChannel.lean",
+        "lines": [
+          67,
+          67
+        ],
+        "sha256": "d5e60568c0ea8c56b936ed44c7ec0a7c74a127b4a8e59b59ec70588bb08380b1"
+      },
+      {
+        "name": "BlockHierarchy.PairChannel.law",
+        "file": "PairChannel.lean",
+        "lines": [
+          11,
+          14
+        ],
+        "sha256": "040f6b81fb545cce44dc8e238bd21e35812a5e0368014ec00dcb406df63660a0"
+      },
+      {
+        "name": "BlockHierarchy.PairChannel.law._sparseCasesOn_1",
+        "file": "PairChannel.lean",
+        "lines": null,
+        "sha256": "18298358e62d117a3b0a2d327f0889e6fc7e4fc5c97bdae4f4e3e92ae7ebb1bd"
+      },
+      {
+        "name": "BlockHierarchy.PairChannel.law._sparseCasesOn_2",
+        "file": "PairChannel.lean",
+        "lines": null,
+        "sha256": "61f5549a90ecdf89477a8a8fccb762ed4e0d7338849dbe87c755127c7cf363b5"
+      },
+      {
+        "name": "BlockHierarchy.PairChannel.law.match_1",
+        "file": "PairChannel.lean",
+        "lines": null,
+        "sha256": "5f1495275a47f3c94a36a456fc1732f02be626fb231b1226d9fe7a67bc7b6774"
+      },
+      {
+        "name": "BlockHierarchy.PairChannel.prior",
+        "file": "PairChannel.lean",
+        "lines": [
+          21,
+          23
+        ],
+        "sha256": "79659f2a009e65434a791bd5291eb8f7bd600646e84c6a3d2a4f51dbc92df239"
+      },
+      {
+        "name": "BlockHierarchy.PairChannel.prior._proof_1",
+        "file": "PairChannel.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.PersistentPairStatement",
+        "file": "ReducedPair/PaperStatement.lean",
+        "lines": [
+          7,
+          37
+        ],
+        "sha256": "3f3677823e147039c34b52db08f836dd9f1b650dffca37852ae404b794083d2c"
+      },
+      {
+        "name": "BlockHierarchy.PersistentPairStatement._proof_1",
+        "file": "ReducedPair/PaperStatement.lean",
+        "lines": null,
+        "sha256": "ede2361f56bbefb8336307b08f8f3248a1abe104ec0c5be6cd0f52471cf86ab6"
+      },
+      {
+        "name": "BlockHierarchy.PersistentPairStatement._proof_2",
+        "file": "ReducedPair/PaperStatement.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.RateAt",
+        "file": "ReducedPair/RateStatement.lean",
+        "lines": [
+          19,
+          20
+        ],
+        "sha256": "327ee49bab339abfcf31a6d020f35b2d06b00280d72c2ba3a4aa3843e18ca22f"
+      },
+      {
+        "name": "BlockHierarchy.ReducedPair.Z",
+        "file": "ReducedPair.lean",
+        "lines": [
+          12,
+          12
+        ],
+        "sha256": "4ce2175675f34dfd3b0c956be46678c89831757d9166e0d2d8734775b2979a64"
+      },
+      {
+        "name": "BlockHierarchy.ReducedPair.classVariance",
+        "file": "ReducedPair/Moments.lean",
+        "lines": [
+          28,
+          30
+        ],
+        "sha256": "87b1c6f922bb67be86cbfffe3888edd8f1031e38d8192868d0995350e93cbab0"
+      },
+      {
+        "name": "BlockHierarchy.ReducedPair.prior",
+        "file": "ReducedPair.lean",
+        "lines": [
+          8,
+          10
+        ],
+        "sha256": "6e10acb0c2d164edaf3f6065499083da635c4358a7cdc209833888e1b3b53fd5"
+      },
+      {
+        "name": "BlockHierarchy.binaryEntropyNats",
+        "file": "ReducedPair/Moments.lean",
+        "lines": [
+          6,
+          6
+        ],
+        "sha256": "4fd7ac6cf31492e9c6c8cbbd4dc310900db6ea14916fe95ac113d541456c8d76"
+      },
+      {
+        "name": "BlockHierarchy.logTwo",
+        "file": "ReducedPair/Moments.lean",
+        "lines": [
+          8,
+          8
+        ],
+        "sha256": "f6bf21bd006158f2df70aefe442397856043c67908e0502c053901b6fa3542f0"
+      },
+      {
+        "name": "BlockHierarchy.logTwo._proof_1",
+        "file": "ReducedPair/Moments.lean",
+        "lines": null,
+        "sha256": "b544ac65de6ead4362b021f8600db09b44772bb5b753f4b43f9051691a04eb18"
+      },
+      {
+        "name": "BlockHierarchy.majorityWord",
+        "file": "ReducedPair/RateStatement.lean",
+        "lines": [
+          10,
+          10
+        ],
+        "sha256": "e67825f79768a19d6ca8459a837bb3d43c2b2e1b60cc56f9a2aebba0a061eb41"
+      },
+      {
+        "name": "BlockHierarchy.mean",
+        "file": "ReducedPair/Moments.lean",
+        "lines": [
+          10,
+          10
+        ],
+        "sha256": "1bd55dcd6cd9366dc07474426d26467c5f9a33351f72d402b8426339ad27cb65"
+      },
+      {
+        "name": "BlockHierarchy.pointMass",
+        "file": "ReducedPair/RateStatement.lean",
+        "lines": [
+          8,
+          8
+        ],
+        "sha256": "8b5b5f856cc902c352f312936bbfd0b462203fcefc907f2873183e3f99a0d890"
+      },
+      {
+        "name": "BlockHierarchy.tiltedVariance",
+        "file": "ReducedPair/RateStatement.lean",
+        "lines": [
+          28,
+          29
+        ],
+        "sha256": "bafebba230a2aff8e416cc6fcf9ee824931b746390fe51032c218988db8650f3"
+      },
+      {
+        "name": "BlockHierarchy.variance",
+        "file": "ReducedPair/Moments.lean",
+        "lines": [
+          12,
+          13
+        ],
+        "sha256": "e2c4da315996ee47f5108390ec605ee0a0f87474afb78f2cb1c78045cc19066d"
+      }
+    ]
+  }
+}

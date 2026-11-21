@@ -1,0 +1,7 @@
+leanprover/lean4:v4.33.1
+Lake build targets: ReducedPair.Paper
+Contract: ReducedPair/Release.lean
+Expected: BlockHierarchy.PersistentPairStatement
+'BlockHierarchy.persistent_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+Statement SHA-256: a8ad24b5eea6022fe9023a478cd0fe4793823737c76784d64015f43b1a9d59e4
+Fingerprinted local constants: 40

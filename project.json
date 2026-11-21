@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "skill_version": "0.7.0",
+  "skill_version": "0.8.0",
   "title": "A Block Hierarchy for Rate-Distortion and Dispersion of Binary Markov Sources",
   "folio": {
     "short_title": "The block hierarchy",
@@ -44,7 +44,7 @@
       "sketch": "The two transition words have the same candidate mass. Substitute u = D/(1−D) in their common numerator and use the fact that the four input probabilities sum to one. Multiplication by the positive factor (1−D)² gives C−D(1−D), so both numerators vanish when D(1−D) = C. For the constant word 00, multiplying its numerator by B gives the square (Bu-C)^2 plus AB-C^2. The latter is strictly positive by the pair-mass identity. Exchanging A and B covers 11. The smaller quadratic root lies strictly between zero and one half. Factoring the scaled transition mass shows its sign agrees with the threshold minus the distortion on that interval. At zero persistence set C = pq, A = p - C and B = q - C. The four inverse-prior masses simplify to the products of the one-symbol factors (p-D)/(1-2D) and (q-D)/(1-2D). Both factors are positive below min(p,q) and sum to one.",
       "step": "Proposition 1 is closed. Lean checked the complete stationary Markov statement, all four support probabilities, uniqueness of the minimizing marginal and every endpoint claimed in the proposition.",
       "next": "Paper-wide work continues with Theorem 3.",
-      "run_log": "evidence/persistent-pair-complete.txt",
+      "run_log": "evidence/phase-review-check.txt",
       "scope": "For every stationary two-state source with positive transition probabilities, the contract compares mutual information against every competing joint law with the same input and distortion budget. It proves existence and uniqueness of the optimal reproduction marginal and gives its exact support before and at each first threshold, including the unbiased tie, zero persistence and lossless distortion. Mutual information is in nats, which preserves the minimizer under conversion to bits.",
       "structured": "Source: local manuscript, Proposition 1, equation labeled eq:pairprior and the following sentence. The numbered steps below expand its algebra; they are a pilot supplement.\n⟨1⟩1. Set u = D/(1−D) and let T = C(1+u²)−(A+B)u.\n⟨1⟩2. Multiply T by (1−D)².\n  ⟨2⟩1. Use A+B = 1−2C from pair-mass normalization.\n  ⟨2⟩2. Expand and collect terms to obtain C−D(1−D).\n⟨1⟩3. Since D < 1/2, the factor in step 2 is nonzero. Thus T = 0 exactly when D(1−D) = C.\n⟨1⟩4. For 00, B times its numerator is (Bu-C)^2 + AB-C^2. The pair-mass identity gives AB-C^2 > 0 under positive persistence. Since B > 0, the numerator is positive. Exchange A and B to obtain the same conclusion for 11.\n⟨1⟩5. The smaller root r lies in (0, 1/2) and r(1-r)=C. The sign of the transition mass equals the sign of (r-D)(1-r-D). For D<1/2 the second factor is strictly positive, so the smaller root is the first zero.\n⟨1⟩6. For the independent case use the two factors from the sketch. Substitute C = pq into each candidate mass, use p+q = 1 and clear denominators. The two factors are positive because D < min(p,q) implies p-D, q-D and 1-2D are positive.\nNegative persistence: the discriminant follows from stationary flow. Independently, the quadratic root and the constant-word comparison give the candidate zero and tie. The root bounds supply the slope hypothesis needed for positivity of both the rarer constant and the transition words. The ordered Markov lemma combines these facts. Exchanging the labels and passing from u to D remain.",
       "lean": "lean/FirstChangeStatement.lean",
@@ -65,20 +65,14 @@
         "lean/FirstChangeAudit.lean"
       ],
       "checked_inputs": {
-        "lean/Audit.lean": "aabfb59a2755ebe572814fee1c52828eb743503918daf599975cd0608a8f67ae",
-        "lean/BlockHierarchy.lean": "fa91adff2940afbbaea2efd02ebc8dee96926c66c23969412bb0f2e0ecbbe72f",
         "lean/ChannelEquality.lean": "513c020d0b6e870f77c404aa76eea36fd0adf8b7d6e5d0970e9aac4a8bf40727",
         "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
-        "lean/Contracts.lean": "5e139a2080d4e5afd68df6ee7102748e95ffba4337a447073f1ea15d2f9960a1",
         "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
         "lean/FirstChange.lean": "b5bbc23cc6866b81061f685df513a31116455cdb8d216eaa786c34d5ab966715",
         "lean/FirstChangeAudit.lean": "a07ab06561efe9f8aeee6f6fdad4e7f568b52aab705d6f40bec3f61fa9013f36",
         "lean/FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
         "lean/FirstSupport.lean": "611a62c98b4d8a9260d27a9d222e81e4a1d477d434929b133517c18eedbb3ebf",
         "lean/IndependentSupport.lean": "2d4fb4d0ccadce0d1a691e5006a42e24f27862ad7b2c2fe443b240bc58080958",
-        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
-        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
-        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
         "lean/Lossless.lean": "9fe4a0c1e45717fef7a08f5d4160af6b3a258fd136169650569a6b083086dd0d",
         "lean/NegativeDistortion.lean": "ab0fde8ce87e5b21d305e3e36cceb68d9b34d055ac45935fa218567a128011c9",
         "lean/NegativeSupport.lean": "6c4929b19cb95cd1a45ec644f224f6c9a33dd987bfd1e1c5647ef6766ea931ac",
@@ -86,23 +80,9 @@
         "lean/PairPrior.lean": "d06b47649ccbbde645858243424a0c4e5a01a4502b8ab9e42adf0190786b82a7",
         "lean/PairUniqueness.lean": "529fc9d3e4adf1ac03aa6b119bec785a5e9dddc02105f394f8f74dabf3a0b86c",
         "lean/PositiveThreshold.lean": "fd9237e826ff2aea6062307deca5592e6d00a27d468d4bdb01f2926d41ddba03",
-        "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
-        "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
-        "lean/ReducedPair/Branch.lean": "df863ea1f25b4d5911845d5bea930d80283502bf0106d0fad24851fe052c69e8",
-        "lean/ReducedPair/ColumnEquality.lean": "8d2e91573bfeaac0a3027320248cbfb93f0c3a7a70520403fcaa83096347051b",
-        "lean/ReducedPair/Full.lean": "1ccf99fbe62737a460bd692eb26772b7371e60e5d7c3b1965f634f985b0c745d",
-        "lean/ReducedPair/GibbsValue.lean": "f4a1bc66fdd1fce664606f60fe6b400ae7c4d19e428c1566d342c700bfe39c7c",
-        "lean/ReducedPair/LosslessValue.lean": "80b41dd175d3dea27fa4b04e03643d57e0a1f8dd48ad54224d6ca06d64ac9741",
-        "lean/ReducedPair/Middle.lean": "098b05d9d23ab82e562b6f9a1bc2fb92d490628d5ff981a862ea78c766161525",
-        "lean/ReducedPair/Moments.lean": "ae4c0ba7925542475b588a6828f0d47d9a4b5d656b29bc3949b65ec16f614c48",
-        "lean/ReducedPair/Optimal.lean": "aa732d3c704feeb422fb93dacdad393b767d96d34d8fb369ee90efc9b6260fe6",
-        "lean/ReducedPair/Paper.lean": "388b35d603dc582053d3c6d0b897082de3ec8f994297163ed9e3111c1c893b42",
-        "lean/ReducedPair/PaperStatement.lean": "a7d11ea722e46bbfc5c55343500173ce14ddfcf744e3b314edb86d2f5bd5b080",
-        "lean/ReducedPair/RateStatement.lean": "ad1f701fda964425d36e9415dee024e4b83f292c6d271e86b589f2a92adab482",
-        "lean/ReducedPair/Release.lean": "3f917e2650e42af4cf9b8157739eee31358432ce2362d90864bba3a889ce8d1d",
-        "lean/ReducedPair/Unique.lean": "3f3c5f0e9c091e33ab47d53460fa934a275d5fad5abab45358e3f85114e7088e",
-        "lean/ReducedPair/ZeroInformation.lean": "4ff8871687577984e99a4e96fcf531cb470bb791bae4bcfabf3c2c5b1fd7f2f8",
-        "lean/ReducedPair/ZeroRate.lean": "9a760d3e4576cc87d985ffc62f6fda11abd94af0ac901975921187fcdf630999"
+        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
       },
       "subproofs": [
         {
@@ -188,7 +168,7 @@
       ],
       "closure": {
         "package": "lean",
-        "audit": "evidence/first-change-audit-v2.json",
+        "audit": "evidence/phase-review-audit.json",
         "expected": "BlockHierarchy.FirstChangeStatement",
         "declaration": "BlockHierarchy.first_change",
         "correspondence": "For every stationary two-state source with positive transition probabilities, the contract compares mutual information against every competing joint law with the same input and distortion budget. It proves existence and uniqueness of the optimal reproduction marginal and gives its exact support before and at each first threshold, including the unbiased tie, zero persistence and lossless distortion. Mutual information is in nats, which preserves the minimizer under conversion to bits."
@@ -220,22 +200,15 @@
         "lean/ReducedPair.lean",
         "lean/Variational.lean"
       ],
-      "run_log": "evidence/persistent-pair-complete.txt",
+      "run_log": "evidence/two-review-check.txt",
       "checked_inputs": {
-        "lean/Audit.lean": "aabfb59a2755ebe572814fee1c52828eb743503918daf599975cd0608a8f67ae",
-        "lean/BlockHierarchy.lean": "fa91adff2940afbbaea2efd02ebc8dee96926c66c23969412bb0f2e0ecbbe72f",
         "lean/ChannelEquality.lean": "513c020d0b6e870f77c404aa76eea36fd0adf8b7d6e5d0970e9aac4a8bf40727",
         "lean/ChannelOptimizer.lean": "2e4f1532a77b6231019a2d36625835d6b77dccac2e7a5af21be0d2f4dabbcc74",
-        "lean/Contracts.lean": "5e139a2080d4e5afd68df6ee7102748e95ffba4337a447073f1ea15d2f9960a1",
         "lean/FiniteChannel.lean": "582d3c377168c180e8aed99371032bb90db73155d6dfa5fcff2489bc25f44fc4",
         "lean/FirstChange.lean": "b5bbc23cc6866b81061f685df513a31116455cdb8d216eaa786c34d5ab966715",
-        "lean/FirstChangeAudit.lean": "a07ab06561efe9f8aeee6f6fdad4e7f568b52aab705d6f40bec3f61fa9013f36",
         "lean/FirstChangeStatement.lean": "30fd21c5462d8325b3c8c851793743b5ed5431f94ecb7f3a1b360b97ab234e0d",
         "lean/FirstSupport.lean": "611a62c98b4d8a9260d27a9d222e81e4a1d477d434929b133517c18eedbb3ebf",
         "lean/IndependentSupport.lean": "2d4fb4d0ccadce0d1a691e5006a42e24f27862ad7b2c2fe443b240bc58080958",
-        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
-        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
-        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
         "lean/Lossless.lean": "9fe4a0c1e45717fef7a08f5d4160af6b3a258fd136169650569a6b083086dd0d",
         "lean/NegativeDistortion.lean": "ab0fde8ce87e5b21d305e3e36cceb68d9b34d055ac45935fa218567a128011c9",
         "lean/NegativeSupport.lean": "6c4929b19cb95cd1a45ec644f224f6c9a33dd987bfd1e1c5647ef6766ea931ac",
@@ -244,7 +217,6 @@
         "lean/PairUniqueness.lean": "529fc9d3e4adf1ac03aa6b119bec785a5e9dddc02105f394f8f74dabf3a0b86c",
         "lean/PositiveThreshold.lean": "fd9237e826ff2aea6062307deca5592e6d00a27d468d4bdb01f2926d41ddba03",
         "lean/ReducedPair.lean": "4f3c260783b9138f59b951b4eacec4e5bc8a06734db6f569a6417eb210c745a9",
-        "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
         "lean/ReducedPair/Branch.lean": "df863ea1f25b4d5911845d5bea930d80283502bf0106d0fad24851fe052c69e8",
         "lean/ReducedPair/ColumnEquality.lean": "8d2e91573bfeaac0a3027320248cbfb93f0c3a7a70520403fcaa83096347051b",
         "lean/ReducedPair/Full.lean": "1ccf99fbe62737a460bd692eb26772b7371e60e5d7c3b1965f634f985b0c745d",
@@ -259,7 +231,11 @@
         "lean/ReducedPair/Release.lean": "3f917e2650e42af4cf9b8157739eee31358432ce2362d90864bba3a889ce8d1d",
         "lean/ReducedPair/Unique.lean": "3f3c5f0e9c091e33ab47d53460fa934a275d5fad5abab45358e3f85114e7088e",
         "lean/ReducedPair/ZeroInformation.lean": "4ff8871687577984e99a4e96fcf531cb470bb791bae4bcfabf3c2c5b1fd7f2f8",
-        "lean/ReducedPair/ZeroRate.lean": "9a760d3e4576cc87d985ffc62f6fda11abd94af0ac901975921187fcdf630999"
+        "lean/ReducedPair/ZeroRate.lean": "9a760d3e4576cc87d985ffc62f6fda11abd94af0ac901975921187fcdf630999",
+        "lean/Variational.lean": "073806514ca5d283ac23b9d3d94170dff86e03a81d917d27be904eeb475adc43",
+        "lean/lake-manifest.json": "984e6f3ba9445eee088548e4e882f3a21bb2cc35008253314249cc344d3f8bf4",
+        "lean/lakefile.toml": "9b0fd05eddd972bfa031fe6f1f46da76d1ac41c89a79c805653b541831c1e12c",
+        "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
       },
       "subproofs": [
         {
@@ -310,7 +286,7 @@
       ],
       "closure": {
         "package": "lean",
-        "audit": "evidence/persistent-pair-audit.json",
+        "audit": "evidence/two-review-audit.json",
         "expected": "BlockHierarchy.PersistentPairStatement",
         "declaration": "BlockHierarchy.persistent_pair",
         "correspondence": "The formal statement covers all positively persistent stationary binary Markov models with the manuscript's interior transition probabilities. Rates compare the explicit joint to every feasible competing joint and are expressed in bits per pair. Variances use the same optimizing marginal and multiplier as the rate. The checker covers lossless distortion, the first threshold, the interior second branch and the zero-rate endpoint. It identifies the unique middle-branch marginal and the unique zero-rate marginal at the biased endpoint."
@@ -458,7 +434,7 @@
         "lean/BlockHierarchy/PairVariance/Paper.lean",
         "lean/BlockHierarchy/PairVariance/ThreeRelease.lean"
       ],
-      "run_log": "evidence/three-symbol-full-complete.txt",
+      "run_log": "evidence/three-review-check.txt",
       "checked_inputs": {
         "lean/BlockHierarchy/FiniteRD.lean": "3505cb88bf62172df5ec7477ef03b7d1a009d006776619a1e568473785b39cc3",
         "lean/BlockHierarchy/Four/AllocationIdentities.lean": "762606623c0a6de007759fb5a6c4c8aaf6d23441a9e034e01366b1ce3f46ebf2",
@@ -504,7 +480,7 @@
       },
       "closure": {
         "package": "lean",
-        "audit": "evidence/three-symbol-full-audit.json",
+        "audit": "evidence/three-review-audit.json",
         "expected": "BlockHierarchy.PairVariance.ThreeFullStatement",
         "declaration": "BlockHierarchy.PairVariance.three_full",
         "correspondence": "For every symmetric chain with 0 < p < 1/2 the contract proves both ordered thresholds, the 8/6/2 supports including both transitions and zero distortion, uniqueness among all minimizing reproduction marginals, both parameter roots with their cubic forms and strict increase, and the stated rate and tilted variance in bits. The Gibbs channel in every branch attains the budget and is compared with every feasible joint law. The actual tilted word variance equals the displayed weighted sum of squared base-two log ratios over unordered pairs of source classes."
@@ -518,7 +494,7 @@
       "next": "Proceed to the finite-block full-support thresholds in Proposition 5.",
       "scope": "For every stationary symmetric binary source with flip probability between zero and one half, the contract proves the ordered classes, exact prefix maxima, clipped weights and support including empty groups, global and slice optimality, the parity derivative and endpoint/root rules. For every interior distortion it constructs a multiplier and a full sixteen-word channel attaining the budget, proves the stated rate in bits and tilted variance, and establishes the column equality at support transitions. The actual tilted word variance equals the displayed weighted sum of squared base-two log ratios over unordered pairs of source classes.",
       "lean": "lean/BlockHierarchy/PairVariance/FourStatement.lean",
-      "run_log": "evidence/four-symbol-full-complete.txt",
+      "run_log": "evidence/four-review-check.txt",
       "checked_inputs": {
         "lean/BlockHierarchy/FiniteRD.lean": "3505cb88bf62172df5ec7477ef03b7d1a009d006776619a1e568473785b39cc3",
         "lean/BlockHierarchy/Four/AllocationIdentities.lean": "762606623c0a6de007759fb5a6c4c8aaf6d23441a9e034e01366b1ce3f46ebf2",
@@ -845,7 +821,7 @@
       ],
       "closure": {
         "package": "lean",
-        "audit": "evidence/four-symbol-full-audit.json",
+        "audit": "evidence/four-review-audit.json",
         "expected": "BlockHierarchy.PairVariance.FourFullStatement",
         "declaration": "BlockHierarchy.PairVariance.four_full",
         "correspondence": "For every stationary symmetric binary source with flip probability between zero and one half, the contract proves the ordered classes, exact prefix maxima, clipped weights and support including empty groups, global and slice optimality, the parity derivative and endpoint/root rules. For every interior distortion it constructs a multiplier and a full sixteen-word channel attaining the budget, proves the stated rate in bits and tilted variance, and establishes the column equality at support transitions. The actual tilted word variance equals the displayed weighted sum of squared base-two log ratios over unordered pairs of source classes."
@@ -874,7 +850,7 @@
         "lean/BlockHierarchy/RecurrenceCriterion.lean",
         "lean/BlockHierarchy/RecurrenceThresholds.lean"
       ],
-      "run_log": "evidence/recurrence-complete.txt",
+      "run_log": "evidence/rec-review-check.txt",
       "checked_inputs": {
         "lean/BlockHierarchy/Recurrence.lean": "c2c0cf675e72fbecde65f963f32c803df906dfd9d1c6682c852826488610e276",
         "lean/BlockHierarchy/RecurrenceClosed.lean": "52856af390d75bd89fd1952652e3bec195984e9526e34e2cf9ac958b36600329",
@@ -996,7 +972,7 @@
       ],
       "closure": {
         "package": "lean",
-        "audit": "evidence/recurrence-audit.json",
+        "audit": "evidence/rec-review-audit.json",
         "expected": "BlockHierarchy.Recurrence.RecurrenceStatement",
         "declaration": "BlockHierarchy.Recurrence.finite_block_recurrence",
         "correspondence": "For each stationary symmetric chain with flip probability between zero and one half, the contract uses signed inverse-channel expectations over actual binary words. It proves the attained prefix maximum, its recurrence, and equivalence of nonnegative inverse masses to the existence of a normalized backward Bernoulli reproduction law. The intermediate prefix tests are strict and the last may attain equality. A common decreasing sequence of finite-block thresholds converges to the stated critical distortion, including equality of its two radical expressions."
@@ -1021,7 +997,7 @@
         "lean/BlockHierarchy/Varentropy/Paper.lean",
         "lean/BlockHierarchy/Varentropy/Release.lean"
       ],
-      "run_log": "evidence/varentropy-complete.txt",
+      "run_log": "evidence/varentropy-review-check.txt",
       "subproofs": [
         {
           "title": "Transition powers on centered functions decay as the persistence eigenvalue",
@@ -1112,7 +1088,7 @@
       },
       "closure": {
         "package": "lean",
-        "audit": "evidence/varentropy-audit.json",
+        "audit": "evidence/varentropy-review-audit.json",
         "expected": "BlockHierarchy.Varentropy.FiniteBlockVarentropyStatement",
         "declaration": "BlockHierarchy.Varentropy.finite_block_varentropy",
         "correspondence": "For every strictly positive stationary binary Markov model in the statement, the variance of block self-information has the exact finite lag-covariance formula. On the backward-channel branch with the same source law the distortion-tilted variance agrees, including lossless coding. The normalized limit and the finite-length correction follow from the explicit covariance remainder."
@@ -1199,7 +1175,7 @@
           "status": "checked"
         }
       ],
-      "run_log": "evidence/cut-complete.txt",
+      "run_log": "evidence/cut-review-check.txt",
       "checked_inputs": {
         "lean/BlockHierarchy/Cut/ColumnAverage.lean": "9b19a0fa9e6157054fadfbfd2b1e484008cceccd739b9b41fcc6e24980d2dcf8",
         "lean/BlockHierarchy/Cut/Compare.lean": "ced870464913ae653881088c11b31c45003c99967f3f27021c13a835c6b01ab4",
@@ -1226,7 +1202,7 @@
       },
       "closure": {
         "package": "lean",
-        "audit": "evidence/cut-audit.json",
+        "audit": "evidence/cut-review-audit.json",
         "expected": "BlockHierarchy.Cut.OneCutStatement",
         "declaration": "BlockHierarchy.Cut.one_cut",
         "correspondence": "For every stationary symmetric binary chain with flip probability between zero and one half, every nonnegative common multiplier, every pair of nonempty adjacent blocks, and any globally minimizing reproduction priors, the two optimized scores are independent under the true adjacent Markov law. Their sum differs from the optimized score of the joined word by at most 1−2p in mean square. Concatenation preserves both path probability and Hamming distortion."
@@ -1375,7 +1351,7 @@
         "lean/BlockHierarchy/VarianceLimit/Paper.lean",
         "lean/BlockHierarchy/VarianceLimit/Release.lean"
       ],
-      "run_log": "evidence/variance-limit-complete.txt",
+      "run_log": "evidence/common-review-check.txt",
       "checked_inputs": {
         "lean/BlockHierarchy/Converse/Paths.lean": "705b5cf55c200c4c62877633ffa5096840e007915ec6a51da986d9eb1ced4726",
         "lean/BlockHierarchy/Cut/ColumnAverage.lean": "9b19a0fa9e6157054fadfbfd2b1e484008cceccd739b9b41fcc6e24980d2dcf8",
@@ -1431,7 +1407,7 @@
       },
       "closure": {
         "package": "lean",
-        "audit": "evidence/variance-limit-audit.json",
+        "audit": "evidence/common-review-audit.json",
         "expected": "BlockHierarchy.VarianceLimit.VarianceLimitStatement",
         "declaration": "BlockHierarchy.VarianceLimit.variance_limit",
         "correspondence": "For each stationary symmetric binary Markov source with 0<p<1/2 the checked theorem supplies a continuous common-multiplier limit on the nonnegative real line, its zero value at zero, strict positivity elsewhere and the exact (1+√2)√((1−2p)/k) enclosure for every positive block length and every optimizing reproduction prior. For interior distortion the constrained finite-block rate-distortion functions converge. At every differentiability point the normalized block variances converge to the positive squared limiting value in bits for every sequence of maximizing slopes and optimizing priors; those maximizing slopes exist."
@@ -1549,7 +1525,7 @@
         "lean/BlockHierarchy/Converse/Paper.lean",
         "lean/BlockHierarchy/Converse/Release.lean"
       ],
-      "run_log": "evidence/converse-complete.txt",
+      "run_log": "evidence/converse-review-check.txt",
       "checked_inputs": {
         "lean/BlockHierarchy/Converse/BSCFacts.lean": "004612810dedd3b25d07cc8cc3d28912d8e79ab8b0c5f23d9ea6d3a99991600c",
         "lean/BlockHierarchy/Converse/Backward.lean": "f513f03c800c79d51ee73892c95292fa05a210272d8ec16f536a83c725b04db9",
@@ -1617,7 +1593,7 @@
       },
       "closure": {
         "package": "lean",
-        "audit": "evidence/converse-audit.json",
+        "audit": "evidence/converse-review-audit.json",
         "expected": "BlockHierarchy.Converse.LowDistortionConverseStatement",
         "declaration": "BlockHierarchy.Converse.low_distortion_converse",
         "correspondence": "For every symmetric binary Markov source with 0 < p < 1/2, every positive distortion through Gray's critical distortion (inclusive), and every error probability strictly between zero and one, the minimum fixed-length code rate on one uninterrupted path has the paper's second-order lower bound. The constrained rate is in bits per symbol. The Gaussian upper quantile is defined from the standard normal measure, and the dispersion is p(1-p) times the squared base-two log odds. The eventual lower bounds include negative quantiles and are equivalent to the stated extended-real lower limit."
@@ -1700,7 +1676,7 @@
         "lean/BlockHierarchy/VarianceLimit/Positive.lean",
         "lean/BlockHierarchy/VarianceLimit/PositiveRelease.lean"
       ],
-      "run_log": "evidence/positive-complete.txt",
+      "run_log": "evidence/positive-review-check.txt",
       "checked_inputs": {
         "lean/BlockHierarchy/Converse/Paths.lean": "705b5cf55c200c4c62877633ffa5096840e007915ec6a51da986d9eb1ced4726",
         "lean/BlockHierarchy/Cut/ColumnAverage.lean": "9b19a0fa9e6157054fadfbfd2b1e484008cceccd739b9b41fcc6e24980d2dcf8",
@@ -1749,7 +1725,7 @@
       },
       "closure": {
         "package": "lean",
-        "audit": "evidence/positive-audit.json",
+        "audit": "evidence/positive-review-audit.json",
         "expected": "BlockHierarchy.VarianceLimit.QuantitativePositivityStatement",
         "declaration": "BlockHierarchy.VarianceLimit.quantitative_positivity",
         "correspondence": "For every stationary symmetric binary source with flip probability between zero and one half, and every strictly positive multiplier, the normalized standard deviation for any sequence of actual optimizing priors converges to a positive limit. The checked bound has exactly the manuscript's coefficient (1−2p)√(p(1−p))/2 and fourth power of 2 log(cosh(τ/2))/τ. The proof supplies the finite gain inequalities, the endpoint deletion estimate and the limiting aggregation."
