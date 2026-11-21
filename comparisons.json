@@ -11,7 +11,33 @@
     "paper_reading": "Consider a stationary binary Markov pair with transition probabilities 0 < a,b < 1, persistence ρ = 1 − a − b, and zero-rate distortion D₀ = min(π₀,π₁). Write A = P(00), B = P(11), and C = P(01) = P(10). For ρ > 0 both 01 and 10 leave the reproduction support at D_FS = (1 − √(1 − 4C))/2. For ρ < 0 the rarer constant leaves first (00 when A < B, 11 when B < A). Both constants leave together when π₀ = π₁. The threshold for ρ < 0 is D_FS = u*/(1 + u*), where u* = (C − √(C² − AB))/max(A,B). For ρ = 0 full support persists for every 0 ≤ D < D₀.",
     "paper_refs": "Paper lines 209–215 (statement). Supporting passages at 121–126, 129–134, 195–201, 216–223.",
     "lean_reading": "Let p and q be positive stationary bit probabilities with p+q=1. Let a and b be the 0→1 and 1→0 transition probabilities, each strictly between 0 and 1, with pa=qb. Write ρ=1−a−b and P(00)=A=p(1−a), P(11)=B=q(1−b), P(01)=P(10)=C=pa. At each stated distortion D, there is a unique reproduction marginal among those realized by a joint law with source P and expected pair Hamming cost exactly 2D that minimizes mutual information against every joint law of cost at most 2D. This marginal is nonnegative and its positive entries are exactly the words listed below.\n\n• If ρ>0, put d=(1−√(1−4C))/2. All four words are positive for 0≤D<d. At D=d exactly 00 and 11 are positive.\n• If ρ<0, put u=(C−√(C²−AB))/max(A,B) and d=u/(1+u). All four are positive for 0≤D<d. At D=d, both 01 and 10 are positive, 00 is positive exactly when p>q, and 11 exactly when q>p.\n• If ρ=0, all four words are positive for 0≤D<min(p,q).",
-    "lean_refs": "FirstChangeStatement.lean lines 8–27 (BinaryModel and its pair law); FirstChangeStatement.lean lines 32–49 (SupportAt, FirstChangeStatement); PairChannel.lean lines 9–17 (Word, law, hamming); PairChannel.lean lines 67–76 (jointCost, IsOptimalAt)"
+    "lean_refs": "FirstChangeStatement.lean lines 8–27 (BinaryModel and its pair law); FirstChangeStatement.lean lines 32–49 (SupportAt, FirstChangeStatement); PairChannel.lean lines 9–17 (Word, law, hamming); PairChannel.lean lines 67–76 (jointCost, IsOptimalAt)",
+    "analysis": {
+      "summary": "The thresholds and disappearing words agree when “leave” means first attaining zero reproduction probability. Lean makes that boundary precise and also gives uniqueness of the optimizing reproduction marginal.",
+      "cases": [
+        {
+          "case": "Positive persistence (ρ > 0)",
+          "paper": "Both 01 and 10 leave at D_FS = (1−√(1−4C))/2.",
+          "lean": "All four probabilities are positive below that same threshold. At equality, SupportAt keeps exactly the words whose bits agree.",
+          "why": "The equal-bit words are 00 and 11. Nonnegativity and the positive-support equivalence force 01 and 10 to have zero probability at equality."
+        },
+        {
+          "case": "Negative persistence (ρ < 0)",
+          "paper": "The rarer constant leaves first. In a tie both constant words leave together. The threshold is u*/(1+u*).",
+          "lean": "Lean uses the same u* = (C−√(C²−AB))/max(A,B). At equality the mixed words stay positive. 00 survives exactly when p > q, and 11 exactly when q > p.",
+          "why": "Flow balance gives pa = qb = C. Hence A = p(1−a) = p−C and B = q(1−b) = q−C, so A−B = p−q. Ordering the bit probabilities orders the two constant-word probabilities identically, including the tie."
+        },
+        {
+          "case": "Independent bits (ρ = 0)",
+          "paper": "All words remain active for 0 ≤ D < D₀.",
+          "lean": "Lean keeps every word positive for 0 ≤ D < min(p,q).",
+          "why": "Here p and q are π₀ and π₁. Their minimum is the paper’s zero-rate threshold. Both statements use a strict upper bound."
+        }
+      ],
+      "scope": "For nonzero persistence this proposition determines the support through the first zero. Continuing absence at every larger distortion would require a further result. SupportAt gives uniqueness of the reproduction marginal among the optimizers specified by IsOptimalAt. It does not assert uniqueness of the whole joint law.",
+      "advice": "Approve if the intended result is the first zero. The proposed paper wording “first reach zero reproduction probability” captures that interpretation and can be handled as an editorial change alongside approval.",
+      "suggested_feedback": "If continuing absence is intended: “Please show whether these words remain absent for larger distortions and specify that range.”"
+    }
   },
   "thm:two": {
     "bindings": {
@@ -25,7 +51,38 @@
     "paper_reading": "For a stationary pair of arbitrary bias with ρ > 0, put A = P(00), B = P(11), C = P(01) = P(10), S = A + B, D₀ = min(π₀,π₁), and D_FS = (1 − √(1 − 4C))/2. For 0 ≤ D ≤ D_FS the rate per pair is R₂(2D) = H(A,C,C,B) − 2h₂(D) and V₂(2D) is the varentropy of (A,C,C,B). For D_FS < D < D₀ put δ = (D − C)/S and u = √(δ/(1 − δ)). Then R₂(2D) = S[h₂(B/S) − h₂(δ)]. The variance is Var(−log₂ Z) under input-class probabilities (A,2C,B) for 00, transitions, and 11, with respective normalizers (A(1 + u²)/S, u, B(1 + u²)/S). Precisely the two constants are active for D_FS ≤ D < D₀. At D₀ a biased source has only its more frequent constant as a zero-rate reproduction. For D ≥ D₀ the rate and the variance at the chosen zero slope are zero.",
     "paper_refs": "Paper lines 232–249 (statement). Supporting passages at 121–126, 129–149, 195–201, 209–215, 250–258.",
     "lean_reading": "Let p,q>0, p+q=1, 0<a,b<1, pa=qb and 1−a−b>0. The pair law has masses A=p(1−a) on 00, B=q(1−b) on 11, and C=pa on each mixed word. Put S=A+B, r=(1−√(1−4C))/2 and d₀=min(p,q). Then 0<r<d₀. Write h for binary entropy in bits and H(P) for pair entropy in bits. R is the minimum mutual information in bits per pair over joints with source P and expected Hamming cost ≤2D. In each case the stated Q and Z satisfy Z(x)=ΣᵧQ(y)u^{d(x,y)}, and the joint P(x)Q(y)u^{d(x,y)}/Z(x) attains R. The tilted variance is V=Var_P[2D log₂u−log₂Z(X)], using Lean’s totalized logarithm at zero.\n\n• For 0≤D≤r, u=D/(1−D) and Z(x)=(1+u)²P(x). R=H(P)−2h(D) and V=Var_P[−log₂P(X)]. In word order 00,11,01,10 the reproduction masses have common denominator (1−u)² and numerators A−2Cu+Bu², B−2Cu+Au², C(1+u²)−Su, C(1+u²)−Su.\n• For r≤D<d₀, let δ=(D−C)/S and u=√(δ/(1−δ)). Then R=S[h(B/S)−h(δ)]. Q has positive masses (A−Bu²)/(S(1−u²)) and (B−Au²)/(S(1−u²)) on 00 and 11 respectively, and vanishes on both mixed words. Every minimizing joint has this reproduction marginal. The normalizers on 00, the mixed words, and 11 are A(1+u²)/S, u, and B(1+u²)/S respectively. V is the variance of their negative base-2 logarithms with weights (A,2C,B).\n• For every D≥d₀, R=0, u=1, Z≡1 and V=0. A minimizing Q puts all mass on 00 if p≥q and on 11 otherwise. If p≠q, every nonnegative joint with source P, zero mutual information and cost ≤2d₀ has this same reproduction marginal.",
-    "lean_refs": "ReducedPair/PaperStatement.lean lines 10–37 (PersistentPairStatement); FirstChangeStatement.lean lines 8–27 (BinaryModel); PairChannel.lean lines 11–23 (law, hamming, prior); ReducedPair.lean lines 9–12 (ReducedPair.prior, ReducedPair.Z); ReducedPair/RateStatement.lean lines 8–29 (majorityWord, MinimizesAt, RateAt, GibbsPoint, tiltedVariance); ReducedPair/Moments.lean lines 6–13,28–30 (entropy, logTwo, variance, classVariance)"
+    "lean_refs": "ReducedPair/PaperStatement.lean lines 10–37 (PersistentPairStatement); FirstChangeStatement.lean lines 8–27 (BinaryModel); PairChannel.lean lines 11–23 (law, hamming, prior); ReducedPair.lean lines 9–12 (ReducedPair.prior, ReducedPair.Z); ReducedPair/RateStatement.lean lines 8–29 (majorityWord, MinimizesAt, RateAt, GibbsPoint, tiltedVariance); ReducedPair/Moments.lean lines 6–13,28–30 (entropy, logTwo, variance, classVariance)",
+    "analysis": {
+      "summary": "Both statements describe the same three distortion regimes for a persistent, possibly biased pair. The threshold belongs to the first rate formula, while the two-constant support is already present at that threshold.",
+      "cases": [
+        {
+          "case": "Full-support branch and first zero",
+          "paper": "For 0 ≤ D ≤ D_FS the rate is pair entropy minus 2h₂(D), and the variance is the varentropy of the pair.",
+          "lean": "PersistentPairStatement uses r = (1−√(1−4C))/2 and gives Z(x) = (1+u)²P(x), R = H(P)−2h₂(D), and V = Var[−log₂ P(X)] through D = r.",
+          "why": "The pair law has masses A, B, C, C. The multiplier and normalization shift the score by the same constant for every x. Such a shift leaves its variance unchanged. Full support below r is compatible with the rate formula still holding at r."
+        },
+        {
+          "case": "Two constants and the threshold",
+          "paper": "For r < D < D₀ the rate is S[h₂(B/S)−h₂((D−C)/S)]. Both constants remain active starting at r.",
+          "lean": "Lean sets δ = (D−C)/S and u² = δ/(1−δ). It gives the same rate, positive masses on 00 and 11, and zero on both mixed words for r ≤ D < D₀.",
+          "why": "Substituting δ recovers the printed formula. The Lean branches overlap at r, so the Lean theorem also supplies the reduced expression at the shared endpoint."
+        },
+        {
+          "case": "Variance on the reduced branch",
+          "paper": "The classes 00, transitions, 11 have probabilities A, 2C, B. Their normalizers are A(1+u²)/S, u, B(1+u²)/S.",
+          "lean": "The checked normalizers have those same values. The two transition words each have source mass C and share the score −log₂ u up to a common shift.",
+          "why": "Combining two equal-score outcomes adds their weights. This gives the same three-point variance, with no extra factor of two in its value."
+        },
+        {
+          "case": "At and beyond zero rate",
+          "paper": "At D ≥ D₀ the rate and the variance with the chosen zero slope vanish. At D₀ a biased source has only its more frequent constant as a zero-rate reproduction.",
+          "lean": "Lean sets D₀ = min(p,q), u = 1 and Z ≡ 1. It gives a majority-constant optimizer and proves uniqueness of its marginal at the biased endpoint.",
+          "why": "With u = 1 and Z = 1 the tilted score is zero. The uniqueness quantifier uses the endpoint cost budget 2D₀."
+        }
+      ],
+      "scope": "Rates here are bits per pair at a block cost of 2D. The endpoint uniqueness concerns a biased source at D₀. The conclusion for larger D is zero rate and zero selected-slope variance.",
+      "advice": "Approve for the persistent pair and the paper’s chosen zero slope. The overlap at D_FS strengthens the boundary description without changing any displayed value."
+    }
   },
   "thm:three": {
     "bindings": {
@@ -39,7 +96,32 @@
     "paper_reading": "For a stationary symmetric chain with 0 < p < 1/2, the constant, one-flip, and alternating classes have probabilities (s₀,s₁,s₂) = ((1 − p)², 2p(1 − p), p²). Put S = s₀ + s₁, d₁ = (1 − √(1 − 4p²))/2, u₁ = d₁/(1 − d₁), u₂ = 2p/(1 + √(1 − 4p²)), and F(u) = 3s₀u³/(1 + u³) + (1 − s₀)(1 + u/(1 + u)). The second threshold is d₂ = F(u₂)/3. All eight words are active for 0 ≤ D < d₁. The two alternating words leave at d₁, and the four one-flip words leave at d₂, leaving only the constants up to D < 1/2. For 0 ≤ D ≤ d₁, R₃(3D) = 1 + 2h₂(p) − 3h₂(D) and V₃(3D) = 2ν(p), where ν(p) = p(1 − p)[log₂((1 − p)/p)]². For d₁ < D < d₂ take the unique u in (u₁,u₂) with 3D = s₂ + u/(1 + u) + Su(1 + 2u)/(1 + u + u²). Set H = (1 + u)(1 + u + u²)/2 and β = (u + u²)/2. The three normalizers are Z = (s₀H/S, s₁H/(2S), β). For d₂ ≤ D < 1/2 the two constants have equal reproduction mass. The unique u in [u₂,1) satisfies 3D = F(u), and Z = (α,β,β), where α = (1 + u³)/2. On both reduced branches R₃(3D) = 3D log₂ u − Σᵢ sᵢ log₂ Zᵢ and V₃(3D) is the sum of sᵢsⱼ[log₂(Zᵢ/Zⱼ)]² over i < j. On the final branch V₃(3D) = s₀(1 − s₀)[log₂(α/β)]². Each reduced distortion equation simplifies to a cubic, and D increases strictly with u on each branch.",
     "paper_refs": "Paper lines 287–310 (statement). Source probabilities and variance formula at 262–276 and 285–286.",
     "lean_reading": "For the stationary symmetric binary Markov triple with flip probability 0<p<1/2, group words by their number of adjacent flips (0,1,2). The classes have sizes (2,4,2) and source weights s=(s₀,s₁,s₂)=((1−p)²,2p(1−p),p²). In the formulas below, class masses are spread uniformly within a class. Write α=(1+u³)/2, β=(u+u²)/2, S=s₀+s₁ and h for binary entropy in bits. Define the middle and constant-word cost functions by M(u)=p²+u/(1+u)+(1−p²)u(1+2u)/(1+u+u²) and L(u)=3s₀u³/(1+u³)+(1−s₀)(1+u/(1+u)). Put d₁=(1−√(1−4p²))/2, u₁=d₁/(1−d₁), u₂=2p/(1+√(1−4p²)) and d₂=L(u₂)/3. Then 0<d₁<d₂<1/2 and 0<u₁<u₂<1. Both costs are strictly increasing on u≥0. For any real D and u≥0, 3D=M(u) is equivalent to (3D−p²)(1+u)(1+u+u²)=u(1+u+u²)+(1−p²)u(1+2u)(1+u). Likewise, 3D=L(u) is equivalent to 3D(1+u³)=3s₀u³+(1−s₀)(1+2u)(1−u+u²).\n\nFor each branch, with source law P and Hamming distance d, Z(x)=ΣᵧQ(y)u^{d(x,y)}. The joint P(x)Q(y)u^{d(x,y)}/Z(x) has expected cost exactly 3D and minimizes mutual information over all joints with source P and cost ≤3D. Every minimizer has reproduction marginal Q. R is the achieved information in bits per triple and V=Var_P[3D log₂u−log₂Z(X)].\n\n• For 0≤D≤d₁, take u=D/(1−D), f(t)=(t−D(1−D))/(1−2D)², and class masses (f(s₀),2f(p(1−p)),f(p²)). All eight words have positive mass below d₁. At d₁ exactly the six words with fewer than two flips remain. Z(x)=(1+u)³P(x), R=1+2h(p)−3h(D), and V=2p(1−p)[log₂((1−p)/p)]².\n• For d₁<D<d₂ there is a unique u∈(u₁,u₂) with M(u)=3D. Put H=(1+u)(1+u+u²)/2 and t=(pH/(1+p)−β)/(α−β). The class masses (1−2t,2t,0) give positive mass to precisely the six words with fewer than two flips. The class normalizers are z=(s₀H/S,s₁H/(2S),β). Then R=3D log₂u−Σᵢsᵢlog₂zᵢ and V=Var_s[−log₂zᵢ].\n• For d₂≤D<1/2 there is a unique u∈[u₂,1) with L(u)=3D. Only 000 and 111 have mass, each 1/2. Use z=(α,β,β) in the preceding rate and variance formulas. Here V=s₀(1−s₀)[log₂(α/β)]².\n\nThe additional display holds for all real p,D,u and every positive triple z. The weighted variance of 3D log₂u−log₂z on the eight words is Σᵢ<ⱼ sᵢsⱼ[log₂(zᵢ/zⱼ)]². For these unrestricted parameters, variance means the finite weighted central second moment in Lean, and log₂ uses Lean’s total real logarithm.",
-    "lean_refs": "BlockHierarchy/PairVariance/ThreeStatement.lean lines 7 (ThreeFullStatement); BlockHierarchy/Three/PaperStatement.lean lines 13–69 (PaperPoint, supportSize, ThreeSymbolStatement); BlockHierarchy/PairVariance/Statement.lean lines 9–16 (pairSum, threeWeights, ThreeDisplayStatement); BlockHierarchy/Three/Classes.lean lines 8–25,46–57 (classes, chain and normalizer); BlockHierarchy/Three/Thresholds.lean lines 6–8 and BlockHierarchy/Three/Inverse.lean lines 8 (thresholds); BlockHierarchy/Three/Distortion.lean lines 5–9 (cost functions); BlockHierarchy/Three/FullWeights.lean lines 6–8 and BlockHierarchy/Three/MiddleWeights.lean lines 5–9 (priors); BlockHierarchy/Three/Entropy.lean lines 6–7 and BlockHierarchy/Three/OperatingPoint.lean lines 43–48,62–63 (entropy and variance); BlockHierarchy/FiniteRD.lean lines 8–18 (Optimal, joint)"
+    "lean_refs": "BlockHierarchy/PairVariance/ThreeStatement.lean lines 7 (ThreeFullStatement); BlockHierarchy/Three/PaperStatement.lean lines 13–69 (PaperPoint, supportSize, ThreeSymbolStatement); BlockHierarchy/PairVariance/Statement.lean lines 9–16 (pairSum, threeWeights, ThreeDisplayStatement); BlockHierarchy/Three/Classes.lean lines 8–25,46–57 (classes, chain and normalizer); BlockHierarchy/Three/Thresholds.lean lines 6–8 and BlockHierarchy/Three/Inverse.lean lines 8 (thresholds); BlockHierarchy/Three/Distortion.lean lines 5–9 (cost functions); BlockHierarchy/Three/FullWeights.lean lines 6–8 and BlockHierarchy/Three/MiddleWeights.lean lines 5–9 (priors); BlockHierarchy/Three/Entropy.lean lines 6–7 and BlockHierarchy/Three/OperatingPoint.lean lines 43–48,62–63 (entropy and variance); BlockHierarchy/FiniteRD.lean lines 8–18 (Optimal, joint)",
+    "analysis": {
+      "summary": "The two threshold values, surviving classes, and operating formulas agree. The apparent change of notation comes from spreading each class mass uniformly across its words.",
+      "cases": [
+        {
+          "case": "Support and endpoints",
+          "paper": "The support sizes are 8, 6, and 2, with losses at d₁ and d₂.",
+          "lean": "Before d₁ all words have positive mass. At d₁ the alternating pair has zero mass. At d₂ the four one-flip words have zero mass.",
+          "why": "The class sizes are 2 constants, 4 one-flip words and 2 alternating words. Removing these classes in that order gives 8 → 6 → 2 with the stated endpoint conventions."
+        },
+        {
+          "case": "Middle and final branches",
+          "paper": "The two reduced rate formulas use their branch-specific Z values, with u determined by the distortion equation.",
+          "lean": "Lean uses M(u) = 3D in the middle and L(u) = 3D on the constant branch. Both functions are strictly increasing and the statement gives a unique u in the corresponding interval.",
+          "why": "S = s₀+s₁ = 1−p², so the two forms of the middle equation agree. Clearing denominators yields the two cubic equations on the stated domain."
+        },
+        {
+          "case": "Variance",
+          "paper": "The reduced variance is the pairwise sum of squared log-ratios. On the last branch it is s₀(1−s₀)[log₂(α/β)]².",
+          "lean": "Lean also gives the variance as the weighted variance of the three log-normalizers, with normalizers (α,β,β) on the last branch.",
+          "why": "The last two classes have equal scores. Combining their weights gives 1−s₀ and the two-point variance in the manuscript."
+        }
+      ],
+      "scope": "The numbered result uses a symmetric persistent chain, 0 < p < 1/2, with D < 1/2. The first rate formula extends to d₁ even though the support loses words there.",
+      "advice": "Approve for the stated persistent chain. The distinction between a support endpoint and a rate-formula endpoint is explicit in both readings."
+    }
   },
   "prop:rec": {
     "bindings": {
@@ -53,7 +135,26 @@
     "paper_reading": "For a stationary symmetric chain with 0 < p < 1/2, 0 < D < 1/2, and block length K ≥ 1, put ρ = 1 − 2p and z = 1 − 2D. Let Hᵢ be the largest absolute normalized signed moment of the next spin among positive-mass reproduction prefixes of length i − 1. The empty prefix gives H₁ = 0. While Hᵢ < z, Hᵢ₊₁ = ρ(1 − zHᵢ)/(z − Hᵢ). The backward Bernoulli(D) channel is feasible exactly when Hᵢ < z for every i < K and H_K ≤ z. The finite-block full-support thresholds decrease to Gray’s critical distortion D_c = (1 − 2√ρ/(1 + ρ))/2 = (1 − √(1 − (p/(1 − p))²))/2.",
     "paper_refs": "Paper lines 419–430 (statement). Supporting passages at 412–418, 431–433.",
     "lean_reading": "Let 0<p<1/2 be the flip probability of a stationary symmetric binary Markov chain, with equiprobable initial bits, and put ρ=1−2p. Fix 0<D<1/2 and z=1−2D. Write σ(true)=1 and σ(false)=−1. For a length-n word y define Wᵧ=∏ᵢ[(1+σ(Xᵢ)σ(yᵢ)/z)/2]. Its inverse mass is M(y)=E[Wᵧ]. Its normalized moment is μ(y)=E[σ(Xₙ₊₁)Wᵧ]/M(y), indexing visited spins from 1. A length K is backward-feasible if some nonnegative reproduction probability law on K-bit words, passed through K independent bit-flip channels of crossover D, gives exactly the Markov source law on K-bit words.\n\nFor each such D there is a sequence H indexed from zero. For every n, Hₙ is the attained maximum of |μ(y)| over length-n words with M(y)>0, and H₀=0. If Hⱼ<z for every j≤n then Hₙ₊₁=ρ(1−zHₙ)/(z−Hₙ). For each n≥0, backward feasibility at length n+1 is equivalent to M(y)≥0 for every word of that length. It is also equivalent to Hⱼ<z for every j<n together with Hₙ≤z.\n\nLet g=(1−2√ρ/(1+ρ))/2. Then g=(1−√(1−(p/(1−p))²))/2. For this p there is a single nonincreasing sequence dₙ∈[0,1/2] such that for every n≥0 and every 0<D<1/2, length n+1 is backward-feasible exactly when D≤dₙ. As n tends to infinity, dₙ tends to g.",
-    "lean_refs": "BlockHierarchy/RecurrenceStatement.lean lines 7–38 (wordSum, expectFrom, markovExpect, pathLaw, invWeight, backWeight, wordWeight, mass, firstMoment, moment); BlockHierarchy/RecurrenceStatement.lean lines 40–55 (InverseNonnegative, BackwardFeasible, MaximumAt, grayD); BlockHierarchy/RecurrenceStatement.lean lines 60–72 (RecurrenceStatement); BlockHierarchy/RecurrenceExtrema.lean lines 7,58 (peak, spin); BlockHierarchy/Three/Classes.lean lines 22 (step)"
+    "lean_refs": "BlockHierarchy/RecurrenceStatement.lean lines 7–38 (wordSum, expectFrom, markovExpect, pathLaw, invWeight, backWeight, wordWeight, mass, firstMoment, moment); BlockHierarchy/RecurrenceStatement.lean lines 40–55 (InverseNonnegative, BackwardFeasible, MaximumAt, grayD); BlockHierarchy/RecurrenceStatement.lean lines 60–72 (RecurrenceStatement); BlockHierarchy/RecurrenceExtrema.lean lines 7,58 (peak, spin); BlockHierarchy/Three/Classes.lean lines 22 (step)",
+    "analysis": {
+      "summary": "The recurrence, its stopping rule and Gray’s limiting distortion agree after shifting the prefix index by one.",
+      "cases": [
+        {
+          "case": "Prefix and recursion",
+          "paper": "H₁ is the maximum for the empty prefix. While the preceding maxima are below z, the next maximum is ρ(1−zH)/(z−H).",
+          "lean": "Lean numbers the empty prefix 0 and proves the same update when every maximum through the current index is strictly below z.",
+          "why": "A prefix with n symbols corresponds to paper index i=n+1. With that shift the initial value is zero and the same denominator z−H stays positive at every update."
+        },
+        {
+          "case": "Feasibility and the limiting threshold",
+          "paper": "Earlier inequalities are strict; the last allows equality. Finite-block thresholds decrease to D_c.",
+          "lean": "At length n+1 the formal test is strict for j<n and weak for j=n. The threshold sequence is nonincreasing and converges to both displayed expressions for Gray’s value.",
+          "why": "The final equality is allowed because no further update divides by z−H. The sequence characterizes feasible distortions at each length, so its limit concerns the same thresholds."
+        }
+      ],
+      "scope": "The claim uses positive block lengths and 0 < D,p < 1/2. Here “decrease” is read as nonincreasing; the Lean statement establishes no strict drop at every successive length.",
+      "advice": "Approve for monotone convergence to the critical distortion. If strict decrease at every length was intended, identify the lengths where strictness is required."
+    }
   },
   "thm:varentropy": {
     "bindings": {
@@ -70,7 +171,33 @@
     "lean_refs": "lean/BlockHierarchy/Varentropy/Statement.lean:85–93 (FiniteBlockVarentropyStatement), 20–57 (path law, scores, moments and constants), 59–83 (backward condition, tilted score and finite formula). lean/FirstChangeStatement.lean:8–23 (BinaryModel and persistence). lean/ReducedPair/Moments.lean:8–13 (base-two logs and variance).",
     "actor": "Proof agent",
     "issue": "The finite-sum variance formula and its limit agree. The question concerns the tilted variance at the zero-rate threshold. Lean assumes D is strictly below it. Paper line 179 gives an example: for independent Bernoulli(1/4) symbols at D = 1/4, the per-symbol variance is (3/16)(log₂ 3)² at the backward-channel slope and zero at the paper’s assigned slope. The checked declaration does not establish the backward-slope endpoint.",
-    "next": "Reconcile the scope of Theorem 6 with the slope convention at paper lines 149 and 179. If the backward-slope endpoint is included, prove that case explicitly in Lean. If the numbered claim is confined to the interior and lossless endpoint, document that reading with the source passage and repeat the comparison."
+    "next": "Reconcile the scope of Theorem 6 with the slope convention at paper lines 149 and 179. If the backward-slope endpoint is included, prove that case explicitly in Lean. If the numbered claim is confined to the interior and lossless endpoint, document that reading with the source passage and repeat the comparison.",
+    "analysis": {
+      "summary": "The finite-block varentropy and its asymptotics agree term by term. One scope question remains when identifying varentropy with tilted variance at the zero-rate endpoint.",
+      "cases": [
+        {
+          "case": "Finite block",
+          "paper": "For N=K−1 transitions, the formula adds the variance of the initial information, N edge variances and two lag sums.",
+          "lean": "Lean takes n=K−1. Its first sum uses i=h−1 for the covariance between edges; the other uses i=h for the initial-state contribution.",
+          "why": "Under i=h−1, N−h becomes n−i−1 and ρ^(h−1) becomes ρⁱ. At K=1 both sums are empty on both sides."
+        },
+        {
+          "case": "Limit and first correction",
+          "paper": "V_K/K tends to s²+2γ/(1−ρ); a c*/K correction leaves order |ρ|^(K−1)/K for 0<|ρ|<1.",
+          "lean": "Lean proves the same limit and correction for blockVariance at n+1.",
+          "why": "Substituting K=n+1 gives identical powers and denominators. These varentropy statements have no distortion parameter."
+        },
+        {
+          "case": "Boundary of the tilted-variance identity",
+          "paper": "Theorem 6 invokes the tight entropy branch. The surrounding text distinguishes the backward-channel slope from the zero slope chosen at the biased zero-rate endpoint.",
+          "lean": "BackwardPoint assumes 0 ≤ D < min(π₀,π₁). The implication identifying tiltedVariance with blockVariance therefore excludes D=D₀.",
+          "why": "For independent Bernoulli(1/4) symbols at D=1/4 the backward slope gives (3/16)(log₂ 3)² per symbol; the assigned zero slope gives zero. Choosing a slope changes the quantity."
+        }
+      ],
+      "scope": "The endpoint question affects the tilted-variance interpretation. It leaves the checked finite sum and limit for the source self-information intact.",
+      "advice": "Hold approval while the proof agent reconciles the intended endpoint with the paper’s slope convention. If an endpoint claim is intended, identify its slope and check that case explicitly.",
+      "suggested_feedback": "The finite-block formula agrees. Please clarify whether the tilted-variance identity includes D=D₀, at which slope, and where the corresponding endpoint is proved."
+    }
   },
   "thm:four": {
     "bindings": {
@@ -84,7 +211,32 @@
     "paper_reading": "For a stationary symmetric chain with 0 < p < 1/2 and 0 < D < 1/2, the complement-and-reversal classes are ordered by decreasing source probability within each parity. Even representatives 0000, 0011, 0110, 0101 have probabilities (1 − p)³, p(1 − p)², p²(1 − p), p³. Odd representatives 0001, 0010 have probabilities 2p(1 − p)², 2p²(1 − p). At trial 0 < u < 1 let m_E = θ and m_O = 1 − θ be the group masses. Put α = (1 + u⁴)/2, β = (u + u³)/2, χ = u², k_E = α − χ, k_O = k_E/2, and L_g = χm_g + β(1 − m_g). In each group g let Sⱼ be the sum of its first j source probabilities. The group multiplier η_g is the maximum of Sⱼ/(m_g + jL_g/k_g) over all nonempty prefixes. Each class i in group g has optimal mass wᵢ = max(0, sᵢ/η_g − L_g/k_g) and normalizer Zᵢ = L_g + k_g wᵢ. The classes with positive mass form a prefix. When m_g = 0, the maximum occurs at j = 1, η_g = s₁k_g/L_g using the first probability in this group, and all its masses are zero. This supplies the one-sided derivative for an empty group. Write T_g for the sum of sᵢ/Zᵢ in group g. The derivative of the optimized objective Σᵢ sᵢ ln Zᵢ with respect to θ is G(θ) = η_E − η_O + (χ − β)(T_E − T_O). Choose θ = 0 if G(0) ≤ 0, θ = 1 if G(1) ≥ 0, and a root of G otherwise. With that allocation, choose u so that 4D equals u times the sum over all classes of sᵢ(L′_g + k′_g wᵢ)/Zᵢ, holding θ and all wᵢ fixed in the derivatives. These conditions determine the optimum. The rate is R₄(4D) = 4D log₂ u − Σᵢ sᵢ log₂ Zᵢ, and V₄(4D) is the sum of sᵢsⱼ[log₂(Zᵢ/Zⱼ)]² over i < j. At a support threshold a class has zero mass and column value one. The allocations on either side show whether it enters or leaves.",
     "paper_refs": "Paper lines 345–366 (statement). Source probabilities and normalizers at 262–276, 314–327, and 336–343.",
     "lean_reading": "For a stationary symmetric binary Markov four-word source P with flip probability 0<p<1/2, partition the 16 words into six classes. In index order, representatives are 0000,0011,0110,0101,0001,0010 with their bit complements and reversals. The four even-weight classes have two words apiece and source masses ((1−p)³,p(1−p)²,p²(1−p),p³). The two odd-weight classes have four words apiece and masses (2p(1−p)²,2p²(1−p)). The source masses sᵢ are nonincreasing within each group. For a six-class reproduction vector w, the word prior Q divides wᵢ equally among class i. For Hamming distance d, write Zᵢ(u,w)=ΣᵧQ(y)u^{d(x,y)} for x in class i.\n\n• There exist common allocation and multiplier functions w(u,θ), e(u,θ), o(u,θ). For each 0<u<1 and 0≤θ≤1, even and odd totals are θ and 1−θ. Put b=(u+u³)/2, k=(1+u⁴)/2−u². In a group with total m, use kᵢ=k for even and kᵢ=k/2 for odd, with B=u²m+b(1−m), c=B/kᵢ. Its multiplier η (e or o) is positive and equals the maximum over nonempty prefixes of (prefix sum of source masses)/(m+prefix length·c). The weights wᵢ=max(0,sᵢ/η−c) sum to m. Positive entries form the initial segment of length equal to their count. If m=0, the first prefix realizes the maximum, η=s_first/c and all group entries are zero. Zᵢ=B+kᵢwᵢ. The joined vector maximizes Σᵢsᵢln Zᵢ among simplex vectors with even mass θ.\n• For fixed u, let F(θ) be this optimized objective and rᵢ=sᵢ/Zᵢ. Set G(θ)=e−o+(u²−b)(Σ_even rᵢ−Σ_odd rᵢ). This is the derivative of F within [0,1], including the endpoint one-sided derivatives. For all θ,t∈[0,1], F(t)≤F(θ)+G(θ)(t−θ). At least one θ satisfies the selection rule θ=0 with G≤0, θ=1 with G≥0, or G=0. At every such θ the allocation is the unique global maximizer over the six-class simplex.\n• For every 0<D<1/2 there exist 0<u<1 and a selected θ for which these same weights yield the normalizers above. Holding w fixed, B′=2um+(1+3u²)(1−m)/2 and kᵢ′=(2u³−2u)/(|class i|/2) are the derivatives in u. Then 4D=uΣᵢsᵢ(B′+kᵢ′wᵢ)/Zᵢ, with each B′ evaluated for class i. The joint P(x)Q(y)u^{d(x,y)}/Z_class(x) attains cost 4D and minimizes mutual information over all joints with source P and cost ≤4D. Its information in bits per block is 4D log₂u−Σᵢsᵢlog₂Zᵢ. Its tilted variance Var_P[4D log₂u−log₂Z_class(X)] equals Var_s[−log₂Zᵢ].\n• On the graph of globally maximizing (u,w) with 0<u<1, suppose a graph point belongs both to the closure of points with wᵢ=0 and to the closure of points with wᵢ>0. At that point wᵢ=0 and the same class-normalizer operator applied to r gives Zᵢ(u,r)=1.\n\nThe additional display holds for all real p,D, every u>0 and every nonnegative w of sum one. The weighted central second moment Var_P[4D log₂u−log₂Z_class(X)] equals Σᵢ<ⱼ sᵢsⱼ[log₂(Zᵢ/Zⱼ)]². This identity includes vectors outside the optimizing graph.",
-    "lean_refs": "BlockHierarchy/PairVariance/FourStatement.lean lines 7 (FourFullStatement); BlockHierarchy/Four/PaperStatement.lean lines 14–86 (PaperGroup, PaperAllocation, PaperParity, PaperPoint, PaperThresholds, FourSymbolStatement); BlockHierarchy/PairVariance/Statement.lean lines 9–10,18–21 (pairSum, FourDisplayStatement); BlockHierarchy/Four/Classes.lean lines 7–45,87–109 (orbits, source, prior, class kernel); BlockHierarchy/Four/WaterClasses.lean lines 8–25 and BlockHierarchy/Four/WaterFilling.lean lines 8–10 (prefix and clipping); BlockHierarchy/Four/Maximizer.lean lines 12–13 (objective); BlockHierarchy/Four/ParityOptimality.lean lines 6–10,60–61 and BlockHierarchy/Four/ParityChoice.lean lines 8–9 (affine formula, parity slope and selection); BlockHierarchy/Four/Distortion.lean lines 8–11 (derivatives); BlockHierarchy/Four/Channel.lean lines 24,62–63 (ratio, classTiltVariance); BlockHierarchy/FiniteRD.lean lines 8–18 (Optimal, joint)"
+    "lean_refs": "BlockHierarchy/PairVariance/FourStatement.lean lines 7 (FourFullStatement); BlockHierarchy/Four/PaperStatement.lean lines 14–86 (PaperGroup, PaperAllocation, PaperParity, PaperPoint, PaperThresholds, FourSymbolStatement); BlockHierarchy/PairVariance/Statement.lean lines 9–10,18–21 (pairSum, FourDisplayStatement); BlockHierarchy/Four/Classes.lean lines 7–45,87–109 (orbits, source, prior, class kernel); BlockHierarchy/Four/WaterClasses.lean lines 8–25 and BlockHierarchy/Four/WaterFilling.lean lines 8–10 (prefix and clipping); BlockHierarchy/Four/Maximizer.lean lines 12–13 (objective); BlockHierarchy/Four/ParityOptimality.lean lines 6–10,60–61 and BlockHierarchy/Four/ParityChoice.lean lines 8–9 (affine formula, parity slope and selection); BlockHierarchy/Four/Distortion.lean lines 8–11 (derivatives); BlockHierarchy/Four/Channel.lean lines 24,62–63 (ratio, classTiltVariance); BlockHierarchy/FiniteRD.lean lines 8–18 (Optimal, joint)",
+    "analysis": {
+      "summary": "The two descriptions give the same parity-group optimization and the same distortion-selected operating point. The key comparison is between the paper’s class probabilities and the word prior used in Lean.",
+      "cases": [
+        {
+          "case": "Allocation within one parity",
+          "paper": "Mass wᵢ is the positive part of sᵢ/η−L/k. Positive weights form a prefix; at zero group mass the first prefix sets η.",
+          "lean": "PaperGroup uses c=L/k, the same maximum over prefix sums and wᵢ=max(0,sᵢ/η−c). It distributes wᵢ across the words in its class.",
+          "why": "Substituting c gives exactly the clipping formula. At m=0 the first (largest) class sets the multiplier and all allocated weights are zero."
+        },
+        {
+          "case": "Choosing θ and u",
+          "paper": "Choose θ from the endpoint derivative signs or an interior root. At fixed weights the derivative in u gives 4D.",
+          "lean": "The formal statement gives the one-sided derivative G at the endpoints and an optimizing θ. It supplies a selected u and θ for each interior D, with weights held fixed in the derivative.",
+          "why": "The derivative in θ selects the parity split. The derivative in u enforces the Hamming-cost constraint. Keeping the two derivatives separate yields the paper’s operating equation."
+        },
+        {
+          "case": "Rate, variance and threshold",
+          "paper": "The rate uses class normalizers, the variance is a pair sum, and a class at a support change has zero mass and column value one.",
+          "lean": "The formal joint attains cost 4D. The display theorem turns the word-score variance into the same class pair sum. The threshold predicate uses limits from zero- and positive-weight optima.",
+          "why": "Members of a class share a normalizer, so their probabilities add in the variance. The two-sided threshold condition captures an actual support change."
+        }
+      ],
+      "scope": "The four-symbol statement works for 0 < p < 1/2 and 0 < D < 1/2. Its threshold condition identifies what happens at a change; determining entry or exit uses the neighboring allocations.",
+      "advice": "Approve the allocation rule and its stated domain. The class-level weights and word-level prior describe the same optimization."
+    }
   },
   "lem:cut": {
     "bindings": {
@@ -99,7 +251,32 @@
     "paper_refs": "Paper lines 518–523 (statement). Definitions at 505–515.",
     "lean_reading": "Start a symmetric binary Markov chain at its uniform law with flip probability 0<p<1/2. For any τ≥0 and adjacent lengths i+1 and j+1 (i,j≥0), take any three probability priors minimizing their respective expected scores for the left block, the right block and the joined block. The joined source retains the transition across the cut, and its Hamming distance is the sum of the two block distances. For a prior q the score is −ln Σ_y q(y)e^{−τd(x,y)}. Write L,R,J for the resulting scores. Under the actual adjacent-block law, L and R are independent. In particular, E[f(L)g(R)]=E[f(L)]E[g(R)] for every pair of real test functions, with marginal expectations on the two pieces. Under that same joint law, E[(J−L−R)²]≤1−2p. The claim quantifies over priors satisfying the three optimality hypotheses.",
     "lean_refs": "lean/BlockHierarchy/Cut/Statement.lean:61–71 (OneCutStatement), 7–35 (words, marginal and adjacent laws, distances), 41–57 (priors, objective and independence).",
-    "resolution": "The two blocks come from one path and share the same multiplier. Only their optimal scores are asserted to be independent."
+    "resolution": "The two blocks come from one path and share the same multiplier. Only their optimal scores are asserted to be independent.",
+    "analysis": {
+      "summary": "The scores on the two adjacent pieces are independent under the actual Markov law. Both formulations also bound the squared score error made by cutting once.",
+      "cases": [
+        {
+          "case": "Law used at the cut",
+          "paper": "Take adjacent words from one stationary chain at a common τ ≥ 0.",
+          "lean": "OneCutStatement uses the joined law with its boundary transition and applies the same τ to the three optimizing priors.",
+          "why": "Subtracting a boundary contribution requires an expectation under the original joined path. The formal adjacent law keeps that transition."
+        },
+        {
+          "case": "What is independent",
+          "paper": "The optimal scores of the two pieces are independent.",
+          "lean": "For arbitrary real functions of the two scores, their product expectation factors into the two marginal expectations.",
+          "why": "On a finite space, choosing indicator functions gives the usual independence statement. The underlying words can still be correlated."
+        },
+        {
+          "case": "Size of the error",
+          "paper": "The expectation of the squared joined-minus-left-minus-right score is at most ρ.",
+          "lean": "Lean bounds that same expectation by 1−2p.",
+          "why": "In this symmetric model ρ=1−2p. Length indices i,j in Lean encode words of lengths i+1,j+1, covering every positive pair of lengths."
+        }
+      ],
+      "scope": "The bound concerns optimal scores at one common multiplier, for stationary symmetric chains with 0 < p < 1/2. Finite-alphabet minimizing priors exist by Cut.exists_optimal.",
+      "advice": "Approve for adjacent blocks of a single chain. The factorization and error bound refer to the scores and the correct joint law."
+    }
   },
   "thm:common": {
     "bindings": {
@@ -114,7 +291,26 @@
     "paper_refs": "Paper lines 525–534 (statement). Definitions at 505–515.",
     "lean_reading": "For each symmetric stationary binary chain with flip probability 0<p<1/2 there is a real function ω continuous on [0,∞), with ω(0)=0 and ω(τ)>0 for τ>0. For every τ≥0, block length K=n+1≥1 and prior q minimizing expected score S_q(x)=−ln Σ_y q(y)e^{−τd(x,y)} for Hamming distance d, write ω_K(τ,q)=√Var(S_q)/√K. Then |ω_K(τ,q)−ω(τ)|≤(1+√2)√((1−2p)/K). For every 0<D<1/2, the constrained rates R_K(D) converge to R(D), defined by the limit operator on this sequence. R_K is the infimum of mutual information in bits per symbol over all test channels with expected Hamming distortion ≤KD. If R is differentiable at D with derivative r, set τ_D=−(ln 2)r. Then ω(τ_D)²/(ln 2)²>0. For every K a maximizing slope exists, meaning a maximizer over t≥0 of C_K(t)−tD, where C_K(t) is the infimum of expected score per symbol over priors. For every sequence of such slopes T_K and every sequence of priors q_K optimal at T_K, ω_K(T_K,q_K)²/(ln 2)² tends to ω(τ_D)²/(ln 2)². The slope-existence and selected-variance conclusions both fall under the derivative hypothesis.",
     "lean_refs": "lean/BlockHierarchy/VarianceLimit/Statement.lean:40–56 (VarianceLimitStatement), 9–36 (channels, constrained and limiting rates, canonical cost, maximizing slope and normalized deviation). lean/BlockHierarchy/Cut/Statement.lean:8–23, 32–35, 41–51 (source, Hamming distance, score and optimization).",
-    "resolution": "The numbered theorem concerns the persistent chain (0 < p < 1/2). The alternating-mask extension discussed separately in the manuscript is outside this declaration. The distortion-limit conclusion assumes differentiability."
+    "resolution": "The numbered theorem concerns the persistent chain (0 < p < 1/2). The alternating-mask extension discussed separately in the manuscript is outside this declaration. The distortion-limit conclusion assumes differentiability.",
+    "analysis": {
+      "summary": "The fixed-multiplier bound and the fixed-distortion limit agree. They have different hypotheses, and Lean places the derivative assumption exactly where the paper uses it.",
+      "cases": [
+        {
+          "case": "Fixed multiplier",
+          "paper": "For all τ ≥ 0 and k ≥ 1 the normalized score standard deviation is within (1+√2)√(ρ/k) of a continuous limiting function.",
+          "lean": "Lean takes k=n+1, ρ=1−2p and proves the bound for every optimal prior, with ω(0)=0 and ω(τ)>0 for τ>0.",
+          "why": "The two substitutions recover the same bound and cover every positive length. Cut.exists_optimal supplies an optimizer at each length."
+        },
+        {
+          "case": "Fixed distortion",
+          "paper": "At a differentiability point of R, use τ(D)=−(ln 2)R′(D). The normalized variance tends to a positive limit in bits squared.",
+          "lean": "Lean uses HasDerivAt at the same interior D and establishes convergence for every sequence of maximizing slopes and optimal priors. The limit is ω(τ(D))²/(ln 2)².",
+          "why": "The fixed-τ quantity is a standard deviation in nats. Squaring and dividing by (ln 2)² gives the variance in bits squared. The derivative supplies the distortion-selected multiplier."
+        }
+      ],
+      "scope": "The numbered result assumes 0<p<1/2. The fixed-distortion conclusion concerns differentiability points with 0<D<1/2. The separate alternating-mask extension in the discussion falls outside this declaration.",
+      "advice": "Approve for the two regimes just distinguished. The Lean quantifier over every optimal choice supports the paper’s use of an optimal score."
+    }
   },
   "cor:positive": {
     "bindings": {
@@ -129,7 +325,26 @@
     "paper_refs": "Paper lines 550–556 (statement). Supporting passages at 505–515, 525–534, 778–801.",
     "lean_reading": "For each symmetric stationary binary chain with 0<p<1/2 and each fixed τ>0, there is a real W>0 satisfying W≥[(1−2p)√(p(1−p))/2]·[2 ln(cosh(τ/2))/τ]⁴. For every sequence of priors q_K, K=n+1≥1, if at each length q_K minimizes the expected Hamming score S_{q_K}(x)=−ln Σ_y q_K(y)e^{−τd(x,y)}, then √Var(S_{q_K})/√K tends to that same W. The explicit bound applies to the normalized standard deviation in natural-log units, and the convergence applies to every sequence meeting the optimality condition.",
     "lean_refs": "lean/BlockHierarchy/VarianceLimit/PositiveStatement.lean:7–17 (endpointLower and QuantitativePositivityStatement). lean/BlockHierarchy/VarianceLimit/Statement.lean:35–36 (omegaAt). lean/BlockHierarchy/Cut/Statement.lean:8–23, 32, 41–51 (source, Hamming distance and score optimization).",
-    "resolution": "The lower bound is on the normalized standard deviation in nats. The finite-block optimizer existence used to interpret the limit is proved in BlockHierarchy/Cut/Existence.lean."
+    "resolution": "The lower bound is on the normalized standard deviation in nats. The finite-block optimizer existence used to interpret the limit is proved in BlockHierarchy/Cut/Existence.lean.",
+    "analysis": {
+      "summary": "The explicit positive lower bound is on the limiting normalized standard deviation at a fixed positive multiplier. The factor and the fourth power match directly.",
+      "cases": [
+        {
+          "case": "Lower bound",
+          "paper": "ω∞(τ) ≥ ρ√(p(1−p)) L(τ)⁴/2, with L(τ)=2 ln(cosh(τ/2))/τ.",
+          "lean": "QuantitativePositivityStatement gives W ≥ ((1−2p)√(p(1−p))/2)·endpointLower(τ)⁴ and W>0.",
+          "why": "Expanding endpointLower and substituting ρ=1−2p gives the printed expression, including the factor of one half."
+        },
+        {
+          "case": "Which limit",
+          "paper": "ω∞ is the limit of the normalized optimal score standard deviation.",
+          "lean": "Every sequence of optimal priors gives omegaAt → W. The definition of omegaAt takes the square root of the variance and divides by √K.",
+          "why": "Finite-block optimizers exist. Uniqueness of a real limit identifies W with the fixed-τ limit of Theorem 8. No squaring or conversion to bits is needed here."
+        }
+      ],
+      "scope": "The multiplier is strictly positive and fixed, the chain is symmetric with 0<p<1/2, and the score is measured in nats.",
+      "advice": "Approve for a bound on the standard deviation. Reinterpreting this formula as a variance bound would require squaring both sides."
+    }
   },
   "prop:converse": {
     "bindings": {
@@ -144,6 +359,25 @@
     "paper_refs": "Paper lines 590–596 (statement). Supporting passages at 65–71, 262–267, 424–429, 497–499, 580–588, 597–602.",
     "lean_reading": "For a stationary symmetric binary Markov chain with 0<p<1/2, set ρ=1−2p and D_G=(1−2√ρ/(1+ρ))/2. For every 0<D≤D_G and 0<ε<1, let M_K be the smallest positive size of a deterministic encoder/decoder on one length-K path, K=n+1, for which the probability of Hamming distance strictly greater than KD is at most ε. Write R_op(K,D,ε)=log₂(M_K)/K and let R(D) be the limiting constrained rate in bits per symbol. Define V=p(1−p)[log₂((1−p)/p)]² and Q⁻¹(ε)=inf{t : Pr[Z>t]≤ε} for Z standard normal. For every real a<√V Q⁻¹(ε), eventually √K[R_op(K,D,ε)−R(D)]>a. Equivalently, the liminf is at least √V Q⁻¹(ε), allowing an infinite liminf.",
     "lean_refs": "lean/BlockHierarchy/Converse/Statement.lean:28–32 (LowDistortionConverseStatement), 10–23 (sizes, operational rate, Gaussian quantile and dispersion). lean/BlockHierarchy/RecurrenceStatement.lean:53–55 (grayD). lean/BlockHierarchy/VarianceLimit/Statement.lean:19–26 (constrained and limiting rates). lean/BlockHierarchy/Cut/Statement.lean:8–23, 32 (source and distance).",
-    "resolution": "Lean expresses the limit inferior by testing every strictly smaller bound. This includes the critical distortion endpoint."
+    "resolution": "Lean expresses the limit inferior by testing every strictly smaller bound. This includes the critical distortion endpoint.",
+    "analysis": {
+      "summary": "Lean expresses the paper’s limit-inferior lower bound as an eventual inequality for every strictly smaller real number. These formulations give the same one-sided converse.",
+      "cases": [
+        {
+          "case": "Meaning of the lower bound",
+          "paper": "The liminf of √K(R*−R) is at least c=√ν(p) Q⁻¹(ε).",
+          "lean": "For each real a<c, every sufficiently large block has √K(R_op−R)>a.",
+          "why": "If the liminf is at least c, every a<c is eventually exceeded. Conversely a liminf below c would allow an a strictly between them that is not eventually exceeded. This remains valid for a liminf of +∞."
+        },
+        {
+          "case": "Operational rate and endpoints",
+          "paper": "Use the minimum code size for excess Hamming distortion at most ε, with 0<D≤D_c and 0<ε<1.",
+          "lean": "Lean minimizes the positive deterministic code size under Pr[d>KD]≤ε and uses its base-two log per symbol. It includes D=grayD and uses the upper tail of the standard normal.",
+          "why": "Writing K=n+1 includes every positive block length. The critical endpoint is included, and the upper-tail convention gives the sign in the displayed quantile."
+        }
+      ],
+      "scope": "This is a lower bound for one stationary symmetric Markov path. A matching achievability bound or a full operational-dispersion formula would be additional mathematical claims.",
+      "advice": "Approve as a converse throughout the stated low-distortion range, including the critical endpoint."
+    }
   }
 }

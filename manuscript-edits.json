@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "edits": {
+    "ae9d7dd28cdebf7aee7a214317a9352c5976e40ab0f3e4cf912e6a9aac272b91": {
+      "claim": "prop:phase",
+      "edition": "arXiv:2603.07435v4 · local manuscript and PDF",
+      "location": "paper/Block_Hierarchy_General_K.tex, line 210",
+      "original": "both $01$ and $10$ leave at",
+      "replacement": "both $01$ and $10$ first reach zero reproduction probability at",
+      "reason": "Clarify that the threshold is the first zero. The theorem review supports a wording change in the manuscript while retaining the checked Lean statement and proof.",
+      "status": "Proposed",
+      "review_id": "ae9d7dd28cdebf7aee7a214317a9352c5976e40ab0f3e4cf912e6a9aac272b91"
+    }
+  }
+}

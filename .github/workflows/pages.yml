@@ -47,7 +47,7 @@ jobs:
           from hashlib import sha256
           from pathlib import Path
           root = Path("dist")
-          for name in ("index.html", "proofs/index.html", "progress.html", "review.html", "guide.html", "manuscript.pdf", "graph.js", "dagre/dagre.min.js"):
+          for name in ("index.html", "proofs/index.html", "progress.html", "review.html", "edits.html", "guide.html", "manuscript.pdf", "graph.js", "dagre/dagre.min.js"):
               assert (root / name).stat().st_size, name
           from html import escape
           project = json.loads(Path("project.json").read_text())
@@ -62,6 +62,8 @@ jobs:
               assert f'href="{path}"' in queue, label
               page = (root / path).read_text(encoding="utf-8")
               assert "What Lean proved" in page and "<form" not in page, label
+              if project["work"].get(label, {}).get("status") == "closed":
+                  assert "How the statements compare" in page and "Agent recommendation" in page or "Author feedback is open" in page, label
           for name in ("index.html", "proofs/index.html", "progress.html"):
               html = (root / name).read_text(encoding="utf-8")
               caption = html.split("</h1>", 1)[1].split("</p>", 1)[0]

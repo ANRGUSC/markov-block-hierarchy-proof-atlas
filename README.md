@@ -10,6 +10,8 @@ The inventory contains ten numbered results and one conjecture. The graph displa
 
 ## Author review
 
+Each checked result includes a case-by-case explanation, its scope and the agent’s recommendation. The [manuscript edits list](https://anrgusc.github.io/markov-block-hierarchy-proof-atlas/edits.html) collects proposed paper changes. Use the local dashboard to request a draft or clear handled suggestions.
+
 [Open the public review queue](https://anrgusc.github.io/markov-block-hierarchy-proof-atlas/review.html) to compare the v4 manuscript with the mathematical reading of each audited Lean statement. GitHub verification and optional human review have separate badges. The open conjecture has no proof to approve. [How to use this atlas](https://anrgusc.github.io/markov-block-hierarchy-proof-atlas/guide.html).
 
 To submit a decision, tell your coding agent **“Open the local review dashboard for the Markov paper.”** From this repository you can also run:
