@@ -53,7 +53,7 @@
     "lean_reading": "Let p,q>0, p+q=1, 0<a,b<1, pa=qb and 1−a−b>0. The pair law has masses A=p(1−a) on 00, B=q(1−b) on 11, and C=pa on each mixed word. Put S=A+B, r=(1−√(1−4C))/2 and d₀=min(p,q). Then 0<r<d₀. Write h for binary entropy in bits and H(P) for pair entropy in bits. R is the minimum mutual information in bits per pair over joints with source P and expected Hamming cost ≤2D. In each case the stated Q and Z satisfy Z(x)=ΣᵧQ(y)u^{d(x,y)}, and the joint P(x)Q(y)u^{d(x,y)}/Z(x) attains R. The tilted variance is V=Var_P[2D log₂u−log₂Z(X)], using Lean’s totalized logarithm at zero.\n\n• For 0≤D≤r, u=D/(1−D) and Z(x)=(1+u)²P(x). R=H(P)−2h(D) and V=Var_P[−log₂P(X)]. In word order 00,11,01,10 the reproduction masses have common denominator (1−u)² and numerators A−2Cu+Bu², B−2Cu+Au², C(1+u²)−Su, C(1+u²)−Su.\n• For r≤D<d₀, let δ=(D−C)/S and u=√(δ/(1−δ)). Then R=S[h(B/S)−h(δ)]. Q has positive masses (A−Bu²)/(S(1−u²)) and (B−Au²)/(S(1−u²)) on 00 and 11 respectively, and vanishes on both mixed words. Every minimizing joint has this reproduction marginal. The normalizers on 00, the mixed words, and 11 are A(1+u²)/S, u, and B(1+u²)/S respectively. V is the variance of their negative base-2 logarithms with weights (A,2C,B).\n• For every D≥d₀, R=0, u=1, Z≡1 and V=0. A minimizing Q puts all mass on 00 if p≥q and on 11 otherwise. If p≠q, every nonnegative joint with source P, zero mutual information and cost ≤2d₀ has this same reproduction marginal.",
     "lean_refs": "ReducedPair/PaperStatement.lean lines 10–37 (PersistentPairStatement); FirstChangeStatement.lean lines 8–27 (BinaryModel); PairChannel.lean lines 11–23 (law, hamming, prior); ReducedPair.lean lines 9–12 (ReducedPair.prior, ReducedPair.Z); ReducedPair/RateStatement.lean lines 8–29 (majorityWord, MinimizesAt, RateAt, GibbsPoint, tiltedVariance); ReducedPair/Moments.lean lines 6–13,28–30 (entropy, logTwo, variance, classVariance)",
     "analysis": {
-      "summary": "Both statements describe the same three distortion regimes for a persistent, possibly biased pair. The threshold belongs to the first rate formula, while the two-constant support is already present at that threshold.",
+      "summary": "The checked Lean theorem implies the paper’s Theorem 2 and proves more. Both give the same rate, variance and support on the paper’s distortion ranges. Lean also proves the reduced rate formula at the shared threshold and uniqueness of the optimizing reproduction marginal on the full reduced branch.",
       "cases": [
         {
           "case": "Full-support branch and first zero",
@@ -68,6 +68,12 @@
           "why": "Substituting δ recovers the printed formula. The Lean branches overlap at r, so the Lean theorem also supplies the reduced expression at the shared endpoint."
         },
         {
+          "case": "What Lean adds about the optimizer",
+          "paper": "The two constants remain active for D_FS ≤ D < D₀. The paper explicitly singles out uniqueness for the biased zero-rate reproduction at D₀.",
+          "lean": "Throughout D_FS ≤ D < D₀, every minimizing joint has the explicit reproduction marginal ReducedPair.prior. The declaration also gives an optimal Gibbs joint for each branch.",
+          "why": "Knowing the optimizing marginal determines its support. Specifying which words have positive mass alone does not determine their probabilities. The extra uniqueness concerns the marginal; several joint laws could in principle have that same marginal."
+        },
+        {
           "case": "Variance on the reduced branch",
           "paper": "The classes 00, transitions, 11 have probabilities A, 2C, B. Their normalizers are A(1+u²)/S, u, B(1+u²)/S.",
           "lean": "The checked normalizers have those same values. The two transition words each have source mass C and share the score −log₂ u up to a common shift.",
@@ -80,8 +86,9 @@
           "why": "With u = 1 and Z = 1 the tilted score is zero. The uniqueness quantifier uses the endpoint cost budget 2D₀."
         }
       ],
-      "scope": "Rates here are bits per pair at a block cost of 2D. The endpoint uniqueness concerns a biased source at D₀. The conclusion for larger D is zero rate and zero selected-slope variance.",
-      "advice": "Approve for the persistent pair and the paper’s chosen zero slope. The overlap at D_FS strengthens the boundary description without changing any displayed value."
+      "scope": "To recover the paper, restrict the reduced rate and variance clause from r ≤ D < D₀ to r < D < D₀, keep the support conclusion from r onward, and retain the separate biased uniqueness clause at D₀. The additional optimizing witnesses and middle-branch uniqueness can then be omitted. The current atlas target is the stronger PersistentPairStatement; the audit does not separately check a corollary containing only the printed claims.",
+      "advice": "Approve if your review means that the checked result covers every printed claim and you are comfortable with the listed extras. If you want the public Lean declaration to state exactly Theorem 2, request the paper-facing corollary below. The stronger proof can supply it.",
+      "suggested_feedback": "Please retain the stronger optimizer theorem as a helper and expose a checked corollary with Theorem 2’s printed ranges and conclusions. In particular, use D_FS < D for the reduced rate formula and D_FS ≤ D for two-constant support."
     }
   },
   "thm:three": {
