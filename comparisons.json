@@ -37,7 +37,8 @@
       "scope": "For nonzero persistence this proposition determines the support through the first zero. Continuing absence at every larger distortion would require a further result. SupportAt gives uniqueness of the reproduction marginal among the optimizers specified by IsOptimalAt. It does not assert uniqueness of the whole joint law.",
       "advice": "Approve if the intended result is the first zero. The proposed paper wording “first reach zero reproduction probability” captures that interpretation and can be handled as an editorial change alongside approval.",
       "suggested_feedback": "If continuing absence is intended: “Please show whether these words remain absent for larger distortions and specify that range.”"
-    }
+    },
+    "stronger_result": "At each distortion specified in Proposition 1, Lean also gives uniqueness of the optimal reproduction marginal. The first-support-change claim only needs which words have positive probability."
   },
   "thm:two": {
     "bindings": {
@@ -89,7 +90,8 @@
       "scope": "To recover the paper, restrict the reduced rate and variance clause from r ≤ D < D₀ to r < D < D₀, keep the support conclusion from r onward, and retain the separate biased uniqueness clause at D₀. The additional optimizing witnesses and middle-branch uniqueness can then be omitted. The current atlas target is the stronger PersistentPairStatement; the audit does not separately check a corollary containing only the printed claims.",
       "advice": "Approve if your review means that the checked result covers every printed claim and you are comfortable with the listed extras. If you want the public Lean declaration to state exactly Theorem 2, request the paper-facing corollary below. The stronger proof can supply it.",
       "suggested_feedback": "Please retain the stronger optimizer theorem as a helper and expose a checked corollary with Theorem 2’s printed ranges and conclusions. In particular, use D_FS < D for the reduced rate formula and D_FS ≤ D for two-constant support."
-    }
+    },
+    "stronger_result": "Lean also proves the reduced rate formula at D = D_FS and uniqueness of the optimizing reproduction marginal for every D_FS ≤ D < D₀. The paper starts that rate formula strictly above D_FS and specifies the active words on that interval."
   },
   "thm:three": {
     "bindings": {
@@ -128,7 +130,8 @@
       ],
       "scope": "The numbered result uses a symmetric persistent chain, 0 < p < 1/2, with D < 1/2. The first rate formula extends to d₁ even though the support loses words there.",
       "advice": "Approve for the stated persistent chain. The distinction between a support endpoint and a rate-formula endpoint is explicit in both readings."
-    }
+    },
+    "stronger_result": "In addition to the three regimes and their rate and variance formulas, the formal operating-point result identifies the reproduction marginal of every minimizing joint on each branch."
   },
   "prop:rec": {
     "bindings": {
@@ -317,7 +320,8 @@
       ],
       "scope": "The numbered result assumes 0<p<1/2. The fixed-distortion conclusion concerns differentiability points with 0<D<1/2. The separate alternating-mask extension in the discussion falls outside this declaration.",
       "advice": "Approve for the two regimes just distinguished. The Lean quantifier over every optimal choice supports the paper’s use of an optimal score."
-    }
+    },
+    "stronger_result": "At a differentiability point, Lean also gives existence of a maximizing slope at each block length and convergence for every sequence of such slopes and associated optimal priors."
   },
   "cor:positive": {
     "bindings": {
